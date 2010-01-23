@@ -1,0 +1,13 @@
+Hello World!!
+
+<%= @import.csv_file_name %>
+
+<% if @import.processed.nil? %>
+
+It hasn't been processed yet.
+
+<% else %>
+
+Success! This import contained <%=  @import.processed %> records
+
+<% end %>

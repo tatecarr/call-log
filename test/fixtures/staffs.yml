@@ -1,0 +1,31 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  staff_id: 1
+  first_name: MyString
+  last_name: MyString
+  nickname: MyString
+  address: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  gender: MyString
+  doh: 2010-01-23
+  cell_number: MyString
+  home_number: MyString
+  agency_staff: false
+
+two:
+  staff_id: 1
+  first_name: MyString
+  last_name: MyString
+  nickname: MyString
+  address: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  gender: MyString
+  doh: 2010-01-23
+  cell_number: MyString
+  home_number: MyString
+  agency_staff: false

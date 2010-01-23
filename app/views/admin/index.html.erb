@@ -1,0 +1,17 @@
+<% form_for @import, :url => { :action => "import_csv" }, :html => { :multipart => true } do |f| %>
+<fieldset>
+	<div class="message">
+		Only csv files are allowed.
+	</div>
+	<ol>
+		<li>
+			<label for="photo_file">CSV File</label>
+			<%= f.file_field :csv %>
+		</li>
+	</ol>
+</fieldset>
+<div class="buttons">
+	<%= f.submit "Import Data" %>
+</div>
+
+<% end %>

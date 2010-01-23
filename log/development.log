@@ -1,0 +1,1513 @@
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (3.1ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.8ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100123184610)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "password_hash" varchar(255), "password_salt" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100123184610')[0m
+Migrating to AddRoleToUser (20100123185244)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mALTER TABLE "users" ADD "role" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100123185244')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-01-23 13:53:51) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+
+ActionController::UnknownAction (No action responded to index. Actions: create, current_user, logged_in?, login_required, new, and redirect_to_target_or_default):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-01-23 13:54:17) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering users/new
+
+ActionView::TemplateError (undefined method `title' for #<ActionView::Base:0x1042bfa20>) on line #1 of app/views/users/new.html.erb:
+1: <% title "Sign up" %>
+2: 
+3: <p>Already have an account? <%= link_to "Log in", login_path %>.</p>
+4: 
+
+    app/views/users/new.html.erb:1
+
+Rendered rescues/_trace (45.7ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-23 13:54:24) [GET]
+
+ActionController::RoutingError (No route matches "/session/new" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-01-23 13:54:27) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering sessions/new
+
+ActionView::TemplateError (undefined method `title' for #<ActionView::Base:0x1043f39a0>) on line #1 of app/views/sessions/new.html.erb:
+1: <% title "Log in" %>
+2: 
+3: <p>Don't have an account? <%= link_to "Sign up!", signup_path %></p>
+4: 
+
+    app/views/sessions/new.html.erb:1
+
+Rendered rescues/_trace (43.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-01-23 13:55:09) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering sessions/new
+Completed in 88ms (View: 87, DB: 0) | 200 OK [http://localhost/sessions/new]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-01-23 13:55:12) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering users/new
+Completed in 84ms (View: 11, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-01-23 13:58:30) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering users/new
+Completed in 17ms (View: 11, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-01-23 13:58:33) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering sessions/new
+Completed in 8ms (View: 7, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-01-23 13:58:35) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering users/new
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-01-23 13:59:05) [POST]
+  Parameters: {"commit"=>"Sign up", "action"=>"create", "authenticity_token"=>"bD4csLo1QUn5BSPOcebb4D3JqwMeZW0mrUYdeu62TEk=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "role"=>"Not Admin", "username"=>"nonadmin", "password"=>"[FILTERED]", "email"=>"benjamin.vogelzang@gordon.edu"}}
+WARNING: Can't mass-assign these protected attributes: role
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."username" = 'nonadmin') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'benjamin.vogelzang@gordon.edu') LIMIT 1[0m
+  [4;36;1mUser Create (0.6ms)[0m   [0;1mINSERT INTO "users" ("created_at", "updated_at", "username", "role", "password_salt", "password_hash", "email") VALUES('2010-01-23 18:59:05', '2010-01-23 18:59:05', 'nonadmin', NULL, '5efe8cd24407f374d2173142b754af8d47f6df17', '76cfa1bf7c49b952412375fa09b5079299a42ad7', 'benjamin.vogelzang@gordon.edu')[0m
+
+NameError (undefined local variable or method `root_url' for #<UsersController:0x1041fc660>):
+  app/controllers/users_controller.rb:11:in `create'
+
+Rendered rescues/_trace (102.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-01-23 14:00:20) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+
+ActionController::UnknownAction (No action responded to index. Actions: create, current_user, logged_in?, login_required, new, and redirect_to_target_or_default):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-01-23 14:00:24) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering users/new
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-23 14:00:27) [GET]
+
+ActionController::RoutingError (No route matches "/session/new" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-01-23 14:00:31) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering sessions/new
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+
+ActionView::TemplateError (undefined method `admin?' for #<ActionView::Base:0x104197df0>) on line #5 of app/views/sessions/new.html.erb:
+2: 
+3: <% if logged_in? %>
+4: 	You are logged in. 
+5: 	<% if admin? %>
+6: 		You are admin.
+7: 	<% else %>
+8: 		You are not admin.
+
+    app/views/sessions/new.html.erb:5
+
+Rendered rescues/_trace (108.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-01-23 14:01:01) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering sessions/new
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+
+ActionView::TemplateError (undefined method `admin?' for #<ActionView::Base:0x104349fe0>) on line #5 of app/views/sessions/new.html.erb:
+2: 
+3: <% if logged_in? %>
+4: 	You are logged in. 
+5: 	<% if admin? %>
+6: 		You are admin.
+7: 	<% else %>
+8: 		You are not admin.
+
+    app/views/sessions/new.html.erb:5
+
+Rendered rescues/_trace (42.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-01-23 14:01:02) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering sessions/new
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+
+ActionView::TemplateError (undefined method `admin?' for #<ActionView::Base:0x1040c5198>) on line #5 of app/views/sessions/new.html.erb:
+2: 
+3: <% if logged_in? %>
+4: 	You are logged in. 
+5: 	<% if admin? %>
+6: 		You are admin.
+7: 	<% else %>
+8: 		You are not admin.
+
+    app/views/sessions/new.html.erb:5
+
+Rendered rescues/_trace (42.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-01-23 14:01:55) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering sessions/new
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://localhost/sessions/new]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-01-23 14:02:01) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering users/new
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-01-23 14:02:13) [POST]
+  Parameters: {"commit"=>"Sign up", "action"=>"create", "authenticity_token"=>"bD4csLo1QUn5BSPOcebb4D3JqwMeZW0mrUYdeu62TEk=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "role"=>"Admin", "username"=>"admin", "password"=>"[FILTERED]", "email"=>"benjamin.vogelzang@gordon.edu"}}
+WARNING: Can't mass-assign these protected attributes: role
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."username" = 'admin') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'benjamin.vogelzang@gordon.edu') LIMIT 1[0m
+Rendering users/new
+Completed in 19ms (View: 10, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-01-23 14:02:24) [POST]
+  Parameters: {"commit"=>"Sign up", "action"=>"create", "authenticity_token"=>"bD4csLo1QUn5BSPOcebb4D3JqwMeZW0mrUYdeu62TEk=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "role"=>"", "username"=>"admin", "password"=>"[FILTERED]", "email"=>"admin@admin.com"}}
+WARNING: Can't mass-assign these protected attributes: role
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."username" = 'admin') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'admin@admin.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("created_at", "updated_at", "username", "role", "password_salt", "password_hash", "email") VALUES('2010-01-23 19:02:24', '2010-01-23 19:02:24', 'admin', NULL, '5b5eb7bba493158570dde493513c3a6fcb7af538', 'fa7a25f745eef6efb06ffa1d27ad6a8a1ec4cd1e', 'admin@admin.com')[0m
+Redirected to http://localhost:3000/
+Completed in 14ms (DB: 1) | 302 Found [http://localhost/users]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-01-23 14:02:24) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering sessions/new
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" [0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-01-23 14:04:52) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering users/new
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-01-23 14:05:06) [POST]
+  Parameters: {"commit"=>"Sign up", "action"=>"create", "authenticity_token"=>"bD4csLo1QUn5BSPOcebb4D3JqwMeZW0mrUYdeu62TEk=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "role"=>"Admin", "username"=>"admin", "password"=>"[FILTERED]", "email"=>"benjamin.vogelzang@gordon.edu"}}
+WARNING: Can't mass-assign these protected attributes: role
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."username" = 'admin') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'benjamin.vogelzang@gordon.edu') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("created_at", "updated_at", "username", "role", "password_salt", "password_hash", "email") VALUES('2010-01-23 19:05:06', '2010-01-23 19:05:06', 'admin', NULL, '3f09c5f25aaa78a1cfc7cabfe47e5dd693d76f57', 'b405c63722cba5fabe20e7c95b828382e6883ce0', 'benjamin.vogelzang@gordon.edu')[0m
+Redirected to http://localhost:3000/
+Completed in 13ms (DB: 1) | 302 Found [http://localhost/users]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-01-23 14:05:06) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering sessions/new
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mUser Delete all (2.3ms)[0m   [0;1mDELETE FROM "users" WHERE ("id" IN (3)) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" [0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-01-23 14:09:18) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering users/new
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-01-23 14:09:26) [POST]
+  Parameters: {"commit"=>"Sign up", "action"=>"create", "authenticity_token"=>"bD4csLo1QUn5BSPOcebb4D3JqwMeZW0mrUYdeu62TEk=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "role"=>"Admin", "username"=>"admin", "password"=>"[FILTERED]", "email"=>"benjamin.vogelzang@gordon.edu"}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."username" = 'admin') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'benjamin.vogelzang@gordon.edu') LIMIT 1[0m
+  [4;35;1mUser Create (0.4ms)[0m   [0mINSERT INTO "users" ("created_at", "updated_at", "username", "role", "password_salt", "password_hash", "email") VALUES('2010-01-23 19:09:26', '2010-01-23 19:09:26', 'admin', 'Admin', 'a6040be13c24a0680dd694ee031b32028faa30de', 'c140bb3cfcdb2e4b2d334e3fef67a4db31f27a12', 'benjamin.vogelzang@gordon.edu')[0m
+Redirected to http://localhost:3000/
+Completed in 14ms (DB: 1) | 302 Found [http://localhost/users]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-01-23 14:09:26) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering sessions/new
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100123184610)
+Migrating to AddRoleToUser (20100123185244)
+Migrating to CreateImports (20100123193718)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "imports" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "processed" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100123193718')[0m
+Migrating to AddAttachmentsCsvToImport (20100123193738)
+  [4;35;1mSQL (0.5ms)[0m   [0mALTER TABLE "imports" ADD "csv_file_name" varchar(255)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "imports" ADD "csv_content_type" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "imports" ADD "csv_file_size" integer[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "imports" ADD "csv_updated_at" datetime[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100123193738')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("imports")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;36;1mImport Load (0.4ms)[0m   [0;1mSELECT * FROM "imports" [0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mImport Load (0.3ms)[0m   [0mSELECT * FROM "imports" [0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-23 14:42:38) [GET]
+
+ActionController::RoutingError (No route matches "/imports" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-23 14:43:02) [GET]
+
+ActionController::RoutingError (No route matches "/imports" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-23 14:43:03) [GET]
+
+ActionController::RoutingError (No route matches "/imports" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-23 14:43:07) [GET]
+
+ActionController::RoutingError (No route matches "/imports" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-01-23 14:43:10) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin"}
+Rendering admin/index
+
+ActionView::TemplateError (undefined method `imports_path' for #<ActionView::Base:0x1044a2310>) on line #1 of app/views/admin/index.html.erb:
+1: <% form_for @import, :html => { :multipart => true } do |f| %>
+2: <fieldset>
+3: 	<div class="message">
+4: 		Only csv files are allowed.
+
+    app/views/admin/index.html.erb:1
+
+Rendered rescues/_trace (47.9ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-01-23 14:44:39) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin"}
+Rendering admin/index
+
+ActionView::TemplateError (undefined method `imports_path' for #<ActionView::Base:0x1041e6658>) on line #1 of app/views/admin/index.html.erb:
+1: <% form_for @import, :action => "import_csv", :html => { :multipart => true } do |f| %>
+2: <fieldset>
+3: 	<div class="message">
+4: 		Only csv files are allowed.
+
+    app/views/admin/index.html.erb:1
+
+Rendered rescues/_trace (46.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-01-23 14:45:05) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin"}
+Rendering admin/index
+
+ActionView::TemplateError (undefined method `imports_path' for #<ActionView::Base:0x104321db0>) on line #1 of app/views/admin/index.html.erb:
+1: <% form_for @import, :controller => "admin", :action => "import_csv", :html => { :multipart => true } do |f| %>
+2: <fieldset>
+3: 	<div class="message">
+4: 		Only csv files are allowed.
+
+    app/views/admin/index.html.erb:1
+
+Rendered rescues/_trace (118.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-01-23 14:45:29) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin"}
+Rendering admin/index
+
+ActionView::TemplateError (undefined method `imports_path' for #<ActionView::Base:0x1044878a8>) on line #1 of app/views/admin/index.html.erb:
+1: <% form_for @import, :html => { :multipart => true } do |f| %>
+2: <fieldset>
+3: 	<div class="message">
+4: 		Only csv files are allowed.
+
+    app/views/admin/index.html.erb:1
+
+Rendered rescues/_trace (44.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-01-23 14:49:18) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin"}
+Rendering admin/index
+Completed in 22ms (View: 17, DB: 0) | 200 OK [http://localhost/admin]
+
+
+Processing AdminController#import_csv (for 127.0.0.1 at 2010-01-23 14:49:37) [POST]
+  Parameters: {"commit"=>"Import Data", "action"=>"import_csv", "authenticity_token"=>"bD4csLo1QUn5BSPOcebb4D3JqwMeZW0mrUYdeu62TEk=", "import"=>{"csv"=>#<File:/var/folders/cF/cFzIU0DCE2SOOWWsiTwcak+++TI/-Tmp-/RackMultipart20100123-480-i8iqzs-0>}, "controller"=>"admin"}
+
+ActionView::MissingTemplate (Missing template admin/import_csv.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-01-23 14:59:31) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin"}
+Rendering admin/index
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://localhost/admin]
+
+
+Processing AdminController#import_csv (for 127.0.0.1 at 2010-01-23 14:59:38) [POST]
+  Parameters: {"commit"=>"Import Data", "action"=>"import_csv", "authenticity_token"=>"bD4csLo1QUn5BSPOcebb4D3JqwMeZW0mrUYdeu62TEk=", "import"=>{"csv"=>#<File:/var/folders/cF/cFzIU0DCE2SOOWWsiTwcak+++TI/-Tmp-/RackMultipart20100123-480-ytrr90-0>}, "controller"=>"admin"}
+Redirected to http://localhost:3000/admin/show
+Completed in 41ms (DB: 0) | 302 Found [http://localhost/admin/import_csv]
+
+
+Processing AdminController#show (for 127.0.0.1 at 2010-01-23 14:59:38) [GET]
+  Parameters: {"action"=>"show", "id"=>"show", "controller"=>"admin"}
+  [4;36;1mImport Load (0.1ms)[0m   [0;1mSELECT * FROM "imports" WHERE ("imports"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Import with ID=show):
+  app/controllers/admin_controller.rb:15:in `show'
+
+Rendered rescues/_trace (101.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mImport Load (0.3ms)[0m   [0;1mSELECT * FROM "imports" [0m
+
+
+Processing AdminController#import_csv (for 127.0.0.1 at 2010-01-23 15:01:07) [POST]
+  Parameters: {"commit"=>"Import Data", "action"=>"import_csv", "authenticity_token"=>"bD4csLo1QUn5BSPOcebb4D3JqwMeZW0mrUYdeu62TEk=", "import"=>{"csv"=>#<File:/var/folders/cF/cFzIU0DCE2SOOWWsiTwcak+++TI/-Tmp-/RackMultipart20100123-480-151nh0n-0>}, "controller"=>"admin"}
+Rendering admin/show
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.>) on line #5 of app/views/admin/show.html.erb:
+2: 
+3: <%= @import.csv.path %>
+4: 
+5: <% if @import.processed > 0 %>
+6: 
+7: Success! This import contained <%=  @import.processed %> records
+8: 
+
+    app/views/admin/show.html.erb:5
+    app/controllers/admin_controller.rb:11:in `import_csv'
+
+Rendered rescues/_trace (43.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mImport Load (0.3ms)[0m   [0mSELECT * FROM "imports" [0m
+
+
+Processing AdminController#import_csv (for 127.0.0.1 at 2010-01-23 15:01:57) [POST]
+  Parameters: {"commit"=>"Import Data", "action"=>"import_csv", "authenticity_token"=>"bD4csLo1QUn5BSPOcebb4D3JqwMeZW0mrUYdeu62TEk=", "import"=>{"csv"=>#<File:/var/folders/cF/cFzIU0DCE2SOOWWsiTwcak+++TI/-Tmp-/RackMultipart20100123-480-1g771so-0>}, "controller"=>"admin"}
+  [4;35;1mImport Create (0.5ms)[0m   [0mINSERT INTO "imports" ("created_at", "csv_file_name", "updated_at", "csv_content_type", "processed", "csv_updated_at", "csv_file_size") VALUES('2010-01-23 20:01:57', 'Internship.pages', '2010-01-23 20:01:57', 'application/octet-stream', NULL, '2010-01-23 20:01:57', 128061)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /Users/Tate/Documents/rails/call-log/public/system/csvs/1/original/Internship.pages
+Rendering admin/show
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.>) on line #5 of app/views/admin/show.html.erb:
+2: 
+3: <%= @import.csv.path %>
+4: 
+5: <% if @import.processed > 0 %>
+6: 
+7: Success! This import contained <%=  @import.processed %> records
+8: 
+
+    app/views/admin/show.html.erb:5
+    app/controllers/admin_controller.rb:12:in `import_csv'
+
+Rendered rescues/_trace (42.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mImport Load (0.6ms)[0m   [0;1mSELECT * FROM "imports" [0m
+
+
+Processing AdminController#show (for 127.0.0.1 at 2010-01-23 15:03:41) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"admin"}
+  [4;36;1mImport Load (0.3ms)[0m   [0;1mSELECT * FROM "imports" WHERE ("imports"."id" = 1) [0m
+Rendering admin/show
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.>) on line #5 of app/views/admin/show.html.erb:
+2: 
+3: <%= @import.csv.path %>
+4: 
+5: <% if @import.processed > 0 %>
+6: 
+7: Success! This import contained <%=  @import.processed %> records
+8: 
+
+    app/views/admin/show.html.erb:5
+
+Rendered rescues/_trace (116.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AdminController#show (for 127.0.0.1 at 2010-01-23 15:03:45) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"admin"}
+  [4;35;1mImport Load (0.3ms)[0m   [0mSELECT * FROM "imports" WHERE ("imports"."id" = 1) [0m
+Rendering admin/show
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.>) on line #5 of app/views/admin/show.html.erb:
+2: 
+3: <%= @import.csv.path %>
+4: 
+5: <% if @import.processed > 0 %>
+6: 
+7: Success! This import contained <%=  @import.processed %> records
+8: 
+
+    app/views/admin/show.html.erb:5
+
+Rendered rescues/_trace (43.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-01-23 15:03:49) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin"}
+Rendering admin/index
+Completed in 10ms (View: 4, DB: 0) | 200 OK [http://localhost/admin/]
+
+
+Processing AdminController#import_csv (for 127.0.0.1 at 2010-01-23 15:05:17) [POST]
+  Parameters: {"commit"=>"Import Data", "action"=>"import_csv", "authenticity_token"=>"bD4csLo1QUn5BSPOcebb4D3JqwMeZW0mrUYdeu62TEk=", "import"=>{"csv"=>#<File:/var/folders/cF/cFzIU0DCE2SOOWWsiTwcak+++TI/-Tmp-/RackMultipart20100123-480-4drtks-0>}, "controller"=>"admin"}
+  [4;36;1mImport Create (0.4ms)[0m   [0;1mINSERT INTO "imports" ("created_at", "csv_file_name", "updated_at", "csv_content_type", "processed", "csv_updated_at", "csv_file_size") VALUES('2010-01-23 20:05:17', 'randomdata.csv', '2010-01-23 20:05:17', 'text/csv', NULL, '2010-01-23 20:05:17', 1900)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /Users/Tate/Documents/rails/call-log/public/system/csvs/2/original/randomdata.csv
+Rendering admin/show
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.>) on line #5 of app/views/admin/show.html.erb:
+2: 
+3: <%= @import.csv_file_name %>
+4: 
+5: <% if @import.processed > 0 %>
+6: 
+7: Success! This import contained <%=  @import.processed %> records
+8: 
+
+    app/views/admin/show.html.erb:5
+    app/controllers/admin_controller.rb:11:in `import_csv'
+
+Rendered rescues/_trace (43.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mImport Load (0.6ms)[0m   [0mSELECT * FROM "imports" [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100123184610)
+Migrating to AddRoleToUser (20100123185244)
+Migrating to CreateImports (20100123193718)
+Migrating to AddAttachmentsCsvToImport (20100123193738)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("imports")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("users")[0m
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-01-23 15:07:23) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin"}
+Rendering admin/index
+Completed in 26ms (View: 20, DB: 0) | 200 OK [http://localhost/admin]
+
+
+Processing AdminController#import_csv (for 127.0.0.1 at 2010-01-23 15:07:40) [POST]
+  Parameters: {"commit"=>"Import Data", "action"=>"import_csv", "authenticity_token"=>"bD4csLo1QUn5BSPOcebb4D3JqwMeZW0mrUYdeu62TEk=", "import"=>{"csv"=>#<File:/var/folders/cF/cFzIU0DCE2SOOWWsiTwcak+++TI/-Tmp-/RackMultipart20100123-556-1rdwqil-0>}, "controller"=>"admin"}
+  [4;36;1mImport Create (0.5ms)[0m   [0;1mINSERT INTO "imports" ("created_at", "csv_file_name", "updated_at", "csv_content_type", "processed", "csv_updated_at", "csv_file_size") VALUES('2010-01-23 20:07:40', 'randomdata.csv', '2010-01-23 20:07:40', 'text/csv', NULL, '2010-01-23 20:07:40', 1900)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /Users/Tate/Documents/rails/call-log/public/system/csvs/3/original/randomdata.csv
+Rendering admin/show
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.>) on line #5 of app/views/admin/show.html.erb:
+2: 
+3: <%= @import.csv_file_name %>
+4: 
+5: <% if @import.processed > 0 %>
+6: 
+7: Success! This import contained <%=  @import.processed %> records
+8: 
+
+    app/views/admin/show.html.erb:5
+    app/controllers/admin_controller.rb:11:in `import_csv'
+
+Rendered rescues/_trace (45.1ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mImport Load (0.8ms)[0m   [0;1mSELECT * FROM "imports" [0m
+
+
+Processing AdminController#import_csv (for 127.0.0.1 at 2010-01-23 15:09:24) [POST]
+  Parameters: {"commit"=>"Import Data", "action"=>"import_csv", "authenticity_token"=>"bD4csLo1QUn5BSPOcebb4D3JqwMeZW0mrUYdeu62TEk=", "import"=>{"csv"=>#<File:/var/folders/cF/cFzIU0DCE2SOOWWsiTwcak+++TI/-Tmp-/RackMultipart20100123-556-ghp2iz-0>}, "controller"=>"admin"}
+  [4;35;1mImport Create (0.3ms)[0m   [0mINSERT INTO "imports" ("created_at", "csv_file_name", "updated_at", "csv_content_type", "processed", "csv_updated_at", "csv_file_size") VALUES('2010-01-23 20:09:24', 'randomdata.csv', '2010-01-23 20:09:24', 'text/csv', NULL, '2010-01-23 20:09:24', 1900)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /Users/Tate/Documents/rails/call-log/public/system/csvs/4/original/randomdata.csv
+Rendering admin/show
+Completed in 24ms (View: 7, DB: 0) | 200 OK [http://localhost/admin/import_csv]
+  [4;35;1mImport Load (0.9ms)[0m   [0mSELECT * FROM "imports" [0m
+
+
+Processing AdminController#import_csv (for 127.0.0.1 at 2010-01-23 15:34:40) [POST]
+  Parameters: {"commit"=>"Import Data", "action"=>"import_csv", "authenticity_token"=>"bD4csLo1QUn5BSPOcebb4D3JqwMeZW0mrUYdeu62TEk=", "import"=>{"csv"=>#<File:/var/folders/cF/cFzIU0DCE2SOOWWsiTwcak+++TI/-Tmp-/RackMultipart20100123-556-14nkhcy-0>}, "controller"=>"admin"}
+  [4;36;1mImport Create (0.4ms)[0m   [0;1mINSERT INTO "imports" ("created_at", "csv_file_name", "updated_at", "csv_content_type", "processed", "csv_updated_at", "csv_file_size") VALUES('2010-01-23 20:34:40', 'randomdata.csv', '2010-01-23 20:34:40', 'text/csv', NULL, '2010-01-23 20:34:40', 1900)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /Users/Tate/Documents/rails/call-log/public/system/csvs/5/original/randomdata.csv
+Rendering admin/show
+Completed in 19ms (View: 2, DB: 0) | 200 OK [http://localhost/admin/import_csv]
+  [4;36;1mImport Load (1.0ms)[0m   [0;1mSELECT * FROM "imports" [0m
+  [4;35;1mImport Load (1.0ms)[0m   [0mSELECT * FROM "imports" [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100123184610)
+Migrating to AddRoleToUser (20100123185244)
+Migrating to CreateImports (20100123193718)
+Migrating to AddAttachmentsCsvToImport (20100123193738)
+Migrating to CreateStaffs (20100123205525)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE TABLE "staffs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "staff_id" integer, "first_name" varchar(255), "last_name" varchar(255), "nickname" varchar(255), "address" varchar(255), "city" varchar(255), "state" varchar(255), "zip" varchar(255), "gender" varchar(255), "doh" date, "cell_number" varchar(255), "home_number" varchar(255), "agency_staff" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100123205525')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.9ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("imports")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("staffs")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("users")[0m
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:09:51) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs"}
+  [4;36;1mStaff Load (0.5ms)[0m   [0;1mSELECT * FROM "staffs" [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 29ms (View: 24, DB: 0) | 200 OK [http://localhost/staffs]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-01-23 16:10:05) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin"}
+Rendering admin/index
+Completed in 16ms (View: 10, DB: 0) | 200 OK [http://localhost/admin]
+
+
+Processing AdminController#import_csv (for 127.0.0.1 at 2010-01-23 16:10:13) [POST]
+  Parameters: {"commit"=>"Import Data", "action"=>"import_csv", "authenticity_token"=>"bD4csLo1QUn5BSPOcebb4D3JqwMeZW0mrUYdeu62TEk=", "import"=>{"csv"=>#<File:/var/folders/cF/cFzIU0DCE2SOOWWsiTwcak+++TI/-Tmp-/RackMultipart20100123-636-1l2x0r8-0>}, "controller"=>"admin"}
+  [4;35;1mImport Create (0.5ms)[0m   [0mINSERT INTO "imports" ("created_at", "csv_file_name", "updated_at", "csv_content_type", "processed", "csv_updated_at", "csv_file_size") VALUES('2010-01-23 21:10:13', 'randomdata.csv', '2010-01-23 21:10:13', 'text/csv', NULL, '2010-01-23 21:10:13', 3713)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /Users/Tate/Documents/rails/call-log/public/system/csvs/6/original/randomdata.csv
+  [4;36;1mStaff Delete all (1.0ms)[0m   [0;1mDELETE FROM "staffs" WHERE 1=1[0m
+  [4;35;1mStaff Create (0.4ms)[0m   [0mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('669-4845 Cursus. Ave', 'Berlin', '83834', '2010-01-23 21:10:13', 4, '(706) 208-8443', 'Vincent', '2010-01-23 21:10:13', 'F', 'f', 'Lewis', '2009-09-17', '(972) 555-3291', 'Jennifer', 'Rhode Island')[0m
+  [4;36;1mStaff Create (0.4ms)[0m   [0;1mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('3932 Vehicula Rd.', 'Auburn Hills', '83925', '2010-01-23 21:10:13', 33, '(791) 912-9723', 'Brendan', '2010-01-23 21:10:13', 'M', 't', 'Clemons', '2009-11-03', '(420) 140-8343', 'Calista', 'LA')[0m
+  [4;35;1mStaff Create (0.4ms)[0m   [0mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('8212 Et', ' Av.', 'HI', '2010-01-23 21:10:13', 18, '(423) 514-7110', 'Sonya', '2010-01-23 21:10:13', '21815', 'f', 'Key', NULL, '2009-09-11 07:40:05', 'Mohammad', 'Huntington')[0m
+  [4;36;1mStaff Create (0.4ms)[0m   [0;1mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('Ap #203-9610 Dui Road', 'Anchorage', '47859', '2010-01-23 21:10:13', 39, '(170) 450-7217', 'Renee', '2010-01-23 21:10:13', 'M', 'f', 'Fischer', '2010-07-24', '(983) 126-7483', 'Owen', 'ID')[0m
+  [4;35;1mStaff Create (0.6ms)[0m   [0mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('Ap #952-2878 Faucibus Road', 'Lowell', '34872', '2010-01-23 21:10:13', 28, '(206) 780-0503', 'Quon', '2010-01-23 21:10:13', 'F', 'f', 'Mccullough', '2009-12-14', '(801) 262-9836', 'Yuli', 'CO')[0m
+  [4;36;1mStaff Create (0.4ms)[0m   [0;1mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('5109 Tellus Road', 'North Tonawanda', '43331', '2010-01-23 21:10:13', 38, '(526) 906-6441', 'Wylie', '2010-01-23 21:10:13', 'M', 'f', 'Snyder', '2010-11-14', '(138) 707-7027', 'Jack', 'Iowa')[0m
+  [4;35;1mStaff Create (0.4ms)[0m   [0mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('3124 Lectus St.', 'Fallon', '06187', '2010-01-23 21:10:13', 15, '(807) 482-2905', 'Jerome', '2010-01-23 21:10:13', 'F', 'f', 'Rivera', '2009-04-02', '(615) 306-9703', 'Jena', 'LA')[0m
+  [4;36;1mStaff Create (0.3ms)[0m   [0;1mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('P.O. Box 825', ' 1982 Purus', 'Jeannette', '2010-01-23 21:10:13', 25, '2009-07-26 08:31:28', 'Adara', '2010-01-23 21:10:13', 'Kentucky', 'f', 'Snyder', NULL, 'M', 'Vivien', ' Rd.')[0m
+  [4;35;1mStaff Create (0.4ms)[0m   [0mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('Ap #280-1796 Nisi Rd.', 'Littleton', '40299', '2010-01-23 21:10:13', 15, '(714) 715-3775', 'Abra', '2010-01-23 21:10:13', 'F', 'f', 'Austin', '2009-02-17', '(746) 408-5688', 'Melyssa', 'TX')[0m
+  [4;36;1mStaff Create (0.4ms)[0m   [0;1mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('7247 Etiam Rd.', 'Jackson', '89735', '2010-01-23 21:10:13', 40, '(880) 325-9737', 'Kyle', '2010-01-23 21:10:13', 'M', 'f', 'Hernandez', '2009-07-13', '(227) 708-2360', 'Glenna', 'Minnesota')[0m
+  [4;35;1mStaff Create (0.4ms)[0m   [0mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('449-5676 Tincidunt Avenue', 'Santa Clara', '84520', '2010-01-23 21:10:13', 25, '(202) 362-2867', 'Keane', '2010-01-23 21:10:13', 'M', 't', 'Bond', '2009-07-05', '(295) 421-3940', 'Chandler', 'Texas')[0m
+  [4;36;1mStaff Create (0.3ms)[0m   [0;1mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('P.O. Box 810', ' 6626 Nullam Rd.', 'New Hampshire', '2010-01-23 21:10:13', 10, '(978) 231-4272', 'Jorden', '2010-01-23 21:10:13', '82576', 'f', 'Cooper', NULL, '2009-05-11 17:09:46', 'Marvin', 'Meriden')[0m
+  [4;35;1mStaff Create (0.4ms)[0m   [0mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('6237 Porta Road', 'Birmingham', '72515', '2010-01-23 21:10:13', 5, '(859) 873-6123', 'Geoffrey', '2010-01-23 21:10:13', 'F', 'f', 'Cole', '2010-04-30', '(444) 369-6448', 'Aileen', 'Nevada')[0m
+  [4;36;1mStaff Create (0.3ms)[0m   [0;1mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('8131 Non', ' Road', 'Georgia', '2010-01-23 21:10:13', 33, '(935) 913-2845', 'Destiny', '2010-01-23 21:10:13', '40514', 'f', 'Bridges', NULL, '2009-08-01 06:52:37', 'Sydney', 'Tustin')[0m
+  [4;35;1mStaff Create (0.4ms)[0m   [0mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('3426 In Rd.', 'Albuquerque', '25854', '2010-01-23 21:10:13', 28, '(901) 754-9032', 'Francesca', '2010-01-23 21:10:13', 'F', 'f', 'Jimenez', '2009-11-12', '(160) 478-0494', 'Owen', 'KS')[0m
+  [4;36;1mStaff Create (0.4ms)[0m   [0;1mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('Ap #493-3836 Duis Avenue', 'Bayamon', '79919', '2010-01-23 21:10:13', 14, '(775) 164-0384', 'Sopoline', '2010-01-23 21:10:13', 'F', 'f', 'Hinton', '2009-04-09', '(195) 850-7549', 'Lareina', 'AL')[0m
+  [4;35;1mStaff Create (0.4ms)[0m   [0mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('363-3839 Leo Rd.', 'Pomona', '83948', '2010-01-23 21:10:13', 15, '(101) 633-0664', 'Faith', '2010-01-23 21:10:13', 'M', 'f', 'Love', '2010-03-25', '(254) 328-3667', 'Iona', 'Louisiana')[0m
+  [4;36;1mStaff Create (0.3ms)[0m   [0;1mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('P.O. Box 246', ' 8217 Nunc St.', 'MA', '2010-01-23 21:10:13', 1, '(407) 141-0075', 'Danielle', '2010-01-23 21:10:13', '63820', 'f', 'Morrow', NULL, '2009-10-02 14:04:09', 'Sacha', 'Bell Gardens')[0m
+  [4;35;1mStaff Create (0.3ms)[0m   [0mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('2925 Elit. St.', 'Buena Park', '66477', '2010-01-23 21:10:13', 23, '(336) 607-5178', 'Boris', '2010-01-23 21:10:13', 'F', 'f', 'Price', '2010-07-15', '(319) 729-8300', 'Flynn', 'North Carolina')[0m
+  [4;36;1mStaff Create (0.3ms)[0m   [0;1mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('P.O. Box 956', ' 8473 Curabitur St.', 'AL', '2010-01-23 21:10:13', 11, '(854) 552-0798', 'Madeson', '2010-01-23 21:10:13', '21862', 'f', 'Irwin', NULL, '2010-06-02 07:07:10', 'Kasimir', 'El Cerrito')[0m
+  [4;35;1mStaff Create (0.4ms)[0m   [0mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('Ap #381-6930 Nisi Rd.', 'Lodi', '72651', '2010-01-23 21:10:13', 33, '(383) 660-1248', 'Ross', '2010-01-23 21:10:13', 'M', 't', 'Gross', '2009-06-12', '(539) 914-5109', 'Inez', 'Georgia')[0m
+  [4;36;1mStaff Create (0.3ms)[0m   [0;1mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('3511 Varius St.', 'Clairton', '87738', '2010-01-23 21:10:13', 24, '(738) 700-5189', 'Colette', '2010-01-23 21:10:13', 'M', 'f', 'Robles', '2010-01-16', '(316) 772-8852', 'Alisa', 'Texas')[0m
+  [4;35;1mStaff Create (0.5ms)[0m   [0mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('975-4024 In Rd.', 'Bethlehem', '29814', '2010-01-23 21:10:13', 11, '(319) 165-6940', 'Kennedy', '2010-01-23 21:10:13', 'F', 'f', 'Sargent', '2009-04-10', '(979) 689-2981', 'Rahim', 'Montana')[0m
+  [4;36;1mStaff Create (0.4ms)[0m   [0;1mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('Ap #113-1620 Sagittis Ave', 'Saipan', '86784', '2010-01-23 21:10:13', 32, '(264) 942-6137', 'Sandra', '2010-01-23 21:10:13', 'M', 't', 'Petty', '2009-08-02', '(158) 223-8188', 'Kyle', 'WV')[0m
+  [4;35;1mStaff Create (0.3ms)[0m   [0mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('Ap #438-7525 Eleifend Street', 'Kemmerer', '56574', '2010-01-23 21:10:13', 9, '(679) 344-5082', 'Quinn', '2010-01-23 21:10:13', 'F', 'f', 'Meyer', '2010-09-17', '(908) 851-4752', 'Nicole', 'KY')[0m
+  [4;36;1mStaff Create (0.4ms)[0m   [0;1mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('Ap #935-8185 Nunc Road', 'Anchorage', '41216', '2010-01-23 21:10:13', 15, '(414) 226-4853', 'Amela', '2010-01-23 21:10:13', 'M', 't', 'Ratliff', '2009-10-26', '(834) 189-5888', 'Lucas', 'VT')[0m
+  [4;35;1mStaff Create (0.4ms)[0m   [0mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('828-4996 Bibendum Av.', 'Winston-Salem', '64152', '2010-01-23 21:10:13', 18, '(300) 127-9754', 'Clare', '2010-01-23 21:10:13', 'F', 't', 'Reid', '2010-05-10', '(944) 160-5468', 'Clarke', 'TX')[0m
+  [4;36;1mStaff Create (0.4ms)[0m   [0;1mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('5661 In', ' Rd.', 'MO', '2010-01-23 21:10:13', 5, '(961) 173-7702', 'Petra', '2010-01-23 21:10:13', '58413', 'f', 'Campos', NULL, '2009-07-30 12:14:21', 'Eliana', 'San Dimas')[0m
+  [4;35;1mStaff Create (0.4ms)[0m   [0mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('1993 Netus Road', 'Port Orford', '21598', '2010-01-23 21:10:13', 3, '(809) 454-4835', 'Jasper', '2010-01-23 21:10:13', 'M', 't', 'Jefferson', '2009-03-03', '(304) 643-7888', 'Jonah', 'DC')[0m
+  [4;36;1mStaff Create (0.4ms)[0m   [0;1mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('P.O. Box 952', ' 194 Imperdiet St.', 'Alabama', '2010-01-23 21:10:13', 17, '(244) 508-9925', 'Libby', '2010-01-23 21:10:13', '45634', 'f', 'Adkins', NULL, '2009-12-08 21:17:02', 'Quincy', 'Santa Monica')[0m
+  [4;35;1mStaff Create (0.4ms)[0m   [0mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES(NULL, NULL, NULL, '2010-01-23 21:10:13', NULL, NULL, NULL, '2010-01-23 21:10:13', NULL, NULL, NULL, NULL, NULL, NULL, NULL)[0m
+[paperclip] Deleting attachments.
+[paperclip] deleting /Users/Tate/Documents/rails/call-log/public/system/csvs/6/original/randomdata.csv
+  [4;36;1mImport Destroy (0.3ms)[0m   [0;1mDELETE FROM "imports" WHERE "id" = 6[0m
+Redirected to http://localhost:3000/admin
+Completed in 359ms (DB: 14) | 302 Found [http://localhost/admin/import_csv]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-01-23 16:10:13) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin"}
+Rendering admin/index
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/admin]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:10:20) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs"}
+  [4;35;1mStaff Load (4.7ms)[0m   [0mSELECT * FROM "staffs" [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 200ms (View: 125, DB: 5) | 200 OK [http://localhost/staffs]
+
+
+Processing StaffsController#show (for 127.0.0.1 at 2010-01-23 16:10:48) [GET]
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"staffs"}
+  [4;36;1mStaff Load (0.3ms)[0m   [0;1mSELECT * FROM "staffs" WHERE ("staffs"."id" = 3) [0m
+Rendering template within layouts/staffs
+Rendering staffs/show
+Completed in 16ms (View: 9, DB: 0) | 200 OK [http://localhost/staffs/3]
+  [4;36;1mImport Load (0.0ms)[0m   [0;1mSQLite3::SQLException: database schema has changed: SELECT * FROM "imports" [0m
+  [4;35;1mImport Load (1.3ms)[0m   [0mSELECT * FROM "imports" [0m
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-01-23 16:13:29) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin"}
+Rendering admin/index
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/admin]
+
+
+Processing AdminController#import_csv (for 127.0.0.1 at 2010-01-23 16:13:41) [POST]
+  Parameters: {"commit"=>"Import Data", "action"=>"import_csv", "authenticity_token"=>"bD4csLo1QUn5BSPOcebb4D3JqwMeZW0mrUYdeu62TEk=", "import"=>{"csv"=>#<File:/var/folders/cF/cFzIU0DCE2SOOWWsiTwcak+++TI/-Tmp-/RackMultipart20100123-636-u6dsrj-0>}, "controller"=>"admin"}
+  [4;35;1mImport Create (0.3ms)[0m   [0mINSERT INTO "imports" ("created_at", "csv_file_name", "updated_at", "csv_content_type", "processed", "csv_updated_at", "csv_file_size") VALUES('2010-01-23 21:13:41', 'randomdata.csv', '2010-01-23 21:13:41', 'text/csv', NULL, '2010-01-23 21:13:41', 2716)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /Users/Tate/Documents/rails/call-log/public/system/csvs/7/original/randomdata.csv
+  [4;36;1mStaff Delete all (3.0ms)[0m   [0;1mDELETE FROM "staffs" WHERE 1=1[0m
+  [4;35;1mStaff Create (0.4ms)[0m   [0mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('669-4845 Cursus. Ave', 'Berlin', '83834', '2010-01-23 21:13:41', 4, '(706) 208-8443', 'Vincent', '2010-01-23 21:13:41', 'F', 'f', 'Lewis', '2009-09-17', '(972) 555-3291', 'Jennifer', 'Rhode Island')[0m
+  [4;36;1mStaff Create (0.5ms)[0m   [0;1mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('3932 Vehicula Rd.', 'Auburn Hills', '83925', '2010-01-23 21:13:41', 33, '(791) 912-9723', 'Brendan', '2010-01-23 21:13:41', 'M', 't', 'Clemons', '2009-11-03', '(420) 140-8343', 'Calista', 'LA')[0m
+  [4;35;1mStaff Create (0.4ms)[0m   [0mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('Ap #203-9610 Dui Road', 'Anchorage', '47859', '2010-01-23 21:13:41', 39, '(170) 450-7217', 'Renee', '2010-01-23 21:13:41', 'M', 'f', 'Fischer', '2010-07-24', '(983) 126-7483', 'Owen', 'ID')[0m
+  [4;36;1mStaff Create (0.4ms)[0m   [0;1mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('Ap #952-2878 Faucibus Road', 'Lowell', '34872', '2010-01-23 21:13:41', 28, '(206) 780-0503', 'Quon', '2010-01-23 21:13:41', 'F', 'f', 'Mccullough', '2009-12-14', '(801) 262-9836', 'Yuli', 'CO')[0m
+  [4;35;1mStaff Create (0.4ms)[0m   [0mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('5109 Tellus Road', 'North Tonawanda', '43331', '2010-01-23 21:13:41', 38, '(526) 906-6441', 'Wylie', '2010-01-23 21:13:41', 'M', 'f', 'Snyder', '2010-11-14', '(138) 707-7027', 'Jack', 'Iowa')[0m
+  [4;36;1mStaff Create (0.4ms)[0m   [0;1mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('3124 Lectus St.', 'Fallon', '06187', '2010-01-23 21:13:41', 15, '(807) 482-2905', 'Jerome', '2010-01-23 21:13:41', 'F', 'f', 'Rivera', '2009-04-02', '(615) 306-9703', 'Jena', 'LA')[0m
+  [4;35;1mStaff Create (0.5ms)[0m   [0mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('Ap #280-1796 Nisi Rd.', 'Littleton', '40299', '2010-01-23 21:13:41', 15, '(714) 715-3775', 'Abra', '2010-01-23 21:13:41', 'F', 'f', 'Austin', '2009-02-17', '(746) 408-5688', 'Melyssa', 'TX')[0m
+  [4;36;1mStaff Create (0.4ms)[0m   [0;1mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('7247 Etiam Rd.', 'Jackson', '89735', '2010-01-23 21:13:41', 40, '(880) 325-9737', 'Kyle', '2010-01-23 21:13:41', 'M', 'f', 'Hernandez', '2009-07-13', '(227) 708-2360', 'Glenna', 'Minnesota')[0m
+  [4;35;1mStaff Create (0.4ms)[0m   [0mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('449-5676 Tincidunt Avenue', 'Santa Clara', '84520', '2010-01-23 21:13:41', 25, '(202) 362-2867', 'Keane', '2010-01-23 21:13:41', 'M', 't', 'Bond', '2009-07-05', '(295) 421-3940', 'Chandler', 'Texas')[0m
+  [4;36;1mStaff Create (0.4ms)[0m   [0;1mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('6237 Porta Road', 'Birmingham', '72515', '2010-01-23 21:13:41', 5, '(859) 873-6123', 'Geoffrey', '2010-01-23 21:13:41', 'F', 'f', 'Cole', '2010-04-30', '(444) 369-6448', 'Aileen', 'Nevada')[0m
+  [4;35;1mStaff Create (0.8ms)[0m   [0mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('3426 In Rd.', 'Albuquerque', '25854', '2010-01-23 21:13:41', 28, '(901) 754-9032', 'Francesca', '2010-01-23 21:13:41', 'F', 'f', 'Jimenez', '2009-11-12', '(160) 478-0494', 'Owen', 'KS')[0m
+  [4;36;1mStaff Create (0.4ms)[0m   [0;1mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('Ap #493-3836 Duis Avenue', 'Bayamon', '79919', '2010-01-23 21:13:41', 14, '(775) 164-0384', 'Sopoline', '2010-01-23 21:13:41', 'F', 'f', 'Hinton', '2009-04-09', '(195) 850-7549', 'Lareina', 'AL')[0m
+  [4;35;1mStaff Create (0.4ms)[0m   [0mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('363-3839 Leo Rd.', 'Pomona', '83948', '2010-01-23 21:13:41', 15, '(101) 633-0664', 'Faith', '2010-01-23 21:13:41', 'M', 'f', 'Love', '2010-03-25', '(254) 328-3667', 'Iona', 'Louisiana')[0m
+  [4;36;1mStaff Create (0.5ms)[0m   [0;1mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('2925 Elit. St.', 'Buena Park', '66477', '2010-01-23 21:13:41', 23, '(336) 607-5178', 'Boris', '2010-01-23 21:13:41', 'F', 'f', 'Price', '2010-07-15', '(319) 729-8300', 'Flynn', 'North Carolina')[0m
+  [4;35;1mStaff Create (0.4ms)[0m   [0mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('Ap #381-6930 Nisi Rd.', 'Lodi', '72651', '2010-01-23 21:13:41', 33, '(383) 660-1248', 'Ross', '2010-01-23 21:13:41', 'M', 't', 'Gross', '2009-06-12', '(539) 914-5109', 'Inez', 'Georgia')[0m
+  [4;36;1mStaff Create (0.4ms)[0m   [0;1mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('3511 Varius St.', 'Clairton', '87738', '2010-01-23 21:13:41', 24, '(738) 700-5189', 'Colette', '2010-01-23 21:13:41', 'M', 'f', 'Robles', '2010-01-16', '(316) 772-8852', 'Alisa', 'Texas')[0m
+  [4;35;1mStaff Create (0.5ms)[0m   [0mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('975-4024 In Rd.', 'Bethlehem', '29814', '2010-01-23 21:13:41', 11, '(319) 165-6940', 'Kennedy', '2010-01-23 21:13:41', 'F', 'f', 'Sargent', '2009-04-10', '(979) 689-2981', 'Rahim', 'Montana')[0m
+  [4;36;1mStaff Create (0.4ms)[0m   [0;1mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('Ap #113-1620 Sagittis Ave', 'Saipan', '86784', '2010-01-23 21:13:41', 32, '(264) 942-6137', 'Sandra', '2010-01-23 21:13:41', 'M', 't', 'Petty', '2009-08-02', '(158) 223-8188', 'Kyle', 'WV')[0m
+  [4;35;1mStaff Create (0.4ms)[0m   [0mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('Ap #438-7525 Eleifend Street', 'Kemmerer', '56574', '2010-01-23 21:13:41', 9, '(679) 344-5082', 'Quinn', '2010-01-23 21:13:41', 'F', 'f', 'Meyer', '2010-09-17', '(908) 851-4752', 'Nicole', 'KY')[0m
+  [4;36;1mStaff Create (0.4ms)[0m   [0;1mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('Ap #935-8185 Nunc Road', 'Anchorage', '41216', '2010-01-23 21:13:41', 15, '(414) 226-4853', 'Amela', '2010-01-23 21:13:41', 'M', 't', 'Ratliff', '2009-10-26', '(834) 189-5888', 'Lucas', 'VT')[0m
+  [4;35;1mStaff Create (0.4ms)[0m   [0mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('828-4996 Bibendum Av.', 'Winston-Salem', '64152', '2010-01-23 21:13:41', 18, '(300) 127-9754', 'Clare', '2010-01-23 21:13:41', 'F', 't', 'Reid', '2010-05-10', '(944) 160-5468', 'Clarke', 'TX')[0m
+  [4;36;1mStaff Create (0.4ms)[0m   [0;1mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES('1993 Netus Road', 'Port Orford', '21598', '2010-01-23 21:13:41', 3, '(809) 454-4835', 'Jasper', '2010-01-23 21:13:41', 'M', 't', 'Jefferson', '2009-03-03', '(304) 643-7888', 'Jonah', 'DC')[0m
+  [4;35;1mStaff Create (0.4ms)[0m   [0mINSERT INTO "staffs" ("address", "city", "zip", "created_at", "staff_id", "home_number", "nickname", "updated_at", "gender", "agency_staff", "last_name", "doh", "cell_number", "first_name", "state") VALUES(NULL, NULL, NULL, '2010-01-23 21:13:41', NULL, NULL, NULL, '2010-01-23 21:13:41', NULL, NULL, NULL, NULL, NULL, NULL, NULL)[0m
+[paperclip] Deleting attachments.
+[paperclip] deleting /Users/Tate/Documents/rails/call-log/public/system/csvs/7/original/randomdata.csv
+  [4;36;1mImport Destroy (0.7ms)[0m   [0;1mDELETE FROM "imports" WHERE "id" = 7[0m
+Redirected to http://localhost:3000/admin
+Completed in 267ms (DB: 14) | 302 Found [http://localhost/admin/import_csv]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-01-23 16:13:41) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin"}
+Rendering admin/index
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/admin]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:13:45) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs"}
+  [4;35;1mStaff Load (3.5ms)[0m   [0mSELECT * FROM "staffs" [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 100ms (View: 91, DB: 4) | 200 OK [http://localhost/staffs]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:38:19) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs"}
+  [4;36;1mStaff Load (3.2ms)[0m   [0;1mSELECT * FROM "staffs" [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+ActionView::TemplateError (undefined local variable or method `employees_path' for #<ActionView::Base:0x10345c6b8>) on line #3 of app/views/staffs/index.html.erb:
+1: <h1>Listing staffs</h1>
+2: 
+3: <% form_tag employees_path, :method => 'get' do %>
+4: 
+5: 	<%= text_field_with_auto_complete :staffs, :last_name %>
+6: 
+
+    app/views/staffs/index.html.erb:3
+    app/controllers/staffs_controller.rb:8:in `index'
+
+Rendered rescues/_trace (117.6ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:38:43) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs"}
+  [4;35;1mStaff Load (3.1ms)[0m   [0mSELECT * FROM "staffs" [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+
+ActionView::TemplateError (staff_url failed to generate from {:controller=>"staffs", :action=>"show"} - you may have ambiguous routes, or you may need to supply additional parameters for this route.  content_url has the following required parameters: ["staffs", :id] - are they all satisfied?) on line #3 of app/views/staffs/index.html.erb:
+1: <h1>Listing staffs</h1>
+2: 
+3: <% form_tag staff_path, :method => 'get' do %>
+4: 
+5: 	<%= text_field_with_auto_complete :staffs, :last_name %>
+6: 
+
+    (eval):16:in `staff_path'
+    app/views/staffs/index.html.erb:3
+    app/controllers/staffs_controller.rb:8:in `index'
+
+Rendered rescues/_trace (53.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:39:21) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs"}
+  [4;36;1mStaff Load (3.3ms)[0m   [0;1mSELECT * FROM "staffs" [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+
+ActionView::TemplateError (undefined method `last_name' for #<Array:0x103605b40>) on line #5 of app/views/staffs/index.html.erb:
+2: 
+3: <% form_tag staffs_path, :method => 'get' do %>
+4: 
+5: 	<%= text_field_with_auto_complete :staffs, :last_name %>
+6: 
+7: <% end %>
+8: 
+
+    app/views/staffs/index.html.erb:5
+    app/views/staffs/index.html.erb:3
+    app/controllers/staffs_controller.rb:8:in `index'
+
+Rendered rescues/_trace (55.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:41:36) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs"}
+  [4;35;1mStaff Load (73.1ms)[0m   [0mSELECT * FROM "staffs" [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+
+ActionView::TemplateError (undefined method `first_name' for #<Array:0x1036dd2e8>) on line #5 of app/views/staffs/index.html.erb:
+2: 
+3: <% form_tag staffs_path, :method => 'get' do %>
+4: 
+5: 	<%= text_field_with_auto_complete :staffs, :first_name %>
+6: 
+7: <% end %>
+8: 
+
+    app/views/staffs/index.html.erb:5
+    app/views/staffs/index.html.erb:3
+    app/controllers/staffs_controller.rb:8:in `index'
+
+Rendered rescues/_trace (55.3ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:42:27) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs"}
+  [4;36;1mStaff Load (3.1ms)[0m   [0;1mSELECT * FROM "staffs" [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+
+ActionView::TemplateError (undefined method `first_name' for #<Array:0x103128af0>) on line #5 of app/views/staffs/index.html.erb:
+2: 
+3: <% form_tag staffs_path, :method => 'get' do %>
+4: 
+5: 	<%= text_field_with_auto_complete :staffs, :first_name %>
+6: 
+7: <% end %>
+8: 
+
+    app/views/staffs/index.html.erb:5
+    app/views/staffs/index.html.erb:3
+    app/controllers/staffs_controller.rb:10:in `index'
+
+Rendered rescues/_trace (55.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:42:43) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs"}
+  [4;35;1mStaff Load (3.2ms)[0m   [0mSELECT * FROM "staffs" [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+
+ActionView::TemplateError (undefined method `last_name' for #<Array:0x1032da1f0>) on line #5 of app/views/staffs/index.html.erb:
+2: 
+3: <% form_tag staffs_path, :method => 'get' do %>
+4: 
+5: 	<%= text_field_with_auto_complete :staffs, :last_name %>
+6: 
+7: <% end %>
+8: 
+
+    app/views/staffs/index.html.erb:5
+    app/views/staffs/index.html.erb:3
+    app/controllers/staffs_controller.rb:10:in `index'
+
+Rendered rescues/_trace (133.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:42:45) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs"}
+  [4;36;1mStaff Load (3.4ms)[0m   [0;1mSELECT * FROM "staffs" [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+
+ActionView::TemplateError (undefined method `last_name' for #<Array:0x103430e50>) on line #5 of app/views/staffs/index.html.erb:
+2: 
+3: <% form_tag staffs_path, :method => 'get' do %>
+4: 
+5: 	<%= text_field_with_auto_complete :staffs, :last_name %>
+6: 
+7: <% end %>
+8: 
+
+    app/views/staffs/index.html.erb:5
+    app/views/staffs/index.html.erb:3
+    app/controllers/staffs_controller.rb:10:in `index'
+
+Rendered rescues/_trace (55.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:43:29) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs"}
+  [4;35;1mStaff Load (3.2ms)[0m   [0mSELECT * FROM "staffs" [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+
+ActionView::TemplateError (undefined method `last_name' for #<Array:0x1035583f0>) on line #5 of app/views/staffs/index.html.erb:
+2: 
+3: <% form_tag staffs_path, :method => 'get' do %>
+4: 
+5: 	<%= text_field_with_auto_complete :staffs, :last_name %>
+6: 
+7: <% end %>
+8: 
+
+    app/views/staffs/index.html.erb:5
+    app/views/staffs/index.html.erb:3
+    app/controllers/staffs_controller.rb:10:in `index'
+
+Rendered rescues/_trace (55.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:43:30) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs"}
+  [4;36;1mStaff Load (3.1ms)[0m   [0;1mSELECT * FROM "staffs" [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+
+ActionView::TemplateError (undefined method `last_name' for #<Array:0x103080f58>) on line #5 of app/views/staffs/index.html.erb:
+2: 
+3: <% form_tag staffs_path, :method => 'get' do %>
+4: 
+5: 	<%= text_field_with_auto_complete :staffs, :last_name %>
+6: 
+7: <% end %>
+8: 
+
+    app/views/staffs/index.html.erb:5
+    app/views/staffs/index.html.erb:3
+    app/controllers/staffs_controller.rb:10:in `index'
+
+Rendered rescues/_trace (54.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:43:30) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs"}
+  [4;35;1mStaff Load (3.0ms)[0m   [0mSELECT * FROM "staffs" [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+
+ActionView::TemplateError (undefined method `last_name' for #<Array:0x1031cedb0>) on line #5 of app/views/staffs/index.html.erb:
+2: 
+3: <% form_tag staffs_path, :method => 'get' do %>
+4: 
+5: 	<%= text_field_with_auto_complete :staffs, :last_name %>
+6: 
+7: <% end %>
+8: 
+
+    app/views/staffs/index.html.erb:5
+    app/views/staffs/index.html.erb:3
+    app/controllers/staffs_controller.rb:10:in `index'
+
+Rendered rescues/_trace (132.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:43:36) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs"}
+  [4;36;1mStaff Load (3.0ms)[0m   [0;1mSELECT * FROM "staffs" [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+
+ActionView::TemplateError (undefined method `last_name' for #<Array:0x1033d1e78>) on line #5 of app/views/staffs/index.html.erb:
+2: 
+3: <% form_tag staffs_path, :method => 'get' do %>
+4: 
+5: 	<%= text_field_with_auto_complete :staffs, :last_name %>
+6: 
+7: <% end %>
+8: 
+
+    app/views/staffs/index.html.erb:5
+    app/views/staffs/index.html.erb:3
+    app/controllers/staffs_controller.rb:10:in `index'
+
+Rendered rescues/_trace (130.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:44:01) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs"}
+  [4;35;1mStaff Load (3.1ms)[0m   [0mSELECT * FROM "staffs" [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 139ms (View: 128, DB: 3) | 200 OK [http://localhost/staffs]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:44:04) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs", "search"=>{"order"=>"ascend_by_first_name"}}
+  [4;36;1mStaff Load (3.8ms)[0m   [0;1mSELECT * FROM "staffs" ORDER BY staffs.first_name ASC[0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 201ms (View: 188, DB: 4) | 200 OK [http://localhost/staffs?search%5Border%5D=ascend_by_first_name]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:44:05) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs", "search"=>{"order"=>"descend_by_first_name"}}
+  [4;35;1mStaff Load (3.3ms)[0m   [0mSELECT * FROM "staffs" ORDER BY staffs.first_name DESC[0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 118ms (View: 105, DB: 3) | 200 OK [http://localhost/staffs?search%5Border%5D=descend_by_first_name]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:44:07) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs", "search"=>{"order"=>"ascend_by_last_name"}}
+  [4;36;1mStaff Load (3.3ms)[0m   [0;1mSELECT * FROM "staffs" ORDER BY staffs.last_name ASC[0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 207ms (View: 193, DB: 3) | 200 OK [http://localhost/staffs?search%5Border%5D=ascend_by_last_name]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:44:08) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs", "search"=>{"order"=>"descend_by_last_name"}}
+  [4;35;1mStaff Load (3.4ms)[0m   [0mSELECT * FROM "staffs" ORDER BY staffs.last_name DESC[0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 116ms (View: 103, DB: 3) | 200 OK [http://localhost/staffs?search%5Border%5D=descend_by_last_name]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:44:09) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs", "search"=>{"order"=>"ascend_by_state"}}
+  [4;36;1mStaff Load (3.3ms)[0m   [0;1mSELECT * FROM "staffs" ORDER BY staffs.state ASC[0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 208ms (View: 195, DB: 3) | 200 OK [http://localhost/staffs?search%5Border%5D=ascend_by_state]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:44:10) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs", "search"=>{"order"=>"descend_by_state"}}
+  [4;35;1mStaff Load (3.4ms)[0m   [0mSELECT * FROM "staffs" ORDER BY staffs.state DESC[0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 116ms (View: 103, DB: 3) | 200 OK [http://localhost/staffs?search%5Border%5D=descend_by_state]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:44:22) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs", "search"=>"Bond"}
+  [4;36;1mStaff Load (3.0ms)[0m   [0;1mSELECT * FROM "staffs" [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 207ms (View: 196, DB: 3) | 200 OK [http://localhost/staffs?search=Bond]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:44:38) [GET]
+  Parameters: {"commit"=>"Search", "action"=>"index", "controller"=>"staffs", "search"=>{"last_name_like"=>"Bond", "order"=>""}}
+  [4;35;1mStaff Load (0.4ms)[0m   [0mSELECT * FROM "staffs" WHERE (staffs.last_name LIKE '%Bond%') [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 39ms (View: 30, DB: 0) | 200 OK [http://localhost/staffs?search%5Border%5D=&search%5Blast_name_like%5D=Bond&commit=Search]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:44:47) [GET]
+  Parameters: {"commit"=>"Search", "action"=>"index", "controller"=>"staffs", "search"=>{"last_name_like"=>"B", "order"=>"", "gender_equals"=>"f"}}
+  [4;36;1mStaff Load (0.3ms)[0m   [0;1mSELECT * FROM "staffs" WHERE ((staffs.gender = 'f') AND (staffs.last_name LIKE '%B%')) [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 120ms (View: 27, DB: 0) | 200 OK [http://localhost/staffs?search%5Border%5D=&search%5Blast_name_like%5D=B&search%5Bgender_equals%5D=f&commit=Search]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:44:51) [GET]
+  Parameters: {"commit"=>"Search", "action"=>"index", "controller"=>"staffs", "search"=>{"last_name_like"=>"M", "order"=>"", "gender_equals"=>"f"}}
+  [4;35;1mStaff Load (0.2ms)[0m   [0mSELECT * FROM "staffs" WHERE ((staffs.gender = 'f') AND (staffs.last_name LIKE '%M%')) [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 37ms (View: 27, DB: 0) | 200 OK [http://localhost/staffs?search%5Border%5D=&search%5Blast_name_like%5D=M&search%5Bgender_equals%5D=f&commit=Search]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:45:09) [GET]
+  Parameters: {"commit"=>"Search", "action"=>"index", "controller"=>"staffs", "search"=>{"last_name_like"=>"M", "order"=>"", "gender_equals"=>"f"}}
+  [4;36;1mStaff Load (0.3ms)[0m   [0;1mSELECT * FROM "staffs" WHERE ((staffs.gender = 'f') AND (staffs.last_name LIKE '%M%')) [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 43ms (View: 34, DB: 0) | 200 OK [http://localhost/staffs?search%5Border%5D=&search%5Blast_name_like%5D=M&search%5Bgender_equals%5D=f&commit=Search]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:45:14) [GET]
+  Parameters: {"commit"=>"Search", "action"=>"index", "controller"=>"staffs", "search"=>{"last_name_like"=>"B", "order"=>"", "gender_equals"=>"F"}}
+  [4;35;1mStaff Load (0.2ms)[0m   [0mSELECT * FROM "staffs" WHERE ((staffs.gender = 'F') AND (staffs.last_name LIKE '%B%')) [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 37ms (View: 27, DB: 0) | 200 OK [http://localhost/staffs?search%5Border%5D=&search%5Blast_name_like%5D=B&search%5Bgender_equals%5D=F&commit=Search]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:45:15) [GET]
+  Parameters: {"commit"=>"Search", "action"=>"index", "controller"=>"staffs", "search"=>{"last_name_like"=>"B", "order"=>"", "gender_equals"=>"F"}}
+  [4;36;1mStaff Load (0.2ms)[0m   [0;1mSELECT * FROM "staffs" WHERE ((staffs.gender = 'F') AND (staffs.last_name LIKE '%B%')) [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 36ms (View: 27, DB: 0) | 200 OK [http://localhost/staffs?search%5Border%5D=&search%5Blast_name_like%5D=B&search%5Bgender_equals%5D=F&commit=Search]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:45:19) [GET]
+  Parameters: {"commit"=>"Search", "action"=>"index", "controller"=>"staffs", "search"=>{"last_name_like"=>"B", "order"=>"", "gender_equals"=>"F"}}
+  [4;35;1mStaff Load (0.3ms)[0m   [0mSELECT * FROM "staffs" WHERE ((staffs.gender = 'F') AND (staffs.last_name LIKE '%B%')) [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 109ms (View: 28, DB: 0) | 200 OK [http://localhost/staffs?search%5Border%5D=&search%5Blast_name_like%5D=B&search%5Bgender_equals%5D=F&commit=Search]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:45:21) [GET]
+  Parameters: {"commit"=>"Search", "action"=>"index", "controller"=>"staffs", "search"=>{"last_name_like"=>"B", "order"=>"", "gender_equals"=>"F"}}
+  [4;36;1mStaff Load (0.3ms)[0m   [0;1mSELECT * FROM "staffs" WHERE ((staffs.gender = 'F') AND (staffs.last_name LIKE '%B%')) [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 37ms (View: 28, DB: 0) | 200 OK [http://localhost/staffs?search%5Border%5D=&search%5Blast_name_like%5D=B&search%5Bgender_equals%5D=F&commit=Search]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:45:22) [GET]
+  Parameters: {"commit"=>"Search", "action"=>"index", "controller"=>"staffs", "search"=>{"last_name_like"=>"B", "order"=>"", "gender_equals"=>"F"}}
+  [4;35;1mStaff Load (0.2ms)[0m   [0mSELECT * FROM "staffs" WHERE ((staffs.gender = 'F') AND (staffs.last_name LIKE '%B%')) [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 36ms (View: 27, DB: 0) | 200 OK [http://localhost/staffs?search%5Border%5D=&search%5Blast_name_like%5D=B&search%5Bgender_equals%5D=F&commit=Search]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:45:26) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs"}
+  [4;36;1mStaff Load (3.1ms)[0m   [0;1mSELECT * FROM "staffs" [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 209ms (View: 198, DB: 3) | 200 OK [http://localhost/staffs]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:45:30) [GET]
+  Parameters: {"commit"=>"Search", "action"=>"index", "controller"=>"staffs", "search"=>{"last_name_like"=>"B", "order"=>""}}
+  [4;35;1mStaff Load (0.6ms)[0m   [0mSELECT * FROM "staffs" WHERE (staffs.last_name LIKE '%B%') [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 43ms (View: 33, DB: 1) | 200 OK [http://localhost/staffs?search%5Border%5D=&search%5Blast_name_like%5D=B&commit=Search]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:45:39) [GET]
+  Parameters: {"commit"=>"Search", "action"=>"index", "controller"=>"staffs", "search"=>{"last_name_like"=>"Carr", "order"=>""}}
+  [4;36;1mStaff Load (0.2ms)[0m   [0;1mSELECT * FROM "staffs" WHERE (staffs.last_name LIKE '%Carr%') [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 33ms (View: 25, DB: 0) | 200 OK [http://localhost/staffs?search%5Border%5D=&search%5Blast_name_like%5D=Carr&commit=Search]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:46:58) [GET]
+  Parameters: {"commit"=>"Search", "action"=>"index", "controller"=>"staffs", "search"=>{"last_name_like"=>"Carr", "order"=>""}}
+  [4;35;1mStaff Load (0.2ms)[0m   [0mSELECT * FROM "staffs" WHERE (staffs.last_name LIKE '%Carr%') [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 119ms (View: 111, DB: 0) | 200 OK [http://localhost/staffs?search%5Border%5D=&search%5Blast_name_like%5D=Carr&commit=Search]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:47:02) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs"}
+  [4;36;1mStaff Load (3.3ms)[0m   [0;1mSELECT * FROM "staffs" [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 123ms (View: 111, DB: 3) | 200 OK [http://localhost/staffs]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:47:04) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs"}
+  [4;35;1mStaff Load (3.2ms)[0m   [0mSELECT * FROM "staffs" [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 208ms (View: 196, DB: 3) | 200 OK [http://localhost/staffs]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:47:31) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs"}
+  [4;36;1mStaff Load (3.1ms)[0m   [0;1mSELECT * FROM "staffs" [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 127ms (View: 116, DB: 3) | 200 OK [http://localhost/staffs]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-23 16:47:32) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/defaults.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:47:47) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs"}
+  [4;35;1mStaff Load (3.1ms)[0m   [0mSELECT * FROM "staffs" [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 208ms (View: 196, DB: 3) | 200 OK [http://localhost/staffs]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-01-23 16:47:48) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/defaults.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:48:56) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs"}
+  [4;36;1mStaff Load (3.2ms)[0m   [0;1mSELECT * FROM "staffs" [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 212ms (View: 200, DB: 3) | 200 OK [http://localhost/staffs]
+
+
+Processing StaffsController#auto_complete_for_staff_last_name (for 127.0.0.1 at 2010-01-23 16:48:58) [POST]
+  Parameters: {"action"=>"auto_complete_for_staff_last_name", "staff"=>{"last_name"=>"s"}, "controller"=>"staffs", "_"=>""}
+  [4;35;1mStaff Load (1.9ms)[0m   [0mSELECT * FROM "staffs" WHERE (LOWER(last_name) LIKE '%s%') ORDER BY last_name ASC LIMIT 10[0m
+Completed in 22ms (View: 15, DB: 2) | 200 OK [http://localhost/staffs/auto_complete_for_staff_last_name]
+
+
+Processing StaffsController#auto_complete_for_staff_last_name (for 127.0.0.1 at 2010-01-23 16:49:01) [POST]
+  Parameters: {"action"=>"auto_complete_for_staff_last_name", "staff"=>{"last_name"=>"B"}, "controller"=>"staffs", "_"=>""}
+  [4;36;1mStaff Load (0.9ms)[0m   [0;1mSELECT * FROM "staffs" WHERE (LOWER(last_name) LIKE '%b%') ORDER BY last_name ASC LIMIT 10[0m
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://localhost/staffs/auto_complete_for_staff_last_name]
+
+
+Processing StaffsController#auto_complete_for_staff_last_name (for 127.0.0.1 at 2010-01-23 16:49:09) [POST]
+  Parameters: {"action"=>"auto_complete_for_staff_last_name", "staff"=>{"last_name"=>"b"}, "controller"=>"staffs", "_"=>""}
+  [4;35;1mStaff Load (0.9ms)[0m   [0mSELECT * FROM "staffs" WHERE (LOWER(last_name) LIKE '%b%') ORDER BY last_name ASC LIMIT 10[0m
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://localhost/staffs/auto_complete_for_staff_last_name]
+
+
+Processing StaffsController#auto_complete_for_staff_last_name (for 127.0.0.1 at 2010-01-23 16:52:13) [POST]
+  Parameters: {"action"=>"auto_complete_for_staff_last_name", "staff"=>{"last_name"=>"b"}, "controller"=>"staffs", "_"=>""}
+  [4;36;1mStaff Load (0.9ms)[0m   [0;1mSELECT * FROM "staffs" WHERE (LOWER(last_name) LIKE '%b%') ORDER BY last_name ASC LIMIT 10[0m
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://localhost/staffs/auto_complete_for_staff_last_name]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:52:14) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs"}
+  [4;35;1mStaff Load (3.1ms)[0m   [0mSELECT * FROM "staffs" [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 196ms (View: 184, DB: 3) | 200 OK [http://localhost/staffs]
+
+
+Processing StaffsController#auto_complete_for_staff_last_name (for 127.0.0.1 at 2010-01-23 16:52:17) [POST]
+  Parameters: {"action"=>"auto_complete_for_staff_last_name", "staff"=>{"last_name"=>"b"}, "controller"=>"staffs", "_"=>""}
+  [4;36;1mStaff Load (1.0ms)[0m   [0;1mSELECT * FROM "staffs" WHERE (LOWER(last_name) LIKE '%b%') ORDER BY last_name ASC LIMIT 10[0m
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://localhost/staffs/auto_complete_for_staff_last_name]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:52:21) [GET]
+  Parameters: {"action"=>"index", "staff"=>{"last_name"=>"Bond"}, "controller"=>"staffs"}
+  [4;35;1mStaff Load (3.0ms)[0m   [0mSELECT * FROM "staffs" [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 122ms (View: 110, DB: 3) | 200 OK [http://localhost/staffs?staff%5Blast_name%5D=Bond]
+
+
+Processing StaffsController#auto_complete_for_staff_last_name (for 127.0.0.1 at 2010-01-23 16:52:31) [POST]
+  Parameters: {"action"=>"auto_complete_for_staff_last_name", "staff"=>{"last_name"=>"B"}, "controller"=>"staffs", "_"=>""}
+  [4;36;1mStaff Load (0.9ms)[0m   [0;1mSELECT * FROM "staffs" WHERE (LOWER(last_name) LIKE '%b%') ORDER BY last_name ASC LIMIT 10[0m
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://localhost/staffs/auto_complete_for_staff_last_name]
+
+
+Processing StaffsController#auto_complete_for_staff_last_name (for 127.0.0.1 at 2010-01-23 16:52:32) [POST]
+  Parameters: {"action"=>"auto_complete_for_staff_last_name", "staff"=>{"last_name"=>"Robles"}, "controller"=>"staffs", "_"=>""}
+  [4;35;1mStaff Load (0.7ms)[0m   [0mSELECT * FROM "staffs" WHERE (LOWER(last_name) LIKE '%robles%') ORDER BY last_name ASC LIMIT 10[0m
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://localhost/staffs/auto_complete_for_staff_last_name]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:52:34) [GET]
+  Parameters: {"action"=>"index", "staff"=>{"last_name"=>"Robles"}, "controller"=>"staffs"}
+  [4;36;1mStaff Load (3.0ms)[0m   [0;1mSELECT * FROM "staffs" [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 124ms (View: 113, DB: 3) | 200 OK [http://localhost/staffs?staff%5Blast_name%5D=Robles]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:52:41) [GET]
+  Parameters: {"commit"=>"Search", "action"=>"index", "controller"=>"staffs", "search"=>{"last_name_like"=>"Robies", "order"=>""}}
+  [4;35;1mStaff Load (0.2ms)[0m   [0mSELECT * FROM "staffs" WHERE (staffs.last_name LIKE '%Robies%') [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 113ms (View: 104, DB: 0) | 200 OK [http://localhost/staffs?search%5Border%5D=&search%5Blast_name_like%5D=Robies&commit=Search]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:52:53) [GET]
+  Parameters: {"commit"=>"Search", "action"=>"index", "controller"=>"staffs", "search"=>{"last_name_like"=>"Ro", "order"=>""}}
+  [4;36;1mStaff Load (0.6ms)[0m   [0;1mSELECT * FROM "staffs" WHERE (staffs.last_name LIKE '%Ro%') [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 46ms (View: 37, DB: 1) | 200 OK [http://localhost/staffs?search%5Border%5D=&search%5Blast_name_like%5D=Ro&commit=Search]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:53:09) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs", "search"=>{"last_name_like"=>"Ro", "order"=>"ascend_by_city"}}
+  [4;35;1mStaff Load (0.6ms)[0m   [0mSELECT * FROM "staffs" WHERE (staffs.last_name LIKE '%Ro%') ORDER BY staffs.city ASC[0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 41ms (View: 31, DB: 1) | 200 OK [http://localhost/staffs?search%5Blast_name_like%5D=Ro&search%5Border%5D=ascend_by_city]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:53:10) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs", "search"=>{"last_name_like"=>"Ro", "order"=>"descend_by_city"}}
+  [4;36;1mStaff Load (0.7ms)[0m   [0;1mSELECT * FROM "staffs" WHERE (staffs.last_name LIKE '%Ro%') ORDER BY staffs.city DESC[0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 41ms (View: 32, DB: 1) | 200 OK [http://localhost/staffs?search%5Blast_name_like%5D=Ro&search%5Border%5D=descend_by_city]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:53:10) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs", "search"=>{"last_name_like"=>"Ro", "order"=>"ascend_by_city"}}
+  [4;35;1mStaff Load (0.7ms)[0m   [0mSELECT * FROM "staffs" WHERE (staffs.last_name LIKE '%Ro%') ORDER BY staffs.city ASC[0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 45ms (View: 34, DB: 1) | 200 OK [http://localhost/staffs?search%5Blast_name_like%5D=Ro&search%5Border%5D=ascend_by_city]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:53:11) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs", "search"=>{"last_name_like"=>"Ro", "order"=>"descend_by_city"}}
+  [4;36;1mStaff Load (0.6ms)[0m   [0;1mSELECT * FROM "staffs" WHERE (staffs.last_name LIKE '%Ro%') ORDER BY staffs.city DESC[0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 42ms (View: 32, DB: 1) | 200 OK [http://localhost/staffs?search%5Blast_name_like%5D=Ro&search%5Border%5D=descend_by_city]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:53:12) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs", "search"=>{"last_name_like"=>"Ro", "order"=>"ascend_by_home_number"}}
+  [4;35;1mStaff Load (0.6ms)[0m   [0mSELECT * FROM "staffs" WHERE (staffs.last_name LIKE '%Ro%') ORDER BY staffs.home_number ASC[0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 43ms (View: 33, DB: 1) | 200 OK [http://localhost/staffs?search%5Blast_name_like%5D=Ro&search%5Border%5D=ascend_by_home_number]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:53:13) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs", "search"=>{"last_name_like"=>"Ro", "order"=>"descend_by_home_number"}}
+  [4;36;1mStaff Load (0.6ms)[0m   [0;1mSELECT * FROM "staffs" WHERE (staffs.last_name LIKE '%Ro%') ORDER BY staffs.home_number DESC[0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 117ms (View: 107, DB: 1) | 200 OK [http://localhost/staffs?search%5Blast_name_like%5D=Ro&search%5Border%5D=descend_by_home_number]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:53:13) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs", "search"=>{"last_name_like"=>"Ro", "order"=>"ascend_by_agency_staff"}}
+  [4;35;1mStaff Load (0.6ms)[0m   [0mSELECT * FROM "staffs" WHERE (staffs.last_name LIKE '%Ro%') ORDER BY staffs.agency_staff ASC[0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 42ms (View: 32, DB: 1) | 200 OK [http://localhost/staffs?search%5Blast_name_like%5D=Ro&search%5Border%5D=ascend_by_agency_staff]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:53:14) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs", "search"=>{"last_name_like"=>"Ro", "order"=>"descend_by_agency_staff"}}
+  [4;36;1mStaff Load (0.6ms)[0m   [0;1mSELECT * FROM "staffs" WHERE (staffs.last_name LIKE '%Ro%') ORDER BY staffs.agency_staff DESC[0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 42ms (View: 32, DB: 1) | 200 OK [http://localhost/staffs?search%5Blast_name_like%5D=Ro&search%5Border%5D=descend_by_agency_staff]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:53:17) [GET]
+  Parameters: {"commit"=>"Search", "action"=>"index", "controller"=>"staffs", "search"=>{"last_name_like"=>"", "order"=>"descend_by_agency_staff"}}
+  [4;35;1mStaff Load (3.3ms)[0m   [0mSELECT * FROM "staffs" ORDER BY staffs.agency_staff DESC[0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 202ms (View: 189, DB: 3) | 200 OK [http://localhost/staffs?search%5Border%5D=descend_by_agency_staff&search%5Blast_name_like%5D=&commit=Search]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:53:20) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs", "search"=>{"order"=>"ascend_by_last_name"}}
+  [4;36;1mStaff Load (3.3ms)[0m   [0;1mSELECT * FROM "staffs" ORDER BY staffs.last_name ASC[0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 122ms (View: 109, DB: 3) | 200 OK [http://localhost/staffs?search%5Border%5D=ascend_by_last_name]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:53:25) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs", "search"=>{"order"=>"ascend_by_first_name"}}
+  [4;35;1mStaff Load (3.3ms)[0m   [0mSELECT * FROM "staffs" ORDER BY staffs.first_name ASC[0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 208ms (View: 196, DB: 3) | 200 OK [http://localhost/staffs?search%5Border%5D=ascend_by_first_name]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:53:27) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs", "search"=>{"order"=>"ascend_by_nickname"}}
+  [4;36;1mStaff Load (3.3ms)[0m   [0;1mSELECT * FROM "staffs" ORDER BY staffs.nickname ASC[0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 120ms (View: 107, DB: 3) | 200 OK [http://localhost/staffs?search%5Border%5D=ascend_by_nickname]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:53:30) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs", "search"=>{"order"=>"ascend_by_gender"}}
+  [4;35;1mStaff Load (3.3ms)[0m   [0mSELECT * FROM "staffs" ORDER BY staffs.gender ASC[0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 209ms (View: 196, DB: 3) | 200 OK [http://localhost/staffs?search%5Border%5D=ascend_by_gender]

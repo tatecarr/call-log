@@ -1,0 +1,63 @@
+<h1>Listing staffs</h1>
+
+<% form_tag staffs_path, :method => 'get' do %>
+
+	<%= text_field_with_auto_complete :staff, :last_name %>
+
+<% end %>
+
+
+<% form_for @search do |f| -%>
+	<p>
+		<%= f.text_field :last_name_like %>
+	</p>
+  <p>
+		<%= f.radio_button :gender_equals, :M %>F<%= f.radio_button :gender_equals, :F %>M
+	</p>
+	<p>
+		<%= f.submit "Search", :disable_with => 'Searching...' %>
+	</p>
+<% end -%>
+
+<table>
+  <tr>
+    <th>Staff</th>
+    <th><%= order @search, :by => :first_name %></th>
+    <th><%= order @search, :by => :last_name %></th>
+    <th><%= order @search, :by => :nickname %></th>
+    <th><%= order @search, :by => :address %></th>
+    <th><%= order @search, :by => :city %></th>
+    <th><%= order @search, :by => :state %></th>
+    <th><%= order @search, :by => :zip %></th>
+    <th><%= order @search, :by => :gender %></th>
+    <th><%= order @search, :by => :doh %></th>
+    <th><%= order @search, :by => :cell_number %></th>
+    <th><%= order @search, :by => :home_number %></th>
+    <th><%= order @search, :by => :agency_staff %></th>
+  </tr>
+
+<% @staffs.each do |staff| %>
+  <tr>
+    <td><%=h staff.staff_id %></td>
+    <td><%=h staff.first_name %></td>
+    <td><%=h staff.last_name %></td>
+    <td><%=h staff.nickname %></td>
+    <td><%=h staff.address %></td>
+    <td><%=h staff.city %></td>
+    <td><%=h staff.state %></td>
+    <td><%=h staff.zip %></td>
+    <td><%=h staff.gender %></td>
+    <td><%=h staff.doh %></td>
+    <td><%=h staff.cell_number %></td>
+    <td><%=h staff.home_number %></td>
+    <td><%=h staff.agency_staff %></td>
+    <td><%= link_to 'Show', staff %></td>
+    <td><%= link_to 'Edit', edit_staff_path(staff) %></td>
+    <td><%= link_to 'Destroy', staff, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New staff', new_staff_path %>
