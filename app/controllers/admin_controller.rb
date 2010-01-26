@@ -3,6 +3,9 @@ class AdminController < ApplicationController
     @import = Import.new
   end
 
+  def show
+    @import = Import.find(params[:id])
+	end
 
   def import_csv
     @import = Import.new(params[:import])
@@ -11,45 +14,46 @@ class AdminController < ApplicationController
     lines = parse_csv_file(@import.csv.path)
     
     # map the column names to the right attributes in the db
-    @row_positions = Hash.new
-    Staff.column_names.each do |attribute|
-      lines[0].each_with_index do |csv_row, index|
-        if attribute == csv_row
-          @row_positions[attribute.to_sym] = index
-        end
-      end
-    end
+    puts lines[0]
+    @row_positions = Hash[ *lines[0].map { |v| [ v.to_sym, lines[0].index(v) ] }.flatten ]#Hash.new
+    
+    #@row_positions = Hash.new
+    #Staff.column_names.each do |attribute|
+    #  lines[0].each_with_index do |csv_row, index|
+    #    if attribute == csv_row
+    #      @row_positions[attribute.to_sym] = index
+    #    end
+    #  end
+    #end
 
-    lines.shift #comment this line out if your CSV file doesn't contain a header row
+    # remove the column headers
+    lines.shift
     
-    Staff.delete_all
+    # delete all the staff that aren't agency staff
+    Staff.delete_all(["agency_staff = ?", false])
     
+    # step through the file and add each person line by line
     if lines.size > 0
       @import.processed = lines.size
       lines.each do |line|
           add_person(line)
       end
+      
       @import.destroy
       flash[:notice] = "CSV data processing was successful."
-      redirect_to :action => "index"
+      redirect_to staffs_url#:action => "index"
     else
+      
       flash[:error] = "CSV data processing failed."
       render :action => "show", :id => @import.id
     end
 	end
 
-  def show
-    @import = Import.find(params[:id])
-	end
-
   private
 
+    # parse the csv file. Returns an array containing each line. 
     def parse_csv_file(path_to_csv)
       lines = []
-
-      #if not installed run, sudo gem install fastercsv
-      #http://fastercsv.rubyforge.org/
-      require 'fastercsv' 
 
       FasterCSV.foreach(path_to_csv) do |row|
         lines << row
@@ -57,6 +61,7 @@ class AdminController < ApplicationController
       lines
     end
 
+    # add a person to the database
   	def add_person(line)
       params = Hash.new
       params[:staff] = Hash.new
