@@ -1511,3 +1511,304 @@ Processing StaffsController#index (for 127.0.0.1 at 2010-01-23 16:53:30) [GET]
 Rendering template within layouts/staffs
 Rendering staffs/index
 Completed in 209ms (View: 196, DB: 3) | 200 OK [http://localhost/staffs?search%5Border%5D=ascend_by_gender]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-01-26 15:29:35) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering sessions/new
+Completed in 131ms (View: 129, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-01-26 15:29:41) [POST]
+  Parameters: {"commit"=>"Log in", "action"=>"create", "authenticity_token"=>"W5CDWU/u1/fWKNuw7dXtBFct03Tvi5caIvFmVd1quYw=", "controller"=>"sessions", "login"=>"test", "password"=>"[FILTERED]"}
+  [4;36;1mUser Load (13.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."username" = 'test') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'test') LIMIT 1[0m
+Rendering sessions/new
+Completed in 78ms (View: 3, DB: 13) | 200 OK [http://localhost/sessions]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-01-26 15:29:47) [POST]
+  Parameters: {"commit"=>"Log in", "action"=>"create", "authenticity_token"=>"W5CDWU/u1/fWKNuw7dXtBFct03Tvi5caIvFmVd1quYw=", "controller"=>"sessions", "login"=>"admin", "password"=>"[FILTERED]"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."username" = 'admin') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 10ms (DB: 0) | 302 Found [http://localhost/sessions]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-01-26 15:29:47) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering sessions/new
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+Completed in 11ms (View: 9, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-26 15:30:08) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs"}
+  [4;36;1mStaff Load (16.8ms)[0m   [0;1mSELECT * FROM "staffs" [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 200ms (View: 164, DB: 17) | 200 OK [http://localhost/staffs]
+
+
+Processing StaffsController#show (for 127.0.0.1 at 2010-01-26 15:30:18) [GET]
+  Parameters: {"action"=>"show", "id"=>"32", "controller"=>"staffs"}
+  [4;35;1mStaff Load (0.4ms)[0m   [0mSELECT * FROM "staffs" WHERE ("staffs"."id" = 32) [0m
+Rendering template within layouts/staffs
+Rendering staffs/show
+Completed in 43ms (View: 36, DB: 0) | 200 OK [http://localhost/staffs/32]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-26 15:30:22) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs"}
+  [4;36;1mStaff Load (3.2ms)[0m   [0;1mSELECT * FROM "staffs" [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 130ms (View: 117, DB: 3) | 200 OK [http://localhost/staffs]
+
+
+Processing StaffsController#auto_complete_for_staff_last_name (for 127.0.0.1 at 2010-01-26 15:30:30) [POST]
+  Parameters: {"action"=>"auto_complete_for_staff_last_name", "staff"=>{"last_name"=>"lew"}, "controller"=>"staffs"}
+  [4;35;1mStaff Load (0.8ms)[0m   [0mSELECT * FROM "staffs" WHERE (LOWER(last_name) LIKE '%lew%') ORDER BY last_name ASC LIMIT 10[0m
+Completed in 97ms (View: 92, DB: 1) | 200 OK [http://localhost/staffs/auto_complete_for_staff_last_name]
+
+
+Processing StaffsController#auto_complete_for_staff_last_name (for 127.0.0.1 at 2010-01-26 15:30:33) [POST]
+  Parameters: {"action"=>"auto_complete_for_staff_last_name", "staff"=>{"last_name"=>"lewi"}, "controller"=>"staffs"}
+  [4;36;1mStaff Load (0.8ms)[0m   [0;1mSELECT * FROM "staffs" WHERE (LOWER(last_name) LIKE '%lewi%') ORDER BY last_name ASC LIMIT 10[0m
+Completed in 7ms (View: 3, DB: 1) | 200 OK [http://localhost/staffs/auto_complete_for_staff_last_name]
+
+
+Processing StaffsController#auto_complete_for_staff_last_name (for 127.0.0.1 at 2010-01-26 15:30:34) [POST]
+  Parameters: {"action"=>"auto_complete_for_staff_last_name", "staff"=>{"last_name"=>"cl"}, "controller"=>"staffs"}
+  [4;35;1mStaff Load (0.8ms)[0m   [0mSELECT * FROM "staffs" WHERE (LOWER(last_name) LIKE '%cl%') ORDER BY last_name ASC LIMIT 10[0m
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://localhost/staffs/auto_complete_for_staff_last_name]
+
+
+Processing StaffsController#auto_complete_for_staff_last_name (for 127.0.0.1 at 2010-01-26 15:30:35) [POST]
+  Parameters: {"action"=>"auto_complete_for_staff_last_name", "staff"=>{"last_name"=>"cle"}, "controller"=>"staffs"}
+  [4;36;1mStaff Load (0.8ms)[0m   [0;1mSELECT * FROM "staffs" WHERE (LOWER(last_name) LIKE '%cle%') ORDER BY last_name ASC LIMIT 10[0m
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://localhost/staffs/auto_complete_for_staff_last_name]
+
+
+Processing StaffsController#auto_complete_for_staff_last_name (for 127.0.0.1 at 2010-01-26 15:30:36) [POST]
+  Parameters: {"action"=>"auto_complete_for_staff_last_name", "staff"=>{"last_name"=>"clem"}, "controller"=>"staffs"}
+  [4;35;1mStaff Load (0.8ms)[0m   [0mSELECT * FROM "staffs" WHERE (LOWER(last_name) LIKE '%clem%') ORDER BY last_name ASC LIMIT 10[0m
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://localhost/staffs/auto_complete_for_staff_last_name]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-26 15:30:44) [GET]
+  Parameters: {"action"=>"index", "staff"=>{"last_name"=>"Clemons"}, "controller"=>"staffs"}
+  [4;36;1mStaff Load (3.4ms)[0m   [0;1mSELECT * FROM "staffs" [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 129ms (View: 117, DB: 3) | 200 OK [http://localhost/staffs?staff%5Blast_name%5D=Clemons]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-26 15:30:49) [GET]
+  Parameters: {"commit"=>"Search", "action"=>"index", "controller"=>"staffs", "search"=>{"last_name_like"=>"clemons", "order"=>""}}
+  [4;35;1mStaff Load (0.5ms)[0m   [0mSELECT * FROM "staffs" WHERE (staffs.last_name LIKE '%clemons%') [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 127ms (View: 114, DB: 0) | 200 OK [http://localhost/staffs?search%5Border%5D=&search%5Blast_name_like%5D=clemons&commit=Search]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-26 15:30:54) [GET]
+  Parameters: {"commit"=>"Search", "action"=>"index", "controller"=>"staffs", "search"=>{"last_name_like"=>"cle", "order"=>""}}
+  [4;36;1mStaff Load (0.4ms)[0m   [0;1mSELECT * FROM "staffs" WHERE (staffs.last_name LIKE '%cle%') [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 43ms (View: 34, DB: 0) | 200 OK [http://localhost/staffs?search%5Border%5D=&search%5Blast_name_like%5D=cle&commit=Search]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-26 15:30:56) [GET]
+  Parameters: {"commit"=>"Search", "action"=>"index", "controller"=>"staffs", "search"=>{"last_name_like"=>"", "order"=>""}}
+  [4;35;1mStaff Load (3.2ms)[0m   [0mSELECT * FROM "staffs" [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 126ms (View: 114, DB: 3) | 200 OK [http://localhost/staffs?search%5Border%5D=&search%5Blast_name_like%5D=&commit=Search]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-26 15:31:00) [GET]
+  Parameters: {"commit"=>"Search", "action"=>"index", "controller"=>"staffs", "search"=>{"last_name_like"=>"c", "order"=>""}}
+  [4;36;1mStaff Load (1.0ms)[0m   [0;1mSELECT * FROM "staffs" WHERE (staffs.last_name LIKE '%c%') [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 147ms (View: 51, DB: 1) | 200 OK [http://localhost/staffs?search%5Border%5D=&search%5Blast_name_like%5D=c&commit=Search]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-26 15:31:14) [GET]
+  Parameters: {"commit"=>"Search", "action"=>"index", "controller"=>"staffs", "search"=>{"last_name_like"=>"ee", "order"=>""}}
+  [4;35;1mStaff Load (0.2ms)[0m   [0mSELECT * FROM "staffs" WHERE (staffs.last_name LIKE '%ee%') [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 36ms (View: 27, DB: 0) | 200 OK [http://localhost/staffs?search%5Border%5D=&search%5Blast_name_like%5D=ee&commit=Search]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-26 15:31:17) [GET]
+  Parameters: {"commit"=>"Search", "action"=>"index", "controller"=>"staffs", "search"=>{"last_name_like"=>"", "order"=>""}}
+  [4;36;1mStaff Load (3.2ms)[0m   [0;1mSELECT * FROM "staffs" [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 127ms (View: 115, DB: 3) | 200 OK [http://localhost/staffs?search%5Border%5D=&search%5Blast_name_like%5D=&commit=Search]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-26 15:31:21) [GET]
+  Parameters: {"commit"=>"Search", "action"=>"index", "controller"=>"staffs", "search"=>{"last_name_like"=>"vince", "order"=>""}}
+  [4;35;1mStaff Load (0.2ms)[0m   [0mSELECT * FROM "staffs" WHERE (staffs.last_name LIKE '%vince%') [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 37ms (View: 28, DB: 0) | 200 OK [http://localhost/staffs?search%5Border%5D=&search%5Blast_name_like%5D=vince&commit=Search]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-26 15:31:24) [GET]
+  Parameters: {"commit"=>"Search", "action"=>"index", "controller"=>"staffs", "search"=>{"last_name_like"=>"", "order"=>""}}
+  [4;36;1mStaff Load (3.4ms)[0m   [0;1mSELECT * FROM "staffs" [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 127ms (View: 115, DB: 3) | 200 OK [http://localhost/staffs?search%5Border%5D=&search%5Blast_name_like%5D=&commit=Search]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-26 15:31:29) [GET]
+  Parameters: {"commit"=>"Search", "action"=>"index", "controller"=>"staffs", "search"=>{"last_name_like"=>"vincent", "order"=>""}}
+  [4;35;1mStaff Load (0.3ms)[0m   [0mSELECT * FROM "staffs" WHERE (staffs.last_name LIKE '%vincent%') [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 120ms (View: 110, DB: 0) | 200 OK [http://localhost/staffs?search%5Border%5D=&search%5Blast_name_like%5D=vincent&commit=Search]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-26 15:31:32) [GET]
+  Parameters: {"commit"=>"Search", "action"=>"index", "controller"=>"staffs", "search"=>{"last_name_like"=>"", "order"=>""}}
+  [4;36;1mStaff Load (3.5ms)[0m   [0;1mSELECT * FROM "staffs" [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 133ms (View: 119, DB: 4) | 200 OK [http://localhost/staffs?search%5Border%5D=&search%5Blast_name_like%5D=&commit=Search]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-26 15:53:20) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs"}
+  [4;35;1mStaff Load (3.9ms)[0m   [0mSELECT * FROM "staffs" [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 217ms (View: 204, DB: 4) | 200 OK [http://localhost/staffs]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-01-26 15:53:24) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin"}
+Rendering admin/index
+Completed in 161ms (View: 32, DB: 0) | 200 OK [http://localhost/admin]
+
+
+Processing AdminController#import_csv (for 127.0.0.1 at 2010-01-26 15:53:59) [POST]
+  Parameters: {"commit"=>"Import Data", "action"=>"import_csv", "authenticity_token"=>"W5CDWU/u1/fWKNuw7dXtBFct03Tvi5caIvFmVd1quYw=", "import"=>{"csv"=>#<File:/var/folders/cF/cFzIU0DCE2SOOWWsiTwcak+++TI/-Tmp-/RackMultipart20100126-2501-jizqii-0>}, "controller"=>"admin"}
+
+Errno::ENOENT (No such file or directory - /Users/Tate/Documents/rails/call-log/public/system/csvs//original/North_Shore_Arc_Call_Log_Project_-_Project_Proposal.pdf):
+  fastercsv (1.5.0) lib/faster_csv.rb:1193:in `initialize'
+  fastercsv (1.5.0) lib/faster_csv.rb:1193:in `open'
+  fastercsv (1.5.0) lib/faster_csv.rb:1193:in `open'
+  fastercsv (1.5.0) lib/faster_csv.rb:1023:in `foreach'
+  app/controllers/admin_controller.rb:54:in `parse_csv_file'
+  app/controllers/admin_controller.rb:11:in `import_csv'
+
+Rendered rescues/_trace (115.5ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-26 15:54:08) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs"}
+  [4;36;1mStaff Load (3.2ms)[0m   [0;1mSELECT * FROM "staffs" [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 129ms (View: 115, DB: 3) | 200 OK [http://localhost/staffs]
+
+
+Processing HousesController#index (for 127.0.0.1 at 2010-01-26 16:04:58) [GET]
+  Parameters: {"action"=>"index", "controller"=>"houses"}
+  [4;35;1mHouse Load (0.0ms)[0m   [0mSQLite3::SQLException: no such table: houses: SELECT * FROM "houses" [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: houses: SELECT * FROM "houses" ):
+  app/controllers/houses_controller.rb:5:in `index'
+
+Rendered rescues/_trace (45.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100123184610)
+Migrating to AddRoleToUser (20100123185244)
+Migrating to CreateImports (20100123193718)
+Migrating to AddAttachmentsCsvToImport (20100123193738)
+Migrating to CreateStaffs (20100123205525)
+Migrating to CreateHouses (20100126210427)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE TABLE "houses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "bu_code" integer, "name" varchar(255), "address" varchar(255), "city" varchar(255), "state" varchar(255), "zip" varchar(255), "phone1" varchar(255), "phone2" varchar(255), "fax" varchar(255), "overview" text, "ratio" varchar(255), "trainings_needed" text, "medication_times" text, "relief_pay" varchar(255), "waivers" text, "keys" varchar(255), "schedule_info" text, "behavior_plans" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100126210427')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("houses")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("imports")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("staffs")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("users")[0m
+
+
+Processing HousesController#index (for 127.0.0.1 at 2010-01-26 16:05:19) [GET]
+  Parameters: {"action"=>"index", "controller"=>"houses"}
+  [4;36;1mHouse Load (0.5ms)[0m   [0;1mSELECT * FROM "houses" [0m
+Rendering template within layouts/houses
+Rendering houses/index
+Completed in 18ms (View: 13, DB: 1) | 200 OK [http://localhost/houses]
+
+
+Processing HousesController#new (for 127.0.0.1 at 2010-01-26 16:05:25) [GET]
+  Parameters: {"action"=>"new", "controller"=>"houses"}
+Rendering template within layouts/houses
+Rendering houses/new
+Completed in 106ms (View: 99, DB: 0) | 200 OK [http://localhost/houses/new]
+
+
+Processing HousesController#create (for 127.0.0.1 at 2010-01-26 16:08:18) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"W5CDWU/u1/fWKNuw7dXtBFct03Tvi5caIvFmVd1quYw=", "house"=>{"behavior_plans"=>"Don't stay up too late.", "schedule_info"=>"Find it online foo.", "keys"=>"Given at beginning of the year", "ratio"=>"1:15 Profs:Students", "city"=>"Wenham", "address"=>"255 Grapevine Road", "name"=>"Gordon College", "zip"=>"01984", "medication_times"=>"Caffeine at midnight.", "overview"=>"This is a liberal arts college.", "relief_pay"=>"$8.00 for most", "phone1"=>"978.867.2300", "bu_code"=>"200", "waivers"=>"None", "phone2"=>"978.867.4444", "fax"=>"800.I.DUNNO!", "trainings_needed"=>"How to read.", "state"=>"MA"}, "controller"=>"houses"}
+  [4;35;1mHouse Create (22.1ms)[0m   [0mINSERT INTO "houses" ("name", "address", "city", "ratio", "keys", "schedule_info", "behavior_plans", "zip", "created_at", "medication_times", "overview", "updated_at", "relief_pay", "bu_code", "phone1", "phone2", "waivers", "fax", "trainings_needed", "state") VALUES('Gordon College', '255 Grapevine Road', 'Wenham', '1:15 Profs:Students', 'Given at beginning of the year', 'Find it online foo.', 'Don''t stay up too late.', '01984', '2010-01-26 21:08:19', 'Caffeine at midnight.', 'This is a liberal arts college.', '2010-01-26 21:08:19', '$8.00 for most', 200, '978.867.2300', '978.867.4444', 'None', '800.I.DUNNO!', 'How to read.', 'MA')[0m
+Redirected to http://localhost:3000/houses/1
+Completed in 39ms (DB: 22) | 302 Found [http://localhost/houses]
+
+
+Processing HousesController#show (for 127.0.0.1 at 2010-01-26 16:08:19) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"houses"}
+  [4;36;1mHouse Load (0.4ms)[0m   [0;1mSELECT * FROM "houses" WHERE ("houses"."id" = 1) [0m
+Rendering template within layouts/houses
+Rendering houses/show
+Completed in 19ms (View: 10, DB: 0) | 200 OK [http://localhost/houses/1]
+
+
+Processing HousesController#index (for 127.0.0.1 at 2010-01-26 16:08:24) [GET]
+  Parameters: {"action"=>"index", "controller"=>"houses"}
+  [4;35;1mHouse Load (0.8ms)[0m   [0mSELECT * FROM "houses" [0m
+Rendering template within layouts/houses
+Rendering houses/index
+Completed in 17ms (View: 11, DB: 1) | 200 OK [http://localhost/houses]
+
+
+Processing HousesController#show (for 127.0.0.1 at 2010-01-26 16:10:17) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"houses"}
+  [4;36;1mHouse Load (0.5ms)[0m   [0;1mSELECT * FROM "houses" WHERE ("houses"."id" = 1) [0m
+Rendering template within layouts/houses
+Rendering houses/show
+Completed in 14ms (View: 5, DB: 0) | 200 OK [http://localhost/houses/1]
+
+
+Processing HousesController#index (for 127.0.0.1 at 2010-01-26 16:11:20) [GET]
+  Parameters: {"action"=>"index", "controller"=>"houses"}
+  [4;35;1mHouse Load (0.8ms)[0m   [0mSELECT * FROM "houses" [0m
+Rendering template within layouts/houses
+Rendering houses/index
+Completed in 92ms (View: 86, DB: 1) | 200 OK [http://localhost/houses]
