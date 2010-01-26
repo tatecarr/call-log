@@ -1,0 +1,41 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  bu_code: 1
+  name: MyString
+  address: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  phone1: MyString
+  phone2: MyString
+  fax: MyString
+  overview: MyText
+  ratio: MyString
+  trainings_needed: MyText
+  medication_times: MyText
+  relief_pay: MyString
+  waivers: MyText
+  keys: MyString
+  schedule_info: MyText
+  behavior_plans: MyText
+
+two:
+  bu_code: 1
+  name: MyString
+  address: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  phone1: MyString
+  phone2: MyString
+  fax: MyString
+  overview: MyText
+  ratio: MyString
+  trainings_needed: MyText
+  medication_times: MyText
+  relief_pay: MyString
+  waivers: MyText
+  keys: MyString
+  schedule_info: MyText
+  behavior_plans: MyText

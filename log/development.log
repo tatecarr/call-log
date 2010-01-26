@@ -1812,3 +1812,19 @@ Processing HousesController#index (for 127.0.0.1 at 2010-01-26 16:11:20) [GET]
 Rendering template within layouts/houses
 Rendering houses/index
 Completed in 92ms (View: 86, DB: 1) | 200 OK [http://localhost/houses]
+
+
+Processing HousesController#index (for 127.0.0.1 at 2010-01-26 16:36:44) [GET]
+  Parameters: {"action"=>"index", "controller"=>"houses"}
+  [4;36;1mHouse Load (0.8ms)[0m   [0;1mSELECT * FROM "houses" [0m
+Rendering template within layouts/houses
+Rendering houses/index
+Completed in 17ms (View: 11, DB: 1) | 200 OK [http://localhost/houses]
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-01-26 16:36:50) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs"}
+  [4;35;1mStaff Load (3.9ms)[0m   [0mSELECT * FROM "staffs" [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 155ms (View: 124, DB: 4) | 200 OK [http://localhost/staffs]

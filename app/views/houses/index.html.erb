@@ -1,0 +1,54 @@
+<h1>Listing houses</h1>
+
+<table>
+  <tr>
+    <th>Bu code</th>
+    <th>Name</th>
+    <th>Address</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip</th>
+    <th>Phone1</th>
+    <th>Phone2</th>
+    <th>Fax</th>
+    <th>Overview</th>
+    <th>Ratio</th>
+    <th>Trainings needed</th>
+    <th>Medication times</th>
+    <th>Relief pay</th>
+    <th>Waivers</th>
+    <th>Keys</th>
+    <th>Schedule info</th>
+    <th>Behavior plans</th>
+  </tr>
+
+<% @houses.each do |house| %>
+  <tr>
+    <td><%=h house.bu_code %></td>
+    <td><%=h house.name %></td>
+    <td><%=h house.address %></td>
+    <td><%=h house.city %></td>
+    <td><%=h house.state %></td>
+    <td><%=h house.zip %></td>
+    <td><%=h house.phone1 %></td>
+    <td><%=h house.phone2 %></td>
+    <td><%=h house.fax %></td>
+    <td><%=h house.overview %></td>
+    <td><%=h house.ratio %></td>
+    <td><%=h house.trainings_needed %></td>
+    <td><%=h house.medication_times %></td>
+    <td><%=h house.relief_pay %></td>
+    <td><%=h house.waivers %></td>
+    <td><%=h house.keys %></td>
+    <td><%=h house.schedule_info %></td>
+    <td><%=h house.behavior_plans %></td>
+    <td><%= link_to 'Show', house %></td>
+    <td><%= link_to 'Edit', edit_house_path(house) %></td>
+    <td><%= link_to 'Destroy', house, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New house', new_house_path %>

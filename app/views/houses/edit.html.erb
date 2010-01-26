@@ -1,0 +1,84 @@
+<h1>Editing house</h1>
+
+<% form_for(@house) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :bu_code %><br />
+    <%= f.text_field :bu_code %>
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </p>
+  <p>
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </p>
+  <p>
+    <%= f.label :state %><br />
+    <%= f.text_field :state %>
+  </p>
+  <p>
+    <%= f.label :zip %><br />
+    <%= f.text_field :zip %>
+  </p>
+  <p>
+    <%= f.label :phone1 %><br />
+    <%= f.text_field :phone1 %>
+  </p>
+  <p>
+    <%= f.label :phone2 %><br />
+    <%= f.text_field :phone2 %>
+  </p>
+  <p>
+    <%= f.label :fax %><br />
+    <%= f.text_field :fax %>
+  </p>
+  <p>
+    <%= f.label :overview %><br />
+    <%= f.text_area :overview %>
+  </p>
+  <p>
+    <%= f.label :ratio %><br />
+    <%= f.text_field :ratio %>
+  </p>
+  <p>
+    <%= f.label :trainings_needed %><br />
+    <%= f.text_area :trainings_needed %>
+  </p>
+  <p>
+    <%= f.label :medication_times %><br />
+    <%= f.text_area :medication_times %>
+  </p>
+  <p>
+    <%= f.label :relief_pay %><br />
+    <%= f.text_field :relief_pay %>
+  </p>
+  <p>
+    <%= f.label :waivers %><br />
+    <%= f.text_area :waivers %>
+  </p>
+  <p>
+    <%= f.label :keys %><br />
+    <%= f.text_field :keys %>
+  </p>
+  <p>
+    <%= f.label :schedule_info %><br />
+    <%= f.text_area :schedule_info %>
+  </p>
+  <p>
+    <%= f.label :behavior_plans %><br />
+    <%= f.text_area :behavior_plans %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @house %> |
+<%= link_to 'Back', houses_path %>
