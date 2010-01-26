@@ -1,4 +1,11 @@
 class HousesController < ApplicationController
+  # =>The
+  # =>  Sabres
+  # =>    will
+  # =>      win
+  # =>        it
+  # =>          all
+  
   # GET /houses
   # GET /houses.xml
   def index
