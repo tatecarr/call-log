@@ -1,11 +1,4 @@
 class HousesController < ApplicationController
-  # =>The
-  # =>  Sabres
-  # =>    will
-  # =>      win
-  # =>        it
-  # =>          all
-  
   # GET /houses
   # GET /houses.xml
   def index
@@ -21,7 +14,7 @@ class HousesController < ApplicationController
   # GET /houses/1.xml
   def show
     @house = House.find(params[:id])
-    @impot = Import.new
+
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @house }
