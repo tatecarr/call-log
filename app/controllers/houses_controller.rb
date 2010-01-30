@@ -1,5 +1,3 @@
-# Sabers suck
-
 class HousesController < ApplicationController
   # GET /houses
   # GET /houses.xml
