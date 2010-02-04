@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(:version => 20100126210427) do
   end
 
   create_table "imports", :force => true do |t|
-    t.integer  "processed"
+    t.integer  "processed",        :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "csv_file_name"

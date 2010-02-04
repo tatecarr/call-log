@@ -15,3 +15,20 @@
 </div>
 
 <% end %>
+
+
+<%= button_to_remote "Backup", :url => { :action => "backup" } %>
+		
+<div id="backup"></div>
+<%= button_to_remote "Restore", :url => { :action => "restore" } %>
+
+
+<% form_for @user, :url => {:action => 'add_user' } do |f| -%>
+<p>	Please enter the email address of the person you would like to add<br />
+  	<%= f.text_field :email %></p>
+<p>
+	Account Type:
+	<%= select("user", "role", %w[House-Admin Admin]) %>
+</p>
+<%= f.submit "Add User", :disable_with => 'Adding...' %>
+<% end -%>

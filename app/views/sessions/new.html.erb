@@ -22,3 +22,10 @@
   </p>
   <p><%= submit_tag "Log in" %></p>
 <% end %>
+
+<% form_tag(:action => "reset_password") do %>
+	Forgot your password??<br />
+	<%= text_field_tag "email" %>
+	<%= submit_tag %>
+<% end -%>
+
