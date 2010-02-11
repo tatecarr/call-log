@@ -14,6 +14,7 @@ class AdminController < ApplicationController
   def index
     @import = Import.new
     @user = User.new
+    @users = User.all
   end
 
   def show
@@ -132,7 +133,21 @@ class AdminController < ApplicationController
 	end
 	
 	def restore
-	  success = system "/usr/local/mysql/bin/mysql -u root call_log_development < public/call_log_backup_02_02_2010.sql"
+	  # upload and save the file
+    @import = Import.new(params[:import])
+    @import.save
+    
+	  success = system "/usr/local/mysql/bin/mysql -u root call_log_development < #{@import.csv.path}"
+	  
+	  if success
+	    flash[:notice] = "The restore was successful."
+	    @import.destroy
+    else
+      flash[:error] = "Failed to restore. Make sure the file is the correct format and try again."
+      @import.destroy
+      render :action => "index"
+    end
+    redirect_to staffs_url
 	end
 
 
