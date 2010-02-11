@@ -13,6 +13,6 @@ class ApplicationController < ActionController::Base
   protected
   
   def admin?
-    current_user.role == "Admin"
+    current_user.role == "System-Admin"
   end
 end
