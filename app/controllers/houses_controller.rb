@@ -1,4 +1,6 @@
 class HousesController < ApplicationController
+  auto_complete_for :staff, :last_name
+  
   # GET /houses
   # GET /houses.xml
   def index
@@ -25,7 +27,7 @@ class HousesController < ApplicationController
   # GET /houses/new.xml
   def new
     @house = House.new
-
+    3.times { @house.house_staffs.build }
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @house }
@@ -82,4 +84,13 @@ class HousesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def manage_staff
+    @house = House.find(params[:id])
+    
+    
+    
+    
+  end
+  
 end

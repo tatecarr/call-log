@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  bu_code: 1
+  staff_id: 1
+  position_name: MyString
+
+two:
+  bu_code: 1
+  staff_id: 1
+  position_name: MyString

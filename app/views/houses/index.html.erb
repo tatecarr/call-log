@@ -1,5 +1,11 @@
 <h1>Listing houses</h1>
 
+<% form_tag staffs_path, :method => 'get' do %>
+
+	<%= text_field_with_auto_complete :staff, :last_name %>
+
+<% end %>
+
 <table>
   <tr>
     <th>Bu code</th>

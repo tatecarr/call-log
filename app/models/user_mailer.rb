@@ -12,4 +12,12 @@ class UserMailer < ActionMailer::Base
     subject     "Your temporary password"
     body        :user => user
   end
+  
+  def email_feedback(feedback)
+    recipients  "taylor.carr@gordon.edu"
+    from        "Call Log Test User"
+    subject     "Call Log Test Feedback"
+    body        :feedback => feedback
+  end
+        
 end

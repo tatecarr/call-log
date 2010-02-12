@@ -1,12 +1,23 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :houses
+
+  #map.resources :house_staffs
+  map.resources :houses, :has_many => :house_staffs
+  
+  map.resources :house_staffs
 
   map.resources :staffs
+  
+  map.resources :feedbacks
 
   map.signup 'signup', :controller => 'users', :action => 'new'
   map.logout 'logout', :controller => 'sessions', :action => 'destroy'
   map.login 'login', :controller => 'sessions', :action => 'new'
   map.passwordreset 'password-reset', :controller => "users", :action => "password_reset"
+  
+  map.manage_staff 'manage_staff', :controller => "houses", :action => "manage_staff"
+  
+  map.email_feedback 'email_feedback', :controller => "feedback", :action => "index"
+  
   map.root :controller => 'sessions', :action => "new" 
   map.resources :sessions
   map.resources :admin

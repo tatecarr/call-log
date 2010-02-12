@@ -1,0 +1,24 @@
+<h1>Listing house_staffs</h1>
+
+<table>
+  <tr>
+    <th>Bu code</th>
+    <th>Staff</th>
+    <th>Position name</th>
+  </tr>
+
+<% @house_staffs.each do |house_staff| %>
+  <tr>
+    <td><%=h house_staff.bu_code %></td>
+    <td><%=h house_staff.staff_id %></td>
+    <td><%=h house_staff.position_name %></td>
+    <td><%= link_to 'Show', house_staff %></td>
+    <td><%= link_to 'Edit', edit_house_staff_path(house_staff) %></td>
+    <td><%= link_to 'Destroy', house_staff, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New house_staff', new_house_staff_path %>
