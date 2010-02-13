@@ -1,0 +1,3 @@
+page.insert_html :bottom, :assigned_house_staff, :partial => @house_staff
+page[@house_staff].visual_effect :highlight
+page[:new_house_staff].reset

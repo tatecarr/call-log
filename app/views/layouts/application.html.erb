@@ -6,7 +6,7 @@
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title><%= controller.controller_name %>: <%= controller.action_name %></title>
   <%= stylesheet_link_tag 'scaffold' %>
-<%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag :defaults %>
 </head>
 <body>
 
@@ -14,6 +14,8 @@
 <p style="color: red"><%= flash[:error] %></p>
 
 <%= yield %>
+
+<div align="center"><%= link_to "SUBMIT FEEDBACK OR TEST INFO", email_feedback_path %></div>
 
 </body>
 </html>

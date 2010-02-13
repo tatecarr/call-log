@@ -154,8 +154,6 @@ class AdminController < ApplicationController
     redirect_to staffs_url
 	end
 
-
-
 #-------------------------- Private helper methods ----------------------------------
 
   private

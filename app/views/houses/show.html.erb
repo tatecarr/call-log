@@ -1,3 +1,28 @@
+<%= link_to "Manage Assigned Staff", manage_staff_url(:id => @house.bu_code) %>
+
+<h2>Staff Assigned to House</h2>
+<div id="assigned_house_staff">
+	<p>
+		<%= render :partial => @house.house_staffs %>
+	</p>
+</div>
+
+<% form_tag staffs_path, :method => 'get' do %>
+
+	<%= text_field_with_auto_complete :staff, :last_name %>
+
+<% end %>
+
+<% remote_form_for [@house, HouseStaff.new] do |f| %>
+	<p>
+		<%= f.label :staff_id, "Staff ID" %>
+		<%= f.text_field :staff_id %> &nbsp;
+		<%= f.label :position_name, "Position" %>
+		<%= f.text_field :position_name %>
+	</p>
+	<p><%= f.submit "Add Staff to House" %></p>
+<% end %>
+
 <p>
   <b>Bu code:</b>
   <%=h @house.bu_code %>

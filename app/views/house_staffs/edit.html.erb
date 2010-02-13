@@ -1,0 +1,24 @@
+<h1>Editing house_staff</h1>
+
+<% form_for(@house_staff) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :bu_code %><br />
+    <%= f.text_field :bu_code %>
+  </p>
+  <p>
+    <%= f.label :staff_id %><br />
+    <%= f.text_field :staff_id %>
+  </p>
+  <p>
+    <%= f.label :position_name %><br />
+    <%= f.text_field :position_name %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @house_staff %> |
+<%= link_to 'Back', house_staffs_path %>

@@ -1,0 +1,37 @@
+<h1>Submit Call Log Application Feedback</h1>
+
+<% if @email_sent %>
+
+	<p>An email has been sent to the developers.  Thank you for your feedback.</p>
+
+<% else %>
+
+	<% form_tag email_feedback_path, :method => 'get' do %>
+		<p>
+			Application page you were on: <br/>
+			<%= text_field_tag :app_page, params[:app_page], :class => "feedback" %>
+		</p>
+		<p>
+			What function were you doing: <br/>
+			<%= text_area_tag :what_function, params[:what_function], :class => "feedback" %>
+		</p>
+		<p>
+			What steps, data input, clicking, etc. did you do: <br/>
+			<%= text_area_tag :what_input, params[:what_input], :class => "feedback" %>
+		</p>
+		<p>
+			What do you think was supposed to happen: <br/>
+			<%= text_area_tag :supposed_to_happen, params[:supposed_to_happen], :class => "feedback" %>
+		</p>
+		<p>
+			What actually happened: <br/>
+			<%= text_area_tag :actually_happened, params[:actually_happened], :class => "feedback" %>
+		</p>
+		<p>
+			Any suggestions on changes to improve what you were testing: <br/>
+			<%= text_area_tag :suggestions, params[:suggestions], :class => "feedback" %>
+		</p>
+		<%= submit_tag "Email Feedback", :disable_with => "Emailing..." %>
+	<% end %>
+	
+<% end %>

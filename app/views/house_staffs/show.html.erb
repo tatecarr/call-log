@@ -1,0 +1,18 @@
+<p>
+  <b>Bu code:</b>
+  <%=h @house_staff.bu_code %>
+</p>
+
+<p>
+  <b>Staff:</b>
+  <%=h @house_staff.staff_id %>
+</p>
+
+<p>
+  <b>Position name:</b>
+  <%=h @house_staff.position_name %>
+</p>
+
+
+<%= link_to 'Edit', edit_house_staff_path(@house_staff) %> |
+<%= link_to 'Back', house_staffs_path %>
