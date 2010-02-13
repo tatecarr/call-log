@@ -7,19 +7,19 @@
 	</p>
 </div>
 
-<% form_tag staffs_path, :method => 'get' do %>
-
-	<%= text_field_with_auto_complete :staff, :last_name %>
-
-<% end %>
-
 <% remote_form_for [@house, HouseStaff.new] do |f| %>
-	<p>
-		<%= f.label :staff_id, "Staff ID" %>
-		<%= f.text_field :staff_id %> &nbsp;
-		<%= f.label :position_name, "Position" %>
-		<%= f.text_field :position_name %>
-	</p>
+	<table>
+		<tr>
+			<td>
+				<%= f.label :staff_id, "Staff ID" %>
+				<%= text_field_with_auto_complete :staff, :full_name %>
+			</td>
+			<td>
+				<%= f.label :position_name, "Position" %>
+				<%= f.text_field :position_name %>
+			</td>
+		</tr>
+	</table>
 	<p><%= f.submit "Add Staff to House" %></p>
 <% end %>
 

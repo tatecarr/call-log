@@ -1,10 +1,16 @@
 class HousesController < ApplicationController
-  auto_complete_for :staff, :last_name
+  auto_complete_for :house, :name
   
   # GET /houses
   # GET /houses.xml
   def index
-    @houses = House.all
+    puts params;
+    # to allow for searching with autocomplete on house name
+    #params[:search][:house_name_like] = params[:house][:name] unless params[:house].nil?
+    
+    
+    @search = House.find_by_name("Gordon College")#.search(:all)#params[:search])
+    @houses = @search
 
     respond_to do |format|
       format.html # index.html.erb
@@ -27,7 +33,7 @@ class HousesController < ApplicationController
   # GET /houses/new.xml
   def new
     @house = House.new
-    3.times { @house.house_staffs.build }
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @house }

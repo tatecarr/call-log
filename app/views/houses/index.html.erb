@@ -1,31 +1,26 @@
 <h1>Listing houses</h1>
 
-<% form_tag staffs_path, :method => 'get' do %>
 
-	<%= text_field_with_auto_complete :staff, :last_name %>
-
-<% end %>
+<% form_for @search do |f| -%>
+	<p>
+		<%= text_field_with_auto_complete :house, :name %>
+	</p>
+	<p>
+		<%= f.submit "Search", :disable_with => 'Searching...' %>
+	</p>
+<% end -%>
 
 <table>
   <tr>
-    <th>Bu code</th>
-    <th>Name</th>
-    <th>Address</th>
-    <th>City</th>
-    <th>State</th>
-    <th>Zip</th>
-    <th>Phone1</th>
-    <th>Phone2</th>
-    <th>Fax</th>
-    <th>Overview</th>
-    <th>Ratio</th>
-    <th>Trainings needed</th>
-    <th>Medication times</th>
-    <th>Relief pay</th>
-    <th>Waivers</th>
-    <th>Keys</th>
-    <th>Schedule info</th>
-    <th>Behavior plans</th>
+    <th><%= order @search, :by => :bu_code %></th>
+    <th><%= order @search, :by => :name %></th>
+    <th><%= order @search, :by => :address %></th>
+    <th><%= order @search, :by => :city %></th>
+    <th><%= order @search, :by => :state %></th>
+    <th><%= order @search, :by => :zip %></th>
+    <th><%= order @search, :by => :phone1 %></th>
+    <th><%= order @search, :by => :phone2 %></th>
+    <th><%= order @search, :by => :fax %></th>
   </tr>
 
 <% @houses.each do |house| %>
@@ -39,15 +34,6 @@
     <td><%=h house.phone1 %></td>
     <td><%=h house.phone2 %></td>
     <td><%=h house.fax %></td>
-    <td><%=h house.overview %></td>
-    <td><%=h house.ratio %></td>
-    <td><%=h house.trainings_needed %></td>
-    <td><%=h house.medication_times %></td>
-    <td><%=h house.relief_pay %></td>
-    <td><%=h house.waivers %></td>
-    <td><%=h house.keys %></td>
-    <td><%=h house.schedule_info %></td>
-    <td><%=h house.behavior_plans %></td>
     <td><%= link_to 'Show', house %></td>
     <td><%= link_to 'Edit', edit_house_path(house) %></td>
     <td><%= link_to 'Destroy', house, :confirm => 'Are you sure?', :method => :delete %></td>

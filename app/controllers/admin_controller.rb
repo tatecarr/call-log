@@ -91,7 +91,7 @@ class AdminController < ApplicationController
       
       # step through the file and add a person for each line
       lines.each do |line|
-          add_person(line)
+          add_person(line) unless line.empty?
       end
       
       # we don't need the file anymore so we can remove it
@@ -183,6 +183,7 @@ class AdminController < ApplicationController
       params[:staff][:staff_id] = line[@row_positions[:staff_id]]
       params[:staff][:first_name] = line[@row_positions[:first_name]]
       params[:staff][:last_name] = line[@row_positions[:last_name]]
+      params[:staff][:full_name] = params[:staff][:first_name] + " " + params[:staff][:last_name] + " (" + params[:staff][:staff_id] +")"
       params[:staff][:nickname] = line[@row_positions[:nickname]]
       params[:staff][:address] = line[@row_positions[:address]]
       params[:staff][:city] = line[@row_positions[:city]]
@@ -192,7 +193,7 @@ class AdminController < ApplicationController
       params[:staff][:doh] = line[@row_positions[:doh]]
       params[:staff][:cell_number] = line[@row_positions[:cell_number]]
       params[:staff][:home_number] = line[@row_positions[:home_number]]
-      params[:staff][:agency_staff] = line[@row_positions[:agency_staff]]
+      params[:staff][:agency_staff] = false
       
       # create and save the new staff member to the db
       person = Staff.new(params[:staff])
