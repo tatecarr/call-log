@@ -1,65 +1,77 @@
-<div id="import-page" style="display:none;">
-	<% form_for @import, :url => { :action => "import_csv" }, :html => { :multipart => true } do |f| %>
-	<fieldset>
-		<div class="message">
-			Only csv files are allowed.
+<a href="" onclick="toggleIt('import-page');">Import Staff</a> <a href="" onclick="toggleIt('backup-page');">Backup Database</a> <a href="" onclick="toggleIt('restore-page');">Restore Database</a> <a href="" onclick="toggleIt('user-page');">Manage Users</a>
+<div id="content">
+	<div id="import-page" style="display:none;">
+		<% form_for @import, :url => { :action => "import_csv" }, :html => { :multipart => true } do |f| %>
+		<fieldset>
+			<div class="message">
+				Only csv files are allowed.
+			</div>
+			<ol>
+				<li>
+					<label for="photo_file">CSV File</label>
+					<%= f.file_field :csv, :onclick => 'enableSubmit(this);' %>
+				</li>
+			</ol>
+		</fieldset>
+		<div class="buttons">
+			<%= f.submit "Import Data", :disabled => true, :disable_with => "Importing..." %>
 		</div>
-		<ol>
-			<li>
-				<label for="photo_file">CSV File</label>
-				<%= f.file_field :csv, :onclick => 'enableSubmit(this);' %>
-			</li>
-		</ol>
-	</fieldset>
-	<div class="buttons">
-		<%= f.submit "Import Data", :disabled => true, :disable_with => "Importing..." %>
-	</div>
 
-	<% end %>
-</div>
-
-
-<div id="backup-page" style="display:none;">
-	<% form_tag(:action => "backup") do %>
-		<p><%= submit_tag "Backup" %></p>
-	<% end -%>
-</div>
-
-
-<div id="restore-page" style="display:none;">
-	<% form_for @import, :url => { :action => "restore" }, :html => { :multipart => true } do |f| %>
-	<fieldset>
-		<div class="message">
-			Only .sql files are allowed.
-		</div>
-		<ol>
-			<li>
-				<label for="photo_file">.sql File</label>
-				<%= f.file_field :csv, :onclick => 'enableSubmit(this);' %>
-			</li>
-		</ol>
-	</fieldset>
-	<div class="buttons">
-		<%= f.submit "Restore from Backup", :disabled => true, :disable_with => "Restoring..." %>
-	</div>
-	<% end %>
-</div>
-
-<div id="user-page" style="display:none;">	
-	<% form_for @user, :url => {:action => 'add_user' } do |f| -%>
-	<p>	Please enter the email address of the person you would like to add<br />
-	  	<%= f.text_field :email %></p>
-	<p>
-		Account Type:
-		<%= select("user", "role", %w[House-Admin System-Admin]) %>
-	</p>
-	<%= f.submit "Add User", :disable_with => 'Adding...' %>
-	<% end -%>
-
-	<h2>Users</h2>
-	<div id="users-list">
-		<% @users.each do |user| %>
-			<p><%= user.username %>: <%= user.email %> Role: <%= user.role %> <%= link_to "Destroy", user, :confirm => 'Are you sure?', :method => :delete %></p>
 		<% end %>
+	</div>
+
+
+	<div id="backup-page" style="display:none;">
+		<% form_tag(:action => "backup") do %>
+			<p><%= submit_tag "Backup" %></p>
+		<% end -%>
+	</div>
+
+
+	<div id="restore-page" style="display:none;">
+		<% form_for @import, :url => { :action => "restore" }, :html => { :multipart => true } do |f| %>
+		<fieldset>
+			<div class="message">
+				Only .sql files are allowed.
+			</div>
+			<ol>
+				<li>
+					<label for="photo_file">.sql File</label>
+					<%= f.file_field :csv, :onclick => 'enableSubmit(this);' %>
+				</li>
+			</ol>
+		</fieldset>
+		<div class="buttons">
+			<%= f.submit "Restore from Backup", :disabled => true, :disable_with => "Restoring..." %>
+		</div>
+		<% end %>
+	</div>
+
+	<div id="user-page">	
+		<% form_for @user, :url => {:action => 'add_user' } do |f| -%>
+		<p>	Please enter the email address of the person you would like to add<br />
+		  	<%= f.text_field :email %></p>
+		<p>
+			Account Type:
+			<%= select("user", "role", %w[House-Admin System-Admin]) %>
+		</p>
+		<%= f.submit "Add User", :disable_with => 'Adding...' %>
+		<% end -%>
+
+		<h2>Users</h2>
+		<div id="users-list">
+			<% @users.each do |user| %>
+				<p><%= user.username %>: <%= user.email %> Role: <%= user.role %> <%= link_to "Destroy", user, :confirm => 'Are you sure?', :method => :delete %></p>
+			<% end %>
+		</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	</div>
 </div>
