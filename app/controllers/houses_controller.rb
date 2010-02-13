@@ -6,6 +6,7 @@ class HousesController < ApplicationController
   def index
     puts params
     # to allow for searching with autocomplete on house name
+
     params[:search][:full_info_like] = params[:house][:full_info] unless params[:house].nil?
     
     @search = House.search(params[:search])
