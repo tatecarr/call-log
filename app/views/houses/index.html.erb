@@ -3,7 +3,7 @@
 
 <% form_for @search do |f| -%>
 	<p>
-		<%= text_field_with_auto_complete :house, :name %>
+		<%= text_field_with_auto_complete :house, :full_info %>
 	</p>
 	<p>
 		<%= f.submit "Search", :disable_with => 'Searching...' %>

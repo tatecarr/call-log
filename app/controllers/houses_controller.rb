@@ -1,21 +1,29 @@
 class HousesController < ApplicationController
-  auto_complete_for :house, :name
+  auto_complete_for :house, :full_info
   
   # GET /houses
   # GET /houses.xml
   def index
-    puts params;
+    puts params
     # to allow for searching with autocomplete on house name
-    #params[:search][:house_name_like] = params[:house][:name] unless params[:house].nil?
+    params[:search][:full_info_like] = params[:house][:full_info] unless params[:house].nil?
     
-    
-    @search = House.find_by_name("Gordon College")#.search(:all)#params[:search])
-    @houses = @search
+    @search = House.search(params[:search])
+    @houses = @search.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @houses }
+    if @houses.length == 1
+      
+      redirect_to @houses[0]
+      
+    else
+    
+      respond_to do |format|
+        format.html # index.html.erb
+        format.xml  { render :xml => @houses }
+      end
+      
     end
+    
   end
 
   # GET /houses/1
@@ -48,6 +56,7 @@ class HousesController < ApplicationController
   # POST /houses
   # POST /houses.xml
   def create
+    params[:house][:full_info] = params[:house][:name] + " (" + params[:house][:bu_code] + ")"
     @house = House.new(params[:house])
 
     respond_to do |format|

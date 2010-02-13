@@ -14,10 +14,17 @@ class StaffsController < ApplicationController
     
     @search = Staff.search(params[:search])
     @staffs = @search.all
+    
+    if @staffs.length == 1
+      
+      redirect_to @staffs[0]
+      
+    else
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @staffs }
+      respond_to do |format|
+        format.html # index.html.erb
+        format.xml  { render :xml => @staffs }
+      end
     end
   end
 
