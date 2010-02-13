@@ -1,14 +1,18 @@
 <h1>Listing staffs</h1>
 
 
-<% form_for @search do |f| -%>
+<%- form_for @search do |f| -%>
 	<p>
-		<%= text_field_with_auto_complete :staff, :last_name %>
+		<%= text_field_with_auto_complete :staff, :full_name %>
 	</p>
-    <p>
+  	<p>
 		<%= f.radio_button :gender_equals, :M %>M<%= f.radio_button :gender_equals, :F %>F
-    <p>
-		<%= f.radio_button :gender_equals, :M %>F<%= f.radio_button :gender_equals, :F %>M
+	</p>
+	<p>
+		Home Phone: <%= text_field_with_auto_complete :staff, :home_number %>
+	</p>
+	<p>
+		Cell Phone: <%= text_field_with_auto_complete :staff, :cell_number %>
 	</p>
 	<p>
 		<%= f.submit "Search", :disable_with => 'Searching...' %>

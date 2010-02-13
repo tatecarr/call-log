@@ -1,11 +1,16 @@
 class StaffsController < ApplicationController
-  auto_complete_for :staff, :last_name
+  auto_complete_for :staff, :full_name
+  auto_complete_for :staff, :home_number
+  auto_complete_for :staff, :cell_number
   
   # GET /staffs
   # GET /staffs.xml
   def index
+    
     # to allow for searching with auto complete on last name
-    params[:search][:last_name_like] = params[:staff][:last_name] unless params[:staff].nil?
+    params[:search][:full_name_like] = params[:staff][:full_name] unless params[:staff].nil?
+    params[:search][:home_number_like] = params[:staff][:home_number] unless params[:staff].nil?
+    params[:search][:cell_number_like] = params[:staff][:cell_number] unless params[:staff].nil?
     
     @search = Staff.search(params[:search])
     @staffs = @search.all
