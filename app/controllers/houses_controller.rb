@@ -6,10 +6,10 @@ class HousesController < ApplicationController
   def index
     puts params;
     # to allow for searching with autocomplete on house name
-    #params[:search][:house_name_like] = params[:house][:name] unless params[:house].nil?
+    params[:search][:name_like] = params[:house][:name] unless params[:house].nil?
     
     
-    @search = House.find_by_name("Gordon College")#.search(:all)#params[:search])
+    @search = House.search(params[:search])
     @houses = @search
 
     respond_to do |format|
