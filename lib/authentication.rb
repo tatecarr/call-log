@@ -30,7 +30,15 @@ module Authentication
   
   def login_required
     unless logged_in?
-      flash[:error] = "You must first log in or sign up before accessing this page."
+      flash[:error] = "You must first log in before accessing this page."
+      store_target_location
+      redirect_to login_url
+    end
+  end
+  
+  def admin_required
+    unless logged_in? && admin?
+      flash[:error] = "You must be a administrator to access this page."
       store_target_location
       redirect_to login_url
     end

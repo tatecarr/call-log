@@ -1,5 +1,9 @@
 class SessionsController < ApplicationController
   def new
+    redirect_to home_path if logged_in?
+  end
+  
+  def home
   end
   
   def create
@@ -7,7 +11,7 @@ class SessionsController < ApplicationController
     if user
       session[:user_id] = user.id
       flash[:notice] = "Logged in successfully."
-      redirect_to_target_or_default(root_url)
+      redirect_to home_path
     else
       flash.now[:error] = "Invalid login or password."
       render :action => 'new'
@@ -20,8 +24,11 @@ class SessionsController < ApplicationController
     # find the user who's email matches the one specified
     @user = User.find_by_email(params[:email])
     
+    if @user.nil?
+      flash[:error] = "No account exists with this email address."
+    
     # update the user with a new generated password
-    if @user.update_attributes(:password => Digest::SHA1.hexdigest("--#{Time.now.to_s}--#{@user.username}--")[0,6])
+    elsif @user.update_attributes(:password => Digest::SHA1.hexdigest("--#{Time.now.to_s}--#{@user.username}--")[0,6])
     
       # send them an email with the generated password
       UserMailer.deliver_forgotten_password(@user)
@@ -30,6 +37,8 @@ class SessionsController < ApplicationController
       # looks like we couldn't update for some reason...this shouldn't ever happen
       flash[:error] = "We were unable to reset your password."
     end
+    
+    redirect_to :action => "new"
   end
   
   def destroy

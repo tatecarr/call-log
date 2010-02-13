@@ -6,19 +6,21 @@
 	<ol>
 		<li>
 			<label for="photo_file">CSV File</label>
-			<%= f.file_field :csv %>
+			<%= f.file_field :csv, :onclick => 'enableSubmit(this);' %>
 		</li>
 	</ol>
 </fieldset>
 <div class="buttons">
-	<%= f.submit "Import Data" %>
+	<%= f.submit "Import Data", :disabled => true %>
 </div>
 
 <% end %>
 
 
-<%= button_to_remote "Backup", :url => { :action => "backup" } %>
-		
+<% form_tag(:action => "backup") do %>
+	<p><%= submit_tag "Backup" %></p>
+<% end -%>
+
 <div id="backup"></div>
 <% form_for @import, :url => { :action => "restore" }, :html => { :multipart => true } do |f| %>
 <fieldset>
@@ -28,12 +30,12 @@
 	<ol>
 		<li>
 			<label for="photo_file">.sql File</label>
-			<%= f.file_field :csv %>
+			<%= f.file_field :csv, :onclick => 'enableSubmit(this);' %>
 		</li>
 	</ol>
 </fieldset>
 <div class="buttons">
-	<%= f.submit "Restore from Backup" %>
+	<%= f.submit "Restore from Backup", :disabled => true %>
 </div>
 <% end %>
 

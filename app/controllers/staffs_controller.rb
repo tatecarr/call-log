@@ -4,6 +4,9 @@ class StaffsController < ApplicationController
   # GET /staffs
   # GET /staffs.xml
   def index
+    # to allow for auto complete on last name
+    params[:search][:last_name_like] = params[:staff][:last_name] unless params[:staff].nil?
+    
     @search = Staff.search(params[:search])
     @staffs = @search.all
 

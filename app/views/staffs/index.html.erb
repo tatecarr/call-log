@@ -1,18 +1,12 @@
 <h1>Listing staffs</h1>
 
-<% form_tag staffs_path, :method => 'get' do %>
-
-	<%= text_field_with_auto_complete :staff, :last_name %>
-
-<% end %>
-
 
 <% form_for @search do |f| -%>
 	<p>
-		<%= f.text_field :last_name_like %>
+		<%= text_field_with_auto_complete :staff, :last_name %>
 	</p>
   <p>
-		<%= f.radio_button :gender_equals, :M %>F<%= f.radio_button :gender_equals, :F %>M
+		<%= f.radio_button :gender_equals, :M %>M<%= f.radio_button :gender_equals, :F %>F
 	</p>
 	<p>
 		<%= f.submit "Search", :disable_with => 'Searching...' %>

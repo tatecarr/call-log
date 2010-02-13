@@ -8,6 +8,7 @@
 #-----------------------------------------------------------------------------------
 class AdminController < ApplicationController
 
+  before_filter :admin_required
 
 #-------------------------- Actions for displaying pages ---------------------------
  
@@ -121,15 +122,18 @@ class AdminController < ApplicationController
     now = Time.now.strftime("%m_%d_%Y")
     
     # open a shell and perform a mysql dump into a file
-    success = system "/usr/local/mysql/bin/mysqldump -u root #{config['database']} > call_log_backup_#{now}.sql"
+    success = system "mysqldump -u root #{config['database']} > call_log_backup_#{now}.sql"
     
     if success
       # if we were successful backing up the file, move it to a place where it can be downloaded
       system "mv call_log_backup_#{now}.sql public/call_log_backup_#{now}.sql"
+      flash[:notice] = "The backup was successful."
     else
       # something went wrong with the dump
       flash[:error] = "The backup was unsuccessful. Please try again."
     end
+    
+    redirect_to :action => "index"
 	end
 	
 	def restore
@@ -137,7 +141,7 @@ class AdminController < ApplicationController
     @import = Import.new(params[:import])
     @import.save
     
-	  success = system "/usr/local/mysql/bin/mysql -u root call_log_development < #{@import.csv.path}"
+	  success = system "mysql -u root call_log_development < #{@import.csv.path}"
 	  
 	  if success
 	    flash[:notice] = "The restore was successful."

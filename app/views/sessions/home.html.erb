@@ -1,0 +1,5 @@
+<% if admin? %>
+	<p><%= link_to "Admin", :controller => "admin", :action => "index" %></p>
+<% end %>
+<p><%= link_to "Call-Log", staffs_path %></p>
+<p><%= link_to "Houses", houses_path %></p>
