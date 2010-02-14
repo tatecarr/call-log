@@ -100,9 +100,7 @@
 					<div>
 						<div id="<%= user.id %>_houses_list">
 							<p>
-								<% user.user_house.each do |user_house| %>
-									<%= render :partial => user_house %>
-								<% end %>
+								<%= render :partial => user.user_houses %>
 							</p>
 						</div>
 						<% form_remote_tag :url => { :controller => "admin", :action => "create" }, :html => {:id => "#{user.id}_form"} do %>
