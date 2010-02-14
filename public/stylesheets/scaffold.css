@@ -1,3 +1,52 @@
+div.header_row {
+	float:left;
+	width:775px;
+}
+
+div.header_row div {
+	float:left;
+}
+
+div.user_row {
+	float:left;
+	width:775px;
+}
+
+.user_row:hover {
+	background-color:yellow;
+}
+
+
+
+div.user_row_houses {
+	float:left;
+	width:775px;
+}
+
+div.user_row div {
+	float:left;
+}
+
+.manage_col {
+	width:75px;
+}
+
+.username_col {
+	width:150px;
+}
+
+.email_col {
+	width:250px;
+}
+
+.role_col {
+	width:150px;
+}
+
+.remove_col {
+	width:150px;
+}
+
 textarea.feedback {
 	width: 500px;
 	height: 70px;

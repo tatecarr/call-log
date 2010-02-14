@@ -9,6 +9,35 @@
 class AdminController < ApplicationController
 
   before_filter :admin_required
+  
+#-------------------------- Create for UserHouse -----------------------------------
+
+  def create
+    
+    @user_house = UserHouse.new
+    @user_house.user_id = params[:user_id]
+    @user_house.bu_code = House.find_by_full_info(params[:house_full_info])
+    @user_house.save
+
+    render :update do |page|
+      page.insert_html :bottom, "#{@user_house.user_id}_houses_list", :partial => @user_house
+      page.visual_effect :highlight, "#{@user_house.user_id}_houses_list"
+      page["#{@user_house.user_id}_form"].reset
+    end
+    
+  end
+  
+  def destroy
+    @user_house = UserHouse.find(params[:id])
+    @user_house.destroy
+    
+    redirect_to :action => "index"
+
+    #respond_to do |format|
+    #  format.html { redirect_to(house_staffs_url) }
+    #  format.xml  { head :ok }
+    #end
+  end
 
 #-------------------------- Actions for displaying pages ---------------------------
  
@@ -16,6 +45,7 @@ class AdminController < ApplicationController
     @import = Import.new
     @user = User.new
     @users = User.all
+    @user_house = UserHouse.new
   end
 
   def show

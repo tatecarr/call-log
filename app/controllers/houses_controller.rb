@@ -59,6 +59,7 @@ class HousesController < ApplicationController
   def create
     params[:house][:full_info] = params[:house][:name] + " (" + params[:house][:bu_code] + ")"
     @house = House.new(params[:house])
+    @house.bu_code = params[:house][:bu_code]
 
     respond_to do |format|
       if @house.save

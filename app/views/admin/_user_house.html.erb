@@ -1,0 +1,6 @@
+<% div_for user_house do %>
+	<p>
+		<%= House.find_by_bu_code(user_house.bu_code).full_info %>
+		<%= link_to 'Remove', user_house, :method => :delete, :confirm => "Are you sure?" %>
+	</p>
+<% end %>

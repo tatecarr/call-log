@@ -1,4 +1,4 @@
-<a href="" onclick="toggleIt('import-page');">Import Staff</a> <a href="" onclick="toggleIt('backup-page');">Backup Database</a> <a href="" onclick="toggleIt('restore-page');">Restore Database</a> <a href="" onclick="toggleIt('user-page');">Manage Users</a>
+<a href="#" onclick="toggleIt('import-page');">Import Staff</a> <a href="#" onclick="toggleIt('backup-page');">Backup Database</a> <a href="#" onclick="toggleIt('restore-page');">Restore Database</a> <a href="#" onclick="toggleIt('user-page');">Manage Users</a>
 <div id="content">
 	<div id="import-page" style="display:none;">
 		<% form_for @import, :url => { :action => "import_csv" }, :html => { :multipart => true } do |f| %>
@@ -47,22 +47,81 @@
 		<% end %>
 	</div>
 
-	<div id="user-page">	
+	<div id="user-page">
+		
+		<h3>Add a User</h3>
 		<% form_for @user, :url => {:action => 'add_user' } do |f| -%>
-		<p>	Please enter the email address of the person you would like to add<br />
-		  	<%= f.text_field :email %></p>
-		<p>
-			Account Type:
-			<%= select("user", "role", %w[House-Admin System-Admin]) %>
+		<p>Email address of user being added: &nbsp;&nbsp; Account Type:<br />
+		  	<%= f.text_field :email %> &nbsp;&nbsp;
+			<%= select("user", "role", %w[House-Admin System-Admin]) %> &nbsp;
+			<%= f.submit "Add User", :disable_with => 'Adding...' %>
+			<% end -%>
 		</p>
-		<%= f.submit "Add User", :disable_with => 'Adding...' %>
-		<% end -%>
 
-		<h2>Users</h2>
-		<div id="users-list">
+
+		<h3>Current Users</h3>
+		<div id="users-list" style="float:left; width:500px">
+			<div class="header_row">
+				<div class="manage_col">
+					<strong>Manage</strong>
+				</div>
+				<div class="username_col">
+					<strong>Username</strong>
+				</div>
+				<div class="email_col">
+					<strong>Email</strong>
+				</div>
+				<div class="role_col">
+					<strong>Role</strong>
+				</div>
+			</div> <br/>
 			<% @users.each do |user| %>
-				<p><%= user.username %>: <%= user.email %> Role: <%= user.role %> <%= link_to "Destroy", user, :confirm => 'Are you sure?', :method => :delete %></p>
+			
+				<a href="#" onclick="Effect.toggle('<%= user.id %>_houses', 'slide', { duration: 0.3 }); return false;">				
+					<div id="<%= user.id %>" class="user_row">
+						<div class="manage_col">
+							text
+						</div>
+						<div class="username_col">
+							<%= user.username %>
+						</div>
+						<div class="email_col">
+							<%= user.email %>
+						</div>
+						<div class="role_col">
+							<%= user.role %>
+						</div>
+						<div class="remove_col">
+							<%= link_to "Remove", user, :confirm => 'Are you sure?', :method => :delete %>
+						</div>
+					</div>
+				</a>
+				<div id="<%= user.id %>_houses" class="user_row_houses" style="display:none;">
+					<div>
+						<div id="<%= user.id %>_houses_list">
+							<p>
+								<% user.user_house.each do |user_house| %>
+									<%= render :partial => user_house %>
+								<% end %>
+							</p>
+						</div>
+						<% form_remote_tag :url => { :controller => "admin", :action => "create" }, :html => {:id => "#{user.id}_form"} do %>
+							<table>
+								<tr>
+									<%= hidden_field_tag :user_id, user.id %>
+									<td>
+										<%= label_tag :house_full_info, "House" %>
+										<%= text_field_tag :house_full_info %>
+									</td>
+								</tr>
+							</table>
+							<p><%= submit_tag "Add User to House" %></p>
+						<% end %>
+					</div>
+				</div>
+				
 			<% end %>
+			
 		</div>
 	
 	

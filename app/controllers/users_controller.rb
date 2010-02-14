@@ -28,7 +28,7 @@ class UsersController < ApplicationController
   def destroy
 	  @user = User.find(params[:id])
     if current_user != @user
-      @house.destroy
+      @user.destroy
     else
       flash[:error] = "You cannot delete yourself!"
     end
