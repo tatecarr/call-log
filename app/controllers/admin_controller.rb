@@ -9,6 +9,7 @@
 class AdminController < ApplicationController
 
   before_filter :admin_required
+  auto_complete_for :house, :full_info
   
 #-------------------------- Create for UserHouse -----------------------------------
 
@@ -16,11 +17,11 @@ class AdminController < ApplicationController
     
     @user_house = UserHouse.new
     @user_house.user_id = params[:user_id]
-    @user_house.bu_code = House.find_by_full_info(params[:house_full_info])
+    @user_house.bu_code = House.find_by_full_info(params[:full_info]).bu_code
     @user_house.save
 
     render :update do |page|
-      page.insert_html :bottom, "#{@user_house.user_id}_houses_list", :partial => @user_house
+      page.insert_html :bottom, "#{@user_house.user_id}_houses_list", :partial => "user_house", :collection => [@user_house]
       page.visual_effect :highlight, "#{@user_house.user_id}_houses_list"
       page["#{@user_house.user_id}_form"].reset
     end
