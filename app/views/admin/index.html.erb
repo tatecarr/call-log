@@ -100,7 +100,7 @@
 					<div>
 						<div id="<%= user.id %>_houses_list">
 							<p>
-								<%= render :partial => user.user_houses %>
+								<%= render :partial => "user_house", :collection => user.user_houses %>
 							</p>
 						</div>
 						<% form_remote_tag :url => { :controller => "admin", :action => "create" }, :html => {:id => "#{user.id}_form"} do %>
@@ -108,8 +108,8 @@
 								<tr>
 									<%= hidden_field_tag :user_id, user.id %>
 									<td>
-										<%= label_tag :house_full_info, "House" %>
-										<%= text_field_tag :house_full_info %>
+										<%= label_tag :full_info, "House" %>
+										<%= text_field_with_auto_complete :house, :full_info, :id => "#{user.id}_full_info" %>
 									</td>
 								</tr>
 							</table>
