@@ -23,6 +23,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :admin
 
   map.resources :users
+  
+  map.resources :reports
 
   # The priority is based upon order of creation: first created -> highest priority.
 

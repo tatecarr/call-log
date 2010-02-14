@@ -1,4 +1,4 @@
-<a href="" onclick="toggleIt('import-page');">Import Staff</a> <a href="" onclick="toggleIt('backup-page');">Backup Database</a> <a href="" onclick="toggleIt('restore-page');">Restore Database</a> <a href="" onclick="toggleIt('user-page');">Manage Users</a>
+<a href="#" onclick="toggleIt('import-page');">Import Staff</a> <a href="#" onclick="toggleIt('backup-page');">Backup Database</a> <a href="#" onclick="toggleIt('restore-page');">Restore Database</a> <a href="#" onclick="toggleIt('user-page');">Manage Users</a>
 <div id="content">
 	<div id="import-page" style="display:none;">
 		<% form_for @import, :url => { :action => "import_csv" }, :html => { :multipart => true } do |f| %>
