@@ -1,0 +1,6 @@
+<% form_tag '/houses.pdf', :method => 'get' do %>
+  <% for house in @houses %>
+	<%= check_box_tag "bu_code_equals[]", house.bu_code %><%= house.name %><br />
+  <% end %>
+  <%= submit_tag "Print Selected House Reports", :disable_with => "Printing..." %>
+<% end %>

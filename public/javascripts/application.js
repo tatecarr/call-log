@@ -5,3 +5,13 @@
 function enableSubmit(ourButton) {
 	ourButton.form["commit"].disabled = false;
 }
+
+function toggleIt(element) {
+	var content = document.getElementById('content').childNodes;
+	for (var i = 0; i < content.length; i++) {
+		if (content[i].style) {
+			content[i].style.display = "none";
+		}
+	}
+	document.getElementById(element).style.display = "";
+}
