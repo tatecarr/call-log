@@ -25539,3 +25539,371 @@ Processing StaffsController#index (for 127.0.0.1 at 2010-02-15 03:51:27) [GET]
 Rendering template within layouts/staffs
 Rendering staffs/index
 Completed in 369ms (View: 353, DB: 5) | 200 OK [http://localhost/staffs?search%5Border%5D=&staff%5Bfull_name%5D=a&staff%5Bhome_number%5D=&staff%5Bcell_number%5D=&number_per_page=1&commit=Search]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-02-15 04:00:53) [GET]
+  Parameters: {"commit"=>"Search", "action"=>"index", "staff"=>{"home_number"=>"", "full_name"=>"a", "cell_number"=>""}, "controller"=>"staffs", "number_per_page"=>"1", "search"=>{"order"=>""}}
+  [4;36;1mStaff Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `staffs`[0m
+  [4;35;1mStaff Load (0.7ms)[0m   [0mSELECT * FROM `staffs` WHERE (staffs.full_name LIKE '%a%') LIMIT 0, 50[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mSELECT count(*) AS count_all FROM `staffs` WHERE (staffs.full_name LIKE '%a%') [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 381ms (View: 366, DB: 5) | 200 OK [http://localhost/staffs?search%5Border%5D=&staff%5Bfull_name%5D=a&staff%5Bhome_number%5D=&staff%5Bcell_number%5D=&number_per_page=1&commit=Search]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-02-15 04:01:40) [GET]
+  Parameters: {"commit"=>"Search", "action"=>"index", "staff"=>{"home_number"=>"", "full_name"=>"a", "cell_number"=>""}, "controller"=>"staffs", "number_per_page"=>"1", "search"=>{"order"=>""}}
+  [4;35;1mStaff Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `staffs`[0m
+  [4;36;1mStaff Load (0.7ms)[0m   [0;1mSELECT * FROM `staffs` WHERE (staffs.full_name LIKE '%a%') LIMIT 0, 50[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSELECT count(*) AS count_all FROM `staffs` WHERE (staffs.full_name LIKE '%a%') [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 368ms (View: 353, DB: 6) | 200 OK [http://localhost/staffs?search%5Border%5D=&staff%5Bfull_name%5D=a&staff%5Bhome_number%5D=&staff%5Bcell_number%5D=&number_per_page=1&commit=Search]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HousesController#index (for 127.0.0.1 at 2010-02-15 10:50:04) [GET]
+  Parameters: {"action"=>"index", "controller"=>"houses"}
+  [4;36;1mHouse Columns (26.6ms)[0m   [0;1mSHOW FIELDS FROM `houses`[0m
+  [4;35;1mHouse Load (0.3ms)[0m   [0mSELECT * FROM `houses` [0m
+Rendering template within layouts/houses
+Rendering houses/index
+Completed in 180ms (View: 144, DB: 27) | 200 OK [http://localhost/houses]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-02-15 10:50:07) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.[]=):
+  app/controllers/staffs_controller.rb:21:in `index'
+
+Rendered rescues/_trace (44.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HousesController#index (for 127.0.0.1 at 2010-02-15 10:51:08) [GET]
+  Parameters: {"action"=>"index", "controller"=>"houses"}
+  [4;36;1mHouse Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `houses`[0m
+  [4;35;1mHouse Load (0.6ms)[0m   [0mSELECT * FROM `houses` [0m
+Rendering template within layouts/houses
+Rendering houses/index
+Completed in 55ms (View: 41, DB: 3) | 200 OK [http://localhost/houses]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-02-15 10:51:10) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.[]):
+  app/controllers/staffs_controller.rb:16:in `index'
+
+Rendered rescues/_trace (37.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-02-15 10:52:23) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs"}
+  [4;36;1mStaff Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `staffs`[0m
+  [4;35;1mStaff Load (0.4ms)[0m   [0mSELECT * FROM `staffs` LIMIT 0, 25[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT count(*) AS count_all FROM `staffs` [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 238ms (View: 226, DB: 4) | 200 OK [http://localhost/staffs]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-02-15 10:52:29) [GET]
+  Parameters: {"commit"=>"Search", "action"=>"index", "staff"=>{"home_number"=>"", "full_name"=>"Enter search here", "cell_number"=>""}, "controller"=>"staffs", "number_per_page"=>"0", "search"=>{"order"=>""}}
+  [4;35;1mStaff Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `staffs`[0m
+  [4;36;1mStaff Load (4.0ms)[0m   [0;1mSELECT * FROM `staffs` WHERE (staffs.full_name LIKE '%Enter search here%') LIMIT 0, 25[0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 48ms (View: 32, DB: 7) | 200 OK [http://localhost/staffs?search%5Border%5D=&staff%5Bfull_name%5D=Enter+search+here&staff%5Bhome_number%5D=&staff%5Bcell_number%5D=&number_per_page=0&commit=Search]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StaffsController#auto_complete_for_staff_full_name (for 127.0.0.1 at 2010-02-15 10:52:32) [POST]
+  Parameters: {"action"=>"auto_complete_for_staff_full_name", "staff"=>{"full_name"=>"Enter search here"}, "controller"=>"staffs"}
+  [4;35;1mStaff Load (2.8ms)[0m   [0mSELECT * FROM `staffs` WHERE (LOWER(full_name) LIKE '%enter search here%') ORDER BY full_name ASC LIMIT 10[0m
+Completed in 9ms (View: 1, DB: 3) | 200 OK [http://localhost/staffs/auto_complete_for_staff_full_name]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StaffsController#auto_complete_for_staff_full_name (for 127.0.0.1 at 2010-02-15 10:52:33) [POST]
+  Parameters: {"action"=>"auto_complete_for_staff_full_name", "staff"=>{"full_name"=>"en"}, "controller"=>"staffs"}
+  [4;36;1mStaff Load (3.1ms)[0m   [0;1mSELECT * FROM `staffs` WHERE (LOWER(full_name) LIKE '%en%') ORDER BY full_name ASC LIMIT 10[0m
+  [4;35;1mStaff Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `staffs`[0m
+Completed in 12ms (View: 2, DB: 6) | 200 OK [http://localhost/staffs/auto_complete_for_staff_full_name]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-02-15 10:52:34) [GET]
+  Parameters: {"commit"=>"Search", "action"=>"index", "staff"=>{"home_number"=>"", "full_name"=>"en", "cell_number"=>""}, "controller"=>"staffs", "number_per_page"=>"0", "search"=>{"order"=>""}}
+  [4;36;1mStaff Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `staffs`[0m
+  [4;35;1mStaff Load (1.3ms)[0m   [0mSELECT * FROM `staffs` WHERE (staffs.full_name LIKE '%en%') LIMIT 0, 25[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `staffs` WHERE (staffs.full_name LIKE '%en%') [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 241ms (View: 225, DB: 6) | 200 OK [http://localhost/staffs?search%5Border%5D=&staff%5Bfull_name%5D=en&staff%5Bhome_number%5D=&staff%5Bcell_number%5D=&number_per_page=0&commit=Search]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-02-15 10:52:43) [GET]
+  Parameters: {"commit"=>"Search", "action"=>"index", "staff"=>{"home_number"=>"", "full_name"=>"", "cell_number"=>""}, "controller"=>"staffs", "number_per_page"=>"1", "search"=>{"order"=>""}}
+  [4;35;1mStaff Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `staffs`[0m
+  [4;36;1mStaff Load (0.6ms)[0m   [0;1mSELECT * FROM `staffs` LIMIT 0, 50[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT count(*) AS count_all FROM `staffs` [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 370ms (View: 359, DB: 4) | 200 OK [http://localhost/staffs?search%5Border%5D=&staff%5Bfull_name%5D=&staff%5Bhome_number%5D=&staff%5Bcell_number%5D=&number_per_page=1&commit=Search]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StaffsController#auto_complete_for_staff_full_name (for 127.0.0.1 at 2010-02-15 10:52:49) [POST]
+  Parameters: {"action"=>"auto_complete_for_staff_full_name", "staff"=>{"full_name"=>"Enter search here"}, "controller"=>"staffs"}
+  [4;36;1mStaff Load (2.8ms)[0m   [0;1mSELECT * FROM `staffs` WHERE (LOWER(full_name) LIKE '%enter search here%') ORDER BY full_name ASC LIMIT 10[0m
+Completed in 8ms (View: 1, DB: 3) | 200 OK [http://localhost/staffs/auto_complete_for_staff_full_name]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StaffsController#auto_complete_for_staff_full_name (for 127.0.0.1 at 2010-02-15 10:52:49) [POST]
+  Parameters: {"action"=>"auto_complete_for_staff_full_name", "staff"=>{"full_name"=>"en"}, "controller"=>"staffs"}
+  [4;35;1mStaff Load (3.1ms)[0m   [0mSELECT * FROM `staffs` WHERE (LOWER(full_name) LIKE '%en%') ORDER BY full_name ASC LIMIT 10[0m
+  [4;36;1mStaff Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `staffs`[0m
+Completed in 12ms (View: 3, DB: 5) | 200 OK [http://localhost/staffs/auto_complete_for_staff_full_name]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-02-15 10:52:51) [GET]
+  Parameters: {"commit"=>"Search", "action"=>"index", "staff"=>{"home_number"=>"", "full_name"=>"en", "cell_number"=>""}, "controller"=>"staffs", "number_per_page"=>"1", "search"=>{"order"=>""}}
+  [4;35;1mStaff Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `staffs`[0m
+  [4;36;1mStaff Load (2.6ms)[0m   [0;1mSELECT * FROM `staffs` WHERE (staffs.full_name LIKE '%en%') LIMIT 0, 50[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mSELECT count(*) AS count_all FROM `staffs` WHERE (staffs.full_name LIKE '%en%') [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 354ms (View: 331, DB: 8) | 200 OK [http://localhost/staffs?search%5Border%5D=&staff%5Bfull_name%5D=en&staff%5Bhome_number%5D=&staff%5Bcell_number%5D=&number_per_page=1&commit=Search]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-02-15 10:53:42) [GET]
+  Parameters: {"commit"=>"Search", "action"=>"index", "staff"=>{"home_number"=>"", "full_name"=>"en", "cell_number"=>""}, "controller"=>"staffs", "number_per_page"=>"1", "search"=>{"order"=>""}}
+  [4;36;1mStaff Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `staffs`[0m
+  [4;35;1mStaff Load (1.9ms)[0m   [0mSELECT * FROM `staffs` WHERE (staffs.full_name LIKE '%en%') LIMIT 0, 50[0m
+  [4;36;1mSQL (3.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `staffs` WHERE (staffs.full_name LIKE '%en%') [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 374ms (View: 357, DB: 8) | 200 OK [http://localhost/staffs?search%5Border%5D=&staff%5Bfull_name%5D=en&staff%5Bhome_number%5D=&staff%5Bcell_number%5D=&number_per_page=1&commit=Search]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HousesController#index (for 127.0.0.1 at 2010-02-15 10:53:54) [GET]
+  Parameters: {"action"=>"index", "controller"=>"houses"}
+  [4;35;1mHouse Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `houses`[0m
+  [4;36;1mHouse Load (0.4ms)[0m   [0;1mSELECT * FROM `houses` [0m
+Rendering template within layouts/houses
+Rendering houses/index
+Completed in 151ms (View: 137, DB: 3) | 200 OK [http://localhost/houses]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-02-15 10:54:17) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs"}
+  [4;35;1mStaff Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `staffs`[0m
+  [4;36;1mStaff Load (0.4ms)[0m   [0;1mSELECT * FROM `staffs` LIMIT 0, 25[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT count(*) AS count_all FROM `staffs` [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 150ms (View: 138, DB: 3) | 200 OK [http://localhost/staffs]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StaffsController#auto_complete_for_staff_full_name (for 127.0.0.1 at 2010-02-15 10:54:20) [POST]
+  Parameters: {"action"=>"auto_complete_for_staff_full_name", "staff"=>{"full_name"=>"bb"}, "controller"=>"staffs"}
+  [4;36;1mStaff Load (2.8ms)[0m   [0;1mSELECT * FROM `staffs` WHERE (LOWER(full_name) LIKE '%bb%') ORDER BY full_name ASC LIMIT 10[0m
+  [4;35;1mStaff Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `staffs`[0m
+Completed in 12ms (View: 2, DB: 5) | 200 OK [http://localhost/staffs/auto_complete_for_staff_full_name]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-02-15 10:54:22) [GET]
+  Parameters: {"commit"=>"Search", "action"=>"index", "staff"=>{"home_number"=>"", "full_name"=>"bb", "cell_number"=>""}, "controller"=>"staffs", "number_per_page"=>"0", "search"=>{"order"=>""}}
+  [4;36;1mStaff Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `staffs`[0m
+  [4;35;1mStaff Load (3.9ms)[0m   [0mSELECT * FROM `staffs` WHERE (staffs.full_name LIKE '%bb%') LIMIT 0, 25[0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 179ms (View: 76, DB: 6) | 200 OK [http://localhost/staffs?search%5Border%5D=&staff%5Bfull_name%5D=bb&staff%5Bhome_number%5D=&staff%5Bcell_number%5D=&number_per_page=0&commit=Search]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StaffsController#auto_complete_for_staff_full_name (for 127.0.0.1 at 2010-02-15 10:54:26) [POST]
+  Parameters: {"action"=>"auto_complete_for_staff_full_name", "staff"=>{"full_name"=>"en"}, "controller"=>"staffs"}
+  [4;36;1mStaff Load (3.1ms)[0m   [0;1mSELECT * FROM `staffs` WHERE (LOWER(full_name) LIKE '%en%') ORDER BY full_name ASC LIMIT 10[0m
+  [4;35;1mStaff Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `staffs`[0m
+Completed in 13ms (View: 2, DB: 6) | 200 OK [http://localhost/staffs/auto_complete_for_staff_full_name]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-02-15 10:54:27) [GET]
+  Parameters: {"commit"=>"Search", "action"=>"index", "staff"=>{"home_number"=>"", "full_name"=>"en", "cell_number"=>""}, "controller"=>"staffs", "number_per_page"=>"0", "search"=>{"order"=>""}}
+  [4;36;1mStaff Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `staffs`[0m
+  [4;35;1mStaff Load (1.4ms)[0m   [0mSELECT * FROM `staffs` WHERE (staffs.full_name LIKE '%en%') LIMIT 0, 25[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM `staffs` WHERE (staffs.full_name LIKE '%en%') [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 254ms (View: 237, DB: 7) | 200 OK [http://localhost/staffs?search%5Border%5D=&staff%5Bfull_name%5D=en&staff%5Bhome_number%5D=&staff%5Bcell_number%5D=&number_per_page=0&commit=Search]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-02-15 10:54:41) [GET]
+  Parameters: {"commit"=>"Search", "action"=>"index", "staff"=>{"home_number"=>"", "full_name"=>"en", "cell_number"=>""}, "controller"=>"staffs", "number_per_page"=>"1", "search"=>{"order"=>""}}
+  [4;35;1mStaff Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `staffs`[0m
+  [4;36;1mStaff Load (1.9ms)[0m   [0;1mSELECT * FROM `staffs` WHERE (staffs.full_name LIKE '%en%') LIMIT 0, 50[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSELECT count(*) AS count_all FROM `staffs` WHERE (staffs.full_name LIKE '%en%') [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 263ms (View: 246, DB: 7) | 200 OK [http://localhost/staffs?search%5Border%5D=&staff%5Bfull_name%5D=en&staff%5Bhome_number%5D=&staff%5Bcell_number%5D=&number_per_page=1&commit=Search]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-02-15 10:54:48) [GET]
+  Parameters: {"commit"=>"Search", "action"=>"index", "staff"=>{"home_number"=>"", "full_name"=>"en", "cell_number"=>""}, "controller"=>"staffs", "number_per_page"=>"3", "search"=>{"order"=>""}}
+  [4;36;1mStaff Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `staffs`[0m
+  [4;35;1mStaff Load (3.3ms)[0m   [0mSELECT * FROM `staffs` WHERE (staffs.full_name LIKE '%en%') LIMIT 0, 100[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `staffs` WHERE (staffs.full_name LIKE '%en%') [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 601ms (View: 579, DB: 8) | 200 OK [http://localhost/staffs?search%5Border%5D=&staff%5Bfull_name%5D=en&staff%5Bhome_number%5D=&staff%5Bcell_number%5D=&number_per_page=3&commit=Search]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-02-15 10:54:55) [GET]
+  Parameters: {"commit"=>"Search", "action"=>"index", "staff"=>{"home_number"=>"", "full_name"=>"en", "cell_number"=>""}, "page"=>"2", "controller"=>"staffs", "number_per_page"=>"3", "search"=>{"home_number_like"=>"", "order"=>"", "full_name_like"=>"en", "cell_number_like"=>""}}
+  [4;35;1mStaff Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `staffs`[0m
+  [4;36;1mStaff Load (4.3ms)[0m   [0;1mSELECT * FROM `staffs` WHERE (staffs.full_name LIKE '%en%') LIMIT 100, 100[0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 338ms (View: 322, DB: 7) | 200 OK [http://localhost/staffs?commit=Search&number_per_page=3&page=2&search%5Bcell_number_like%5D=&search%5Bfull_name_like%5D=en&search%5Bhome_number_like%5D=&search%5Border%5D=&staff%5Bcell_number%5D=&staff%5Bfull_name%5D=en&staff%5Bhome_number%5D=]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StaffsController#auto_complete_for_staff_home_number (for 127.0.0.1 at 2010-02-15 10:55:02) [POST]
+  Parameters: {"action"=>"auto_complete_for_staff_home_number", "staff"=>{"home_number"=>"2"}, "controller"=>"staffs"}
+  [4;35;1mStaff Load (3.6ms)[0m   [0mSELECT * FROM `staffs` WHERE (LOWER(home_number) LIKE '%2%') ORDER BY home_number ASC LIMIT 10[0m
+  [4;36;1mStaff Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `staffs`[0m
+Completed in 13ms (View: 2, DB: 6) | 200 OK [http://localhost/staffs/auto_complete_for_staff_home_number]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StaffsController#auto_complete_for_staff_cell_number (for 127.0.0.1 at 2010-02-15 10:55:05) [POST]
+  Parameters: {"action"=>"auto_complete_for_staff_cell_number", "staff"=>{"cell_number"=>"3"}, "controller"=>"staffs"}
+  [4;35;1mStaff Load (3.4ms)[0m   [0mSELECT * FROM `staffs` WHERE (LOWER(cell_number) LIKE '%3%') ORDER BY cell_number ASC LIMIT 10[0m
+  [4;36;1mStaff Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `staffs`[0m
+Completed in 13ms (View: 2, DB: 6) | 200 OK [http://localhost/staffs/auto_complete_for_staff_cell_number]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-02-15 10:55:07) [GET]
+  Parameters: {"commit"=>"Search", "action"=>"index", "staff"=>{"home_number"=>"2", "full_name"=>"en", "cell_number"=>"3"}, "controller"=>"staffs", "number_per_page"=>"3", "search"=>{"order"=>""}}
+  [4;35;1mStaff Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `staffs`[0m
+  [4;36;1mStaff Load (6.0ms)[0m   [0;1mSELECT * FROM `staffs` WHERE (((staffs.cell_number LIKE '%3%') AND (staffs.home_number LIKE '%2%')) AND (staffs.full_name LIKE '%en%')) LIMIT 0, 100[0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 437ms (View: 416, DB: 9) | 200 OK [http://localhost/staffs?search%5Border%5D=&staff%5Bfull_name%5D=en&staff%5Bhome_number%5D=2&staff%5Bcell_number%5D=3&number_per_page=3&commit=Search]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-02-15 10:55:15) [GET]
+  Parameters: {"commit"=>"Search", "action"=>"index", "staff"=>{"home_number"=>"2", "full_name"=>"en", "cell_number"=>"3"}, "controller"=>"staffs", "number_per_page"=>"2", "search"=>{"order"=>""}}
+  [4;35;1mStaff Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `staffs`[0m
+  [4;36;1mStaff Load (5.5ms)[0m   [0;1mSELECT * FROM `staffs` WHERE (((staffs.cell_number LIKE '%3%') AND (staffs.home_number LIKE '%2%')) AND (staffs.full_name LIKE '%en%')) LIMIT 0, 75[0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 432ms (View: 412, DB: 8) | 200 OK [http://localhost/staffs?search%5Border%5D=&staff%5Bfull_name%5D=en&staff%5Bhome_number%5D=2&staff%5Bcell_number%5D=3&number_per_page=2&commit=Search]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-02-15 10:55:22) [GET]
+  Parameters: {"commit"=>"Search", "action"=>"index", "staff"=>{"home_number"=>"2", "full_name"=>"en", "cell_number"=>"3"}, "controller"=>"staffs", "number_per_page"=>"1", "search"=>{"order"=>""}}
+  [4;35;1mStaff Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `staffs`[0m
+  [4;36;1mStaff Load (5.3ms)[0m   [0;1mSELECT * FROM `staffs` WHERE (((staffs.cell_number LIKE '%3%') AND (staffs.home_number LIKE '%2%')) AND (staffs.full_name LIKE '%en%')) LIMIT 0, 50[0m
+  [4;35;1mSQL (2.7ms)[0m   [0mSELECT count(*) AS count_all FROM `staffs` WHERE (((staffs.cell_number LIKE '%3%') AND (staffs.home_number LIKE '%2%')) AND (staffs.full_name LIKE '%en%')) [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 372ms (View: 349, DB: 11) | 200 OK [http://localhost/staffs?search%5Border%5D=&staff%5Bfull_name%5D=en&staff%5Bhome_number%5D=2&staff%5Bcell_number%5D=3&number_per_page=1&commit=Search]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-02-15 10:55:59) [GET]
+  Parameters: {"commit"=>"Search", "action"=>"index", "staff"=>{"home_number"=>"2", "full_name"=>"en", "cell_number"=>"3"}, "controller"=>"staffs", "number_per_page"=>"1", "search"=>{"order"=>""}}
+  [4;36;1mStaff Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `staffs`[0m
+  [4;35;1mStaff Load (5.4ms)[0m   [0mSELECT * FROM `staffs` WHERE (((staffs.cell_number LIKE '%3%') AND (staffs.home_number LIKE '%2%')) AND (staffs.full_name LIKE '%en%')) LIMIT 0, 50[0m
+  [4;36;1mSQL (2.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM `staffs` WHERE (((staffs.cell_number LIKE '%3%') AND (staffs.home_number LIKE '%2%')) AND (staffs.full_name LIKE '%en%')) [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 276ms (View: 251, DB: 11) | 200 OK [http://localhost/staffs?search%5Border%5D=&staff%5Bfull_name%5D=en&staff%5Bhome_number%5D=2&staff%5Bcell_number%5D=3&number_per_page=1&commit=Search]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-02-15 10:56:11) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs"}
+  [4;35;1mStaff Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `staffs`[0m
+  [4;36;1mStaff Load (0.4ms)[0m   [0;1mSELECT * FROM `staffs` LIMIT 0, 25[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT count(*) AS count_all FROM `staffs` [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 153ms (View: 142, DB: 3) | 200 OK [http://localhost/staffs]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing StaffsController#index (for 127.0.0.1 at 2010-02-15 10:56:39) [GET]
+  Parameters: {"commit"=>"Search", "action"=>"index", "staff"=>{"home_number"=>"", "full_name"=>"", "cell_number"=>""}, "controller"=>"staffs", "number_per_page"=>"3", "search"=>{"order"=>""}}
+  [4;36;1mStaff Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `staffs`[0m
+  [4;35;1mStaff Load (0.8ms)[0m   [0mSELECT * FROM `staffs` LIMIT 0, 100[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT count(*) AS count_all FROM `staffs` [0m
+Rendering template within layouts/staffs
+Rendering staffs/index
+Completed in 667ms (View: 654, DB: 4) | 200 OK [http://localhost/staffs?search%5Border%5D=&staff%5Bfull_name%5D=&staff%5Bhome_number%5D=&staff%5Bcell_number%5D=&number_per_page=3&commit=Search]

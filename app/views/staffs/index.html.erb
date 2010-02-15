@@ -3,16 +3,16 @@
 
 <%- form_for @search do |f| -%>
 	<p>
-		<%= text_field_with_auto_complete :staff, :full_name %>
+		<%= text_field_with_auto_complete :staff, :full_name, :value => @full_name %>
 	</p>
   	<p>
 		<%= f.radio_button :gender_equals, :M %>M<%= f.radio_button :gender_equals, :F %>F
 	</p>
 	<p>
-		Home Phone: <%= text_field_with_auto_complete :staff, :home_number %>
+		Home Phone: <%= text_field_with_auto_complete :staff, :home_number, :value => @home_number %>
 	</p>
 	<p>
-		Cell Phone: <%= text_field_with_auto_complete :staff, :cell_number %>
+		Cell Phone: <%= text_field_with_auto_complete :staff, :cell_number, :value => @cell_number %>
 	</p>
 	<% form_tag staffs_path, :method => 'get' do %>
 		<p>

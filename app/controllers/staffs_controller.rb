@@ -7,19 +7,22 @@ class StaffsController < ApplicationController
   # GET /staffs.xml
   def index
 
+    #TODO, LIST HOW MANY STAFF ARE IN THE LIST.  BOTH WHEN A SEARCH IS EXECUTED OR OTHERWISE
+
     # The options for number of results per page.
     @number_per_page_options = [["25", "0"], ["50", "1"], ["75", "2"], ["100", "3"]]
     @number_per_page = params[:number_per_page] || 0
     @selected_number = @number_per_page_options[@number_per_page.to_i][0]
     
-    # to allow for searching with auto complete on last name
-    params[:search][:full_name_like] = params[:staff][:full_name] unless params[:staff].nil?
-    params[:search][:home_number_like] = params[:staff][:home_number] unless params[:staff].nil?
-    params[:search][:cell_number_like] = params[:staff][:cell_number] unless params[:staff].nil?
+    # Save search terms so the fields can be populated with them after a search instead of being cleared.
+    @full_name = params[:staff][:full_name] unless params[:staff].nil?
+    @home_number = params[:staff][:home_number] unless params[:staff].nil?
+    @cell_number = params[:staff][:cell_number] unless params[:staff].nil?
     
-    #TODO - WE SHOULD SAVE THE SEARCH PARAMS SO THAT THE FIELDS ARE POPULATED WITH THEM WHEN
-    #THE PAGE REFRESHES.  I DID THE RESULTS PER PAGE THIS WAY, BUT WE'D NEED TO DO IT FOR
-    #THE OTHER FIELDS AS WELL.
+    # to allow for searching with auto complete on last name
+    params[:search][:full_name_like] = @full_name unless params[:staff].nil?
+    params[:search][:home_number_like] = @home_number unless params[:staff].nil?
+    params[:search][:cell_number_like] = @cell_number unless params[:staff].nil?
     
     @search = Staff.search(params[:search])
     @staffs = @search.paginate :per_page => @selected_number, :page => params[:page]
