@@ -14,9 +14,12 @@
 	<p>
 		Cell Phone: <%= text_field_with_auto_complete :staff, :cell_number %>
 	</p>
-	<p>
-		<%= f.submit "Search", :disable_with => 'Searching...' %>
-	</p>
+	<% form_tag staffs_path, :method => 'get' do %>
+		<p>
+			Results per page: <%= select_tag :number_per_page, options_for_select(@number_per_page_options, selected = @number_per_page) %>
+			<%= submit_tag "Search", :disable_with => 'Searching...' %>
+		</p>
+	<% end %>
 <% end -%>
 
 <table>
@@ -57,6 +60,8 @@
   </tr>
 <% end %>
 </table>
+
+<%= will_paginate @staffs %>
 
 <br />
 

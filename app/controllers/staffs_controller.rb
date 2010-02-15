@@ -6,14 +6,23 @@ class StaffsController < ApplicationController
   # GET /staffs
   # GET /staffs.xml
   def index
+
+    # The options for number of results per page.
+    @number_per_page_options = [["25", "0"], ["50", "1"], ["75", "2"], ["100", "3"]]
+    @number_per_page = params[:number_per_page] || 0
+    @selected_number = @number_per_page_options[@number_per_page.to_i][0]
     
     # to allow for searching with auto complete on last name
     params[:search][:full_name_like] = params[:staff][:full_name] unless params[:staff].nil?
     params[:search][:home_number_like] = params[:staff][:home_number] unless params[:staff].nil?
     params[:search][:cell_number_like] = params[:staff][:cell_number] unless params[:staff].nil?
     
+    #TODO - WE SHOULD SAVE THE SEARCH PARAMS SO THAT THE FIELDS ARE POPULATED WITH THEM WHEN
+    #THE PAGE REFRESHES.  I DID THE RESULTS PER PAGE THIS WAY, BUT WE'D NEED TO DO IT FOR
+    #THE OTHER FIELDS AS WELL.
+    
     @search = Staff.search(params[:search])
-    @staffs = @search.all
+    @staffs = @search.paginate :per_page => @selected_number, :page => params[:page]
     
     if @staffs.length == 1
       
