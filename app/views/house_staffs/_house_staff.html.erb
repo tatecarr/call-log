@@ -1,6 +1,6 @@
 <% div_for house_staff do %>
 	<p>
-		<strong>Staff: </strong> <%= house_staff.staff_id %> &nbsp; <strong>Position: </strong> <%= house_staff.position_name %>
+		<strong>Staff: </strong> <%= Staff.find_by_staff_id(house_staff.staff_id).full_name %> &nbsp; <strong>Position: </strong> <%= house_staff.position_name %>
 		<%= link_to 'Remove', house_staff, :method => :delete, :confirm => "Are you sure?" %>
 	</p>
 <% end %>

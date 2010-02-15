@@ -58,7 +58,6 @@
 			<% end -%>
 		</p>
 
-
 		<h3>Current Users</h3>
 		<div id="users-list" style="float:left; width:500px">
 			<div class="header_row">
@@ -109,7 +108,7 @@
 									<%= hidden_field_tag :user_id, user.id %>
 									<td>
 										<%= label_tag :full_info, "House" %>
-										<%= text_field_with_auto_complete :house, :full_info, :id => "#{user.id}_full_info" %>
+										<%= text_field_with_auto_complete :house, :full_info %> <!-- , :id => "#{user.id}_full_info" %> -->
 									</td>
 								</tr>
 							</table>
@@ -120,15 +119,6 @@
 				
 			<% end %>
 			
-		</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		</div>	
 	</div>
 </div>

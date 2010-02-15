@@ -1,6 +1,8 @@
 class HouseStaffsController < ApplicationController
-  # GET /house_staffs
-  # GET /house_staffs.xml
+
+#------------------- Action for showing all UserHouse Assocs. ----------------------
+
+  # This action will never be called v1.0 code, but could be in the future.
   def index
     @house_staffs = HouseStaff.all
 
@@ -10,8 +12,9 @@ class HouseStaffsController < ApplicationController
     end
   end
 
-  # GET /house_staffs/1
-  # GET /house_staffs/1.xml
+#--------------------- Action for showing a UserHouse Assoc. -----------------------
+
+  # This action will never be called v1.0 code, but could be in the future.
   def show
     @house_staff = HouseStaff.find(params[:id])
 
@@ -21,8 +24,8 @@ class HouseStaffsController < ApplicationController
     end
   end
 
-  # GET /house_staffs/new
-  # GET /house_staffs/new.xml
+#------------------- Action for creating a new UserHouse Assoc. --------------------
+
   def new
     @house_staff = HouseStaff.new
 
@@ -37,31 +40,43 @@ class HouseStaffsController < ApplicationController
     @house_staff = HouseStaff.find(params[:id])
   end
 
-  # POST /house_staffs
-  # POST /house_staffs.xml
+#---------------- Action for creating a HouseStaff Assoc. in the DB ----------------
+
   def create
-    puts params[:house_id]
+    
+    # Find the house that the HouseStaff Assoc belongs to, its id is pass in the params
     @house = House.find(params[:house_id])
-    @house_staff = @house.house_staffs.create!(params[:house_staff])
+    
+    # House and HouseStaff have a one-to-many relationship.  So we call we want to
+    # call @house.house_staffs.create and it will create a new house_staff association
+    # record, while setting its foreign key to the :bu_code of the house it belongs
+    # to, which was just found above.
+    #
+    # To provide easy searching, the parameters that are passed to create this association
+    # are the :bu_code (:house_id), the :full_name of the staff member, and the :position_name.
+    #
+    # The :full_name is passed instead of the :staff_id because to allow autocomplete on
+    # the staff member's name or their id, we want to search on a field of the staff model
+    # which has both.  Which is why the :full_name column was added.  But we originally
+    # designed the DB schema to take the :staff_id.
+    #
+    # So a regular expression is used to pull the :staff_id from the :full_name.
+    #
+    # An example of the :full_name is "John Smith (333)" where the :staff_id is in parenthesis.
+    #
+    # The regular expression /\d+/ will match a string of "one or more digits".  calling
+    # the .match(string) method will return the matching substring in the provided string
+    # parameter.  Which is then passed as a parameter to create the house_staffs.
+    @house_staff = @house.house_staffs.create!({ :bu_code => @house.bu_code, :staff_id => (/\d+/.match(params[:staff][:full_name])).to_s, :position_name => params[:house_staff][:position_name] })
+
     respond_to do |format|
       format.html { redirect_to @house }
       format.js
     end
-
-    #respond_to do |format|
-    #  if @house_staff.save
-    #    flash[:notice] = 'HouseStaff was successfully created.'
-    #    format.html { redirect_to(@house_staff) }
-    #    format.xml  { render :xml => @house_staff, :status => :created, :location => @house_staff }
-    #  else
-    #    format.html { render :action => "new" }
-    #    format.xml  { render :xml => @house_staff.errors, :status => :unprocessable_entity }
-    #  end
-    #end
   end
 
-  # PUT /house_staffs/1
-  # PUT /house_staffs/1.xml
+#--------------------- Action for updating a UserHouse Assoc. ----------------------
+
   def update
     @house_staff = HouseStaff.find(params[:id])
 
@@ -77,8 +92,8 @@ class HouseStaffsController < ApplicationController
     end
   end
 
-  # DELETE /house_staffs/1
-  # DELETE /house_staffs/1.xml
+#--------------------- Action for deleting a UserHouse Assoc. ----------------------
+
   def destroy
     @house_staff = HouseStaff.find(params[:id])
     @house_staff.destroy

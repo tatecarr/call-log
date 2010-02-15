@@ -6,27 +6,54 @@
 # Written By: Ben Vogelzang 1/28/10
 #
 #-----------------------------------------------------------------------------------
+
 class AdminController < ApplicationController
 
   before_filter :admin_required
   auto_complete_for :house, :full_info
   
-#-------------------------- Create for UserHouse -----------------------------------
+#--------------------- Action for creating a UserHouse Assoc. ----------------------
 
   def create
     
+    # Create a UserHouse Association with the passed params.
     @user_house = UserHouse.new
     @user_house.user_id = params[:user_id]
-    @user_house.bu_code = House.find_by_full_info(params[:full_info]).bu_code
+
+    #-------------------------------------------------------------------------------
+    # The :full_info of the house is passed to allow for easier searching, so using
+    # that information, the associated house is found, and its :bu_code is added.
+    #-------------------------------------------------------------------------------
+    @user_house.bu_code = House.find_by_full_info(params[:house][:full_info]).bu_code
+
+    # Save the association to the DB
     @user_house.save
 
+    # Rails specific AJAX commands
     render :update do |page|
+      
+      #-------------------------------------------------------------------------------      
+      # Format is   page.insert_html  [where in div], [div id to insert into], 
+      #                               [name of partial], [values to pass to partial]
+      #
+      # Adds a user_house partial to the specified div at the bottom, the partial contains the html
+      # necessary for displaying the values in the association, and the @user_house created above
+      # contains the information of the new association.
+      #
+      # This is done in the background, so the list is updated and the page doesn't reload.
+      #-------------------------------------------------------------------------------
       page.insert_html :bottom, "#{@user_house.user_id}_houses_list", :partial => "user_house", :collection => [@user_house]
+      
+      # Causes the new parital to be highlighted for a short period
       page.visual_effect :highlight, "#{@user_house.user_id}_houses_list"
+      
+      # Clears the form where the user_house information was entered.
       page["#{@user_house.user_id}_form"].reset
+      
     end
-    
   end
+
+#--------------------- Action for deleting a UserHouse Assoc. ----------------------
   
   def destroy
     @user_house = UserHouse.find(params[:id])
@@ -34,10 +61,6 @@ class AdminController < ApplicationController
     
     redirect_to :action => "index"
 
-    #respond_to do |format|
-    #  format.html { redirect_to(house_staffs_url) }
-    #  format.xml  { head :ok }
-    #end
   end
 
 #-------------------------- Actions for displaying pages ---------------------------

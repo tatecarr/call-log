@@ -14,8 +14,6 @@ ActionController::Routing::Routes.draw do |map|
   map.home 'home', :controller => 'sessions', :action => 'home'
   map.passwordreset 'password-reset', :controller => "users", :action => "password_reset"
   
-  map.manage_staff 'manage_staff', :controller => "houses", :action => "manage_staff"
-  
   map.email_feedback 'email_feedback', :controller => "feedback", :action => "index"
   
   map.root :controller => 'sessions', :action => "new" 

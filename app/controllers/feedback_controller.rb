@@ -12,13 +12,6 @@ class FeedbackController < ApplicationController
                     "actually_happened",  params[:actually_happened].to_s,
                     "suggestions",        params[:suggestions].to_s }
       
-      puts @feedback["app_page"]
-      puts @feedback["what_function"]
-      puts @feedback["what_input"]
-      puts @feedback["supposed_to_happen"]
-      puts @feedback["actually_happened"]
-      puts @feedback["suggestions"]
-      
       UserMailer.deliver_email_feedback(@feedback)
       
     end
