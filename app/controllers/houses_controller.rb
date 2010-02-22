@@ -55,7 +55,16 @@ class HousesController < ApplicationController
 #----------------------- Action for displaying house pages -------------------------
 
   def show
+    
     @house = House.find(params[:id])
+
+    # Does a SQL select statement for all the staff that work at this house.  We want
+    # to do this because we want to sort the staff first by their :sort_order which
+    # is dependent on the @house_position_list in the application_controller, and then
+    # secondly by the staffs' first name.
+    @ordered_full_time_staff = HouseStaff.find_by_sql("SELECT HOUSE_STAFFS.* FROM HOUSE_STAFFS JOIN STAFFS ON HOUSE_STAFFS.STAFF_ID = STAFFS.STAFF_ID WHERE HOUSE_STAFFS.BU_CODE = #{@house.bu_code} AND HOUSE_STAFFS.POSITION_TYPE = 'Full Time Staff' ORDER BY HOUSE_STAFFS.SORT_ORDER, STAFFS.FIRST_NAME")
+    @ordered_relief_staff = HouseStaff.find_by_sql("SELECT HOUSE_STAFFS.* FROM HOUSE_STAFFS JOIN STAFFS ON HOUSE_STAFFS.STAFF_ID = STAFFS.STAFF_ID WHERE HOUSE_STAFFS.BU_CODE = #{@house.bu_code} AND HOUSE_STAFFS.POSITION_TYPE = 'Relief Staff' ORDER BY HOUSE_STAFFS.SORT_ORDER, STAFFS.FIRST_NAME")
+    @ordered_overtime_staff = HouseStaff.find_by_sql("SELECT HOUSE_STAFFS.* FROM HOUSE_STAFFS JOIN STAFFS ON HOUSE_STAFFS.STAFF_ID = STAFFS.STAFF_ID WHERE HOUSE_STAFFS.BU_CODE = #{@house.bu_code} AND HOUSE_STAFFS.POSITION_TYPE = 'Overtime Staff' ORDER BY HOUSE_STAFFS.SORT_ORDER, STAFFS.FIRST_NAME")
 
     respond_to do |format|
       format.html # show.html.erb

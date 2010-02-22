@@ -10,9 +10,25 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
   
+  helper_method :house_position_list
+  
   protected
   
   def admin?
     current_user.role == "System-Admin"
   end
+  
+  # List of positions someone working at a house might have.  It has been put in the App Controller
+  # because it needs to be accessed by both the House views and the HouseStaff controller.  So
+  # to keep it consistent and not duplicate code, it is here where both have access to retrieving it.
+  #
+  # THE ORDER IN WHICH POSITIONS ARE IN THIS ARRAY IS THE ORDER IN WHICH THEY WILL BE SORTED
+  # WHEN VIEWING THE STAFF OF A HOUSE.  IF THIS ORDER GETS CHANGED, THE VALUE IN HouseStaff.sort_order
+  # WILL BE OFF AND WILL NEED TO BE ADJUSTED.  AN EXCEPTION IS IF A POSITION IS ADDED AT THE END.
+  def house_position_list
+    @house_position_list = ["Res. Dir. Clinical Manager", "Res. Dir. Nurse Case Manager", "Assistant House Director",
+                          "House Coordinator", "House Manager", "Skills Instructor", "Awake Overnight", "Sleep Overnight",
+                          "Relief Manager", "PSS"]
+  end
+  
 end
