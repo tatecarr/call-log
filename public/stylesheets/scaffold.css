@@ -1,50 +1,131 @@
-div.header_row {
+html, body, p, ul, ol, dl, li, h1, h2, h3, h4, img	{
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	list-style: none;
+}
+
+img	{
+	border: 0;
+}
+
+a {
+	outline: none;
+}
+
+body { background-color: #fff; width: 900px; margin: auto;}
+
+body, p, ol, ul, td {
+  font-family: 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
+  font-size:   12px;
+  color: rgb(51,51,51);
+  line-height: 22px;
+}
+
+a { color: #000; }
+a:visited { color: #666; }
+a:hover { color: #999; }
+
+/* navigation */
+
+ul#navi {
+	background: url(/images/menu-bar.gif) repeat-x top left;
+	width: 900px;
+	height: 60px;
+	position: relative;
+	left: 13px;
+	line-height: 0px; /* fixes IE6 stepdown bug */
+}
+
+ul#navi li a {
+	height: 60px;
+	display: block;
+	position: absolute;
+	top: 0;
+	text-indent: -9999px;
+}
+
+ul#navi li#home_link a {
+	left: -13px;
+	width:181px;
+	background-image: url(/images/logo3.gif);
+	background-repeat: no-repeat;
+}
+
+ul#navi li#call_log_link a {
+	left: 181px;
+	width:90px;
+	background-image: url(/images/call-log.gif);
+	background-repeat: no-repeat;
+}
+
+ul#navi li#houses_link a {
+	left: 271px;
+	width:90px;
+	background-image: url(/images/houses.gif);
+	background-repeat: no-repeat;
+}
+
+ul#navi li#reports_link a {
+	left: 361px;
+	width:90px;
+	background-image: url(/images/reports.gif);
+	background-repeat: no-repeat;
+}
+
+ul#navi li#admin_link a {
+	left: 451px;
+	width:90px;
+	background-image: url(/images/admin.gif);
+	background-repeat: no-repeat;
+}
+
+ul#navi li a:hover {
+	background-position: 0 -61px;
+}
+
+ul#navi li#home_link a:hover {
+	background-position: 0px 0px;
+}
+
+
+
+/* admin page */
+
+#add-user-form {
+	float: left;
+	width: 300px;
+}
+
+#current-users {
+	float: left;
+	width: 600px;
+	clear:right;
+}
+
+.user_username {
+	width: 150px;
 	float:left;
-	width:775px;
 }
 
-div.header_row div {
+.user_email {
+	width: 250px;
 	float:left;
 }
 
-div.user_row {
-	float:left;
-	width:775px;
-}
-
-.user_row:hover {
-	background-color:yellow;
-}
-
-
-
-div.user_row_houses {
-	float:left;
-	width:775px;
-}
-
-div.user_row div {
+.user_role {
+	width: 130px;
 	float:left;
 }
 
-.manage_col {
-	width:75px;
+.houses {
+	margin-left: 30px;
 }
 
-.username_col {
-	width:150px;
-}
-
-.email_col {
-	width:250px;
-}
-
-.role_col {
-	width:150px;
-}
-
-.remove_col {
-	width:150px;
+.user_info:hover {
+	background-color: #CCC;
 }
 
 textarea.feedback {
@@ -56,23 +137,34 @@ input.feedback {
 	width: 500px;
 }
 
-body { background-color: #fff; color: #333; }
-
-body, p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size:   13px;
-  line-height: 18px;
+#flash-notice {
+	color: green;
+	padding: 10px 5px 10px 40px;
+	border: 1px solid green;
+	background: #EEE url(/images/success.gif) no-repeat 5px center;
+	width: 600px;
 }
 
-pre {
-  background-color: #eee;
-  padding: 10px;
-  font-size: 11px;
+#flash-error {
+	color: #CC0000;
+	padding: 10px 5px 10px 40px;
+	border: 1px solid #CC0000;
+	background: #EEE url(/images/failure.gif) no-repeat 5px center;
+	width: 600px;
 }
 
-a { color: #000; }
-a:visited { color: #666; }
-a:hover { color: #fff; background-color:#000; }
+#logo {
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+#logout-link {
+	position: relative;
+	top: 10px;
+	text-align: right;
+}
+
+
 
 .fieldWithErrors {
   padding: 2px;

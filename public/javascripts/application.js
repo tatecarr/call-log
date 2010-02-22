@@ -7,7 +7,7 @@ function enableSubmit(ourButton) {
 }
 
 function toggleIt(element) {
-	var content = document.getElementById('content').childNodes;
+	var content = document.getElementById("content").childNodes;
 	for (var i = 0; i < content.length; i++) {
 		if (content[i].style) {
 			content[i].style.display = "none";

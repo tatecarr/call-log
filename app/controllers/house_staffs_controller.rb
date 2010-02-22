@@ -1,4 +1,5 @@
 class HouseStaffsController < ApplicationController
+  before_filter :login_required
 
 #------------------- Action for showing all UserHouse Assocs. ----------------------
 

@@ -1,17 +1,13 @@
-<a href="#" onclick="toggleIt('import-page');">Import Staff</a> <a href="#" onclick="toggleIt('backup-page');">Backup Database</a> <a href="#" onclick="toggleIt('restore-page');">Restore Database</a> <a href="#" onclick="toggleIt('user-page');">Manage Users</a>
+<a href="#" onclick="toggleIt('user-page');return false;">Manage Users</a>
+<a href="#" onclick="toggleIt('import-page');return false;">Import Staff</a> 
+<a href="#" onclick="toggleIt('backup-page');return false;">Backup Database</a>
+<a href="#" onclick="toggleIt('restore-page');return false;">Restore Database</a>
 <div id="content">
 	<div id="import-page" style="display:none;">
 		<% form_for @import, :url => { :action => "import_csv" }, :html => { :multipart => true } do |f| %>
 		<fieldset>
-			<div class="message">
-				Only csv files are allowed.
-			</div>
-			<ol>
-				<li>
-					<label for="photo_file">CSV File</label>
-					<%= f.file_field :csv, :onclick => 'enableSubmit(this);' %>
-				</li>
-			</ol>
+			CSV File:
+			<%= f.file_field :csv, :onclick => 'enableSubmit(this);' %>
 		</fieldset>
 		<div class="buttons">
 			<%= f.submit "Import Data", :disabled => true, :disable_with => "Importing..." %>
@@ -31,15 +27,8 @@
 	<div id="restore-page" style="display:none;">
 		<% form_for @import, :url => { :action => "restore" }, :html => { :multipart => true } do |f| %>
 		<fieldset>
-			<div class="message">
-				Only .sql files are allowed.
-			</div>
-			<ol>
-				<li>
-					<label for="photo_file">.sql File</label>
-					<%= f.file_field :csv, :onclick => 'enableSubmit(this);' %>
-				</li>
-			</ol>
+			SQL File: 
+			<%= f.file_field :csv, :onclick => 'enableSubmit(this);' %>
 		</fieldset>
 		<div class="buttons">
 			<%= f.submit "Restore from Backup", :disabled => true, :disable_with => "Restoring..." %>
@@ -48,77 +37,51 @@
 	</div>
 
 	<div id="user-page">
-		
-		<h3>Add a User</h3>
+	
+		<div id="add-user-form">
+		<h2>Add a User</h2>
 		<% form_for @user, :url => {:action => 'add_user' } do |f| -%>
-		<p>Email address of user being added: &nbsp;&nbsp; Account Type:<br />
-		  	<%= f.text_field :email %> &nbsp;&nbsp;
-			<%= select("user", "role", %w[House-Admin System-Admin]) %> &nbsp;
-			<%= f.submit "Add User", :disable_with => 'Adding...' %>
-			<% end -%>
-		</p>
+			<p>
+				Email Address of User:<br />
+			  	<%= f.text_field :email %> 
+			</p>
+			<p>
+				Account Type:<br/>
+				<%= select("user", "role", %w[House-Admin System-Admin]) %> &nbsp;
+			</p>
+			<p>
+				<%= f.submit "Add User", :disable_with => 'Adding...' %>
+			</p>
+		<% end -%>
+		</div>
 
-		<h3>Current Users</h3>
-		<div id="users-list" style="float:left; width:500px">
-			<div class="header_row">
-				<div class="manage_col">
-					<strong>Manage</strong>
-				</div>
-				<div class="username_col">
-					<strong>Username</strong>
-				</div>
-				<div class="email_col">
-					<strong>Email</strong>
-				</div>
-				<div class="role_col">
-					<strong>Role</strong>
-				</div>
-			</div> <br/>
-			<% @users.each do |user| %>
+		<div id="current-users">
+		<h2>Current Users</h2>
+		<% @users.each do |user| %>				
+			<table class="user_info" onclick="Effect.toggle('houses_<%= user.id %>', 'slide', { duration: 0.3 }); return false;">
+				<tr>
+					<td class="user_username"><%= user.username %></td>
+					<td class="user_email"><%= user.email %></td>
+					<td class="user_role"><%= user.role %></td>
+					<td class="remove_link"><%= link_to "Remove", user, :confirm => 'Are you sure? This will erase all of the users information and they will not be able to log in.', :method => :delete %></td>
+				</tr>
+			</table>
 			
-				<a href="#" onclick="Effect.toggle('<%= user.id %>_houses', 'slide', { duration: 0.3 }); return false;">				
-					<div id="<%= user.id %>" class="user_row">
-						<div class="manage_col">
-							text
-						</div>
-						<div class="username_col">
-							<%= user.username %>
-						</div>
-						<div class="email_col">
-							<%= user.email %>
-						</div>
-						<div class="role_col">
-							<%= user.role %>
-						</div>
-						<div class="remove_col">
-							<%= link_to "Remove", user, :confirm => 'Are you sure?', :method => :delete %>
-						</div>
-					</div>
-				</a>
-				<div id="<%= user.id %>_houses" class="user_row_houses" style="display:none;">
-					<div>
-						<div id="<%= user.id %>_houses_list">
-							<p>
-								<%= render :partial => "user_house", :collection => user.user_houses %>
-							</p>
-						</div>
-						<% form_remote_tag :url => { :controller => "admin", :action => "create" }, :html => {:id => "#{user.id}_form"} do %>
-							<table>
-								<tr>
-									<%= hidden_field_tag :user_id, user.id %>
-									<td>
-										<%= label_tag :full_info, "House" %>
-										<%= text_field_with_auto_complete :house, :full_info %> <!-- , :id => "#{user.id}_full_info" %> -->
-									</td>
-								</tr>
-							</table>
-							<p><%= submit_tag "Add User to House" %></p>
-						<% end %>
-					</div>
+			<div id="houses_<%= user.id %>" class="houses" style="display:none;">
+				
+				<div id="houses_list_<%= user.id %>">
+						<%= render :partial => "user_house", :collection => user.user_houses %>
 				</div>
 				
-			<% end %>
-			
-		</div>	
+				<% form_remote_tag :url => { :controller => "admin", :action => "create" }, :html => {:id => "form_#{user.id}"} do %>
+					House:
+					<%= text_field_tag :full_info %> <!-- , :id => "#{user.id}_full_info" %> -->
+					<%= hidden_field_tag :user_id, user.id %>
+					<%= submit_tag "Add User to House" %>
+				<% end %>
+			</div>
+	
+		<% end %>
+		</div>
 	</div>
 </div>

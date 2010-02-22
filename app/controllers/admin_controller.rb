@@ -42,13 +42,13 @@ class AdminController < ApplicationController
       #
       # This is done in the background, so the list is updated and the page doesn't reload.
       #-------------------------------------------------------------------------------
-      page.insert_html :bottom, "#{@user_house.user_id}_houses_list", :partial => "user_house", :collection => [@user_house]
+      page.insert_html :bottom, "houses_list_#{@user_house.user_id}", :partial => "user_house", :collection => [@user_house]
       
       # Causes the new parital to be highlighted for a short period
-      page.visual_effect :highlight, "#{@user_house.user_id}_houses_list"
+      page.visual_effect :highlight, "houses_list_#{@user_house.user_id}"
       
       # Clears the form where the user_house information was entered.
-      page["#{@user_house.user_id}_form"].reset
+      page["form_#{@user_house.user_id}"].reset
       
     end
   end

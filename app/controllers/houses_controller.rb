@@ -1,4 +1,5 @@
 class HousesController < ApplicationController
+  before_filter :login_required
   
 #------------------- Creates AJAX methods for autocompleting forms -----------------
   

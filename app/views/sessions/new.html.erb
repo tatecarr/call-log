@@ -21,12 +21,16 @@
   <p><%= submit_tag "Log in" %></p>
 <% end %>
 
+
+<p><a href="" onclick="Effect.toggle('forgot-password-form', 'slide', { duration: 0.3 }); return false;">Forgot your password? Click Here</a></p> 
+
+<div id="forgot-password-form" style="display: none;">
 <% form_tag(:action => "reset_password") do %>
-	<p>Forgot your password??</p> 
 	<p>
 		Enter your email address below<br />
 		<%= text_field_tag "email" %>
 	</p>
 	<p><%= submit_tag "Submit" %></p>
 <% end -%>
+</div>
 
