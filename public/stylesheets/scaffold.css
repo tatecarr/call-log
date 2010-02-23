@@ -32,7 +32,7 @@ a:hover { color: #999; }
 
 ul#navi {
 	background: url(/images/menu-bar.gif) repeat-x top left;
-	width: 900px;
+	width: 887px;
 	height: 60px;
 	position: relative;
 	left: 13px;
@@ -153,14 +153,7 @@ input.feedback {
 	width: 600px;
 }
 
-#logo {
-	text-align: center;
-	margin-bottom: 15px;
-}
-
 #logout-link {
-	position: relative;
-	top: 10px;
 	text-align: right;
 }
 
@@ -201,4 +194,64 @@ input.feedback {
   font-size: 12px;
   list-style: square;
 }
+
+/* Pagination */
+
+.pagination {
+   font-weight: bold;
+   margin-top: 30px;
+}
+
+.pagination a {
+    padding: 3px 5px;
+    border: 1px solid #CCC;
+    text-decoration: none;
+    background-color: #EEE;
+}
+
+.pagination a:hover {
+    color: #000;
+    border: 1px solid #006A69;
+}
+
+.pagination .next_page, .pagination .prev_page {
+    border: none;
+    background-color: #fff;
+}
+
+.pagination a.next_page:hover, a.prev_page:hover {
+    border: none;
+    background-color: #fff;
+    text-decoration: underline;
+}
+
+.pagination .current {
+	padding: 3px 5px;
+}
+
+/* list tables */
+
+#list-table {
+ width: 900px;
+ margin-top: 30px;
+ border-collapse: collapse;
+}
+
+#list-table th {
+  text-align: left;
+}
+
+#list-table tr.odd {
+  background-color: rgb(237, 243, 254);
+}
+
+#no-results {
+  border: 1px solid #000;
+  background-color: #FFC;
+}
+
+#no-results td {
+ padding: 5px;
+}
+
 

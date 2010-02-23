@@ -10,27 +10,23 @@
 	</p>
 <% end -%>
 
-<table>
+<table id="list-table">
   <tr>
     <th><%= order @search, :by => :bu_code %></th>
     <th><%= order @search, :by => :name %></th>
     <th><%= order @search, :by => :address %></th>
     <th><%= order @search, :by => :city %></th>
-    <th><%= order @search, :by => :state %></th>
-    <th><%= order @search, :by => :zip %></th>
     <th><%= order @search, :by => :phone1 %></th>
     <th><%= order @search, :by => :phone2 %></th>
     <th><%= order @search, :by => :fax %></th>
   </tr>
 
-<% @houses.each do |house| %>
-  <tr>
+<% @houses.each_with_index do |house, i| %>
+  <tr <% if i % 2 == 1 %>class="odd"<% end %>>
     <td><%=h house.bu_code %></td>
     <td><%=h house.name %></td>
     <td><%=h house.address %></td>
     <td><%=h house.city %></td>
-    <td><%=h house.state %></td>
-    <td><%=h house.zip %></td>
     <td><%=h house.phone1 %></td>
     <td><%=h house.phone2 %></td>
     <td><%=h house.fax %></td>

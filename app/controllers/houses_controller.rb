@@ -37,8 +37,8 @@ class HousesController < ApplicationController
     # When only one house is returned in a search, redirect directly to that house's
     # page instead of showing the search results.
     #-------------------------------------------------------------------------------
+    ### TODO gives error if one house is in the database...can't evaluate params[:search]...also must fix this problem while adding houses
     if @houses.length == 1 && params[:search][:bu_code_equals].nil?
-      
       redirect_to @houses[0]
     
     # Else display the page accordingly depending on the type of request.
