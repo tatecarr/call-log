@@ -1,4 +1,5 @@
 class StaffsController < ApplicationController
+  before_filter :login_required
   auto_complete_for :staff, :full_name
   auto_complete_for :staff, :home_number
   auto_complete_for :staff, :cell_number
