@@ -12,19 +12,32 @@ class AdminController < ApplicationController
   before_filter :admin_required
   auto_complete_for :house, :full_info
   
+  def auto_complete_for_house_full_info
+    
+    leg = params[:house].keys[0] # get index as its always only one at a time
+
+    auto_complete_responder_for_full_info params[:house][leg][:full_info]
+    
+  end
+  
 #--------------------- Action for creating a UserHouse Assoc. ----------------------
 
   def create
     
     # Create a UserHouse Association with the passed params.
     @user_house = UserHouse.new
-    @user_house.user_id = params[:user_id]
+    user_id = params[:user_id]
+    
+    # needed user_id below, and @user_house.user_id was nil until the object gets saved I think
+    # because a nil error was being given when I directly assigned params[:user_id] to the
+    # @user_house.user_id and then used the variable's attr in the find below.
+    @user_house.user_id = user_id
 
     #-------------------------------------------------------------------------------
     # The :full_info of the house is passed to allow for easier searching, so using
     # that information, the associated house is found, and its :bu_code is added.
     #-------------------------------------------------------------------------------
-    @user_house.bu_code = House.find_by_full_info(params[:house][:full_info]).bu_code
+    @user_house.bu_code = House.find_by_full_info(params[:house][user_id][:full_info]).bu_code
 
     # Save the association to the DB
     @user_house.save
@@ -66,6 +79,7 @@ class AdminController < ApplicationController
 #-------------------------- Actions for displaying pages ---------------------------
  
   def index
+puts "WHATS GOING ON HERE??????????"
     @import = Import.new
     @user = User.new
     @users = User.all
@@ -211,6 +225,20 @@ class AdminController < ApplicationController
 #-------------------------- Private helper methods ----------------------------------
 
   private
+  
+  
+    def auto_complete_responder_for_full_info(value)
+        
+      param = '%' + value.downcase + '%' 
+      find_options= {
+        :conditions => [ 'LOWER(full_info) LIKE ?', param ],
+        :order => 'full_info ASC',
+        :limit => 10
+      }
+      @houses = House.find(:all, find_options)
+      render :partial => 'house_full_info'
+
+    end
 
     # Read a csv file into a 2-d array.
 		#
