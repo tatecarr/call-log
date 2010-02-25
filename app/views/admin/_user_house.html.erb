@@ -1,5 +1,12 @@
 <% div_for user_house do %>
-	<p>
+	<div style="float:left; width:150px">
 		<%= House.find_by_bu_code(user_house.bu_code).full_info %>
-	</p>
+	</div>
+	<div style="float:left;">
+		<%= form_remote_tag :url => url_for(:controller => 'admin', :action => 'remove_user_house') %>
+		<%= hidden_field_tag 'user_id', user_house.user_id %>
+		<%= hidden_field_tag 'bu_code', user_house.bu_code %>
+		<%= submit_tag "Remove" %>
+		</form>
+	</div><br/>
 <% end %>

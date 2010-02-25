@@ -68,6 +68,23 @@ class AdminController < ApplicationController
 
 #--------------------- Action for deleting a UserHouse Assoc. ----------------------
   
+  def remove_user_house
+    
+    # finds the user_house association table record.  it takes the first one, but there should.
+    @user_house = UserHouse.find(:all, :conditions => ["user_id = ? AND bu_code = ?", params[:user_id], params[:bu_code]])[0]
+    
+    # save the id of the record, because we'll need it after we delete the record.
+    @user_house_id = @user_house.id
+    
+    # delete the record for this user_house association.
+    @user_house.delete
+		
+		# ajax, hides the div that displayed this relationship, which no longer exists.
+		render :update do |page|
+			page.visual_effect :fade, "user_house_#{@user_house_id}", :duration => 0.25
+		end
+  end
+  
   def destroy
     @user_house = UserHouse.find(params[:id])
     @user_house.destroy
@@ -79,7 +96,6 @@ class AdminController < ApplicationController
 #-------------------------- Actions for displaying pages ---------------------------
  
   def index
-puts "WHATS GOING ON HERE??????????"
     @import = Import.new
     @user = User.new
     @users = User.all
