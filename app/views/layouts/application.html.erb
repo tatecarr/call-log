@@ -7,21 +7,23 @@
   <title><%= controller.controller_name %>: <%= controller.action_name %></title>
   <%= stylesheet_link_tag 'scaffold' %>
   <%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag 'curvycorners' %>
 </head>
 <body>
 	
 
-<a id="left-end"></a>
 <ul id="navi">
 	<li id="home_link"><%= link_to "", root_path %></li>
 	<li id="call_log_link"><%= link_to "", staffs_path %></li>
 	<li id="houses_link"><%= link_to "", houses_path %></li>
 	<li id="reports_link"><%= link_to "", reports_path %></li>
 	<% if logged_in? && admin? %><li id="admin_link"><%= link_to "", :controller => "admin", :action => "index" %></li><% end %>
+	<li id="dec_text_link"><a href="" onclick=""></a></li>
+	<li id="inc_text_link"><a href="" onclick=""></a></li>
+	<% if logged_in? %><li id="logout_link"><%= link_to "Logout", logout_path %></li><% end %>
 </ul>
-<a id="right-end"></a>
 
-<div id="logout-link"><%= link_to "Logout", logout_path %></div>
+<div id="logout-link"></div>
 
 <% if flash[:notice] %>
 	<p id="flash-notice"><%= flash[:notice] %></p>
