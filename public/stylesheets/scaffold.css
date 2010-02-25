@@ -32,15 +32,16 @@ a:hover { color: #999; }
 
 ul#navi {
 	background: url(/images/menu-bar.gif) repeat-x top left;
-	width: 887px;
-	height: 60px;
+	width: 900px;
+	height: 65px;
 	position: relative;
-	left: 13px;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
 	line-height: 0px; /* fixes IE6 stepdown bug */
 }
 
 ul#navi li a {
-	height: 60px;
+	height: 65px;
 	display: block;
 	position: absolute;
 	top: 0;
@@ -48,42 +49,63 @@ ul#navi li a {
 }
 
 ul#navi li#home_link a {
-	left: -13px;
-	width:181px;
+	left: 10px;
+	width:185px;
 	background-image: url(/images/logo3.gif);
 	background-repeat: no-repeat;
 }
 
 ul#navi li#call_log_link a {
-	left: 181px;
-	width:90px;
+	left: 195px;
+	width:100px;
 	background-image: url(/images/call-log.gif);
 	background-repeat: no-repeat;
 }
 
 ul#navi li#houses_link a {
-	left: 271px;
-	width:90px;
+	left: 295px;
+	width:100px;
 	background-image: url(/images/houses.gif);
 	background-repeat: no-repeat;
 }
 
 ul#navi li#reports_link a {
-	left: 361px;
-	width:90px;
+	left: 395px;
+	width:100px;
 	background-image: url(/images/reports.gif);
 	background-repeat: no-repeat;
 }
 
 ul#navi li#admin_link a {
-	left: 451px;
-	width:90px;
+	left: 495px;
+	width:100px;
 	background-image: url(/images/admin.gif);
 	background-repeat: no-repeat;
 }
 
+ul#navi li#dec_text_link a {
+	left: 670px;
+	width:60px;
+	background-image: url(/images/dec-text.gif);
+	background-repeat: no-repeat;
+}
+
+ul#navi li#inc_text_link a {
+	left: 730px;
+	width:60px;
+	background-image: url(/images/inc-text.gif);
+	background-repeat: no-repeat;
+}
+
+ul#navi li#logout_link a {
+	left: 790px;
+	width:100px;
+	background-image: url(/images/logout.gif);
+	background-repeat: no-repeat;
+}
+
 ul#navi li a:hover {
-	background-position: 0 -61px;
+	background-position: 0 -66px;
 }
 
 ul#navi li#home_link a:hover {
@@ -140,24 +162,22 @@ input.feedback {
 #flash-notice {
 	color: green;
 	padding: 10px 5px 10px 40px;
-	border: 1px solid green;
+	border: 2px solid green;
 	background: #EEE url(/images/success.gif) no-repeat 5px center;
 	width: 600px;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
 }
 
 #flash-error {
 	color: #CC0000;
 	padding: 10px 5px 10px 40px;
-	border: 1px solid #CC0000;
+	border: 2px solid #CC0000;
 	background: #EEE url(/images/failure.gif) no-repeat 5px center;
 	width: 600px;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
 }
-
-#logout-link {
-	text-align: right;
-}
-
-
 
 .fieldWithErrors {
   padding: 2px;
