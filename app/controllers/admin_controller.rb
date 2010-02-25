@@ -85,6 +85,7 @@ class AdminController < ApplicationController
 		end
   end
   
+  # non-ajax way of removing assoc.  but not being used at this point I don't think.
   def destroy
     @user_house = UserHouse.find(params[:id])
     @user_house.destroy
