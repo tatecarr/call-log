@@ -58,7 +58,7 @@
 		<div id="current-users">
 		<h2>Current Users</h2>
 		<% @users.each do |user| %>				
-			<table class="user_info" onclick="Effect.toggle('houses_<%= user.id %>', 'slide', { duration: 0.3 }); return false;">
+			<table class="user_info" onclick="Effect.toggle('houses_<%= user.id %>', 'appear', { duration: 0.3 }); return false;">
 				<tr>
 					<td class="user_username"><%= user.username %></td>
 					<td class="user_email"><%= user.email %></td>
@@ -75,7 +75,7 @@
 				
 				<% form_remote_tag :url => { :controller => "admin", :action => "create" }, :html => {:id => "form_#{user.id}"} do %>
 					House:
-					<%= text_field_tag :full_info %> <!-- , :id => "#{user.id}_full_info" %> -->
+					<%= my_text_field_with_auto_complete :house, :full_info, {:index => user.id} %>
 					<%= hidden_field_tag :user_id, user.id %>
 					<%= submit_tag "Add User to House" %>
 				<% end %>
