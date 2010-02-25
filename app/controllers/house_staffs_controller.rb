@@ -227,6 +227,25 @@ class HouseStaffsController < ApplicationController
 
 #--------------------- Action for deleting a UserHouse Assoc. ----------------------
 
+  # uses ajax to remove the HouseStaff assoc record
+  def remove_house_staff
+    
+    # finds the user_house association table record.  it takes the first one, but there should.
+    @house_staff = HouseStaff.find(:all, :conditions => ["staff_id = ? AND bu_code = ?", params[:staff_id], params[:bu_code]])[0]
+    
+    # save the id of the record, because we'll need it after we delete the record.
+    @house_staff_id = @house_staff.id
+    
+    # delete the record for this user_house association.
+    @house_staff.delete
+		
+		# ajax, hides the div that displayed this relationship, which no longer exists.
+		render :update do |page|
+			page.visual_effect :fade, "house_staff_#{@house_staff_id}", :duration => 0.25
+		end
+  end
+  
+  # non-ajax way of destroying the assoc
   def destroy
     @house_staff = HouseStaff.find(params[:id])
     @house_staff.destroy

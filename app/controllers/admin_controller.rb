@@ -26,43 +26,117 @@ class AdminController < ApplicationController
     
     # Create a UserHouse Association with the passed params.
     @user_house = UserHouse.new
-    user_id = params[:user_id]
     
-    # needed user_id below, and @user_house.user_id was nil until the object gets saved I think
+    # need user_id below, and @user_house.user_id was nil until the object gets saved I think
     # because a nil error was being given when I directly assigned params[:user_id] to the
     # @user_house.user_id and then used the variable's attr in the find below.
-    @user_house.user_id = user_id
+    user_id = params[:user_id]
 
     #-------------------------------------------------------------------------------
     # The :full_info of the house is passed to allow for easier searching, so using
     # that information, the associated house is found, and its :bu_code is added.
     #-------------------------------------------------------------------------------
-    @user_house.bu_code = House.find_by_full_info(params[:house][user_id][:full_info]).bu_code
+    
+    # set full info to whatever was passed in the :full_info of the params
+    full_info = params[:house][user_id][:full_info]
+    
+    # set bu_code to the set of digits in the passed parameter
+    bu_code = (/\d+/.match(full_info)).to_s
+    
+    # try and find the house this user having added based on the bu_code
+    @house = House.find_by_bu_code(bu_code)
+    
+    # if a house was not found, we will try and match the full info based on what was passed
+    if !@house
+      
+      # set bu_code to nothing since it obviously was not a valid bu_code (no hosue found)
+      bu_code = ""
+      
+      # display message when the user doesn't provide a search term.
+      if full_info == ""
+        
+        message = "<br/>Please enter a search term.<br/><br/>"
+        
+      # else they have provided a search term
+      else
+        
+        # for the mysql format when executing a 'LIKE' query
+        full_info = "%" + full_info + "%"
+        
+        # if the returned array is less than size one, nothing was found. set message accordingly.
+        if (@house = House.find(:all, :conditions => ["full_info like ?", full_info])).length < 1
+          
+          message = "<br/>No house found.  Please refine search.<br/><br/>"
+          
+        # else if length is less than 2, meaning length = 1, then we want the bu_code
+        elsif @house.length < 2
+          
+          bu_code = @house[0].bu_code
+          
+        # else more than one result was found and the user needs to refine their search.
+        else
+          
+          message = "<br/>Multiple staff found.  Please refine search.<br/><br/>"
+          
+        end
+      end
+    end
+    
+    # if bu_code is still blank, no house has been found, and we'll update the message div
+    # with whatever reason no house has been found, which will have been set above.
+    if bu_code.to_s.blank?
+      
+      # put the message in the correct div to display to the user.
+      render :update do |page|
+        page["add_house_message_#{user_id}"].replace_html message
+      end
+      
+    # else if a house was found, but the found house is already assigned to the user, display the message below.
+    elsif !UserHouse.find(:all, :conditions => ["user_id = ? AND bu_code = ?", user_id, bu_code]).empty?
+      
+      message = "<br/>The house identified is already assigned to this user.<br/><br/>"
+      
+      render :update do |page|
+        page["add_house_message_#{user_id}"].replace_html message
+      end
+    
+    # else a valid house has been found, so add the record to the UserHouse table.          
+    else
+      
+      # clear any previous message if a bad search had been run.
+      message = ""
+      
+      # set the UserHouse attributes, the user_id was passed as a param, and the bu_code was found above.
+      @user_house.bu_code = bu_code
+      @user_house.user_id = user_id
 
-    # Save the association to the DB
-    @user_house.save
+      # Save the association to the DB
+      @user_house.save
 
-    # Rails specific AJAX commands
-    render :update do |page|
+      # Rails specific AJAX commands
+      render :update do |page|
       
-      #-------------------------------------------------------------------------------      
-      # Format is   page.insert_html  [where in div], [div id to insert into], 
-      #                               [name of partial], [values to pass to partial]
-      #
-      # Adds a user_house partial to the specified div at the bottom, the partial contains the html
-      # necessary for displaying the values in the association, and the @user_house created above
-      # contains the information of the new association.
-      #
-      # This is done in the background, so the list is updated and the page doesn't reload.
-      #-------------------------------------------------------------------------------
-      page.insert_html :bottom, "houses_list_#{@user_house.user_id}", :partial => "user_house", :collection => [@user_house]
+        #-------------------------------------------------------------------------------      
+        # Format is   page.insert_html  [where in div], [div id to insert into], 
+        #                               [name of partial], [values to pass to partial]
+        #
+        # Adds a user_house partial to the specified div at the bottom, the partial contains the html
+        # necessary for displaying the values in the association, and the @user_house created above
+        # contains the information of the new association.
+        #
+        # This is done in the background, so the list is updated and the page doesn't reload.
+        #-------------------------------------------------------------------------------
+        page.insert_html :bottom, "houses_list_#{@user_house.user_id}", :partial => "user_house", :collection => [@user_house]
       
-      # Causes the new parital to be highlighted for a short period
-      page.visual_effect :highlight, "houses_list_#{@user_house.user_id}"
+        # Causes the new parital to be highlighted for a short period
+        page.visual_effect :highlight, "houses_list_#{@user_house.user_id}"
       
-      # Clears the form where the user_house information was entered.
-      page["form_#{@user_house.user_id}"].reset
-      
+        # Clears the form where the user_house information was entered.
+        page["form_#{@user_house.user_id}"].reset
+        
+        # shows/clears a message depending on if a house was added successfully or not.
+        page["add_house_message_#{user_id}"].replace_html message
+      end
     end
   end
 

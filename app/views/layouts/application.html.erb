@@ -18,8 +18,8 @@
 	<li id="houses_link"><%= link_to "", houses_path %></li>
 	<li id="reports_link"><%= link_to "", reports_path %></li>
 	<% if logged_in? && admin? %><li id="admin_link"><%= link_to "", :controller => "admin", :action => "index" %></li><% end %>
-	<li id="dec_text_link"><a href="" onclick=""></a></li>
-	<li id="inc_text_link"><a href="" onclick=""></a></li>
+	<li id="dec_text_link"><a href="#" onclick="decreaseFontSize();return false;"></a></li>
+	<li id="inc_text_link"><a href="#" onclick="increaseFontSize();return false;"></a></li>
 	<% if logged_in? %><li id="logout_link"><%= link_to "Logout", logout_path %></li><% end %>
 </ul>
 
