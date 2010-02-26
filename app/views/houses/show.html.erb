@@ -8,11 +8,11 @@
 		<div id="Full Time Staff">
 
 			<div id="no_full_time_staff">
-				<% if @ordered_full_time_staff.count < 1 %>
+				<% if @ordered_full_time_staff.empty? %>
 					<p>There are no full time staff added to the house yet.</p>
 				<% end %>
 			</div>
-			<% if @ordered_full_time_staff.count > 0 %>
+			<% unless @ordered_full_time_staff.empty? %>
 				<p>
 					<%= render :partial => "house_staffs/house_staff", :collection => @ordered_full_time_staff %>
 				</p>
@@ -24,11 +24,11 @@
 		<div id="Relief Staff">
 			
 			<div id="no_relief_staff">
-				<% if @ordered_relief_staff.count < 1 %>
+				<% if @ordered_relief_staff.empty? %>
 					<p>There are no relief staff added to the house yet.</p>
 				<% end %>
 			</div>
-			<% if @ordered_relief_staff.count > 0 %>
+			<% unless @ordered_relief_staff.empty? %>
 				<p>
 					<%= render :partial => "house_staffs/house_staff", :collection => @ordered_relief_staff %>
 				</p>
@@ -40,11 +40,11 @@
 		<div id="Overtime Staff">
 			
 			<div id="no_overtime_staff">
-				<% if @ordered_overtime_staff.count < 1 %>
+				<% if @ordered_overtime_staff.empty? %>
 					<p>There are no overtime staff added to the house yet.</p>
 				<% end %>
 			</div>
-			<% if @ordered_overtime_staff.count > 0 %>
+			<% unless @ordered_overtime_staff.empty? %>
 				<p>
 					<%= render :partial => "house_staffs/house_staff", :collection => @ordered_overtime_staff %>
 				</p>

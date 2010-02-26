@@ -8,4 +8,5 @@
 User.create!(:username => 'admin', 
             :email => 'test@nearc.com', 
             :password => "nearc",
-            :role => 'System-Admin')
+            :role => 'System-Admin',
+            :system_generated_pw => false)

@@ -112,6 +112,10 @@ ul#navi li#home_link a:hover {
 	background-position: 0px 0px;
 }
 
+ul#navi .current a {
+background-position: 0 -66px;
+}
+
 
 
 /* admin page */
@@ -164,6 +168,15 @@ input.feedback {
 	padding: 10px 5px 10px 40px;
 	border: 2px solid green;
 	background: #EEE url(/images/success.gif) no-repeat 5px center;
+	width: 600px;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+}
+
+#flash-warning {
+	padding: 10px 5px 10px 40px;
+	border: 2px solid #FFCC00;
+	background: #EEE url(/images/warning.gif) no-repeat 5px center;
 	width: 600px;
 	-moz-border-radius:10px;
 	-webkit-border-radius:10px;

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100219205503) do
+ActiveRecord::Schema.define(:version => 20100226022739) do
 
   create_table "house_staffs", :force => true do |t|
     t.integer  "bu_code"
@@ -89,6 +89,7 @@ ActiveRecord::Schema.define(:version => 20100219205503) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "role"
+    t.boolean  "system_generated_pw"
   end
 
 end
