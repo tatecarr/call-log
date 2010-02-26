@@ -61,8 +61,23 @@
 <p>
   <b>Agency staff:</b>
   <%=h @staff.agency_staff %>
-</p>
-
+</p><br/>
+<p>
+	<span id="experience_prefs"><b>Experience and Preferences:</b></span><br/>
+  	<%= in_place_editor_field :staff_info, 'experience_prefs', {}, {:rows => 10, :cols => 100, :external_control => "experience_prefs"} %>
+</p><br/>
+<p>
+	<span id="skills_limits"><b>Skills and Limits</b></span><br/>
+  	<%= in_place_editor_field :staff_info, 'skills_limits', {}, {:rows => 10, :cols => 100, :external_control => "skills_limits"} %>
+</p><br/>
+<p>
+	<span id="schedule_availability"><b>Schedule and Availability</b></span><br/>
+  	<%= in_place_editor_field :staff_info, 'schedule_availability', {}, {:rows => 10, :cols => 100, :external_control => "schedule_availability"} %>
+</p><br/>
+<p>
+	<span id="contact_notes"><b>Contact Info and Notes</b></span><br/>
+  	<%= in_place_editor_field :staff_info, 'contact_notes', {}, {:rows => 10, :cols => 100, :external_control => "contact_notes"} %>
+</p><br/>
 
 <%= link_to 'Edit', edit_staff_path(@staff) %> |
 <%= link_to 'Back', staffs_path %>

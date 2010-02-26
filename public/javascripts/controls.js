@@ -602,8 +602,8 @@ Ajax.InPlaceEditor = Class.create({
     if (this._saving || this._editing) return;
     this._editing = true;
     this.triggerCallback('onEnterEditMode');
-    if (this.options.externalControl)
-      this.options.externalControl.hide();
+    //if (this.options.externalControl)
+    //  this.options.externalControl.hide();
     this.element.hide();
     this.createForm();
     this.element.parentNode.insertBefore(this._form, this.element);

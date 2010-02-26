@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100219205503) do
+ActiveRecord::Schema.define(:version => 20100226011355) do
 
   create_table "house_staffs", :force => true do |t|
     t.integer  "bu_code"
@@ -53,6 +53,16 @@ ActiveRecord::Schema.define(:version => 20100219205503) do
     t.string   "csv_content_type"
     t.integer  "csv_file_size"
     t.datetime "csv_updated_at"
+  end
+
+  create_table "staff_infos", :force => true do |t|
+    t.integer  "staff_id"
+    t.text     "experience_prefs"
+    t.text     "skills_limits"
+    t.text     "schedule_availability"
+    t.text     "contact_notes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "staffs", :force => true do |t|

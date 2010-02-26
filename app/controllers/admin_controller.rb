@@ -371,5 +371,24 @@ class AdminController < ApplicationController
       # create and save the new staff member to the db
       person = Staff.new(params[:staff])
       person.save
+      
+      # want to create a model for holding their info too - there are 4 fields
+      # that hold info about each staff that we don't want to be overwritten
+      # after each import, so they are a separate model linking to staff with
+      # the coresponding staff_id.  if the imported staff doesn't have a record
+      # in this table, create it, otherwise they've been imported before.
+      #
+      # if StaffInfo not found for this staff_id, create one.  otherwise do nothing.
+      if StaffInfo.find_by_staff_id(params[:staff][:staff_id]).nil?
+        staff_info = StaffInfo.new
+        # set the record's staff_id to that of the staff member being created.
+        staff_info.staff_id = params[:staff][:staff_id]
+        staff_info.experience_prefs = "Click here to add experience and preferences info."
+        staff_info.skills_limits = "Click here to add skills and limits info."
+        staff_info.schedule_availability = "Click here to add schedule and availability info."
+        staff_info.contact_notes = "Click here to add conact info and other notes."
+        staff_info.save
+      end
+      
   	end
 end
