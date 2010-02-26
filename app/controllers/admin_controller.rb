@@ -175,6 +175,7 @@ class AdminController < ApplicationController
     @user = User.new
     @users = User.all
     @user_house = UserHouse.new
+    @agency_staffs = Staff.find(:all, :conditions => ['agency_staff = ?', true])
   end
 
   def show

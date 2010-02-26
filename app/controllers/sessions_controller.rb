@@ -4,16 +4,23 @@ class SessionsController < ApplicationController
   end
   
   def home
+    respond_to do |format|
+      format.html { render :layout => 'application' }
+    end 
   end
   
   def create
     user = User.authenticate(params[:login], params[:password])
     if user
       session[:user_id] = user.id
-      flash[:notice] = "Logged in successfully."
+      if user.system_generated_pw
+        flash[:warning] = "You're still using the system generated password. To change it <a href='/password-reset'>click here</a>"
+      else
+        flash[:notice] = "Logged in successfully."
+      end
       redirect_to home_path
     else
-      flash.now[:error] = "Invalid login or password."
+      flash[:error] = "Invalid login or password."
       render :action => 'new'
     end
   end
@@ -28,14 +35,15 @@ class SessionsController < ApplicationController
       flash[:error] = "No account exists with this email address."
     
     # update the user with a new generated password
-    elsif @user.update_attributes(:password => Digest::SHA1.hexdigest("--#{Time.now.to_s}--#{@user.username}--")[0,6])
-    
+    elsif @user.update_attributes(:system_generated_pw => true, 
+                                  :password => Digest::SHA1.hexdigest("--#{Time.now.to_s}--#{@user.username}--")[0,6])
+      
       # send them an email with the generated password
       UserMailer.deliver_forgotten_password(@user)
       flash[:notice] = "Your password has been reset. An email has been sent containing your new password."
     else
       # looks like we couldn't update for some reason...this shouldn't ever happen
-      flash[:error] = "We were unable to reset your password."
+      flash[:error] = "We were unable to reset your password. Please try again."
     end
     
     redirect_to :action => "new"

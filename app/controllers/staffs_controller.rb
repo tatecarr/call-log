@@ -80,11 +80,13 @@ class StaffsController < ApplicationController
   # POST /staffs.xml
   def create
     @staff = Staff.new(params[:staff])
+    @staff.full_name = params[:staff][:first_name] + " " + params[:staff][:last_name] + " (" + (Staff.last.id + 1).to_s + ")"
+    @staff.id = (Staff.last.id + 1).to_s
 
     respond_to do |format|
       if @staff.save
         flash[:notice] = 'Staff was successfully created.'
-        format.html { redirect_to(@staff) }
+        format.html { redirect_to :controller => "admin" }
         format.xml  { render :xml => @staff, :status => :created, :location => @staff }
       else
         format.html { render :action => "new" }
@@ -117,7 +119,7 @@ class StaffsController < ApplicationController
     @staff.destroy
 
     respond_to do |format|
-      format.html { redirect_to(staffs_url) }
+      format.html { redirect_to :controller => "admin" }
       format.xml  { head :ok }
     end
   end

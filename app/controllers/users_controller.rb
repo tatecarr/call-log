@@ -12,8 +12,10 @@ class UsersController < ApplicationController
     @user = User.find_by_email(current_user.email)
     
     # update the password with the new one specified
-    if @user.update_attributes(:password => params[:user][:password], :password_confirmation => params[:user][:password_confirmation])
-    
+    if @user.update_attributes(:system_generated_pw => false,
+                                :password => params[:user][:password],
+                                :password_confirmation => params[:user][:password_confirmation])
+                                
       # send them an email to remind them of the new password
       UserMailer.deliver_forgotten_password(@user)
       flash[:notice] = "Your password has been reset. An email has been sent with your new login credentials"

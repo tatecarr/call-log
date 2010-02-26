@@ -1,7 +1,8 @@
-<a href="#" onclick="toggleIt('user-page');return false;">Manage Users</a>
-<a href="#" onclick="toggleIt('import-page');return false;">Import Staff</a> 
-<a href="#" onclick="toggleIt('backup-page');return false;">Backup Database</a>
-<a href="#" onclick="toggleIt('restore-page');return false;">Restore Database</a>
+<a href="" onclick="toggleIt('user-page');return false;">Manage Users</a>
+<a href="" onclick="toggleIt('import-page');return false;">Import Staff</a> 
+<a href="" onclick="toggleIt('backup-page');return false;">Backup Database</a>
+<a href="" onclick="toggleIt('restore-page');return false;">Restore Database</a>
+<a href="" onclick="toggleIt('agency-staff');return false;">Manage Agency Staff</a>
 <div id="content">
 	<div id="import-page" style="display:none;">
 		<% form_for @import, :url => { :action => "import_csv" }, :html => { :multipart => true } do |f| %>
@@ -49,6 +50,7 @@
 				Account Type:<br/>
 				<%= select("user", "role", %w[House-Admin System-Admin]) %> &nbsp;
 			</p>
+			<%= f.hidden_field :system_generated_pw, :value => true %>
 			<p>
 				<%= f.submit "Add User", :disable_with => 'Adding...' %>
 			</p>
@@ -84,5 +86,19 @@
 	
 		<% end %>
 		</div>
+	</div>
+	<div id="agency-staff" style="display: none;">
+		<%= link_to "Add new agency staff", new_staff_path %>
+		<% @agency_staffs.each do |staff| %>
+			<table>
+				<tr>
+					<td><%= staff.first_name %></td>
+					<td><%= staff.last_name %></td>
+					<td><%= staff.home_number %></td>
+					<td><%= link_to "Edit", edit_staff_path(staff) %></td>
+					<td><%= link_to "Remove", staff, :confirm => "Are you sure? This will erase all of the employees information.", :method => :delete %></td>
+				</tr>
+			</table>
+		<% end %>
 	</div>
 </div>
