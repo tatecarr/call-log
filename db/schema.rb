@@ -55,6 +55,16 @@ ActiveRecord::Schema.define(:version => 20100226022739) do
     t.datetime "csv_updated_at"
   end
 
+  create_table "staff_infos", :force => true do |t|
+    t.integer  "staff_id"
+    t.text     "experience_prefs"
+    t.text     "skills_limits"
+    t.text     "schedule_availability"
+    t.text     "contact_notes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "staffs", :force => true do |t|
     t.integer  "staff_id"
     t.string   "first_name"

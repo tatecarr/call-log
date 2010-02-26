@@ -75,6 +75,7 @@
 						<%= render :partial => "user_house", :collection => user.user_houses %>
 				</div>
 				
+				<div id="add_house_message_<%= user.id %>"></div>
 				<% form_remote_tag :url => { :controller => "admin", :action => "create" }, :html => {:id => "form_#{user.id}"} do %>
 					House:
 					<%= my_text_field_with_auto_complete :house, :full_info, {:index => user.id} %>

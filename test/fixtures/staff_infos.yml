@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  staff_id: 1
+  experience_prefs: MyText
+  skills_limits: MyText
+  schedule_availability: MyText
+  contact_notes: MyText
+
+two:
+  staff_id: 1
+  experience_prefs: MyText
+  skills_limits: MyText
+  schedule_availability: MyText
+  contact_notes: MyText

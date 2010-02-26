@@ -4,6 +4,11 @@ class StaffsController < ApplicationController
   auto_complete_for :staff, :home_number
   auto_complete_for :staff, :cell_number
   
+  in_place_edit_for :staff_info, :experience_prefs
+  in_place_edit_for :staff_info, :skills_limits
+  in_place_edit_for :staff_info, :schedule_availability
+  in_place_edit_for :staff_info, :contact_notes
+  
   # GET /staffs
   # GET /staffs.xml
   def index
@@ -45,6 +50,7 @@ class StaffsController < ApplicationController
   # GET /staffs/1.xml
   def show
     @staff = Staff.find(params[:id])
+    @staff_info = StaffInfo.find_by_staff_id(@staff.staff_id)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -56,6 +62,7 @@ class StaffsController < ApplicationController
   # GET /staffs/new.xml
   def new
     @staff = Staff.new
+    @staff_info = StaffInfo.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -66,6 +73,7 @@ class StaffsController < ApplicationController
   # GET /staffs/1/edit
   def edit
     @staff = Staff.find(params[:id])
+    @staff_info = StaffInfo.find(@staff.staff_id)
   end
 
   # POST /staffs
