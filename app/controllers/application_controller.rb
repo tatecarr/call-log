@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
   
   helper_method :admin?
+  helper_method :house_admin?
   helper_method :house_position_list
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
@@ -19,6 +20,17 @@ class ApplicationController < ActionController::Base
     current_user.role == "System-Admin"
   end
   
+  # will return true or false to whether or not the current user is a house_admin of the provided house
+  def house_admin?(house)
+    bu_code_array = [] # array of bu_codes for the current user's administered houses
+    
+    # need a way to compare the House object to UserHouses...through bu_code.  so make an array of bu_codes.
+    for user_house in current_user.user_houses
+      bu_code_array << user_house.bu_code # add each bu_code to the array.
+    end
+        
+    bu_code_array.include?(house.bu_code) # return true if house's bu_code is in the array, else return false
+  end
 
   def log_them_out
     flash[:error] = "You have been logged out due to inactivity. Please log in again."

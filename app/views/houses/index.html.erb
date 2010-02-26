@@ -1,15 +1,22 @@
 <h1>Listing houses</h1>
 
+<div style="float:left; width:250px">
+	<% form_for @search do |f| -%>
+		<p>
+			<%= text_field_with_auto_complete :house, :full_info %>
+		</p>
+		<p>
+			<%= f.submit "Search", :disable_with => 'Searching...' %>
+		</p>
+	<% end -%>
+</div>
+<% if admin? %>
+	<div style="float:left;">
+		<%= link_to 'NEW HOUSE - BUT A NICE IMAGE, BEN?', new_house_path %>
+	</div>
+<% end %>
 
-<% form_for @search do |f| -%>
-	<p>
-		<%= text_field_with_auto_complete :house, :full_info %>
-	</p>
-	<p>
-		<%= f.submit "Search", :disable_with => 'Searching...' %>
-	</p>
-<% end -%>
-
+<br/>
 <table id="list-table">
   <tr>
     <th><%= order @search, :by => :bu_code %></th>
@@ -31,12 +38,10 @@
     <td><%=h house.phone2 %></td>
     <td><%=h house.fax %></td>
     <td><%= link_to 'Show', house %></td>
-    <td><%= link_to 'Edit', edit_house_path(house) %></td>
-    <td><%= link_to 'Destroy', house, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% if admin? || house_admin?(house) %>
+		<td><%= link_to 'Edit', edit_house_path(house) %></td>
+	    <td><%= link_to 'Destroy', house, :confirm => 'Are you sure?', :method => :delete %></td>
+	<% end %>
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New house', new_house_path %>

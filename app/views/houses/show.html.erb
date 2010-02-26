@@ -1,85 +1,88 @@
-<h2>Staff Assigned to House</h2>
+<br/>
+<% if admin? || house_admin?(@house) %>
+	<%= link_to 'Edit', edit_house_path(@house) %> | 
+<% end %>
+<%= link_to 'Back', houses_path %>
+<br/><br/>
 
-<a href="#" onclick="Effect.toggle('assigned_staff_list', 'slide', { duration: 0.7 }); return false;">Show House Staff</a>
-<div id="assigned_staff_list">
-	<div>
-		
-		<h3>Full Time Staff</h3>
-		<div id="Full Time Staff">
+<h2>Staff Assigned to House</h2>		
+<h3>Full Time Staff</h3>
+<div id="Full Time Staff">
 
-			<div id="no_full_time_staff">
-				<% if @ordered_full_time_staff.empty? %>
-					<p>There are no full time staff added to the house yet.</p>
-				<% end %>
-			</div>
-			<% unless @ordered_full_time_staff.empty? %>
-				<p>
-					<%= render :partial => "house_staffs/house_staff", :collection => @ordered_full_time_staff %>
-				</p>
+	<div id="no_full_time_staff">
+		<% if @ordered_full_time_staff.empty? %>
+			<p>There are no full time staff added to the house yet.</p>
+		<% end %>
+	</div>
+	<% unless @ordered_full_time_staff.empty? %>
+		<p>
+			<%= render :partial => "house_staffs/house_staff", :collection => @ordered_full_time_staff %>
+		</p>
+	<% end %>
+	
+</div><br/>
+
+<h3>Relief Staff</h3>
+<div id="Relief Staff">
+	
+	<div id="no_relief_staff">
+		<% if @ordered_relief_staff.empty? %>
+			<p>There are no relief staff added to the house yet.</p>
+		<% end %>
+	</div>
+	<% unless @ordered_relief_staff.empty? %>
+		<p>
+			<%= render :partial => "house_staffs/house_staff", :collection => @ordered_relief_staff %>
+		</p>
+	<% end %>
+	
+</div><br/>
+
+<h3>Overtime Staff</h3>
+<div id="Overtime Staff">
+	
+	<div id="no_overtime_staff">
+		<% if @ordered_overtime_staff.empty? %>
+			<p>There are no overtime staff added to the house yet.</p>
+		<% end %>
+	</div>
+	<% unless @ordered_overtime_staff.empty? %>
+		<p>
+			<%= render :partial => "house_staffs/house_staff", :collection => @ordered_overtime_staff %>
+		</p>
+	<% end %>
+
+</div><br/>
+
+<% if admin? || house_admin?(@house) %>
+	<a href="#" onclick="Effect.toggle('add_staff_form', 'slide', { duration: 0.3 }); return false;">Add Staff</a>&nbsp;&nbsp;
+	<a href="">Refresh List Order</a>
+	<div id="add_staff_form" style="display:none;">
+		<div>
+			<div id="add_staff_message"></div>
+			<% remote_form_for [@house, HouseStaff.new] do |f| %>
+				<table>
+					<tr>
+						<td>
+							<%= f.label :staff_id, "Staff Member" %>
+							<%= text_field_with_auto_complete :staff, :full_name %>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<%= f.label :position_name, "Position" %>
+							<%= f.select :position_name, options_for_select(house_position_list) %>
+							<%= f.label :position_type, "Position type" %>
+							<%= f.select :position_type, options_for_select(["Full Time Staff","Relief Staff","Overtime Staff"]) %>
+						</td>
+					</tr>
+				</table>
+				<p><%= f.submit "Add Staff to House" %></p>
 			<% end %>
-			
-		</div><br/>
-
-		<h3>Relief Staff</h3>
-		<div id="Relief Staff">
-			
-			<div id="no_relief_staff">
-				<% if @ordered_relief_staff.empty? %>
-					<p>There are no relief staff added to the house yet.</p>
-				<% end %>
-			</div>
-			<% unless @ordered_relief_staff.empty? %>
-				<p>
-					<%= render :partial => "house_staffs/house_staff", :collection => @ordered_relief_staff %>
-				</p>
-			<% end %>
-			
-		</div><br/>
-		
-		<h3>Overtime Staff</h3>
-		<div id="Overtime Staff">
-			
-			<div id="no_overtime_staff">
-				<% if @ordered_overtime_staff.empty? %>
-					<p>There are no overtime staff added to the house yet.</p>
-				<% end %>
-			</div>
-			<% unless @ordered_overtime_staff.empty? %>
-				<p>
-					<%= render :partial => "house_staffs/house_staff", :collection => @ordered_overtime_staff %>
-				</p>
-			<% end %>
-
-		</div><br/>
-
-		<a href="#" onclick="Effect.toggle('add_staff_form', 'slide', { duration: 0.3 }); return false;">Add Staff</a>&nbsp;&nbsp;
-		<a href="">Refresh List Order</a>
-		<div id="add_staff_form" style="display:none;">
-			<div>
-				<div id="add_staff_message"></div>
-				<% remote_form_for [@house, HouseStaff.new] do |f| %>
-					<table>
-						<tr>
-							<td>
-								<%= f.label :staff_id, "Staff Member" %>
-								<%= text_field_with_auto_complete :staff, :full_name %>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<%= f.label :position_name, "Position" %>
-								<%= f.select :position_name, options_for_select(house_position_list) %>
-								<%= f.label :position_type, "Position type" %>
-								<%= f.select :position_type, options_for_select(["Full Time Staff","Relief Staff","Overtime Staff"]) %>
-							</td>
-						</tr>
-					</table>
-					<p><%= f.submit "Add Staff to House" %></p>
-				<% end %>
-			</div>
 		</div>
 	</div>
-</div><br/><br/>
+	<br/><br/>
+<% end %>
 
 <p>
   <b>Bu code:</b>
@@ -170,7 +173,3 @@
   <b>Behavior plans:</b>
   <%=h @house.behavior_plans %>
 </p>
-
-
-<%= link_to 'Edit', edit_house_path(@house) %> |
-<%= link_to 'Back', houses_path %>
