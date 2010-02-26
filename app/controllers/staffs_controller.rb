@@ -31,7 +31,15 @@ class StaffsController < ApplicationController
     params[:search][:cell_number_like] = @cell_number unless params[:staff].nil?
     
     @search = Staff.search(params[:search])
-    @staffs = @search.paginate :per_page => @selected_number, :page => params[:page]
+    
+    # this makes it so that on the first load of the page, when params[:search] is nil, the call-log
+    # is ordered by last_name.  it had been doing it by id (not staff_id), so after every import, the
+    # agency staff would all be listed first in the call log.  kinda undesirable I think.
+    if params[:search]
+      @staffs = @search.paginate :per_page => @selected_number, :page => params[:page]
+    else
+      @staffs = @search.sort_by(&:last_name).paginate :per_page => @selected_number, :page => params[:page]
+    end
     
     if @staffs.length == 1
       
@@ -62,7 +70,6 @@ class StaffsController < ApplicationController
   # GET /staffs/new.xml
   def new
     @staff = Staff.new
-    @staff_info = StaffInfo.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -73,7 +80,7 @@ class StaffsController < ApplicationController
   # GET /staffs/1/edit
   def edit
     @staff = Staff.find(params[:id])
-    @staff_info = StaffInfo.find(@staff.staff_id)
+    @staff_info = StaffInfo.find_by_staff_id(@staff.staff_id)
   end
 
   # POST /staffs
@@ -81,10 +88,22 @@ class StaffsController < ApplicationController
   def create
     @staff = Staff.new(params[:staff])
     @staff.full_name = params[:staff][:first_name] + " " + params[:staff][:last_name] + " (" + (Staff.last.id + 1).to_s + ")"
-    @staff.id = (Staff.last.id + 1).to_s
-
+    
+    # for agency staff the id and staff_id are the same.  it's also used for the staff_info record, so assigning to variable.
+    staff_id = (Staff.last.id + 1).to_s
+    @staff.id = staff_id
+    @staff.staff_id = staff_id
+    
+    @staff_info = StaffInfo.new
+    # set the record's staff_id to that of the staff member being created.
+    @staff_info.staff_id = staff_id
+    @staff_info.experience_prefs = "Click here to add experience and preferences info."
+    @staff_info.skills_limits = "Click here to add skills and limits info."
+    @staff_info.schedule_availability = "Click here to add schedule and availability info."
+    @staff_info.contact_notes = "Click here to add conact info and other notes."
+    
     respond_to do |format|
-      if @staff.save
+      if @staff.save && @staff_info.save
         flash[:notice] = 'Staff was successfully created.'
         format.html { redirect_to :controller => "admin" }
         format.xml  { render :xml => @staff, :status => :created, :location => @staff }
