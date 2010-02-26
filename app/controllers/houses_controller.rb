@@ -42,8 +42,13 @@ class HousesController < ApplicationController
     # page instead of showing the search results.
     #-------------------------------------------------------------------------------
     ### TODO gives error if one house is in the database...can't evaluate params[:search]...also must fix this problem while adding houses
-    if @houses.length == 1 && params[:search][:bu_code_equals].nil?
-      redirect_to @houses[0]
+    ### I think I fixed this, but needs a little testing with adding/removing houses, searching, and pdf stuff when that gets implemented.
+
+    if params[:search]
+      
+      if @houses.length == 1 && params[:search][:bu_code_equals].nil?
+        redirect_to @houses[0]
+      end
     
     # Else display the page accordingly depending on the type of request.
     else
