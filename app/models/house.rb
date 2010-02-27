@@ -7,5 +7,5 @@ class House < ActiveRecord::Base
   has_many :house_staffs, :foreign_key => 'bu_code', :dependent => :destroy
   has_many :user_houses, :foreign_key => 'bu_code', :dependent => :destroy
   
-  validates_presence_of :bu_code
+  validates_presence_of :bu_code, :name
 end

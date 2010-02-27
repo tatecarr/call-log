@@ -5,16 +5,20 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :house_staffs
 
-  map.resources :staffs
+  map.resources :staffs, :as => "call-log"
   
   map.resources :feedbacks
 
   map.logout 'logout', :controller => 'sessions', :action => 'destroy'
   map.login 'login', :controller => 'sessions', :action => 'new'
   map.home 'home', :controller => 'sessions', :action => 'home'
-  map.passwordreset 'password-reset', :controller => "users", :action => "password_reset"
+  map.passwordreset 'change-password', :controller => "users", :action => "password_reset"
   
   map.email_feedback 'email_feedback', :controller => "feedback", :action => "index"
+  
+  map.agency_staff 'agency-staff', :controller => "admin", :action => "agency_staff"
+  map.backup_restore 'backup-restore', :controller => "admin", :action => "backup_restore" 
+  map.import_staff 'import-staff', :controller => "admin", :action => "import_staff" 
   
   map.root :controller => 'sessions', :action => "new" 
   map.resources :sessions

@@ -38,6 +38,7 @@ ul#navi {
 	-moz-border-radius:10px;
 	-webkit-border-radius:10px;
 	line-height: 0px; /* fixes IE6 stepdown bug */
+	margin-bottom: 20px;
 }
 
 ul#navi li a {
@@ -276,6 +277,10 @@ input.feedback {
 
 #list-table tr.odd {
   background-color: rgb(237, 243, 254);
+}
+
+#list-table tr:hover {
+  background-color: #CCC;
 }
 
 #no-results {

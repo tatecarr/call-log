@@ -1,0 +1,17 @@
+<%= link_to "Manage Users", :action => "index" %>
+<%= link_to "Import Staff", import_staff_path %>
+<%= link_to "Agency Staff", agency_staff_path %>
+<%= link_to "Backup and Restore", backup_restore_path %>
+
+<%= link_to "Add new agency staff", new_staff_path %>
+<% @agency_staffs.each do |staff| %>
+	<table>
+		<tr>
+			<td><%= staff.first_name %></td>
+			<td><%= staff.last_name %></td>
+			<td><%= staff.home_number %></td>
+			<td><%= link_to "Edit", edit_staff_path(staff) %></td>
+			<td><%= link_to "Remove", staff, :confirm => "Are you sure? This will erase all of the employees information.", :method => :delete %></td>
+		</tr>
+	</table>
+<% end %>

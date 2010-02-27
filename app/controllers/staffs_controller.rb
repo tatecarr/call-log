@@ -105,7 +105,7 @@ class StaffsController < ApplicationController
     respond_to do |format|
       if @staff.save && @staff_info.save
         flash[:notice] = 'Staff was successfully created.'
-        format.html { redirect_to :controller => "admin" }
+        format.html { redirect_to agency_staff_path }
         format.xml  { render :xml => @staff, :status => :created, :location => @staff }
       else
         format.html { render :action => "new" }
@@ -138,7 +138,7 @@ class StaffsController < ApplicationController
     @staff.destroy
 
     respond_to do |format|
-      format.html { redirect_to :controller => "admin" }
+      format.html { redirect_to agency_staff_path }
       format.xml  { head :ok }
     end
   end

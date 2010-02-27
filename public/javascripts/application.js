@@ -6,15 +6,6 @@ function enableSubmit(ourButton) {
 	ourButton.form["commit"].disabled = false;
 }
 
-function toggleIt(element) {
-	var content = document.getElementById("content").childNodes;
-	for (var i = 0; i < content.length; i++) {
-		if (content[i].style) {
-			content[i].style.display = "none";
-		}
-	}
-	document.getElementById(element).style.display = "";
-}
 
 function resizeText(multiplier) {
   if (document.body.style.fontSize == "") {
@@ -68,4 +59,8 @@ function decreaseFontSize() {
 	      p[i].style.fontSize = s+"px"
 	   }
 	}
+}
+
+function tableRowLinkTo(link) {
+	window.location.href = "call-log/" + link
 }

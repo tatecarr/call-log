@@ -1,0 +1,17 @@
+<%= link_to "Manage Users", :action => "index" %>
+<%= link_to "Import Staff", import_staff_path %>
+<%= link_to "Agency Staff", agency_staff_path %>
+<%= link_to "Backup and Restore", backup_restore_path %>
+
+<div id="import-page">
+	<% form_for @import, :url => { :action => "import_csv" }, :html => { :multipart => true } do |f| %>
+	<fieldset>
+		CSV File:
+		<%= f.file_field :csv, :onclick => 'enableSubmit(this);' %>
+	</fieldset>
+	<div class="buttons">
+		<%= f.submit "Import Data", :disabled => true, :disable_with => "Importing..." %>
+	</div>
+
+	<% end %>
+</div>

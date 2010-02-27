@@ -38,7 +38,7 @@ class AdminController < ApplicationController
     #-------------------------------------------------------------------------------
     
     # set full info to whatever was passed in the :full_info of the params
-    full_info = params[:house][user_id][:full_info]
+    full_info = params[:house][user_id][:full_info].strip
     
     # set bu_code to the set of digits in the passed parameter
     bu_code = (/\d+/.match(full_info)).to_s
@@ -171,11 +171,21 @@ class AdminController < ApplicationController
 #-------------------------- Actions for displaying pages ---------------------------
  
   def index
-    @import = Import.new
     @user = User.new
     @users = User.all
     @user_house = UserHouse.new
+  end
+  
+  def agency_staff
     @agency_staffs = Staff.find(:all, :conditions => ['agency_staff = ?', true])
+  end
+  
+  def backup_restore
+    @import = Import.new
+  end
+  
+  def import_staff
+    @import = Import.new
   end
 
   def show
@@ -226,6 +236,11 @@ class AdminController < ApplicationController
     # read the csv file into a 2-d array
     lines = parse_csv_file(@import.csv.path)
     
+    # does the file have anything in it?
+    if lines.empty?
+      flash[:error] = "There was nothing in the file."
+      redirect_to :action => "index" and return
+    end
     
     # Provides and easy way for us to access the column header position when adding people later.
     #
@@ -262,7 +277,7 @@ class AdminController < ApplicationController
     else
       
       flash[:error] = "The file did not contain any people. Please make sure there are people in the file."
-      render :action => "show", :id => @import.id
+      render :action => "index"
     end
 	end
 	
@@ -286,14 +301,13 @@ class AdminController < ApplicationController
     
     if success
       # if we were successful backing up the file, move it to a place where it can be downloaded
-      system "mv call_log_backup_#{now}.sql public/call_log_backup_#{now}.sql"
-      flash[:notice] = "The backup was successful."
+      moved = system "mv call_log_backup_#{now}.sql public/call_log_backup_#{now}.sql"
+      send_file "public/call_log_backup_#{now}.sql", :type => "text/plain" if moved
     else
       # something went wrong with the dump
       flash[:error] = "The backup was unsuccessful. Please try again."
+      redirect_to backup_restore_path
     end
-    
-    redirect_to :action => "index"
 	end
 	
 	def restore
@@ -303,6 +317,8 @@ class AdminController < ApplicationController
     
 	  success = system "mysql -u root call_log_development < #{@import.csv.path}"
 	  
+	  @import.destroy
+	  
 	  if success
 	    flash[:notice] = "The restore was successful."
 	    @import.destroy
@@ -311,7 +327,7 @@ class AdminController < ApplicationController
       @import.destroy
       render :action => "index"
     end
-    redirect_to staffs_url
+    redirect_to backup_restore_path
 	end
 
 #-------------------------- Private helper methods ----------------------------------

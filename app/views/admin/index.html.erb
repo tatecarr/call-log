@@ -1,80 +1,46 @@
-<a href="" onclick="toggleIt('user-page');return false;">Manage Users</a>
-<a href="" onclick="toggleIt('import-page');return false;">Import Staff</a> 
-<a href="" onclick="toggleIt('backup-page');return false;">Backup Database</a>
-<a href="" onclick="toggleIt('restore-page');return false;">Restore Database</a>
-<a href="" onclick="toggleIt('agency-staff');return false;">Manage Agency Staff</a>
-<div id="content">
-	<div id="import-page" style="display:none;">
-		<% form_for @import, :url => { :action => "import_csv" }, :html => { :multipart => true } do |f| %>
-		<fieldset>
-			CSV File:
-			<%= f.file_field :csv, :onclick => 'enableSubmit(this);' %>
-		</fieldset>
-		<div class="buttons">
-			<%= f.submit "Import Data", :disabled => true, :disable_with => "Importing..." %>
-		</div>
+<%= link_to "Manage Users", :action => "index" %>
+<%= link_to "Import Staff", import_staff_path %>
+<%= link_to "Agency Staff", agency_staff_path %>
+<%= link_to "Backup and Restore", backup_restore_path %>
 
-		<% end %>
+<div id="user-page">
+
+	<div id="add-user-form">
+	<h2>Add a User</h2>
+	<% form_for @user, :url => {:action => 'add_user' } do |f| -%>
+		<p>
+			Email Address of User:<br />
+		  	<%= f.text_field :email %> 
+		</p>
+		<p>
+			Account Type:<br/>
+			<%= select("user", "role", %w[House-Admin System-Admin]) %> &nbsp;
+		</p>
+		<%= f.hidden_field :system_generated_pw, :value => true %>
+		<p>
+			<%= f.submit "Add User", :disable_with => 'Adding...' %>
+		</p>
+	<% end -%>
 	</div>
 
-
-	<div id="backup-page" style="display:none;">
-		<% form_tag(:action => "backup") do %>
-			<p><%= submit_tag "Backup" %></p>
-		<% end -%>
-	</div>
-
-
-	<div id="restore-page" style="display:none;">
-		<% form_for @import, :url => { :action => "restore" }, :html => { :multipart => true } do |f| %>
-		<fieldset>
-			SQL File: 
-			<%= f.file_field :csv, :onclick => 'enableSubmit(this);' %>
-		</fieldset>
-		<div class="buttons">
-			<%= f.submit "Restore from Backup", :disabled => true, :disable_with => "Restoring..." %>
-		</div>
-		<% end %>
-	</div>
-
-	<div id="user-page">
-	
-		<div id="add-user-form">
-		<h2>Add a User</h2>
-		<% form_for @user, :url => {:action => 'add_user' } do |f| -%>
-			<p>
-				Email Address of User:<br />
-			  	<%= f.text_field :email %> 
-			</p>
-			<p>
-				Account Type:<br/>
-				<%= select("user", "role", %w[House-Admin System-Admin]) %> &nbsp;
-			</p>
-			<%= f.hidden_field :system_generated_pw, :value => true %>
-			<p>
-				<%= f.submit "Add User", :disable_with => 'Adding...' %>
-			</p>
-		<% end -%>
-		</div>
-
-		<div id="current-users">
-		<h2>Current Users</h2>
-		<% @users.each do |user| %>				
-			<table class="user_info" onclick="Effect.toggle('houses_<%= user.id %>', 'appear', { duration: 0.3 }); return false;">
-				<tr>
-					<td class="user_username"><%= user.username %></td>
-					<td class="user_email"><%= user.email %></td>
-					<td class="user_role"><%= user.role %></td>
-					<td class="remove_link"><%= link_to "Remove", user, :confirm => 'Are you sure? This will erase all of the users information and they will not be able to log in.', :method => :delete %></td>
-				</tr>
-			</table>
-			
-			<div id="houses_<%= user.id %>" class="houses" style="display:none;">
-				
+	<div id="current-users">
+	<h2>Current Users</h2>
+	<% @users.each do |user| %>				
+		<table class="user_info" onclick="Effect.toggle('houses_<%= user.id %>', 'appear', { duration: 0.3 }); return false;">
+			<tr>
+				<td class="user_username"><%= user.username %></td>
+				<td class="user_email"><%= user.email %></td>
+				<td class="user_role"><%= user.role %></td>
+				<td class="remove_link"><%= link_to "Remove", user, :confirm => 'Are you sure? This will erase all of the users information and they will not be able to log in.', :method => :delete %></td>
+			</tr>
+		</table>
+		
+		<div id="houses_<%= user.id %>" class="houses" style="display:none;">
+			<% unless user.role == "System-Admin" %>
 				<div id="houses_list_<%= user.id %>">
 						<%= render :partial => "user_house", :collection => user.user_houses %>
 				</div>
-				
+			
 				<div id="add_house_message_<%= user.id %>"></div>
 				<% form_remote_tag :url => { :controller => "admin", :action => "create" }, :html => {:id => "form_#{user.id}"} do %>
 					House:
@@ -82,23 +48,11 @@
 					<%= hidden_field_tag :user_id, user.id %>
 					<%= submit_tag "Add User to House" %>
 				<% end %>
-			</div>
-	
-		<% end %>
+			<% else %>
+				<p>Admins have access to all houses.</p>
+			<% end %>
 		</div>
-	</div>
-	<div id="agency-staff" style="display: none;">
-		<%= link_to "Add new agency staff", new_staff_path %>
-		<% @agency_staffs.each do |staff| %>
-			<table>
-				<tr>
-					<td><%= staff.first_name %></td>
-					<td><%= staff.last_name %></td>
-					<td><%= staff.home_number %></td>
-					<td><%= link_to "Edit", edit_staff_path(staff) %></td>
-					<td><%= link_to "Remove", staff, :confirm => "Are you sure? This will erase all of the employees information.", :method => :delete %></td>
-				</tr>
-			</table>
-		<% end %>
+
+	<% end %>
 	</div>
 </div>
