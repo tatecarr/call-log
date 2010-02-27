@@ -1,0 +1,319 @@
+  [4;36;1mUser Delete all (0.3ms)[0m   [0;1mDELETE FROM "users" WHERE 1=1[0m
+  [4;35;1mUser Delete all (0.1ms)[0m   [0mDELETE FROM "users" WHERE 1=1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."username" = 'foobar') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'foo@example.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."username" = 'foobar') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'foo@example.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.6ms)[0m   [0;1mINSERT INTO "users" ("created_at", "updated_at", "username", "role", "password_salt", "system_generated_pw", "password_hash", "email") VALUES('2010-02-27 20:59:34', '2010-02-27 20:59:34', 'foobar', NULL, '19733f7a6d2fcf008ec16e7f337c9865871aec86', NULL, '6d286a4713cc4a16921923d90e146a9828f2902d', 'foo@example.com')[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."username" = 'foobar') LIMIT 1[0m
+  [4;36;1mUser Delete all (0.2ms)[0m   [0;1mDELETE FROM "users" WHERE 1=1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."username" = 'nonexisting') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'nonexisting') LIMIT 1[0m
+  [4;35;1mUser Delete all (0.2ms)[0m   [0mDELETE FROM "users" WHERE 1=1[0m
+  [4;36;1mUser Delete all (0.1ms)[0m   [0;1mDELETE FROM "users" WHERE 1=1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."username" = 'foo') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'foo@bar.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."username" = 'foo') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'foo@bar.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.1ms)[0m   [0mINSERT INTO "users" ("created_at", "updated_at", "username", "role", "password_salt", "system_generated_pw", "password_hash", "email") VALUES('2010-02-27 20:59:34', '2010-02-27 20:59:34', 'foo', NULL, 'd767c02466e2e7cc4f2a0ab907ea48f4bc2af532', NULL, '905d6eedd72ad818b4fc6bc94a91590063e02573', 'foo@bar.com')[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."username" = 'foo@bar.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."email" = 'foo@bar.com') LIMIT 1[0m
+  [4;36;1mUser Delete all (0.3ms)[0m   [0;1mDELETE FROM "users" WHERE 1=1[0m
+  [4;35;1mUser Delete all (0.1ms)[0m   [0mDELETE FROM "users" WHERE 1=1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."username" = 'foobar') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'foo@example.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."username" = 'foobar') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'foo@example.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO "users" ("created_at", "updated_at", "username", "role", "password_salt", "system_generated_pw", "password_hash", "email") VALUES('2010-02-27 20:59:34', '2010-02-27 20:59:34', 'foobar', NULL, '0ce67b05ea36414d4248293c901e67ead419fe2f', NULL, '58081c20934347cc0b76fe9586cf7ac1c323506d', 'foo@example.com')[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."username" = 'foobar') LIMIT 1[0m
+  [4;36;1mUser Delete all (0.2ms)[0m   [0;1mDELETE FROM "users" WHERE 1=1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."username" = 'foo') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'foo@example.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."username" = 'foo') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'foo@example.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO "users" ("created_at", "updated_at", "username", "role", "password_salt", "system_generated_pw", "password_hash", "email") VALUES('2010-02-27 20:59:34', '2010-02-27 20:59:34', 'foo', NULL, '8d8a82cbf2dec7b015ae6eb89fb4ae88fcec0bd7', NULL, '022d3f05788b55651fabedbd868c37129229904c', 'foo@example.com')[0m
+  [4;36;1mUser Delete all (0.3ms)[0m   [0;1mDELETE FROM "users" WHERE 1=1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."username" = 'foo') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'foo@example.com') LIMIT 1[0m
+  [4;35;1mUser Delete all (0.3ms)[0m   [0mDELETE FROM "users" WHERE 1=1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."username" = 'foo') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'foo@example.com') LIMIT 1[0m
+  [4;36;1mUser Delete all (0.3ms)[0m   [0;1mDELETE FROM "users" WHERE 1=1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'foo@example.com') LIMIT 1[0m
+  [4;36;1mUser Delete all (0.2ms)[0m   [0;1mDELETE FROM "users" WHERE 1=1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."username" = 'foo') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'foo@bar@example.com') LIMIT 1[0m
+  [4;35;1mUser Delete all (0.3ms)[0m   [0mDELETE FROM "users" WHERE 1=1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."username" = 'foo') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'foo@example.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."username" = 'foo') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'foo@example.com') LIMIT 1[0m
+  [4;36;1mUser Delete all (0.2ms)[0m   [0;1mDELETE FROM "users" WHERE 1=1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."username" = 'odd ^&(@)') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'foo@example.com') LIMIT 1[0m
+  [4;35;1mUser Delete all (0.2ms)[0m   [0mDELETE FROM "users" WHERE 1=1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."username" = 'foo') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'foo@example.com') LIMIT 1[0m
+  [4;36;1mUser Delete all (0.2ms)[0m   [0;1mDELETE FROM "users" WHERE 1=1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."username" = 'foo') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bar@example.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."username" = 'foo') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bar@example.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO "users" ("created_at", "updated_at", "username", "role", "password_salt", "system_generated_pw", "password_hash", "email") VALUES('2010-02-27 20:59:34', '2010-02-27 20:59:34', 'foo', NULL, '63dc7b5f0cdff2236291192d4172fbd912d4ed26', NULL, 'd7a0c140f6148608cc3c283c4865da264ad15881', 'bar@example.com')[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."username" = 'foo') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'bar@example.com') LIMIT 1[0m
+  [4;36;1mUser Delete all (0.3ms)[0m   [0;1mDELETE FROM "users" WHERE 1=1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."username" = 'uniquename') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'foo@example.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."username" = 'uniquename') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'foo@example.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO "users" ("created_at", "updated_at", "username", "role", "password_salt", "system_generated_pw", "password_hash", "email") VALUES('2010-02-27 20:59:34', '2010-02-27 20:59:34', 'uniquename', NULL, '8cbb199d69e9b42f4e29d70786c9b4f403e708a9', NULL, 'ce0d7d3d0f6c0c7b35a983021eca1182ad7ce57f', 'foo@example.com')[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."username" = 'uniquename') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'foo@example.com') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "house_staffs" [0m
+
+
+Processing HouseStaffsController#create (for 0.0.0.0 at 2010-02-27 15:59:36) [POST]
+  Parameters: {"action"=>"create", "house_staff"=>{}, "controller"=>"house_staffs"}
+::: Checking session expiry
+::: Initializing session expiry. Expires at 2010-02-27 21:14:36 UTC
+Redirected to http://test.host/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 16ms (DB: 3) | 302 Found [http://test.host/house_staffs?]
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "house_staffs" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "house_staffs" [0m
+  [4;35;1mHouseStaff Load (0.3ms)[0m   [0mSELECT * FROM "house_staffs" WHERE ("house_staffs"."id" = 2053932785) [0m
+
+
+Processing HouseStaffsController#destroy (for 0.0.0.0 at 2010-02-27 15:59:36) [DELETE]
+  Parameters: {"action"=>"destroy", "id"=>"2053932785", "controller"=>"house_staffs"}
+::: Checking session expiry
+::: Initializing session expiry. Expires at 2010-02-27 21:14:36 UTC
+Redirected to http://test.host/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 1) | 302 Found [http://test.host/house_staffs/2053932785]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "house_staffs" [0m
+  [4;35;1mHouseStaff Load (0.3ms)[0m   [0mSELECT * FROM "house_staffs" WHERE ("house_staffs"."id" = 2053932785) [0m
+
+
+Processing HouseStaffsController#edit (for 0.0.0.0 at 2010-02-27 15:59:36) [GET]
+  Parameters: {"action"=>"edit", "id"=>"2053932785", "controller"=>"house_staffs"}
+::: Checking session expiry
+::: Initializing session expiry. Expires at 2010-02-27 21:14:36 UTC
+Redirected to http://test.host/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/house_staffs/2053932785/edit]
+
+
+Processing HouseStaffsController#index (for 0.0.0.0 at 2010-02-27 15:59:36) [GET]
+  Parameters: {"action"=>"index", "controller"=>"house_staffs"}
+::: Checking session expiry
+::: Initializing session expiry. Expires at 2010-02-27 21:14:36 UTC
+Redirected to http://test.host/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/house_staffs]
+
+
+Processing HouseStaffsController#new (for 0.0.0.0 at 2010-02-27 15:59:36) [GET]
+  Parameters: {"action"=>"new", "controller"=>"house_staffs"}
+::: Checking session expiry
+::: Initializing session expiry. Expires at 2010-02-27 21:14:36 UTC
+Redirected to http://test.host/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/house_staffs/new]
+  [4;36;1mHouseStaff Load (0.3ms)[0m   [0;1mSELECT * FROM "house_staffs" WHERE ("house_staffs"."id" = 2053932785) [0m
+
+
+Processing HouseStaffsController#show (for 0.0.0.0 at 2010-02-27 15:59:36) [GET]
+  Parameters: {"action"=>"show", "id"=>"2053932785", "controller"=>"house_staffs"}
+::: Checking session expiry
+::: Initializing session expiry. Expires at 2010-02-27 21:14:36 UTC
+Redirected to http://test.host/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/house_staffs/2053932785]
+  [4;35;1mHouseStaff Load (0.3ms)[0m   [0mSELECT * FROM "house_staffs" WHERE ("house_staffs"."id" = 2053932785) [0m
+
+
+Processing HouseStaffsController#update (for 0.0.0.0 at 2010-02-27 15:59:36) [PUT]
+  Parameters: {"action"=>"update", "house_staff"=>{}, "id"=>"2053932785", "controller"=>"house_staffs"}
+::: Checking session expiry
+::: Initializing session expiry. Expires at 2010-02-27 21:14:36 UTC
+Redirected to http://test.host/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/house_staffs/2053932785?]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "houses" [0m
+
+
+Processing HousesController#create (for 0.0.0.0 at 2010-02-27 15:59:36) [POST]
+  Parameters: {"house"=>{}, "action"=>"create", "controller"=>"houses"}
+::: Checking session expiry
+::: Initializing session expiry. Expires at 2010-02-27 21:14:36 UTC
+Redirected to http://test.host/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/houses?]
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "houses" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "houses" [0m
+  [4;35;1mHouse Load (0.6ms)[0m   [0mSELECT * FROM "houses" WHERE ("houses"."bu_code" = 1) [0m
+
+
+Processing HousesController#destroy (for 0.0.0.0 at 2010-02-27 15:59:36) [DELETE]
+  Parameters: {"action"=>"destroy", "id"=>"1", "controller"=>"houses"}
+::: Checking session expiry
+::: Initializing session expiry. Expires at 2010-02-27 21:14:36 UTC
+Redirected to http://test.host/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 1) | 302 Found [http://test.host/houses/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "houses" [0m
+  [4;35;1mHouse Load (0.6ms)[0m   [0mSELECT * FROM "houses" WHERE ("houses"."bu_code" = 1) [0m
+
+
+Processing HousesController#edit (for 0.0.0.0 at 2010-02-27 15:59:36) [GET]
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"houses"}
+::: Checking session expiry
+::: Initializing session expiry. Expires at 2010-02-27 21:14:36 UTC
+Redirected to http://test.host/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 1) | 302 Found [http://test.host/houses/1/edit]
+
+
+Processing HousesController#index (for 0.0.0.0 at 2010-02-27 15:59:36) [GET]
+  Parameters: {"action"=>"index", "controller"=>"houses"}
+::: Checking session expiry
+::: Initializing session expiry. Expires at 2010-02-27 21:14:36 UTC
+Redirected to http://test.host/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/houses]
+
+
+Processing HousesController#new (for 0.0.0.0 at 2010-02-27 15:59:36) [GET]
+  Parameters: {"action"=>"new", "controller"=>"houses"}
+::: Checking session expiry
+::: Initializing session expiry. Expires at 2010-02-27 21:14:36 UTC
+Redirected to http://test.host/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/houses/new]
+  [4;36;1mHouse Load (0.7ms)[0m   [0;1mSELECT * FROM "houses" WHERE ("houses"."bu_code" = 1) [0m
+
+
+Processing HousesController#show (for 0.0.0.0 at 2010-02-27 15:59:36) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"houses"}
+::: Checking session expiry
+::: Initializing session expiry. Expires at 2010-02-27 21:14:36 UTC
+Redirected to http://test.host/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 1) | 302 Found [http://test.host/houses/1]
+  [4;35;1mHouse Load (0.6ms)[0m   [0mSELECT * FROM "houses" WHERE ("houses"."bu_code" = 1) [0m
+
+
+Processing HousesController#update (for 0.0.0.0 at 2010-02-27 15:59:36) [PUT]
+  Parameters: {"house"=>{}, "action"=>"update", "id"=>"1", "controller"=>"houses"}
+::: Checking session expiry
+::: Initializing session expiry. Expires at 2010-02-27 21:14:36 UTC
+Redirected to http://test.host/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 1) | 302 Found [http://test.host/houses/1?]
+
+
+Processing SessionsController#new (for 0.0.0.0 at 2010-02-27 15:59:36) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+::: Checking session expiry
+::: Initializing session expiry. Expires at 2010-02-27 21:14:36 UTC
+Rendering template within layouts/sessions
+Rendering sessions/new
+Completed in 31ms (View: 29, DB: 0) | 200 OK [http://test.host/login]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "staffs" [0m
+
+
+Processing StaffsController#create (for 0.0.0.0 at 2010-02-27 15:59:36) [POST]
+  Parameters: {"staff"=>{}, "action"=>"create", "controller"=>"staffs"}
+::: Checking session expiry
+::: Initializing session expiry. Expires at 2010-02-27 21:14:36 UTC
+Redirected to http://test.host/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/staffs?]
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "staffs" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "staffs" [0m
+  [4;35;1mStaff Load (0.3ms)[0m   [0mSELECT * FROM "staffs" WHERE ("staffs"."id" = 2053932785) [0m
+
+
+Processing StaffsController#destroy (for 0.0.0.0 at 2010-02-27 15:59:36) [DELETE]
+  Parameters: {"action"=>"destroy", "id"=>"2053932785", "controller"=>"staffs"}
+::: Checking session expiry
+::: Initializing session expiry. Expires at 2010-02-27 21:14:36 UTC
+Redirected to http://test.host/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 1) | 302 Found [http://test.host/staffs/2053932785]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "staffs" [0m
+  [4;35;1mStaff Load (0.4ms)[0m   [0mSELECT * FROM "staffs" WHERE ("staffs"."id" = 2053932785) [0m
+
+
+Processing StaffsController#edit (for 0.0.0.0 at 2010-02-27 15:59:36) [GET]
+  Parameters: {"action"=>"edit", "id"=>"2053932785", "controller"=>"staffs"}
+::: Checking session expiry
+::: Initializing session expiry. Expires at 2010-02-27 21:14:36 UTC
+Redirected to http://test.host/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 1) | 302 Found [http://test.host/staffs/2053932785/edit]
+
+
+Processing StaffsController#index (for 0.0.0.0 at 2010-02-27 15:59:36) [GET]
+  Parameters: {"action"=>"index", "controller"=>"staffs"}
+::: Checking session expiry
+::: Initializing session expiry. Expires at 2010-02-27 21:14:36 UTC
+Redirected to http://test.host/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/staffs]
+
+
+Processing StaffsController#new (for 0.0.0.0 at 2010-02-27 15:59:36) [GET]
+  Parameters: {"action"=>"new", "controller"=>"staffs"}
+::: Checking session expiry
+::: Initializing session expiry. Expires at 2010-02-27 21:14:36 UTC
+Redirected to http://test.host/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/staffs/new]
+  [4;36;1mStaff Load (0.4ms)[0m   [0;1mSELECT * FROM "staffs" WHERE ("staffs"."id" = 2053932785) [0m
+
+
+Processing StaffsController#show (for 0.0.0.0 at 2010-02-27 15:59:36) [GET]
+  Parameters: {"action"=>"show", "id"=>"2053932785", "controller"=>"staffs"}
+::: Checking session expiry
+::: Initializing session expiry. Expires at 2010-02-27 21:14:36 UTC
+Redirected to http://test.host/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/staffs/2053932785]
+  [4;35;1mStaff Load (0.4ms)[0m   [0mSELECT * FROM "staffs" WHERE ("staffs"."id" = 2053932785) [0m
+
+
+Processing StaffsController#update (for 0.0.0.0 at 2010-02-27 15:59:36) [PUT]
+  Parameters: {"staff"=>{}, "action"=>"update", "id"=>"2053932785", "controller"=>"staffs"}
+::: Checking session expiry
+::: Initializing session expiry. Expires at 2010-02-27 21:14:36 UTC
+Redirected to http://test.host/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/staffs/2053932785?]
+
+
+Processing UsersController#new (for 0.0.0.0 at 2010-02-27 15:59:36) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+::: Checking session expiry
+::: Initializing session expiry. Expires at 2010-02-27 21:14:36 UTC
+Redirected to http://test.host/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/users/new]
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m

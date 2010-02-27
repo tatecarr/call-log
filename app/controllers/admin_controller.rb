@@ -385,6 +385,10 @@ class AdminController < ApplicationController
       params[:staff][:home_number] = line[@row_positions[:home_number]]
       params[:staff][:agency_staff] = false
       
+      # Conditions to check if based on their certifications the staff earns $9.65 | $10.19
+      # We don't have the format of that info at this time, so it'll be hardcoded $9.65 for now.
+      params[:staff][:payrate] = "$9.65"
+      
       # create and save the new staff member to the db
       person = Staff.new(params[:staff])
       person.save

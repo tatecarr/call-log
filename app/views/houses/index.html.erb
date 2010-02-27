@@ -24,7 +24,6 @@
     <th><%= order @search, :by => :address %></th>
     <th><%= order @search, :by => :city %></th>
     <th><%= order @search, :by => :phone1 %></th>
-    <th><%= order @search, :by => :phone2 %></th>
     <th><%= order @search, :by => :fax %></th>
   </tr>
 
@@ -35,7 +34,6 @@
     <td><%=h house.address %></td>
     <td><%=h house.city %></td>
     <td><%=h house.phone1 %></td>
-    <td><%=h house.phone2 %></td>
     <td><%=h house.fax %></td>
     <td><%= link_to 'Show', house %></td>
     <% if admin? || house_admin?(house) %>
