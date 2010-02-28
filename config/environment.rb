@@ -25,9 +25,7 @@ Rails::Initializer.run do |config|
     config.gem "searchlogic"
     config.gem "prawn"
     config.gem 'fastercsv'
-    config.gem 'mislav-will_paginate', 
-      :lib => 'will_paginate', 
-      :source => 'http://gems.github.com'
+    config.gem 'will_paginate'
     
     
   # Only load the plugins named here, in the order given (default is alphabetical).
