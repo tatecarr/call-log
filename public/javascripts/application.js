@@ -64,3 +64,7 @@ function decreaseFontSize() {
 function tableRowLinkTo(link) {
 	window.location.href = "call-log/" + link
 }
+
+function tableRowLinkToHouse(link) {
+	window.location.href = "houses/" + link
+}

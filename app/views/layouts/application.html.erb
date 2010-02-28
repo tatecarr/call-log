@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title><%= controller.controller_name %>: <%= controller.action_name %></title>
+  <title><%= yield :title %></title>
   <%= stylesheet_link_tag 'scaffold' %>
   <%= javascript_include_tag :defaults %>
   <%= javascript_include_tag 'curvycorners' %>
@@ -23,7 +23,14 @@
 	<% if logged_in? %><li id="logout_link"><%= link_to "Logout", logout_path %></li><% end %>
 </ul>
 
-<div id="logout-link"></div>
+<% if controller.controller_name == "admin" %>
+<ul id="second_navi">
+<li><%= link_to "Manage Users", :action => "index" %></li>
+<li><%= link_to "Import Staff", import_staff_path %></li>
+<li><%= link_to "Agency Staff", agency_staff_path %></li>
+<li><%= link_to "Backup and Restore", backup_restore_path %></li>
+</ul>
+<% end %>
 
 <% if flash[:notice] %>
 	<p id="flash-notice"><%= flash[:notice] %></p>

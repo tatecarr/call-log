@@ -1,4 +1,6 @@
-<h2>Call Log</h2>
+<% content_for :title, "Call Log" %>
+
+<h1>Call Log</h1>
 
 
 <div id="search-form">
@@ -8,24 +10,29 @@
 			<tr>
 				<td>Full Name:</td> 
 				<td><%= text_field_with_auto_complete :staff, :full_name, :value => @full_name %></td>
-			</tr>
-			<tr>
-				<td>Pay Rate:</td>
-				<td>Min: <%= text_field_tag :pay_rate_low, value = nil, :class => "pay_rate" %> Max: <%= text_field_tag :pay_rate_high, value = nil, :class => "pay_rate" %></td>
 				<td>Gender:</td>
 				<td><%= f.radio_button :gender_equals, :M %>Male<%= f.radio_button :gender_equals, :F %>Female</td>
 			</tr>
 			<tr>
+				<td>Age:</td>
+				<td><%= text_field_tag :age, value = nil %></td>
+				<td>Certifications:</td>
+				<td>CPR <%= check_box_tag :certification_1 %> FA <%= check_box_tag :certification_2 %> MT<%= check_box_tag :certification_3 %> Other<%= check_box_tag :certification_4 %></td>
+			</tr>
+			<tr>
 				<td>Home Phone:</td> 
 				<td><%= text_field_with_auto_complete :staff, :home_number, :value => @home_number %></td>
+				<td>Pay Rate:</td>
+				<td>Min: <%= text_field_tag :pay_rate_low, value = nil, :class => "pay_rate" %> Max: <%= text_field_tag :pay_rate_high, value = nil, :class => "pay_rate" %></td>
+			</tr>
+			<tr>
 				<td>Cell Phone:</td> 
 				<td><%= text_field_with_auto_complete :staff, :cell_number, :value => @cell_number %></td>
-			</tr>
-		<% form_tag staffs_path, :method => 'get' do %>
-			<tr>
+			<% form_tag staffs_path, :method => 'get' do %>
 				<td>Results per page:</td> 
 				<td><%= select_tag :number_per_page, options_for_select(@number_per_page_options, selected = @number_per_page) %></td>
-				<td>&nbsp;</td>
+			</tr>
+			<tr>
 				<td><%= submit_tag "Search", :disable_with => 'Searching...' %></td>
 			</tr>
 		<% end %>
