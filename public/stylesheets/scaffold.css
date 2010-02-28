@@ -117,7 +117,36 @@ ul#navi .current a {
 background-position: 0 -66px;
 }
 
+/* login page */
 
+#home_logo {
+	text-align: center;
+	display: block;
+	margin: 20px auto;	
+}
+
+#login_forms {
+	width: 200px;
+	margin: auto;
+}
+
+/* general stuff */
+
+h1 { font-size: 24pt; }
+
+h2 { font-size: 20pt; }
+
+input[type="text"] { width: 200px; }
+
+/* search in call-log */
+
+#search-form {
+
+} 
+
+.pay_rate {
+	width: 65px !important;
+}
 
 /* admin page */
 
@@ -172,6 +201,8 @@ input.feedback {
 	width: 600px;
 	-moz-border-radius:10px;
 	-webkit-border-radius:10px;
+	margin: auto;
+	margin-bottom: 10px;
 }
 
 #flash-warning {
@@ -181,6 +212,8 @@ input.feedback {
 	width: 600px;
 	-moz-border-radius:10px;
 	-webkit-border-radius:10px;
+	margin: auto;
+	margin-bottom: 10px;
 }
 
 #flash-error {
@@ -191,6 +224,8 @@ input.feedback {
 	width: 600px;
 	-moz-border-radius:10px;
 	-webkit-border-radius:10px;
+	margin: auto;
+	margin-bottom: 10px;
 }
 
 .fieldWithErrors {
@@ -281,6 +316,10 @@ input.feedback {
 
 #list-table tr:hover {
   background-color: #CCC;
+}
+
+#list-table tr:first-child:hover {
+  background-color: #FFF;
 }
 
 #no-results {

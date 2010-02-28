@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<%= image_tag "/images/logo.jpg" %>
+<%= image_tag "/images/logo.jpg", :id => "home_logo" %>
 
 <% if flash[:notice] %>
 	<p id="flash-notice"><%= flash[:notice] %></p>
