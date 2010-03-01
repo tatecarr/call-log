@@ -26,6 +26,7 @@ Rails::Initializer.run do |config|
     config.gem "prawn"
     config.gem 'fastercsv'
     config.gem 'will_paginate'
+    config.gem 'RedCloth'
     
     
   # Only load the plugins named here, in the order given (default is alphabetical).
