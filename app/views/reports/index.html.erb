@@ -2,9 +2,26 @@
 
 <h1>Reports</h1>
 
+<div id="house-reports">
+<h2>Houses</h2>
 <% form_tag '/houses.pdf', :method => 'get' do %>
   <% for house in @houses %>
 	<%= check_box_tag "bu_code_equals[]", house.bu_code %><%= house.name %><br />
   <% end %>
   <%= submit_tag "Print Selected House Reports", :disable_with => "Printing..." %>
 <% end %>
+</div>
+
+<div id="staff-reports">
+<h2>Staff</h2>
+<% form_tag '/call-log.pdf', :method => 'get' do %>
+  <%= hidden_field_tag :predefined_report, "agency" %>
+  <%= submit_tag "Print Agency Staff Report", :disable_with => "Printing..." %>
+<% end -%>
+
+<% form_tag '/call-log.pdf', :method => 'get' do %>
+  <%= hidden_field_tag :predefined_report, "non-agency" %>
+  <%= submit_tag "Print Non-Agency Staff Report", :disable_with => "Printing..." %>
+<% end -%>
+</div>
+

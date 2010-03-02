@@ -4,10 +4,12 @@
 	<fieldset>
 		CSV File:
 		<%= f.file_field :csv, :onclick => 'enableSubmit(this);' %>
-	</fieldset>
-	<div class="buttons">
 		<%= f.submit "Import Data", :disabled => true, :disable_with => "Importing..." %>
-	</div>
-
+	</fieldset>
 	<% end %>
+	<div id="message"></div>
 </div>
+
+<iframe id="upload_frame" name="upload_frame">
+</iframe>
+

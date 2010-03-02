@@ -1,6 +1,9 @@
 <% content_for :title, "Home" %>
-<% if admin? %>
-	<p><%= link_to "Admin", :controller => "admin", :action => "index" %></p>
-<% end %>
-<p><%= link_to "Call-Log", staffs_path %></p>
-<p><%= link_to "Houses", houses_path %></p>
+<div id="home-page-links">
+	<p><%= link_to "Call-Log", staffs_path, :id => "call_log_home_link" %></p>
+	<p><%= link_to "Houses", houses_path, :id => "houses_home_link" %></p>
+	<p><%= link_to "Reports", reports_path, :id => "reports_home_link" %></p>
+	<% if admin? %>
+		<p><%= link_to "Admin", admin_index_path, :id => "admin_home_link" %></p>
+	<% end %>
+</div>

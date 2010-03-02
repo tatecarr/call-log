@@ -1,13 +1,17 @@
 <% content_for :title, "Admin" %>
 <%= link_to "Add new agency staff", new_staff_path %>
-<% @agency_staffs.each do |staff| %>
-	<table>
-		<tr>
-			<td><%= staff.first_name %></td>
-			<td><%= staff.last_name %></td>
-			<td><%= staff.home_number %></td>
-			<td><%= link_to "Edit", edit_staff_path(staff) %></td>
-			<td><%= link_to "Remove", staff, :confirm => "Are you sure? This will erase all of the employees information.", :method => :delete %></td>
-		</tr>
-	</table>
+<% unless @agency_staffs.empty? %>
+	<% @agency_staffs.each do |staff| %>
+		<table>
+			<tr>
+				<td><%= staff.first_name %></td>
+				<td><%= staff.last_name %></td>
+				<td><%= staff.home_number %></td>
+				<td><%= link_to "Edit", edit_staff_path(staff) %></td>
+				<td><%= link_to "Remove", staff, :confirm => "Are you sure? This will erase all of the employees information.", :method => :delete %></td>
+			</tr>
+		</table>
+	<% end %>
+<% else %>
+	<div id="no-results">No Agency Staff Found</div>
 <% end %>

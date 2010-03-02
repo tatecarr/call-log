@@ -14,43 +14,51 @@ class StaffsController < ApplicationController
   def index
 
     #TODO, LIST HOW MANY STAFF ARE IN THE LIST.  BOTH WHEN A SEARCH IS EXECUTED OR OTHERWISE
-
-    # The options for number of results per page.
-    @number_per_page_options = [["25", "0"], ["50", "1"], ["75", "2"], ["100", "3"]]
-    @number_per_page = params[:number_per_page] || 0
-    @selected_number = @number_per_page_options[@number_per_page.to_i][0]
+    if params[:predefined_report].nil?
+      # The options for number of results per page.
+      @number_per_page_options = [["25", "0"], ["50", "1"], ["75", "2"], ["100", "3"]]
+      @number_per_page = params[:number_per_page] || 0
+      @selected_number = @number_per_page_options[@number_per_page.to_i][0]
     
-    # Save search terms so the fields can be populated with them after a search instead of being cleared.
-    @full_name = params[:staff][:full_name] unless params[:staff].nil?
-    @home_number = params[:staff][:home_number] unless params[:staff].nil?
-    @cell_number = params[:staff][:cell_number] unless params[:staff].nil?
+      # Save search terms so the fields can be populated with them after a search instead of being cleared.
+      @full_name = params[:staff][:full_name] unless params[:staff].nil?
+      @home_number = params[:staff][:home_number] unless params[:staff].nil?
+      @cell_number = params[:staff][:cell_number] unless params[:staff].nil?
     
-    # to allow for searching with auto complete on last name
-    params[:search][:full_name_like] = @full_name unless params[:staff].nil?
-    params[:search][:home_number_like] = @home_number unless params[:staff].nil?
-    params[:search][:cell_number_like] = @cell_number unless params[:staff].nil?
+      # to allow for searching with auto complete on last name
+      params[:search][:full_name_like] = @full_name unless params[:staff].nil?
+      params[:search][:home_number_like] = @home_number unless params[:staff].nil?
+      params[:search][:cell_number_like] = @cell_number unless params[:staff].nil?
     
-    @search = Staff.search(params[:search])
+      @search = Staff.search(params[:search])
     
-    # this makes it so that on the first load of the page, when params[:search] is nil, the call-log
-    # is ordered by last_name.  it had been doing it by id (not staff_id), so after every import, the
-    # agency staff would all be listed first in the call log.  kinda undesirable I think.
-    if params[:search]
-      @staffs = @search.paginate :per_page => @selected_number, :page => params[:page]
-    else
-      @staffs = @search.sort_by(&:last_name).paginate :per_page => @selected_number, :page => params[:page]
-    end
-    
-    if @staffs.length == 1
-      
-      redirect_to @staffs[0]
-      
-    else
-
-      respond_to do |format|
-        format.html # index.html.erb
-        format.xml  { render :xml => @staffs }
+      # this makes it so that on the first load of the page, when params[:search] is nil, the call-log
+      # is ordered by last_name.  it had been doing it by id (not staff_id), so after every import, the
+      # agency staff would all be listed first in the call log.  kinda undesirable I think.
+      if params[:search]
+        @staffs = @search.paginate :per_page => @selected_number, :page => params[:page]
+      else
+        @staffs = @search.sort_by(&:last_name).paginate :per_page => @selected_number, :page => params[:page]
       end
+    
+      if @staffs.length == 1 
+        redirect_to @staffs[0] and return
+      end
+    
+    else
+      case params[:predefined_report]
+      when "agency"
+        @staffs = Staff.find(:all, :conditions => ['agency_staff = ?', true])
+      when "non-agency"
+        @staffs = Staff.find(:all, :conditions => ['agency_staff = ?', false])
+      end
+    end
+
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @staffs }
+      format.pdf  { render :layout => false }
     end
   end
 
@@ -63,6 +71,7 @@ class StaffsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @staff }
+      format.pdf { render :layout => false }
     end
   end
 

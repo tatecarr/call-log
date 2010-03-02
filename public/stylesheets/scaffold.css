@@ -169,11 +169,16 @@ h2 { font-size: 20pt; margin-bottom: 30px;}
 
 input[type="text"] { width: 200px; }
 
+fieldset { width: 300px;}
+
+.buttons { display: inline;}
+
 /* search in call-log */
 
 #search-form {
-
-} 
+	width: 610px;
+	margin: 0 auto;
+}
 
 .pay_rate {
 	width: 65px !important;
@@ -356,10 +361,77 @@ input.feedback {
 #no-results {
   border: 1px solid #000;
   background-color: #FFC;
+  padding: 5px;
 }
 
 #no-results td {
  padding: 5px;
 }
 
+/* home page links */
 
+#home-page-links {
+	width: 600px;
+	margin: auto;
+}
+
+#home-page-links a {
+	font-size: 18pt;
+	padding-top: 90px;
+	padding-bottom: 0px;
+}
+
+#home-page-links #admin_home_link {
+	display: block;
+	width: 300px;
+	float: left;
+	text-align: center;
+	background: url(/images/admin-logo.png) no-repeat center top;
+	margin-bottom: 40px;
+	
+}
+
+#home-page-links #call_log_home_link {
+	display: block;
+	width: 300px;
+	float: left;
+	text-align: center;
+	background: url(/images/call-log-logo.png) no-repeat center top;
+	margin-bottom: 40px;
+}
+
+#home-page-links #houses_home_link {
+	display: block;
+	width: 300px;
+	float: left;
+	text-align: center;
+	background: url(/images/houses-logo.png) no-repeat center top;
+	margin-bottom: 40px;
+}
+
+#home-page-links #reports_home_link {
+	display: block;
+	width: 300px;
+	float: left;
+	text-align: center;
+	background: url(/images/reports-logo.png) no-repeat center top;
+	margin-bottom: 40px;
+}
+
+#new_house_link {
+
+}
+
+#staff-reports {
+	width: 450px;
+	float: left;
+}
+
+#house-reports {
+	width: 450px;
+	float: left;
+}
+
+#results-no {
+	text-align:right;
+}

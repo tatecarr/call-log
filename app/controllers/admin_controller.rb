@@ -12,6 +12,8 @@ class AdminController < ApplicationController
   before_filter :admin_required
   auto_complete_for :house, :full_info
   
+  @@import_status = "hello"
+  
   def auto_complete_for_house_full_info
     
     leg = params[:house].keys[0] # get index as its always only one at a time
@@ -228,20 +230,20 @@ class AdminController < ApplicationController
 
   # import a csv file from upload
   def import_csv
-    
+
     # upload and save the file
     @import = Import.new(params[:import])
     @import.save
-    
+
     # read the csv file into a 2-d array
     lines = parse_csv_file(@import.csv.path)
-    
+
     # does the file have anything in it?
     if lines.empty?
       flash[:error] = "There was nothing in the file."
       redirect_to :action => "index" and return
     end
-    
+
     # Provides and easy way for us to access the column header position when adding people later.
     #
     # We start with an array of column headers: 
@@ -257,31 +259,32 @@ class AdminController < ApplicationController
 
     # we don't want to add the column headers as a person so remove them
     lines.shift
-    
+
     # make sure we have people to import
     if lines.size > 0
-      
+
       # delete all the staff that aren't agency staff
       Staff.delete_all(["agency_staff = ?", false])
-      
+
       # step through the file and add a person for each line
       lines.each do |line|
           add_person(line) unless line.empty?
       end
-      
+
       # we don't need the file anymore so we can remove it
       @import.destroy
-      
+
       flash[:notice] = "CSV data processing was successful."
       redirect_to staffs_url
     else
-      
+
       flash[:error] = "The file did not contain any people. Please make sure there are people in the file."
       render :action => "index"
     end
 	end
-	
-	
+
+
+
 	
 	# provide a backup of the mysql database for download
 	def backup
@@ -297,7 +300,7 @@ class AdminController < ApplicationController
     now = Time.now.strftime("%m_%d_%Y")
     
     # open a shell and perform a mysql dump into a file
-    success = system "mysqldump -u root #{config['database']} > call_log_backup_#{now}.sql"
+    success = system "mysqldump -u #{config['username']} -p#{config['password']} #{config['database']} > call_log_backup_#{now}.sql"
     
     if success
       # if we were successful backing up the file, move it to a place where it can be downloaded
@@ -315,7 +318,15 @@ class AdminController < ApplicationController
     @import = Import.new(params[:import])
     @import.save
     
-	  success = system "mysql -u root call_log_development < #{@import.csv.path}"
+    require 'erb'
+    require 'yaml'
+
+    # make sure that we're set up to connnect to a database
+    unless config = YAML::load(ERB.new(IO.read(RAILS_ROOT + "/config/database.yml")).result)[RAILS_ENV]
+      abort "No database is configured for the environment '#{RAILS_ENV}'"
+    end
+    
+	  success = system "mysql -u #{config['username']} -p#{config['password']} #{config['database']} < #{@import.csv.path}"
 	  
 	  @import.destroy
 	  
