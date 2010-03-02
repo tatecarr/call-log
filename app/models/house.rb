@@ -8,4 +8,6 @@ class House < ActiveRecord::Base
   has_many :user_houses, :foreign_key => 'bu_code', :dependent => :destroy
   
   validates_presence_of :bu_code, :name
+  
+  acts_as_textiled :overview, :trainings_needed, :medication_times, :waivers, :schedule_info, :behavior_plans
 end

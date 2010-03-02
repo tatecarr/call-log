@@ -1,9 +1,14 @@
 class HousesController < ApplicationController
 
-  in_place_edit_for :house, :name
-
   before_filter :login_required
 
+  # creates the necessary ajax required for the in_place_editor_field
+  in_place_edit_for :house, :overview
+  in_place_edit_for :house, :trainings_needed
+  in_place_edit_for :house, :medication_times
+  in_place_edit_for :house, :waivers
+  in_place_edit_for :house, :schedule_info
+  in_place_edit_for :house, :behavior_plans
   
 #------------------- Creates AJAX methods for autocompleting forms -----------------
   

@@ -91,7 +91,7 @@
 
 <p>
   <b>Name:</b>
-  <%= in_place_editor_field :house, 'name' %>
+  <%=h @house.name %>
 </p>
 
 <p>
@@ -130,23 +130,8 @@
 </p>
 
 <p>
-  <b>Overview:</b>
-  <%=h @house.overview %>
-</p>
-
-<p>
   <b>Ratio:</b>
   <%=h @house.ratio %>
-</p>
-
-<p>
-  <b>Trainings needed:</b>
-  <%=h @house.trainings_needed %>
-</p>
-
-<p>
-  <b>Medication times:</b>
-  <%=h @house.medication_times %>
 </p>
 
 <p>
@@ -155,21 +140,72 @@
 </p>
 
 <p>
-  <b>Waivers:</b>
-  <%=h @house.waivers %>
-</p>
-
-<p>
   <b>Keys:</b>
   <%=h @house.keys %>
 </p>
 
-<p>
-  <b>Schedule info:</b>
-  <%=h @house.schedule_info %>
-</p>
+<% if admin? || house_admin?(@house) %>
 
-<p>
-  <b>Behavior plans:</b>
-  <%=h @house.behavior_plans %>
-</p>
+	<p>
+		<span id="overview"><b>Overview (Click to Edit):</b></span><br/>
+	  	<%= in_place_editor_field :house, 'overview', {}, {:rows => 10, :cols => 100, :external_control => "overview"} %>
+	</p>
+	
+	<p>
+		<span id="trainings"><b>Trainings Needed (Click to Edit):</b></span><br/>
+	  	<%= in_place_editor_field :house, 'trainings_needed', {}, {:rows => 10, :cols => 100, :external_control => "trainings"} %>
+	</p>
+	
+	<p>
+		<span id="med_times"><b>Medication Times (Click to Edit):</b></span><br/>
+	  	<%= in_place_editor_field :house, 'medication_times', {}, {:rows => 10, :cols => 100, :external_control => "med_times"} %>
+	</p>
+	
+	<p>
+		<span id="waivers"><b>Waivers (Click to Edit):</b></span><br/>
+	  	<%= in_place_editor_field :house, 'waivers', {}, {:rows => 10, :cols => 100, :external_control => "waivers"} %>
+	</p>
+	
+	<p>
+		<span id="schedule_info"><b>Schedule Info (Click to Edit):</b></span><br/>
+	  	<%= in_place_editor_field :house, 'schedule_info', {}, {:rows => 10, :cols => 100, :external_control => "schedule_info"} %>
+	</p>
+	
+	<p>
+		<span id="behavior"><b>Behavior Plans (Click to Edit):</b></span><br/>
+	  	<%= in_place_editor_field :house, 'behavior_plans', {}, {:rows => 10, :cols => 100, :external_control => "behavior"} %>
+	</p>
+	
+<% else %>
+
+	<p>
+	  <b>Overview:</b>
+	  <%= @house.overview %>
+	</p>
+	
+	<p>
+	  <b>Trainings Needed:</b>
+	  <%= @house.trainings_needed %>
+	</p>
+
+	<p>
+	  <b>Medication Times:</b>
+	  <%= @house.medication_times %>
+	</p>
+
+	<p>
+	  <b>Waivers:</b>
+	  <%= @house.waivers %>
+	</p>
+
+	<p>
+	  <b>Schedule Info:</b>
+	  <%= @house.schedule_info %>
+	</p>
+
+	<p>
+	  <b>Behavior Plans:</b>
+	  <%= @house.behavior_plans %>
+	</p>
+	
+<% end %>
