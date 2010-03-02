@@ -1,26 +1,43 @@
-<h2>Call Log</h2>
+<% content_for :title, "Call Log" %>
+
+<h1>Call Log</h1>
 
 
-<%- form_for @search do |f| -%>
-	<p>
-		Full Name: <%= text_field_with_auto_complete :staff, :full_name, :value => @full_name %>
-	</p>
-  	<p>
-		Gender: <%= f.radio_button :gender_equals, :M %>M<%= f.radio_button :gender_equals, :F %>F
-	</p>
-	<p>
-		Home Phone: <%= text_field_with_auto_complete :staff, :home_number, :value => @home_number %>
-	</p>
-	<p>
-		Cell Phone: <%= text_field_with_auto_complete :staff, :cell_number, :value => @cell_number %>
-	</p>
-	<% form_tag staffs_path, :method => 'get' do %>
-		<p>
-			Results per page: <%= select_tag :number_per_page, options_for_select(@number_per_page_options, selected = @number_per_page) %>
-			<%= submit_tag "Search", :disable_with => 'Searching...' %>
-		</p>
-	<% end %>
-<% end -%>
+<div id="search-form">
+	<h3>Search</h3>
+	<%- form_for @search do |f| -%>
+		<table>
+			<tr>
+				<td>Full Name:</td> 
+				<td><%= text_field_with_auto_complete :staff, :full_name, :value => @full_name %></td>
+				<td>Gender:</td>
+				<td><%= f.radio_button :gender_equals, :M %>Male<%= f.radio_button :gender_equals, :F %>Female</td>
+			</tr>
+			<tr>
+				<td>Age:</td>
+				<td><%= text_field_tag :age, value = nil %></td>
+				<td>Certifications:</td>
+				<td>CPR <%= check_box_tag :certification_1 %> FA <%= check_box_tag :certification_2 %> MT<%= check_box_tag :certification_3 %> Other<%= check_box_tag :certification_4 %></td>
+			</tr>
+			<tr>
+				<td>Home Phone:</td> 
+				<td><%= text_field_with_auto_complete :staff, :home_number, :value => @home_number %></td>
+				<td>Pay Rate:</td>
+				<td>Min: <%= text_field_tag :pay_rate_low, value = nil, :class => "pay_rate" %> Max: <%= text_field_tag :pay_rate_high, value = nil, :class => "pay_rate" %></td>
+			</tr>
+			<tr>
+				<td>Cell Phone:</td> 
+				<td><%= text_field_with_auto_complete :staff, :cell_number, :value => @cell_number %></td>
+			<% form_tag staffs_path, :method => 'get' do %>
+				<td>Results per page:</td> 
+				<td><%= select_tag :number_per_page, options_for_select(@number_per_page_options, selected = @number_per_page) %></td>
+			</tr>
+			<tr>
+				<td><%= submit_tag "Search", :disable_with => 'Searching...' %></td>
+			</tr>
+		<% end %>
+	<% end -%>
+</div>
 
 <table id="list-table">
 	

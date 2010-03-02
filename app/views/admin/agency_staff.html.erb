@@ -1,8 +1,5 @@
-<%= link_to "Manage Users", :action => "index" %>
-<%= link_to "Import Staff", import_staff_path %>
-<%= link_to "Agency Staff", agency_staff_path %>
-<%= link_to "Backup and Restore", backup_restore_path %>
-<br/>
+<% content_for :title, "Admin" %>
+
 <%= link_to "Add new agency staff", new_staff_path %>
 <% @agency_staffs.each do |staff| %>
 	<table>

@@ -1,20 +1,15 @@
-<h1>Listing houses</h1>
+<% content_for :title, "Houses" %>
 
-<div style="float:left; width:250px">
+<h1>Houses</h1>
+
+<div>
 	<% form_for @search do |f| -%>
-		<p>
-			<%= text_field_with_auto_complete :house, :full_info %>
-		</p>
-		<p>
-			<%= f.submit "Search", :disable_with => 'Searching...' %>
-		</p>
+			House Name: <%= text_field_with_auto_complete :house, :full_info %> <%= f.submit "Search", :disable_with => 'Searching...' %>
+		<% if admin? %>
+			<%= link_to 'NEW HOUSE - BUT A NICE IMAGE, BEN?', new_house_path, :id => "new_house_link" %>
+		<% end %>
 	<% end -%>
 </div>
-<% if admin? %>
-	<div style="float:left;">
-		<%= link_to 'NEW HOUSE - BUT A NICE IMAGE, BEN?', new_house_path %>
-	</div>
-<% end %>
 
 <br/>
 <table id="list-table">
@@ -28,7 +23,7 @@
   </tr>
 
 <% @houses.each_with_index do |house, i| %>
-  <tr <% if i % 2 == 1 %>class="odd"<% end %>>
+  <tr <% if i % 2 == 1 %>class="odd"<% end %> onclick="tableRowLinkToHouse(<%= house.id %>);return false;">
     <td><%=h house.bu_code %></td>
     <td><%=h house.name %></td>
     <td><%=h house.address %></td>
