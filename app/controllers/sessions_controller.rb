@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
     if user
       session[:user_id] = user.id
       if user.system_generated_pw
-        flash[:warning] = "You're still using the system generated password. To change it <a href='/password-reset'>click here</a>"
+        flash[:warning] = "You're still using a system generated password. To change it <a href='/change-password'>click here</a>"
       else
         flash[:notice] = "Logged in successfully."
       end

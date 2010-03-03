@@ -1,0 +1,1001 @@
+staff_id,first_name,last_name,nickname,address,city,state,zip,gender,doh,cell_number,home_number
+1,Orson,Monroe,Francis,16 Endicott Street,Two Rivers,MS,79176,F,1969-12-31 19:00:00,(618) 970-1158,(543) 522-2955
+2,Rosalyn,Johnston,August,255 Grapevine Road,Sheboygan,TX,45154,F,1969-12-31 19:00:00,(342) 590-9344,(766) 622-3733
+3,acqueline,Carney,Christian,16 Endicott Street,Oro Valley,AZ,50593,F,1969-12-31 19:00:00,(940) 484-0415,(739) 463-4858
+4,Lacota,Cotton,Vivien,17 Ferry hill Road,Knoxville,NJ,91331,M,1969-12-31 19:00:00,(257) 763-4038,(762) 521-0405
+5,Sybil,Mack,Ciara,16 Endicott Street,Cary,AZ,10678,F,1969-12-31 19:00:00,(517) 546-1196,(407) 713-6755
+6,Natalie,Page,Margaret,255 Grapevine Road,Seal Beach,DE,92010,M,1969-12-31 19:00:00,(667) 764-0628,(855) 510-2872
+7,Alan,Luna,Idona,255 Grapevine Road,Hialeah,FL,27194,M,1969-12-31 19:00:00,(599) 218-0635,(837) 610-6645
+8,Robert,Spencer,Preston,255 Grapevine Road,Allentown,PA,23512,M,1969-12-31 19:00:00,(307) 933-8714,(810) 566-3543
+9,Tate,House,Brandon,17 Ferry hill Road,Great Falls,ND,96894,M,1969-12-31 19:00:00,(475) 290-0015,(779) 322-1645
+10,Ayanna,Ray,Dahlia,255 Grapevine Road,Christiansted,OK,18594,M,1969-12-31 19:00:00,(846) 952-7319,(641) 387-3593
+11,Shafira,Burke,Barry,255 Grapevine Road,East Lansing,RI,24061,F,1969-12-31 19:00:00,(337) 647-2885,(758) 352-1630
+12,Wesley,Mcgee,Ruby,16 Endicott Street,Ann Arbor,HI,38965,M,1969-12-31 19:00:00,(228) 113-7720,(341) 982-9406
+13,Claire,Beck,Timothy,17 Ferry hill Road,Dubuque,WA,52071,F,1969-12-31 19:00:00,(947) 767-0199,(919) 416-5256
+14,Zoe,Riley,Kylan,16 Endicott Street,Battle Creek,AL,17765,M,1969-12-31 19:00:00,(325) 525-4348,(604) 850-8365
+15,Allegra,Newman,Kato,16 Endicott Street,Omaha,MS,98523,F,1969-12-31 19:00:00,(584) 823-4372,(970) 336-3010
+16,Kelsie,Rush,Kelsie,255 Grapevine Road,Macomb,NY,96281,F,1969-12-31 19:00:00,(156) 429-3906,(469) 470-9557
+17,Mercedes,Benjamin,Haviva,17 Ferry hill Road,Guánica,AL,23279,M,1969-12-31 19:00:00,(980) 996-2556,(455) 912-6169
+18,Amber,Young,Wallace,255 Grapevine Road,Charleston,MT,40730,M,1969-12-31 19:00:00,(379) 825-2801,(137) 296-2964
+19,Brady,Rollins,Willa,16 Endicott Street,Kalispell,NH,61130,M,1969-12-31 19:00:00,(761) 663-5907,(970) 944-0245
+20,Slade,Stephens,Brian,17 Ferry hill Road,San Diego,MI,57819,F,1969-12-31 19:00:00,(829) 837-7186,(626) 872-6639
+21,Elmo,Butler,Hayfa,255 Grapevine Road,Thomasville,UT,85815,M,1969-12-31 19:00:00,(533) 610-2470,(296) 726-0301
+22,Minerva,Tyler,Alexander,16 Endicott Street,South Burlington,LA,83427,F,1969-12-31 19:00:00,(472) 842-9397,(657) 159-6594
+23,Indira,Roy,Sheila,17 Ferry hill Road,Rensselaer,NE,22304,F,1969-12-31 19:00:00,(570) 877-4354,(941) 446-8250
+24,Wendy,Dunn,Lamar,255 Grapevine Road,Sheboygan,KY,86366,F,1969-12-31 19:00:00,(436) 791-6320,(798) 949-9750
+25,Uma,Gates,Haley,17 Ferry hill Road,Dayton,AZ,66202,M,1969-12-31 19:00:00,(935) 365-0540,(139) 789-6230
+26,Heather,Manning,Brock,255 Grapevine Road,Schenectady,MT,75810,F,1969-12-31 19:00:00,(762) 403-3420,(427) 658-9198
+27,Karyn,Reeves,Grace,17 Ferry hill Road,Cape May,OK,77049,F,1969-12-31 19:00:00,(527) 958-3759,(338) 437-8000
+28,Omar,Daniels,Patricia,255 Grapevine Road,Mankato,WV,99417,F,1969-12-31 19:00:00,(757) 416-6550,(828) 939-6568
+29,Barclay,Cortez,Sasha,17 Ferry hill Road,Rensselaer,NH,20687,F,1969-12-31 19:00:00,(946) 507-3362,(759) 328-3469
+30,Lamar,Harrell,Lavinia,255 Grapevine Road,Superior,GA,09746,F,1969-12-31 19:00:00,(535) 808-5577,(751) 211-7579
+31,Timothy,Mccarty,Burton,255 Grapevine Road,Charleston,TN,52197,M,1969-12-31 19:00:00,(964) 532-2834,(151) 720-5724
+32,Bert,Hamilton,Ebony,255 Grapevine Road,San Luis Obispo,KY,11676,F,1969-12-31 19:00:00,(183) 927-0787,(993) 717-8509
+33,Lesley,Sparks,Finn,16 Endicott Street,Kenner,VT,52235,F,1969-12-31 19:00:00,(632) 410-3130,(419) 929-5022
+34,Maia,Olson,Chancellor,16 Endicott Street,Peoria,AK,63695,F,1969-12-31 19:00:00,(263) 394-6045,(331) 453-9257
+35,Blythe,Ellis,Stacy,255 Grapevine Road,Malden,NE,10674,M,1969-12-31 19:00:00,(795) 731-0624,(364) 521-5507
+36,Simone,Mcdowell,Freya,255 Grapevine Road,Ketchikan,WV,46832,M,1969-12-31 19:00:00,(636) 360-5340,(666) 274-0379
+37,Illana,Cochran,Stone,255 Grapevine Road,Fargo,PA,98234,M,1969-12-31 19:00:00,(151) 501-0772,(513) 892-3014
+38,Jael,Hart,Chase,17 Ferry hill Road,Chesapeake,MS,99550,F,1969-12-31 19:00:00,(621) 404-9278,(291) 305-6473
+39,Jason,Warner,Serena,255 Grapevine Road,Sedalia,OH,71002,F,1969-12-31 19:00:00,(164) 332-4346,(403) 887-3750
+40,Daniel,Harper,Rama,17 Ferry hill Road,Miami Gardens,MD,62637,M,1969-12-31 19:00:00,(794) 140-4442,(315) 176-2145
+41,Upton,Willis,Abigail,16 Endicott Street,Oneonta,AZ,72676,M,1969-12-31 19:00:00,(271) 613-9390,(252) 398-1989
+42,Keegan,Macias,Zachary,16 Endicott Street,Richland,AL,69740,F,1969-12-31 19:00:00,(633) 933-1863,(855) 835-3950
+43,Jescie,Ellis,Blossom,16 Endicott Street,Sacramento,NH,68791,M,1969-12-31 19:00:00,(348) 202-9587,(930) 981-4121
+44,Venus,Beard,Nathan,17 Ferry hill Road,Florence,IL,47596,M,1969-12-31 19:00:00,(986) 674-5055,(979) 290-0074
+45,Drew,Beach,Phyllis,255 Grapevine Road,Clemson,AK,66053,M,1969-12-31 19:00:00,(372) 438-3074,(185) 150-3686
+46,Wynter,Woods,McKenzie,255 Grapevine Road,Flint,MO,88060,F,1969-12-31 19:00:00,(987) 962-0470,(184) 760-6675
+47,Moses,Bass,Adrienne,16 Endicott Street,Sioux City,NC,73360,F,1969-12-31 19:00:00,(323) 804-8895,(501) 176-7865
+48,Minerva,Landry,Dean,16 Endicott Street,Alameda,VA,97910,M,1969-12-31 19:00:00,(255) 141-4425,(393) 158-7113
+49,Austin,Carver,Clinton,16 Endicott Street,Chattanooga,CT,15571,M,1969-12-31 19:00:00,(220) 656-8498,(186) 299-2116
+50,Venus,Estes,Rachel,16 Endicott Street,Wilkes-Barre,IL,47868,M,1969-12-31 19:00:00,(243) 632-6187,(279) 386-1139
+51,Rebekah,Goodman,Cheyenne,255 Grapevine Road,Needham,OK,54498,F,1969-12-31 19:00:00,(406) 593-6739,(691) 830-5625
+52,Nina,Stafford,Demetrius,17 Ferry hill Road,San Luis Obispo,AK,85191,M,1969-12-31 19:00:00,(853) 682-2740,(145) 771-4630
+53,Otto,Cleveland,Carissa,17 Ferry hill Road,Asheville,UT,07860,F,1969-12-31 19:00:00,(537) 377-3231,(945) 586-2985
+54,Whilemina,Snider,Jacob,17 Ferry hill Road,Lynn,OR,71608,M,1969-12-31 19:00:00,(862) 193-9395,(257) 243-1281
+55,Bert,Garrett,Stone,255 Grapevine Road,Oneida,WY,89542,M,1969-12-31 19:00:00,(455) 740-8080,(511) 702-8316
+56,Reed,Shaffer,May,16 Endicott Street,Mason City,SD,07453,F,1969-12-31 19:00:00,(130) 221-6323,(452) 779-5553
+57,Cara,Bryant,Clio,255 Grapevine Road,Des Moines,AK,37877,F,1969-12-31 19:00:00,(986) 410-7734,(420) 184-1964
+58,Axel,Smith,Lana,16 Endicott Street,West Springfield,LA,16693,F,1969-12-31 19:00:00,(238) 873-2032,(874) 839-8255
+59,Tanner,Kelley,Stewart,17 Ferry hill Road,Yukon,AZ,39177,M,1969-12-31 19:00:00,(502) 535-3101,(590) 745-6940
+60,Christine,Herman,Brooke,255 Grapevine Road,Layton,AK,74787,F,1969-12-31 19:00:00,(325) 427-8275,(732) 772-9140
+61,Kellie,Underwood,Amelia,255 Grapevine Road,Shamokin,NV,21857,F,1969-12-31 19:00:00,(841) 127-8595,(324) 464-9559
+62,Nita,Gibbs,Kirby,17 Ferry hill Road,Somersworth,PA,51202,F,1969-12-31 19:00:00,(391) 896-0114,(754) 304-0496
+63,Hu,Santos,Hayes,255 Grapevine Road,Truth or Consequences,MN,77168,M,1969-12-31 19:00:00,(650) 765-4297,(348) 734-1284
+64,Ila,Pollard,Sydney,16 Endicott Street,Nampa,NC,57808,M,1969-12-31 19:00:00,(741) 948-2879,(210) 495-8737
+65,Gavin,Wynn,Griffith,255 Grapevine Road,Uniontown,WA,78729,M,1969-12-31 19:00:00,(689) 559-6690,(658) 486-7898
+66,Chancellor,Sykes,Randall,16 Endicott Street,Monroe,FL,03492,M,1969-12-31 19:00:00,(415) 115-7641,(608) 506-6940
+67,Shad,Ayala,Charissa,16 Endicott Street,Evansville,SD,00626,M,1969-12-31 19:00:00,(514) 266-7741,(818) 758-6590
+68,Hedley,Erickson,Tate,17 Ferry hill Road,Woodward,OR,38753,M,1969-12-31 19:00:00,(295) 937-7455,(131) 632-9516
+69,Alma,Byers,Glenna,255 Grapevine Road,Pittston,WV,29424,F,1969-12-31 19:00:00,(611) 177-1087,(317) 923-9460
+70,Reed,Hayden,Aladdin,16 Endicott Street,Fort Dodge,TN,35157,F,1969-12-31 19:00:00,(343) 330-5474,(704) 274-9148
+71,Robin,Ruiz,Micah,255 Grapevine Road,Yuma,MA,16759,F,1969-12-31 19:00:00,(805) 470-0842,(691) 740-5264
+72,Lee,Oneil,Tanner,255 Grapevine Road,Alhambra,OK,69475,M,1969-12-31 19:00:00,(569) 301-8036,(531) 706-3753
+73,Vivien,Mathews,Beatrice,255 Grapevine Road,San Francisco,UT,44903,F,1969-12-31 19:00:00,(240) 287-6184,(257) 911-8627
+74,Sade,Beach,Michael,16 Endicott Street,Brigham City,TN,17368,M,1969-12-31 19:00:00,(452) 646-8947,(166) 784-5910
+75,John,Cunningham,Shoshana,255 Grapevine Road,Alexandria,OK,52004,M,1969-12-31 19:00:00,(505) 452-5192,(138) 949-4674
+76,Amaya,Rivas,Chava,255 Grapevine Road,Portland,WV,31246,M,1969-12-31 19:00:00,(191) 284-2132,(627) 301-3730
+77,Cheyenne,Bright,Allistair,16 Endicott Street,Irving,UT,57959,F,1969-12-31 19:00:00,(433) 675-2935,(958) 789-9996
+78,Shelly,Hampton,Jonas,255 Grapevine Road,Barre,OH,52996,M,1969-12-31 19:00:00,(627) 652-5002,(992) 998-7336
+79,Linus,Harmon,Hasad,16 Endicott Street,Woburn,AK,64691,F,1969-12-31 19:00:00,(437) 530-3332,(410) 747-2810
+80,Sandra,Boyer,Brian,255 Grapevine Road,Sedalia,DE,28166,M,1969-12-31 19:00:00,(170) 402-7233,(706) 617-3281
+81,Desiree,Nolan,Dominic,255 Grapevine Road,Martinsburg,RI,42112,M,1969-12-31 19:00:00,(352) 586-1836,(900) 292-4543
+82,Abigail,Anthony,Cassidy,17 Ferry hill Road,Needham,SD,08051,F,1969-12-31 19:00:00,(486) 313-2234,(269) 703-7153
+83,Devin,Cash,Caleb,16 Endicott Street,Dallas,MI,54230,M,1969-12-31 19:00:00,(537) 772-8325,(563) 616-8374
+84,Elton,Alston,Sawyer,17 Ferry hill Road,Houma,OR,75213,F,1969-12-31 19:00:00,(968) 384-7583,(741) 125-3236
+85,Bert,Roth,Glenna,17 Ferry hill Road,Chattanooga,OH,08267,M,1969-12-31 19:00:00,(523) 106-7588,(841) 288-2613
+86,Chanda,Gibson,Ariel,17 Ferry hill Road,Blacksburg,VA,65298,F,1969-12-31 19:00:00,(151) 649-4816,(698) 311-4424
+87,Brynne,Gould,Hollee,255 Grapevine Road,Brea,NJ,46107,M,1969-12-31 19:00:00,(572) 388-9862,(987) 411-5556
+88,Lilah,Parsons,Constance,16 Endicott Street,Peoria,NC,47219,M,1969-12-31 19:00:00,(185) 857-7442,(667) 124-6966
+89,Quail,Frost,Dorian,255 Grapevine Road,Port Jervis,MD,38923,M,1969-12-31 19:00:00,(715) 257-6257,(594) 550-2839
+90,Veda,Austin,Harriet,17 Ferry hill Road,Rolling Hills,AL,35641,M,1969-12-31 19:00:00,(185) 342-8363,(976) 806-7009
+91,Wyoming,Roth,Xantha,16 Endicott Street,Fullerton,LA,43838,F,1969-12-31 19:00:00,(810) 274-1509,(577) 676-5563
+92,Gary,Webb,Odessa,16 Endicott Street,Danbury,CO,97407,M,1969-12-31 19:00:00,(818) 427-9045,(810) 474-7715
+93,Jeremy,Guzman,Maite,17 Ferry hill Road,Missoula,RI,50478,M,1969-12-31 19:00:00,(967) 912-7221,(178) 883-3293
+94,Dante,Martin,Brittany,255 Grapevine Road,Ontario,PA,64321,F,1969-12-31 19:00:00,(431) 762-8316,(349) 543-7044
+95,Conan,Buckley,Cally,255 Grapevine Road,Salinas,IN,41473,F,1969-12-31 19:00:00,(450) 766-0165,(692) 746-9577
+96,Alan,Maxwell,Alisa,16 Endicott Street,Kingsport,AZ,33693,F,1969-12-31 19:00:00,(603) 878-4611,(170) 657-6185
+97,Ralph,Ellison,Kyla,255 Grapevine Road,Valdez,ID,64468,F,1969-12-31 19:00:00,(477) 198-1797,(364) 449-1751
+98,Deacon,Holmes,Giselle,17 Ferry hill Road,Woodward,TX,70058,F,1969-12-31 19:00:00,(562) 250-4258,(740) 501-7451
+99,Paloma,Langley,Zahir,17 Ferry hill Road,Reading,NJ,33706,M,1969-12-31 19:00:00,(673) 922-6732,(859) 301-9505
+100,Priscilla,Shaffer,Baxter,255 Grapevine Road,Lawton,MD,08282,F,1969-12-31 19:00:00,(248) 980-6309,(419) 924-7057
+101,Candice,Alvarez,Britanney,17 Ferry hill Road,Concord,TN,09158,F,1969-12-31 19:00:00,(387) 686-0950,(207) 354-3554
+102,Callum,Rivers,Debra,16 Endicott Street,Flagstaff,WA,79156,M,1969-12-31 19:00:00,(438) 498-5958,(501) 166-2382
+103,Celeste,Carson,Cade,17 Ferry hill Road,Syracuse,AZ,79807,F,1969-12-31 19:00:00,(158) 116-5186,(848) 230-3424
+104,Hyatt,Buckley,Karen,16 Endicott Street,East St. Louis,MA,17375,F,1969-12-31 19:00:00,(929) 205-9541,(854) 389-7942
+105,Jonas,Orr,Meghan,255 Grapevine Road,Sheboygan,NC,28547,M,1969-12-31 19:00:00,(635) 286-9412,(309) 252-6185
+106,Craig,Pierce,Dean,17 Ferry hill Road,Lawrence,MN,24560,M,1969-12-31 19:00:00,(576) 889-1992,(519) 605-8775
+107,Beatrice,Edwards,Yael,255 Grapevine Road,Dallas,MI,54220,F,1969-12-31 19:00:00,(292) 185-5041,(190) 875-9058
+108,Dieter,Ramirez,Frances,17 Ferry hill Road,Shreveport,MS,59252,F,1969-12-31 19:00:00,(578) 520-5204,(163) 112-3953
+109,Josephine,Holder,Shannon,16 Endicott Street,Iowa City,KS,50439,M,1969-12-31 19:00:00,(694) 809-8729,(852) 815-3546
+110,Blossom,Skinner,Xenos,16 Endicott Street,McAllen,VA,81576,F,1969-12-31 19:00:00,(852) 581-4332,(595) 232-2210
+111,April,Peters,Adam,17 Ferry hill Road,Sierra Vista,MI,04457,F,1969-12-31 19:00:00,(484) 826-3124,(547) 868-8381
+112,Wynne,Newman,Leila,255 Grapevine Road,Oakland,NV,27611,F,1969-12-31 19:00:00,(388) 512-0508,(286) 567-4335
+113,Lyle,Baird,Brielle,17 Ferry hill Road,Highland Park,CO,24712,F,1969-12-31 19:00:00,(352) 850-9375,(159) 485-9963
+114,Christopher,Berger,Iona,17 Ferry hill Road,Rancho Cordova,NE,76128,M,1969-12-31 19:00:00,(899) 264-1145,(194) 168-2723
+115,Elliott,Wilkinson,Tanya,16 Endicott Street,Olean,ID,19709,M,1969-12-31 19:00:00,(730) 985-0800,(582) 306-5051
+116,Thomas,Castro,Illana,255 Grapevine Road,Miami Beach,WA,86426,F,1969-12-31 19:00:00,(124) 924-4076,(232) 283-0080
+117,Baker,Griffith,Violet,255 Grapevine Road,Santa Clara,NE,28142,F,1969-12-31 19:00:00,(765) 842-9741,(682) 662-7915
+118,Zenaida,Whitfield,Cade,17 Ferry hill Road,Hawaiian Gardens,HI,43518,F,1969-12-31 19:00:00,(602) 444-9266,(983) 899-8902
+119,Yvonne,Hickman,Kasimir,255 Grapevine Road,Williamsport,MO,31734,F,1969-12-31 19:00:00,(880) 246-0299,(387) 390-2364
+120,Leslie,Mcbride,Teagan,16 Endicott Street,Dothan,NH,05595,M,1969-12-31 19:00:00,(427) 716-9041,(954) 318-8773
+121,Idona,Wilkerson,Sydnee,16 Endicott Street,Valparaiso,KY,97114,M,1969-12-31 19:00:00,(318) 450-3046,(325) 908-3962
+122,Lars,Mcknight,Kim,255 Grapevine Road,Ketchikan,MI,94803,F,1969-12-31 19:00:00,(635) 771-9068,(142) 914-5702
+123,Carlos,Huber,Nasim,255 Grapevine Road,Nevada City,IL,51286,M,1969-12-31 19:00:00,(679) 648-6806,(152) 754-9917
+124,Zahir,Roth,Xavier,255 Grapevine Road,Marquette,WY,67046,M,1969-12-31 19:00:00,(843) 740-7025,(574) 591-4713
+125,Cleo,Norton,Gary,255 Grapevine Road,Wilson,NY,28271,F,1969-12-31 19:00:00,(228) 243-7282,(306) 910-1831
+126,Tyrone,Hahn,Philip,17 Ferry hill Road,Aliso Viejo,UT,00929,F,1969-12-31 19:00:00,(828) 110-2172,(384) 125-0630
+127,Hanae,Gonzalez,Vincent,17 Ferry hill Road,Albuquerque,MT,41179,F,1969-12-31 19:00:00,(804) 987-1612,(872) 513-8422
+128,Keaton,Fletcher,Renee,16 Endicott Street,Decatur,NM,58763,M,1969-12-31 19:00:00,(408) 121-9043,(272) 605-1326
+129,Ursula,Lawrence,Dahlia,17 Ferry hill Road,San Rafael,MO,88886,M,1969-12-31 19:00:00,(187) 221-2938,(189) 315-2778
+130,Carl,Mccullough,Halla,16 Endicott Street,Columbia,FL,86164,F,1969-12-31 19:00:00,(964) 893-8822,(184) 863-9272
+131,Chelsea,Vaughan,Jena,16 Endicott Street,Great Falls,NC,13978,M,1969-12-31 19:00:00,(717) 649-6244,(973) 156-2412
+132,Hayley,Keller,Vivien,16 Endicott Street,Avalon,UT,73490,F,1969-12-31 19:00:00,(497) 731-5156,(629) 132-4819
+133,Hadassah,Dorsey,Scott,255 Grapevine Road,Morgan City,DC,15912,M,1969-12-31 19:00:00,(542) 798-3183,(518) 437-7565
+134,Laurel,Dale,Phoebe,17 Ferry hill Road,West Allis,NJ,83625,F,1969-12-31 19:00:00,(346) 420-9483,(760) 326-8449
+135,David,Guerrero,Kendall,255 Grapevine Road,Hutchinson,ID,74910,F,1969-12-31 19:00:00,(503) 897-5578,(847) 486-6225
+136,Nyssa,Mitchell,Reuben,255 Grapevine Road,Midwest City,IN,37240,F,1969-12-31 19:00:00,(476) 155-8032,(998) 224-8826
+137,Chancellor,Rosa,Zachary,16 Endicott Street,Guthrie,FL,28204,F,1969-12-31 19:00:00,(601) 634-5336,(675) 492-5720
+138,Eugenia,May,Darrel,255 Grapevine Road,Lock Haven,VT,39141,M,1969-12-31 19:00:00,(853) 280-6651,(686) 407-6597
+139,Acton,Kirk,Linus,255 Grapevine Road,Woonsocket,NM,70224,F,1969-12-31 19:00:00,(240) 701-3886,(953) 550-5061
+140,Brynne,Moses,Robert,17 Ferry hill Road,Marshall,MI,86936,M,1969-12-31 19:00:00,(570) 457-2107,(713) 875-9433
+141,Justine,Spears,Price,16 Endicott Street,Norman,ME,03473,M,1969-12-31 19:00:00,(400) 518-2210,(170) 503-0917
+142,Lareina,Rios,Carla,17 Ferry hill Road,Clarksville,MT,80391,M,1969-12-31 19:00:00,(201) 412-4929,(969) 877-4586
+143,Flynn,Black,Cailin,17 Ferry hill Road,Areceibo,NM,72173,M,1969-12-31 19:00:00,(959) 889-8486,(260) 746-0586
+144,Libby,Snyder,Doris,16 Endicott Street,Annapolis,DE,44704,M,1969-12-31 19:00:00,(833) 320-4812,(373) 969-4424
+145,Francesca,Fernandez,Len,255 Grapevine Road,Bayamon,SC,23967,F,1969-12-31 19:00:00,(886) 698-9728,(323) 848-1734
+146,Rigel,Hunt,Colin,16 Endicott Street,La Habra,WY,76952,M,1969-12-31 19:00:00,(515) 234-4582,(163) 808-5401
+147,Adrian,Joyce,Cathleen,16 Endicott Street,Vincennes,CA,30955,F,1969-12-31 19:00:00,(906) 589-5433,(519) 911-9633
+148,Charity,Decker,John,16 Endicott Street,Spokane Valley,ND,28325,M,1969-12-31 19:00:00,(143) 577-0869,(178) 702-8275
+149,Alec,Mcneil,Chanda,16 Endicott Street,Joliet,NJ,11854,F,1969-12-31 19:00:00,(413) 383-2519,(648) 923-9856
+150,Rosalyn,Webb,Eagan,17 Ferry hill Road,Hoover,GA,68282,M,1969-12-31 19:00:00,(658) 277-8167,(497) 344-0471
+151,Audra,Brennan,Griffith,17 Ferry hill Road,Attleboro,MA,68526,M,1969-12-31 19:00:00,(945) 203-5007,(558) 829-9335
+152,Hamilton,Harrell,Upton,255 Grapevine Road,Mobile,NM,35771,M,1969-12-31 19:00:00,(844) 852-2001,(301) 636-0757
+153,Alden,Byers,George,16 Endicott Street,Oakland,KY,45299,F,1969-12-31 19:00:00,(513) 615-9165,(525) 382-3961
+154,Suki,Fields,Jeremy,16 Endicott Street,Waterloo,AL,90303,F,1969-12-31 19:00:00,(399) 454-9802,(725) 796-5210
+155,Todd,Bentley,Ashton,16 Endicott Street,Alamogordo,TX,23312,M,1969-12-31 19:00:00,(776) 678-2039,(904) 215-0169
+156,Brynne,Miles,Rebekah,16 Endicott Street,Ansonia,TN,07883,F,1969-12-31 19:00:00,(517) 656-5516,(667) 827-9944
+157,Madison,Lawson,Eugenia,16 Endicott Street,Huntsville,KS,60787,F,1969-12-31 19:00:00,(438) 955-5134,(504) 458-0116
+158,Rhiannon,Mclaughlin,Zahir,16 Endicott Street,Norwalk,ME,19848,M,1969-12-31 19:00:00,(143) 287-6910,(501) 627-4877
+159,Neville,Hester,Cathleen,17 Ferry hill Road,Fayetteville,IA,15768,M,1969-12-31 19:00:00,(556) 477-9885,(169) 947-6899
+160,Paula,Cooley,Eliana,16 Endicott Street,La Habra Heights,WY,87544,F,1969-12-31 19:00:00,(219) 104-1740,(217) 107-7202
+161,Demetrius,Lamb,Darryl,17 Ferry hill Road,Beloit,SC,22641,M,1969-12-31 19:00:00,(568) 209-3273,(341) 653-8068
+162,Megan,Peck,Moana,255 Grapevine Road,Uniontown,CO,26894,F,1969-12-31 19:00:00,(134) 318-5591,(239) 298-8656
+163,Thomas,Huff,Rhiannon,16 Endicott Street,Berkeley,MA,86020,F,1969-12-31 19:00:00,(488) 989-0192,(280) 837-7855
+164,Maisie,Michael,Wynne,17 Ferry hill Road,Somerville,VT,99587,F,1969-12-31 19:00:00,(675) 878-9687,(164) 810-4797
+165,Hyacinth,Sears,Lisandra,17 Ferry hill Road,Miami Beach,AK,89055,M,1969-12-31 19:00:00,(437) 914-9898,(992) 799-1762
+166,Palmer,Chandler,Davis,17 Ferry hill Road,Barre,DE,63090,M,1969-12-31 19:00:00,(259) 957-9406,(508) 360-9821
+167,Geraldine,Glass,Forrest,16 Endicott Street,Wisconsin Rapids,IN,39199,F,1969-12-31 19:00:00,(560) 976-4756,(456) 288-5114
+168,Cecilia,Caldwell,Orla,255 Grapevine Road,Boulder,DE,03473,F,1969-12-31 19:00:00,(408) 254-5117,(993) 207-3245
+169,Ezekiel,Mcfarland,Mariko,16 Endicott Street,Peekskill,UT,25833,M,1969-12-31 19:00:00,(985) 193-0861,(935) 280-4469
+170,Beau,Goodwin,Stewart,17 Ferry hill Road,Cambridge,OH,05381,F,1969-12-31 19:00:00,(744) 606-5416,(411) 881-9190
+171,Wallace,Burnett,Rhonda,16 Endicott Street,Sioux Falls,CO,23478,F,1969-12-31 19:00:00,(845) 352-5734,(643) 844-7522
+172,Caleb,Barton,Haley,17 Ferry hill Road,Newton,MN,21177,F,1969-12-31 19:00:00,(399) 133-6764,(201) 824-9370
+173,Aphrodite,Herring,Jessamine,17 Ferry hill Road,Richland,MD,12712,M,1969-12-31 19:00:00,(454) 228-3301,(640) 921-0652
+174,Herrod,Gillespie,Mariam,17 Ferry hill Road,San Antonio,NE,73238,F,1969-12-31 19:00:00,(668) 970-5105,(425) 178-4147
+175,Vera,Davis,Dylan,17 Ferry hill Road,Baldwin Park,TN,68037,M,1969-12-31 19:00:00,(175) 381-6066,(841) 998-9113
+176,Dennis,Combs,Dahlia,16 Endicott Street,Temecula,NV,26201,M,1969-12-31 19:00:00,(821) 998-7497,(486) 599-7124
+177,Raphael,Bruce,Zeph,17 Ferry hill Road,Fairfax,AK,21153,F,1969-12-31 19:00:00,(528) 925-2017,(115) 239-0494
+178,Ramona,Dorsey,Ishmael,16 Endicott Street,Olean,NJ,98616,M,1969-12-31 19:00:00,(418) 425-4316,(716) 200-8353
+179,Susan,Cole,Thomas,17 Ferry hill Road,South Pasadena,MD,05313,M,1969-12-31 19:00:00,(492) 708-3154,(363) 616-4350
+180,Molly,House,Jolene,17 Ferry hill Road,Lock Haven,FL,55957,M,1969-12-31 19:00:00,(660) 815-0786,(951) 312-9676
+181,Ashton,Crane,Risa,16 Endicott Street,Guayama,MI,24485,F,1969-12-31 19:00:00,(103) 899-7410,(739) 306-3242
+182,Beck,Rivas,Nayda,16 Endicott Street,Valparaiso,MD,93896,M,1969-12-31 19:00:00,(864) 474-0143,(207) 459-5264
+183,Tucker,Mcbride,Shelby,255 Grapevine Road,Salisbury,LA,08673,F,1969-12-31 19:00:00,(570) 624-8312,(807) 272-0300
+184,Neve,Stein,Ira,16 Endicott Street,Lander,RI,02683,F,1969-12-31 19:00:00,(271) 583-3915,(746) 156-7316
+185,Abdul,Mcfarland,Ivy,17 Ferry hill Road,Manhattan,MO,87559,F,1969-12-31 19:00:00,(534) 559-1952,(520) 837-8910
+186,Preston,Patterson,Lionel,255 Grapevine Road,Jordan Valley,AK,97431,M,1969-12-31 19:00:00,(811) 873-2041,(419) 430-1064
+187,Celeste,Boyle,Ivy,255 Grapevine Road,Jamestown,NH,75596,F,1969-12-31 19:00:00,(706) 847-2666,(178) 132-2470
+188,Lawrence,Casey,Minerva,17 Ferry hill Road,Ketchikan,OH,38134,M,1969-12-31 19:00:00,(812) 589-5575,(908) 489-0961
+189,Shana,Bentley,Stacy,255 Grapevine Road,Cortland,DE,66478,M,1969-12-31 19:00:00,(684) 250-1685,(585) 447-2565
+190,Yvette,Skinner,Palmer,17 Ferry hill Road,Gloucester,IN,17792,M,1969-12-31 19:00:00,(620) 316-7921,(404) 960-9575
+191,Xavier,Bradley,Sawyer,255 Grapevine Road,Agoura Hills,NJ,88519,M,1969-12-31 19:00:00,(365) 386-6916,(615) 280-1999
+192,Channing,Tyler,Kristen,17 Ferry hill Road,Hialeah,WY,92758,F,1969-12-31 19:00:00,(556) 462-0781,(683) 673-7789
+193,Logan,Dillon,Thor,17 Ferry hill Road,Spartanburg,LA,14861,F,1969-12-31 19:00:00,(342) 134-7183,(911) 790-3293
+194,Veronica,Rogers,Omar,17 Ferry hill Road,Tuscaloosa,VA,03956,M,1969-12-31 19:00:00,(806) 180-0917,(910) 204-0815
+195,Astra,Berger,Hu,17 Ferry hill Road,Logan,MS,05912,F,1969-12-31 19:00:00,(120) 938-9580,(631) 546-5506
+196,Colby,Mclean,Camille,16 Endicott Street,Des Moines,KY,56387,F,1969-12-31 19:00:00,(253) 744-3767,(323) 839-0018
+197,Naomi,Hardin,Carter,17 Ferry hill Road,Rock Island,WY,75838,M,1969-12-31 19:00:00,(838) 696-8296,(697) 605-3466
+198,Courtney,Horton,Mark,17 Ferry hill Road,Healdsburg,VA,83411,F,1969-12-31 19:00:00,(188) 375-8625,(778) 244-4917
+199,Whitney,Lambert,Noah,255 Grapevine Road,Louisville,DE,37616,M,1969-12-31 19:00:00,(818) 543-2124,(668) 686-5333
+200,Kirestin,Sparks,Jennifer,255 Grapevine Road,Seal Beach,WV,51879,F,1969-12-31 19:00:00,(236) 450-9285,(150) 484-9781
+201,Daquan,Perez,Brenda,16 Endicott Street,Parker,MO,48574,M,1969-12-31 19:00:00,(358) 544-4958,(898) 689-8502
+202,Derek,Rich,Quintessa,255 Grapevine Road,Davenport,ND,15274,M,1969-12-31 19:00:00,(291) 240-9486,(384) 887-1658
+203,Salvador,Peterson,Kyla,16 Endicott Street,Princeton,CT,56547,M,1969-12-31 19:00:00,(987) 463-6474,(455) 104-8793
+204,Inga,Petty,Karyn,17 Ferry hill Road,Boulder Junction,WV,74551,M,1969-12-31 19:00:00,(244) 729-0740,(799) 593-9682
+205,Ralph,Whitehead,Delilah,16 Endicott Street,Yakima,WV,09753,F,1969-12-31 19:00:00,(825) 576-2658,(697) 270-9734
+206,Eaton,Fletcher,Indira,16 Endicott Street,Mandan,IL,60895,F,1969-12-31 19:00:00,(716) 474-9621,(420) 255-4897
+207,Omar,Lawson,Amaya,17 Ferry hill Road,Pine Bluff,ME,98315,M,1969-12-31 19:00:00,(806) 527-8580,(244) 142-7921
+208,Knox,Whitehead,Josephine,17 Ferry hill Road,Kahului,TX,37443,M,1969-12-31 19:00:00,(717) 308-4425,(943) 874-4794
+209,Felix,Guy,Fallon,17 Ferry hill Road,Port Arthur,AK,42859,F,1969-12-31 19:00:00,(676) 201-0549,(383) 988-2115
+210,Brennan,Snider,Lois,17 Ferry hill Road,Amesbury,NC,60246,F,1969-12-31 19:00:00,(574) 114-2072,(965) 171-2676
+211,Lucian,Pugh,Gabriel,17 Ferry hill Road,Worcester,MN,00984,M,1969-12-31 19:00:00,(182) 164-0201,(113) 680-2637
+212,Yael,Galloway,Cathleen,16 Endicott Street,East Rutherford,NM,06098,F,1969-12-31 19:00:00,(631) 942-9565,(467) 194-0266
+213,Amal,Underwood,Dai,16 Endicott Street,Gaithersburg,ME,22964,M,1969-12-31 19:00:00,(177) 632-0901,(951) 317-2199
+214,Barry,French,Haley,17 Ferry hill Road,North Las Vegas,MA,83360,M,1969-12-31 19:00:00,(930) 931-8831,(103) 203-2374
+215,Yuri,Head,Sloane,16 Endicott Street,Rancho Cordova,TN,80310,F,1969-12-31 19:00:00,(521) 552-5667,(709) 184-0235
+216,Vance,Banks,Honorato,255 Grapevine Road,Fallon,AK,19031,F,1969-12-31 19:00:00,(940) 607-3174,(914) 240-1441
+217,Solomon,Richardson,Cairo,17 Ferry hill Road,Egg Harbor,MO,67507,F,1969-12-31 19:00:00,(145) 319-2344,(845) 397-1787
+218,Xaviera,Bryant,Colin,17 Ferry hill Road,Sierra Vista,AL,75920,F,1969-12-31 19:00:00,(494) 838-5848,(810) 507-4197
+219,Stacey,Rose,Oprah,17 Ferry hill Road,Lawrenceville,OR,78172,M,1969-12-31 19:00:00,(115) 954-7742,(726) 814-7919
+220,Lyle,Morrow,Nicole,255 Grapevine Road,Las Vegas,AZ,34340,F,1969-12-31 19:00:00,(149) 891-5184,(321) 341-8080
+221,Jaime,Gonzales,Brooke,16 Endicott Street,Kearns,MO,50990,M,1969-12-31 19:00:00,(912) 107-2395,(703) 894-2352
+222,Susan,Barlow,Quinn,16 Endicott Street,Fitchburg,TN,86108,F,1969-12-31 19:00:00,(164) 459-1639,(682) 944-8425
+223,Hanae,Marsh,Ifeoma,17 Ferry hill Road,Fairmont,TX,71336,M,1969-12-31 19:00:00,(958) 698-2702,(250) 686-0302
+224,Colin,Golden,Bertha,17 Ferry hill Road,Sonoma,ME,98157,M,1969-12-31 19:00:00,(550) 363-4131,(901) 403-5447
+225,Benedict,Gillespie,Cassady,17 Ferry hill Road,Chula Vista,AL,75336,M,1969-12-31 19:00:00,(991) 132-0334,(470) 828-9691
+226,Chancellor,Cardenas,Brenda,16 Endicott Street,Sturgis,MS,18109,F,1969-12-31 19:00:00,(413) 757-1379,(659) 350-4613
+227,Lester,Wynn,Rooney,255 Grapevine Road,Villa Park,NY,55378,F,1969-12-31 19:00:00,(452) 732-3915,(519) 222-7215
+228,Holly,Barr,Chester,255 Grapevine Road,Rye,ID,05867,M,1969-12-31 19:00:00,(198) 904-4135,(463) 679-0817
+229,Sigourney,Sullivan,Yuli,255 Grapevine Road,Bay City,RI,58747,M,1969-12-31 19:00:00,(511) 657-0116,(906) 814-6049
+230,Ivy,Jordan,Nerea,255 Grapevine Road,Darlington,NJ,36148,M,1969-12-31 19:00:00,(958) 275-1729,(865) 914-3511
+231,Ronan,Hart,Nicholas,255 Grapevine Road,Anderson,MS,31490,M,1969-12-31 19:00:00,(657) 486-2511,(665) 386-0238
+232,Edan,Gibson,Francesca,16 Endicott Street,Odessa,NC,68125,M,1969-12-31 19:00:00,(117) 639-2944,(805) 933-2678
+233,Kaden,Hammond,Jeanette,16 Endicott Street,Calabasas,NM,16434,F,1969-12-31 19:00:00,(632) 687-3823,(266) 944-4791
+234,Pearl,Blackwell,Rhiannon,255 Grapevine Road,Wheaton,NH,08941,M,1969-12-31 19:00:00,(389) 113-3802,(346) 148-7466
+235,Valentine,Mckee,David,16 Endicott Street,Everett,NM,74953,F,1969-12-31 19:00:00,(773) 576-7128,(616) 272-0358
+236,Damian,Salinas,Isabelle,17 Ferry hill Road,Chino Hills,MO,85459,M,1969-12-31 19:00:00,(357) 575-1812,(642) 991-1752
+237,Dolan,Perkins,Quinlan,255 Grapevine Road,Newton,ID,18565,M,1969-12-31 19:00:00,(501) 423-9669,(671) 424-6013
+238,Jarrod,Saunders,Leonard,17 Ferry hill Road,Rensselaer,FL,75886,F,1969-12-31 19:00:00,(192) 761-2336,(772) 795-1714
+239,Rachel,Sullivan,Miriam,255 Grapevine Road,Independence,TN,44246,M,1969-12-31 19:00:00,(182) 518-1808,(859) 574-3616
+240,Tucker,Madden,Jason,17 Ferry hill Road,Watervliet,NE,10502,M,1969-12-31 19:00:00,(200) 119-8684,(437) 143-9080
+241,Scarlet,Robles,Leila,255 Grapevine Road,San Bernardino,VA,16927,F,1969-12-31 19:00:00,(368) 953-4804,(443) 424-2091
+242,Cruz,Robles,Astra,16 Endicott Street,Davis,NH,36795,M,1969-12-31 19:00:00,(581) 485-7292,(534) 536-7176
+243,Patience,Walls,Dillon,255 Grapevine Road,Morgantown,WV,48020,F,1969-12-31 19:00:00,(262) 454-9994,(362) 439-1225
+244,Mariam,Russo,Ivana,255 Grapevine Road,Truth or Consequences,NM,69322,M,1969-12-31 19:00:00,(876) 760-0234,(626) 951-5352
+245,Naida,Jarvis,Thor,17 Ferry hill Road,Martinsburg,CA,26502,F,1969-12-31 19:00:00,(732) 977-5034,(540) 803-5426
+246,Buffy,Richard,Price,17 Ferry hill Road,Bartlesville,OR,03736,M,1969-12-31 19:00:00,(133) 167-6184,(210) 636-7148
+247,Michelle,Lamb,Lester,16 Endicott Street,Muskogee,CT,70013,F,1969-12-31 19:00:00,(817) 992-0026,(594) 643-2990
+248,Karen,Lara,Cameron,255 Grapevine Road,Valparaiso,TN,17824,M,1969-12-31 19:00:00,(277) 304-7993,(425) 415-8777
+249,Clio,Norris,Kermit,16 Endicott Street,Phoenix,MN,92160,F,1969-12-31 19:00:00,(751) 744-1705,(963) 640-8066
+250,Renee,Garner,Axel,255 Grapevine Road,Annapolis,NH,69410,F,1969-12-31 19:00:00,(652) 467-3219,(728) 784-5258
+251,Karyn,Mcclure,Jenette,255 Grapevine Road,Boise,UT,98851,F,1969-12-31 19:00:00,(295) 414-0438,(384) 533-0970
+252,Dara,Tanner,Tatum,255 Grapevine Road,South Pasadena,TX,01497,M,1969-12-31 19:00:00,(219) 558-8323,(754) 634-8238
+253,Hayfa,Clark,Moses,16 Endicott Street,Pine Bluff,NV,28748,F,1969-12-31 19:00:00,(961) 385-9495,(834) 162-4898
+254,Grady,Moody,Hyacinth,17 Ferry hill Road,Palmdale,ID,04075,F,1969-12-31 19:00:00,(602) 198-9320,(955) 843-1075
+255,Heather,Jennings,Quincy,16 Endicott Street,Springfield,VA,40252,F,1969-12-31 19:00:00,(512) 833-7885,(427) 402-8503
+256,Bradley,Stark,Cynthia,255 Grapevine Road,Port Jervis,RI,00713,M,1969-12-31 19:00:00,(664) 559-8772,(890) 493-4852
+257,Farrah,Farmer,Alfonso,17 Ferry hill Road,Boulder,AK,49813,F,1969-12-31 19:00:00,(631) 403-2036,(170) 823-1532
+258,Brett,Jackson,Doris,16 Endicott Street,Peru,MA,89411,M,1969-12-31 19:00:00,(341) 387-3681,(923) 555-6080
+259,Rosalyn,Levine,Justine,17 Ferry hill Road,Frederick,MD,56798,F,1969-12-31 19:00:00,(863) 545-3788,(344) 425-1806
+260,Byron,Hardin,Adrian,16 Endicott Street,Mankato,NH,36499,M,1969-12-31 19:00:00,(542) 231-4768,(129) 835-0659
+261,Kylee,Cabrera,Kadeem,17 Ferry hill Road,Tulsa,RI,79312,M,1969-12-31 19:00:00,(540) 308-3382,(642) 401-8160
+262,Roth,Mccray,Rylee,255 Grapevine Road,Mechanicville,TN,04254,M,1969-12-31 19:00:00,(639) 911-5649,(667) 828-6865
+263,Griffin,Dale,Geoffrey,17 Ferry hill Road,Juneau,OH,17557,F,1969-12-31 19:00:00,(780) 439-9977,(254) 129-4426
+264,Ina,Patton,Harding,16 Endicott Street,Merizo,MA,16707,F,1969-12-31 19:00:00,(361) 349-4935,(320) 756-1208
+265,Tatum,Montoya,Colorado,17 Ferry hill Road,Gold Beach,SC,56617,M,1969-12-31 19:00:00,(664) 699-8295,(767) 175-9370
+266,Basil,Bond,Rina,17 Ferry hill Road,Fremont,HI,90064,M,1969-12-31 19:00:00,(644) 849-6076,(825) 295-2038
+267,Julie,Orr,Blake,17 Ferry hill Road,Belpre,OH,18362,F,1969-12-31 19:00:00,(127) 104-9291,(354) 393-8644
+268,Ramona,Kane,Brynn,255 Grapevine Road,Fulton,UT,16944,F,1969-12-31 19:00:00,(580) 781-9352,(380) 925-6766
+269,Whitney,Wise,Lacy,16 Endicott Street,Rawlins,CO,59640,F,1969-12-31 19:00:00,(314) 677-9578,(834) 691-5970
+270,Tamara,Kelly,Britanni,16 Endicott Street,Palmdale,RI,78392,M,1969-12-31 19:00:00,(698) 276-0016,(132) 112-8546
+271,Emerald,Bolton,Jael,255 Grapevine Road,Dickinson,MO,74762,M,1969-12-31 19:00:00,(490) 517-5495,(623) 260-4751
+272,Tyler,Rich,Michelle,16 Endicott Street,Isle of Palms,TX,17517,M,1969-12-31 19:00:00,(344) 749-3734,(449) 291-0774
+273,Mona,Curry,Gail,17 Ferry hill Road,Lancaster,CA,88833,M,1969-12-31 19:00:00,(838) 663-9121,(242) 927-5409
+274,Piper,Lowery,Aurelia,17 Ferry hill Road,Vineland,MA,75103,M,1969-12-31 19:00:00,(766) 898-0409,(675) 185-8454
+275,Kerry,Leblanc,Shaeleigh,16 Endicott Street,Mission Viejo,AL,35302,F,1969-12-31 19:00:00,(102) 511-1972,(720) 284-7332
+276,Cairo,Thompson,Darrel,255 Grapevine Road,New Orleans,NY,80792,F,1969-12-31 19:00:00,(144) 916-7369,(216) 548-6316
+277,Sydnee,Reid,Ezra,255 Grapevine Road,College Park,OK,94138,F,1969-12-31 19:00:00,(559) 818-9354,(830) 257-0207
+278,Peter,Dennis,Justin,255 Grapevine Road,Kokomo,MN,36285,F,1969-12-31 19:00:00,(140) 494-2354,(825) 233-9588
+279,Tatiana,Ellison,Graham,17 Ferry hill Road,Port Arthur,CT,74614,M,1969-12-31 19:00:00,(192) 446-3714,(144) 523-4568
+280,Louis,Haney,Abra,16 Endicott Street,Port Washington,MI,95987,F,1969-12-31 19:00:00,(346) 151-0055,(380) 859-3993
+281,Tate,Montoya,Rhonda,17 Ferry hill Road,Poughkeepsie,AK,88825,M,1969-12-31 19:00:00,(879) 824-0158,(742) 735-5930
+282,Jerome,Bray,Baker,16 Endicott Street,Turlock,RI,24993,M,1969-12-31 19:00:00,(387) 535-1878,(234) 275-6855
+283,Jordan,Kim,Evangeline,17 Ferry hill Road,Narragansett,MT,82879,F,1969-12-31 19:00:00,(255) 934-0682,(438) 293-7467
+284,Brandon,Estes,Dorian,16 Endicott Street,Chattanooga,WA,91046,M,1969-12-31 19:00:00,(800) 592-8300,(348) 805-9385
+285,Damian,Acevedo,Julie,16 Endicott Street,Jackson,CA,78789,F,1969-12-31 19:00:00,(710) 121-3691,(751) 146-3412
+286,Ethan,Mcmillan,Hasad,17 Ferry hill Road,Burbank,CO,04614,M,1969-12-31 19:00:00,(461) 963-6247,(610) 133-3975
+287,Inez,Sims,Mechelle,16 Endicott Street,Opelousas,AK,51123,F,1969-12-31 19:00:00,(867) 115-7257,(690) 566-9525
+288,Drew,Walsh,Mara,16 Endicott Street,Commerce,VT,20298,F,1969-12-31 19:00:00,(130) 398-8883,(552) 178-3740
+289,Jena,Morin,Urielle,17 Ferry hill Road,Cheyenne,ME,27058,F,1969-12-31 19:00:00,(561) 455-8079,(852) 602-0614
+290,Olivia,Garza,Samson,255 Grapevine Road,Areceibo,SD,68030,F,1969-12-31 19:00:00,(953) 932-8844,(965) 689-3173
+291,Lev,Salinas,Ciaran,255 Grapevine Road,Stafford,WA,98052,F,1969-12-31 19:00:00,(849) 783-6581,(585) 658-2403
+292,Renee,Warren,Debra,255 Grapevine Road,Dearborn,DC,32582,F,1969-12-31 19:00:00,(759) 341-7263,(856) 359-0513
+293,Merritt,Henderson,Jasper,255 Grapevine Road,Sioux Falls,FL,40399,M,1969-12-31 19:00:00,(403) 666-5137,(728) 341-9858
+294,Yetta,Hill,Amos,255 Grapevine Road,Kettering,OR,60873,F,1969-12-31 19:00:00,(400) 637-3556,(965) 824-8655
+295,Prescott,Weeks,Deacon,255 Grapevine Road,Victoria,DC,57057,M,1969-12-31 19:00:00,(949) 506-4723,(161) 716-4186
+296,Josiah,Rosales,Reagan,255 Grapevine Road,Fort Dodge,MA,11761,F,1969-12-31 19:00:00,(677) 490-3610,(875) 961-4391
+297,Shelley,Delaney,Kellie,17 Ferry hill Road,Ontario,NE,60948,F,1969-12-31 19:00:00,(486) 197-8627,(341) 732-5579
+298,Melanie,House,Jana,16 Endicott Street,Cedar Rapids,NJ,49925,F,1969-12-31 19:00:00,(238) 855-1978,(394) 973-5270
+299,Tyler,Ward,Melyssa,16 Endicott Street,Beckley,MN,05434,F,1969-12-31 19:00:00,(995) 973-2671,(417) 697-5840
+300,Hayfa,Knowles,Kieran,16 Endicott Street,Moorhead,MN,86881,M,1969-12-31 19:00:00,(650) 332-6493,(468) 219-5655
+301,Jaden,Boyle,Xerxes,255 Grapevine Road,Sitka,LA,57207,F,1969-12-31 19:00:00,(491) 794-0633,(728) 484-8835
+302,Vance,Cummings,Wyoming,16 Endicott Street,Lansing,NV,36838,M,1969-12-31 19:00:00,(327) 860-6990,(738) 664-5844
+303,Richard,Thomas,Winter,255 Grapevine Road,Flagstaff,NM,48875,M,1969-12-31 19:00:00,(453) 343-0726,(562) 406-1961
+304,Hedwig,Vasquez,Piper,16 Endicott Street,Costa Mesa,MT,01365,M,1969-12-31 19:00:00,(286) 903-4767,(839) 890-2888
+305,Helen,Avila,Hermione,16 Endicott Street,Lebanon,WY,49336,F,1969-12-31 19:00:00,(596) 264-0938,(841) 729-1239
+306,Dennis,Stuart,Urielle,17 Ferry hill Road,Ithaca,MS,06203,F,1969-12-31 19:00:00,(775) 713-5542,(843) 283-3729
+307,Richard,Newton,Holmes,255 Grapevine Road,Logan,SC,11386,F,1969-12-31 19:00:00,(905) 558-3014,(858) 677-4426
+308,Slade,Pate,Ifeoma,17 Ferry hill Road,Mandan,OH,36331,M,1969-12-31 19:00:00,(892) 917-7664,(448) 864-7392
+309,Maisie,Holder,Vladimir,17 Ferry hill Road,Erie,VA,00503,F,1969-12-31 19:00:00,(312) 976-3141,(898) 181-7309
+310,Brielle,Goodwin,Teagan,17 Ferry hill Road,Worland,ME,79381,F,1969-12-31 19:00:00,(675) 727-5266,(173) 483-5228
+311,Cherokee,Duran,Cora,255 Grapevine Road,West Sacramento,NY,78454,F,1969-12-31 19:00:00,(717) 983-0574,(400) 638-8605
+312,Violet,Bailey,Cain,16 Endicott Street,Trenton,MD,84191,F,1969-12-31 19:00:00,(841) 426-7264,(652) 357-2687
+313,Jaden,Rollins,Chloe,255 Grapevine Road,Ann Arbor,DE,24876,F,1969-12-31 19:00:00,(939) 393-9562,(134) 722-1048
+314,Dane,House,Ainsley,17 Ferry hill Road,Fort Collins,AK,74004,F,1969-12-31 19:00:00,(182) 645-6893,(115) 154-3049
+315,Justin,Pittman,Abra,16 Endicott Street,Redding,IL,72854,F,1969-12-31 19:00:00,(190) 894-8009,(743) 782-2520
+316,Guy,Avery,Dorothy,17 Ferry hill Road,Woodruff,MI,91582,F,1969-12-31 19:00:00,(862) 962-5153,(985) 515-8180
+317,Adele,Savage,Keith,255 Grapevine Road,Kemmerer,TN,02174,F,1969-12-31 19:00:00,(476) 539-4259,(418) 599-5742
+318,Branden,Turner,Ava,255 Grapevine Road,Calabasas,ID,74241,M,1969-12-31 19:00:00,(812) 172-3809,(704) 547-6386
+319,Malachi,Whitehead,Sybill,17 Ferry hill Road,Newport,NE,69982,M,1969-12-31 19:00:00,(643) 453-1586,(152) 448-0370
+320,Chloe,Hawkins,Lyle,17 Ferry hill Road,Franklin,ID,44798,F,1969-12-31 19:00:00,(512) 198-0414,(905) 375-4127
+321,Myles,Koch,Alfreda,17 Ferry hill Road,Little Rock,NH,35947,M,1969-12-31 19:00:00,(450) 964-8690,(555) 673-3234
+322,Wing,Soto,Alma,17 Ferry hill Road,Inglewood,UT,51311,F,1969-12-31 19:00:00,(860) 561-0276,(909) 334-2245
+323,Kuame,Stanley,Isabella,16 Endicott Street,Asheville,WV,13074,M,1969-12-31 19:00:00,(456) 622-5328,(760) 906-5902
+324,Nolan,Bonner,Daniel,255 Grapevine Road,Guánica,DC,59515,F,1969-12-31 19:00:00,(487) 705-4653,(718) 621-3241
+325,Leila,Rivera,Gannon,16 Endicott Street,Union City,VT,45422,F,1969-12-31 19:00:00,(385) 939-6582,(796) 147-6115
+326,Axel,Barnett,Jemima,17 Ferry hill Road,Ventura,CA,36412,F,1969-12-31 19:00:00,(619) 292-8989,(466) 572-6761
+327,Stella,Mcgowan,Dakota,16 Endicott Street,Natchez,CA,35345,M,1969-12-31 19:00:00,(473) 463-7292,(918) 780-6420
+328,Cora,Snow,Bradley,16 Endicott Street,Jeannette,AZ,65339,M,1969-12-31 19:00:00,(924) 226-1459,(355) 786-9674
+329,Gabriel,Carroll,Jackson,17 Ferry hill Road,Barrow,VT,80414,M,1969-12-31 19:00:00,(418) 867-0238,(197) 761-0864
+330,Steven,Noble,George,255 Grapevine Road,City of Industry,IL,71689,F,1969-12-31 19:00:00,(575) 813-8016,(727) 681-4556
+331,Meghan,Oliver,Xandra,17 Ferry hill Road,Phenix City,LA,30016,M,1969-12-31 19:00:00,(397) 303-0306,(221) 778-4476
+332,Honorato,Jimenez,Xyla,255 Grapevine Road,Gilette,CA,60767,F,1969-12-31 19:00:00,(710) 127-2489,(363) 749-0991
+333,Wynne,Evans,Clarke,17 Ferry hill Road,Thomasville,CA,84295,F,1969-12-31 19:00:00,(324) 713-9876,(367) 268-1902
+334,Marshall,Vinson,Gage,255 Grapevine Road,Concord,NE,08432,F,1969-12-31 19:00:00,(560) 336-5037,(728) 621-2143
+335,Maya,Morin,Tanner,17 Ferry hill Road,West Palm Beach,GA,53714,F,1969-12-31 19:00:00,(615) 642-3710,(922) 276-8351
+336,Chandler,Kelley,Hasad,16 Endicott Street,Titusville,SC,25631,F,1969-12-31 19:00:00,(836) 556-5797,(555) 817-0614
+337,Hilary,Beck,Dale,255 Grapevine Road,Kingsport,MT,60507,F,1969-12-31 19:00:00,(536) 334-7906,(186) 690-0020
+338,Caleb,Powers,Katelyn,16 Endicott Street,Charleston,WV,62609,F,1969-12-31 19:00:00,(438) 334-3109,(200) 230-3152
+339,Madeline,Powell,Chanda,16 Endicott Street,Signal Hill,WI,96224,M,1969-12-31 19:00:00,(688) 888-9981,(395) 457-0297
+340,Cedric,Ramsey,Price,16 Endicott Street,Orange,ME,83562,F,1969-12-31 19:00:00,(504) 595-7802,(483) 770-8486
+341,Benjamin,Lara,Allistair,255 Grapevine Road,Somersworth,KS,54958,F,1969-12-31 19:00:00,(542) 455-7384,(193) 570-6205
+342,Olga,Talley,Thaddeus,255 Grapevine Road,Jeffersonville,DC,08440,M,1969-12-31 19:00:00,(956) 341-3358,(155) 451-0408
+343,Shelly,Hooper,Zelda,255 Grapevine Road,Agawam,AZ,17374,M,1969-12-31 19:00:00,(269) 518-5638,(349) 757-6978
+344,Harding,Pugh,Tatiana,255 Grapevine Road,Augusta,CO,52912,F,1969-12-31 19:00:00,(419) 147-3970,(547) 525-8941
+345,Burke,Kline,Daryl,255 Grapevine Road,Saratoga Springs,WV,16325,F,1969-12-31 19:00:00,(837) 808-2557,(715) 757-8095
+346,Grant,Rodriquez,Jeanette,16 Endicott Street,Ocean City,HI,75702,M,1969-12-31 19:00:00,(208) 665-3710,(388) 483-7683
+347,Idola,Joyner,Kelsey,17 Ferry hill Road,Fontana,CO,36544,F,1969-12-31 19:00:00,(105) 815-0034,(871) 554-8004
+348,Jillian,Foster,Kristen,16 Endicott Street,Vallejo,IN,73478,F,1969-12-31 19:00:00,(943) 977-7592,(131) 236-6612
+349,Hall,Brady,Kyle,17 Ferry hill Road,Frederiksted,WA,71914,M,1969-12-31 19:00:00,(926) 519-5517,(973) 696-9925
+350,Jamalia,Lawson,Jayme,16 Endicott Street,El Monte,MO,95411,M,1969-12-31 19:00:00,(315) 822-7963,(822) 848-3027
+351,Maggie,Marks,Clayton,255 Grapevine Road,Clarksburg,OK,93608,M,1969-12-31 19:00:00,(312) 376-1090,(674) 601-2534
+352,MacKensie,Joyce,Castor,17 Ferry hill Road,Blythe,MI,30443,M,1969-12-31 19:00:00,(399) 490-9645,(757) 382-8339
+353,Chester,Jordan,Hiroko,16 Endicott Street,Richmond,TN,29529,M,1969-12-31 19:00:00,(198) 743-4916,(835) 275-3290
+354,Solomon,Osborn,Valentine,17 Ferry hill Road,Carson City,WA,83481,F,1969-12-31 19:00:00,(256) 273-9081,(845) 136-8058
+355,Abraham,Nixon,Roanna,17 Ferry hill Road,Ogdensburg,TN,06653,M,1969-12-31 19:00:00,(368) 450-1951,(410) 469-4378
+356,Galvin,Hahn,Oleg,16 Endicott Street,Rock Island,MS,73642,F,1969-12-31 19:00:00,(921) 973-2836,(520) 899-1369
+357,Chastity,Holder,Jerome,16 Endicott Street,Escondido,AK,24655,M,1969-12-31 19:00:00,(398) 224-6555,(556) 816-0617
+358,Herman,Hodge,Ronan,255 Grapevine Road,Brookfield,IN,83971,F,1969-12-31 19:00:00,(167) 622-0798,(959) 576-9147
+359,Eugenia,Mccormick,Amos,255 Grapevine Road,Visalia,MI,62739,F,1969-12-31 19:00:00,(523) 312-1717,(586) 634-9940
+360,Bruno,Hanson,Justin,255 Grapevine Road,Carson,MT,42965,F,1969-12-31 19:00:00,(884) 501-0876,(216) 166-2015
+361,Brenden,Gentry,Alec,16 Endicott Street,Liberal,GA,70964,M,1969-12-31 19:00:00,(655) 531-6587,(250) 275-2052
+362,Rylee,Bartlett,Jessamine,17 Ferry hill Road,Eatontown,NJ,06562,F,1969-12-31 19:00:00,(947) 524-6757,(500) 553-3689
+363,Selma,Bowman,Joshua,17 Ferry hill Road,Malibu,OR,94031,M,1969-12-31 19:00:00,(661) 319-7202,(836) 425-2302
+364,Dennis,Levy,Alexa,16 Endicott Street,Wilkes-Barre,GA,32904,F,1969-12-31 19:00:00,(340) 543-2897,(149) 342-5923
+365,Madison,Ellis,Katelyn,16 Endicott Street,Valdez,NY,07247,M,1969-12-31 19:00:00,(900) 797-7371,(897) 820-4557
+366,Cailin,Hunt,Hop,17 Ferry hill Road,Leominster,ME,14925,M,1969-12-31 19:00:00,(224) 605-4922,(326) 884-9286
+367,Owen,Frye,Adena,17 Ferry hill Road,Chattanooga,WA,48573,F,1969-12-31 19:00:00,(785) 717-0438,(388) 564-2947
+368,Debra,Mooney,Meghan,17 Ferry hill Road,Buena Park,KY,66552,F,1969-12-31 19:00:00,(703) 242-3208,(851) 808-0655
+369,Mary,Nielsen,Susan,17 Ferry hill Road,Mesa,VT,14817,M,1969-12-31 19:00:00,(602) 701-6534,(624) 370-9491
+370,Yvonne,Hughes,Acton,17 Ferry hill Road,Cedarburg,NE,33836,M,1969-12-31 19:00:00,(482) 116-6418,(227) 718-6587
+371,Brynne,Barlow,Elizabeth,17 Ferry hill Road,Newburyport,TN,48320,F,1969-12-31 19:00:00,(470) 898-0166,(353) 840-9434
+372,Robert,Albert,Evelyn,16 Endicott Street,Reno,SC,87367,F,1969-12-31 19:00:00,(662) 739-9828,(337) 872-6755
+373,Neville,Gentry,Heather,255 Grapevine Road,Eau Claire,TN,59421,F,1969-12-31 19:00:00,(601) 529-7675,(301) 167-7918
+374,Elvis,Hartman,Mark,255 Grapevine Road,DuBois,VA,08000,M,1969-12-31 19:00:00,(303) 988-2803,(570) 588-7257
+375,Lana,Riley,Myles,255 Grapevine Road,Port Washington,FL,28121,F,1969-12-31 19:00:00,(103) 906-4879,(757) 115-5818
+376,Carl,Turner,Arthur,16 Endicott Street,Frederick,MD,68661,M,1969-12-31 19:00:00,(771) 540-2072,(228) 147-2387
+377,Audra,Bush,Chandler,16 Endicott Street,Salt Lake City,OK,80161,M,1969-12-31 19:00:00,(219) 392-4205,(788) 265-2770
+378,Judah,Mann,Regan,16 Endicott Street,Palm Springs,WA,08527,M,1969-12-31 19:00:00,(302) 518-2963,(625) 406-9548
+379,Leroy,Burgess,Palmer,255 Grapevine Road,Sault Ste. Marie,NH,37330,M,1969-12-31 19:00:00,(590) 554-1805,(864) 502-0297
+380,Mollie,Robertson,Guy,16 Endicott Street,Reading,MS,59640,F,1969-12-31 19:00:00,(142) 847-7111,(342) 430-1137
+381,Akeem,Campbell,Dustin,255 Grapevine Road,Shelton,GA,20373,F,1969-12-31 19:00:00,(309) 420-5630,(131) 279-2824
+382,Carson,Beasley,MacKenzie,255 Grapevine Road,Sutter Creek,DE,48857,F,1969-12-31 19:00:00,(888) 418-4596,(399) 213-3294
+383,Kylan,Sanford,Leah,255 Grapevine Road,Atlantic City,AK,85363,M,1969-12-31 19:00:00,(812) 319-6087,(311) 515-0912
+384,Guy,Chapman,Erica,16 Endicott Street,Brooklyn Park,DE,48561,M,1969-12-31 19:00:00,(715) 892-0135,(395) 207-5202
+385,Xander,Conley,Hamilton,17 Ferry hill Road,Somersworth,VA,04219,F,1969-12-31 19:00:00,(221) 366-5517,(693) 805-8288
+386,Ciara,Price,Ray,255 Grapevine Road,South Portland,DE,04136,F,1969-12-31 19:00:00,(929) 546-1499,(547) 736-9146
+387,Gareth,Figueroa,Rogan,255 Grapevine Road,Torrington,ID,88117,M,1969-12-31 19:00:00,(647) 146-5942,(411) 558-8865
+388,Bruno,Logan,Samson,16 Endicott Street,Parker,MA,24362,F,1969-12-31 19:00:00,(289) 131-4439,(117) 873-9315
+389,Arthur,Singleton,Yoshio,16 Endicott Street,Covington,MA,64053,F,1969-12-31 19:00:00,(845) 475-3921,(761) 177-0670
+390,Drew,Tyler,Jamal,17 Ferry hill Road,Bossier City,OK,00455,M,1969-12-31 19:00:00,(311) 233-8958,(729) 490-6849
+391,Neil,Maddox,Neil,17 Ferry hill Road,Redlands,NH,15526,M,1969-12-31 19:00:00,(605) 664-4848,(844) 794-4419
+392,Mara,Sutton,Lacy,255 Grapevine Road,Raleigh,SD,53659,F,1969-12-31 19:00:00,(237) 185-9296,(241) 651-2465
+393,Lewis,Higgins,Hoyt,255 Grapevine Road,Vincennes,NJ,53790,M,1969-12-31 19:00:00,(767) 154-2058,(661) 137-6719
+394,Craig,Bray,Justin,17 Ferry hill Road,Artesia,OH,81748,M,1969-12-31 19:00:00,(930) 199-6506,(983) 792-9072
+395,Neve,Rodriguez,Zia,17 Ferry hill Road,Sandy Springs,FL,02242,F,1969-12-31 19:00:00,(318) 925-8086,(115) 288-8688
+396,Hollee,Obrien,April,16 Endicott Street,Cape Girardeau,DE,43861,M,1969-12-31 19:00:00,(876) 952-9781,(669) 358-6295
+397,Burke,Bean,Moana,17 Ferry hill Road,Bowling Green,NV,72548,F,1969-12-31 19:00:00,(104) 786-3555,(242) 437-5447
+398,Addison,Lara,Evangeline,17 Ferry hill Road,Auburn,ND,42557,F,1969-12-31 19:00:00,(435) 991-0334,(709) 247-1906
+399,Dacey,Bender,Elmo,17 Ferry hill Road,San Francisco,IA,03748,M,1969-12-31 19:00:00,(497) 722-4316,(887) 883-0960
+400,Joy,Jacobs,Hector,16 Endicott Street,Knoxville,TX,72279,M,1969-12-31 19:00:00,(914) 430-1280,(220) 181-5351
+401,Camille,Arnold,Addison,16 Endicott Street,Rancho Cordova,VA,81405,M,1969-12-31 19:00:00,(569) 749-8609,(525) 886-0867
+402,Nora,Hendricks,Margaret,16 Endicott Street,Marshall,WV,50010,M,1969-12-31 19:00:00,(596) 205-6305,(176) 943-6894
+403,Michelle,Knowles,Ivor,255 Grapevine Road,West Hartford,WY,00506,M,1969-12-31 19:00:00,(124) 420-4064,(590) 395-9499
+404,Logan,Ward,Tiger,255 Grapevine Road,Vacaville,TX,43978,F,1969-12-31 19:00:00,(188) 152-5538,(587) 987-5763
+405,Ramona,Lloyd,Conan,17 Ferry hill Road,Port Washington,PA,58446,F,1969-12-31 19:00:00,(990) 528-9069,(934) 798-4508
+406,Yoshi,Rhodes,Linus,17 Ferry hill Road,Corinth,ID,91681,F,1969-12-31 19:00:00,(191) 260-0957,(931) 540-4169
+407,Giselle,Shaw,Calvin,16 Endicott Street,Beckley,CO,23925,F,1969-12-31 19:00:00,(851) 818-8403,(817) 176-3583
+408,Barry,Tate,Jordan,17 Ferry hill Road,Rehoboth Beach,NM,18870,M,1969-12-31 19:00:00,(895) 308-1152,(826) 400-5947
+409,Randall,Dickerson,Hunter,17 Ferry hill Road,Menomonee Falls,MN,57142,F,1969-12-31 19:00:00,(405) 568-4948,(143) 991-7153
+410,Hedwig,Calderon,Ria,17 Ferry hill Road,Fountain Valley,HI,49155,M,1969-12-31 19:00:00,(331) 279-1231,(259) 403-7212
+411,Maisie,Holmes,Ifeoma,255 Grapevine Road,Tupelo,AK,50792,M,1969-12-31 19:00:00,(710) 952-1024,(252) 474-0181
+412,Galvin,Ramsey,Coby,255 Grapevine Road,San Mateo,SC,08429,F,1969-12-31 19:00:00,(725) 840-9023,(863) 944-2269
+413,Jasper,Justice,Ramona,17 Ferry hill Road,San Jose,ID,10736,M,1969-12-31 19:00:00,(864) 988-7516,(169) 339-7771
+414,Adam,Leonard,Haley,16 Endicott Street,Maywood,PA,37702,M,1969-12-31 19:00:00,(804) 420-3806,(203) 975-9286
+415,Rogan,Herring,Haley,255 Grapevine Road,Richmond,UT,18622,M,1969-12-31 19:00:00,(533) 330-4333,(282) 479-2123
+416,Katell,Barber,Clarke,16 Endicott Street,Guthrie,MA,64097,F,1969-12-31 19:00:00,(487) 721-9143,(935) 169-6612
+417,Jana,Juarez,Medge,255 Grapevine Road,Frederick,IN,05692,F,1969-12-31 19:00:00,(242) 386-1222,(818) 520-9778
+418,Serina,Banks,Calista,255 Grapevine Road,Dearborn,MS,73226,F,1969-12-31 19:00:00,(126) 348-1667,(976) 645-5574
+419,Sara,Wallace,Yuli,255 Grapevine Road,Rockford,CT,77004,F,1969-12-31 19:00:00,(525) 292-0796,(241) 726-5163
+420,Ciara,Hogan,Jason,17 Ferry hill Road,Danville,IA,78703,M,1969-12-31 19:00:00,(958) 745-9976,(242) 415-5500
+421,Wing,Everett,Georgia,16 Endicott Street,Berlin,GA,50119,M,1969-12-31 19:00:00,(657) 634-8771,(936) 537-4608
+422,Caesar,Chen,Angela,17 Ferry hill Road,Nanticoke,MN,42399,M,1969-12-31 19:00:00,(347) 119-9454,(838) 547-6570
+423,Sonya,Hanson,Jameson,255 Grapevine Road,Taylorsville,MI,43191,F,1969-12-31 19:00:00,(101) 666-4959,(425) 105-8401
+424,Kareem,Vasquez,Kylie,16 Endicott Street,Agoura Hills,KY,40052,M,1969-12-31 19:00:00,(280) 249-6656,(714) 116-5015
+425,Shannon,Cohen,Tamekah,255 Grapevine Road,Hazleton,TN,17197,F,1969-12-31 19:00:00,(479) 125-7407,(663) 689-5082
+426,Breanna,Cole,Barclay,255 Grapevine Road,Commerce,WV,75544,M,1969-12-31 19:00:00,(793) 200-7643,(538) 511-6328
+427,Jordan,Hensley,Remedios,16 Endicott Street,Lowell,ID,67760,M,1969-12-31 19:00:00,(616) 369-7082,(398) 627-1658
+428,Cora,Baldwin,Bert,17 Ferry hill Road,San Francisco,DC,25142,F,1969-12-31 19:00:00,(212) 204-4030,(302) 960-1615
+429,Marcia,Welch,Moses,17 Ferry hill Road,Webster Groves,WI,19531,M,1969-12-31 19:00:00,(461) 592-7046,(757) 362-9693
+430,Alyssa,Valentine,Doris,17 Ferry hill Road,Kalamazoo,MO,65227,M,1969-12-31 19:00:00,(394) 430-0883,(603) 206-2987
+431,Emerson,Gardner,Elvis,255 Grapevine Road,Wausau,OK,49533,M,1969-12-31 19:00:00,(748) 622-2353,(416) 404-6378
+432,Joshua,Nelson,Kato,16 Endicott Street,West Covina,SC,12061,M,1969-12-31 19:00:00,(849) 293-5199,(235) 504-0798
+433,Maile,Summers,Merrill,255 Grapevine Road,Springfield,IN,49389,M,1969-12-31 19:00:00,(820) 910-1566,(607) 395-9829
+434,Angela,Burns,Dorothy,17 Ferry hill Road,Providence,KS,24444,F,1969-12-31 19:00:00,(654) 211-7180,(240) 979-0823
+435,Jared,Woodard,Murphy,16 Endicott Street,Valdez,SC,23988,F,1969-12-31 19:00:00,(998) 288-2382,(182) 906-4028
+436,Mason,Craig,Madeson,16 Endicott Street,Valdez,WI,76674,M,1969-12-31 19:00:00,(620) 912-0940,(115) 233-7694
+437,Cecilia,Tillman,Hedwig,16 Endicott Street,College Station,LA,71501,M,1969-12-31 19:00:00,(236) 287-2923,(461) 965-1598
+438,Cassandra,Chambers,Courtney,17 Ferry hill Road,Altoona,NH,72319,F,1969-12-31 19:00:00,(977) 900-3623,(384) 873-0955
+439,Ariana,Mcclain,Barclay,16 Endicott Street,Santa Cruz,AZ,04971,M,1969-12-31 19:00:00,(722) 445-7206,(136) 191-0528
+440,Chantale,Bass,Tucker,17 Ferry hill Road,Vineland,NY,87409,M,1969-12-31 19:00:00,(546) 852-9899,(800) 339-4386
+441,Eve,Ramos,Dominic,255 Grapevine Road,Bell Gardens,VT,87633,F,1969-12-31 19:00:00,(863) 753-4637,(922) 308-5817
+442,Denton,Dennis,Marah,255 Grapevine Road,Laurel,TX,24688,F,1969-12-31 19:00:00,(428) 156-9892,(987) 895-0211
+443,Lani,Mills,Althea,17 Ferry hill Road,Enid,CA,95513,M,1969-12-31 19:00:00,(805) 697-6754,(705) 916-5771
+444,Dawn,Zimmerman,Dahlia,17 Ferry hill Road,Corpus Christi,VT,33138,M,1969-12-31 19:00:00,(464) 219-9149,(314) 186-3887
+445,Zahir,Bartlett,Mariam,255 Grapevine Road,Washington,AK,94659,M,1969-12-31 19:00:00,(687) 826-1402,(375) 153-0597
+446,Alika,Tucker,Ronan,17 Ferry hill Road,Port Orford,CT,06893,M,1969-12-31 19:00:00,(398) 600-8769,(490) 998-9866
+447,Arden,Gill,Orson,16 Endicott Street,Santa Clarita,NJ,91999,M,1969-12-31 19:00:00,(104) 864-1640,(620) 486-5234
+448,Rooney,Cooley,Ainsley,17 Ferry hill Road,Wisconsin Rapids,MI,45949,M,1969-12-31 19:00:00,(249) 880-4108,(173) 317-1373
+449,Eleanor,Rios,Samantha,17 Ferry hill Road,Eden Prairie,OH,64814,M,1969-12-31 19:00:00,(940) 259-1324,(505) 889-1683
+450,Felix,Bell,Ainsley,17 Ferry hill Road,Plantation,MO,93744,M,1969-12-31 19:00:00,(131) 466-8616,(517) 291-4014
+451,Roanna,Scott,Xander,16 Endicott Street,Vacaville,TN,23364,M,1969-12-31 19:00:00,(306) 122-5406,(411) 426-2157
+452,Phoebe,Keller,Kenneth,17 Ferry hill Road,Seward,NE,09815,M,1969-12-31 19:00:00,(483) 890-2126,(488) 535-2804
+453,Paloma,Vega,Zenaida,255 Grapevine Road,Alpharetta,WI,50544,F,1969-12-31 19:00:00,(455) 571-8503,(956) 860-5505
+454,Ahmed,Bray,Keely,255 Grapevine Road,Bowie,IA,70925,F,1969-12-31 19:00:00,(972) 576-4323,(138) 644-6598
+455,Ralph,Benson,Candice,16 Endicott Street,Torrington,NV,19181,M,1969-12-31 19:00:00,(681) 914-9525,(971) 560-3718
+456,Garth,Bond,Graiden,255 Grapevine Road,Lawton,RI,99980,M,1969-12-31 19:00:00,(958) 474-4559,(262) 970-2841
+457,Berk,Thompson,Timothy,17 Ferry hill Road,Taylorsville,MI,51600,F,1969-12-31 19:00:00,(844) 404-5664,(467) 308-3978
+458,Debra,Meyer,Dolan,17 Ferry hill Road,Santa Fe,NM,60604,F,1969-12-31 19:00:00,(185) 759-1263,(357) 325-5880
+459,Cheryl,Neal,Myles,17 Ferry hill Road,Garden Grove,DE,62457,F,1969-12-31 19:00:00,(172) 346-6949,(205) 185-2524
+460,Aline,Mcfadden,Kyle,17 Ferry hill Road,Cohoes,MN,26799,F,1969-12-31 19:00:00,(456) 495-6917,(869) 494-4596
+461,Keelie,Chang,Barry,16 Endicott Street,Fullerton,NM,56702,F,1969-12-31 19:00:00,(187) 194-9642,(686) 283-6946
+462,Sebastian,Perry,Edan,17 Ferry hill Road,Santa Fe,CA,38925,F,1969-12-31 19:00:00,(299) 832-4296,(123) 169-8323
+463,Graiden,Benjamin,Hedley,17 Ferry hill Road,Rye,WV,59249,F,1969-12-31 19:00:00,(815) 101-1241,(949) 373-6767
+464,Odette,Jackson,Mason,17 Ferry hill Road,Chicago,NM,57563,M,1969-12-31 19:00:00,(757) 908-8481,(217) 984-6303
+465,Scarlett,Dennis,Vance,16 Endicott Street,Kettering,KY,60827,M,1969-12-31 19:00:00,(366) 758-8758,(695) 908-8273
+466,Cairo,Cox,Myra,17 Ferry hill Road,Hayward,NV,39896,M,1969-12-31 19:00:00,(544) 293-8988,(966) 349-3669
+467,Victor,Barrera,Jermaine,17 Ferry hill Road,San Fernando,AZ,70215,F,1969-12-31 19:00:00,(283) 161-0372,(776) 435-3403
+468,Armand,Sims,Iris,16 Endicott Street,Carson City,NY,12405,M,1969-12-31 19:00:00,(775) 148-8152,(515) 919-0035
+469,Lucas,Joyce,Dahlia,16 Endicott Street,Irwindale,OR,37203,F,1969-12-31 19:00:00,(511) 673-2881,(971) 917-6600
+470,Hector,Hines,Reagan,16 Endicott Street,Cambridge,LA,74685,F,1969-12-31 19:00:00,(695) 487-4684,(760) 460-7083
+471,Zena,Wilkins,Olympia,255 Grapevine Road,Jersey City,MT,11907,F,1969-12-31 19:00:00,(847) 531-2915,(722) 706-7038
+472,Colt,Roth,Harriet,255 Grapevine Road,Latrobe,HI,94332,M,1969-12-31 19:00:00,(730) 756-3881,(959) 997-2712
+473,Salvador,Molina,Joy,255 Grapevine Road,Kona,KS,54594,F,1969-12-31 19:00:00,(506) 498-2572,(445) 267-9228
+474,Ian,Petty,Cedric,16 Endicott Street,Plano,ME,84191,M,1969-12-31 19:00:00,(998) 560-9150,(730) 969-4303
+475,Ulric,Rogers,Rama,255 Grapevine Road,Olean,MO,60658,F,1969-12-31 19:00:00,(290) 351-0910,(504) 818-7958
+476,Halee,Duncan,Gisela,16 Endicott Street,West Lafayette,AK,95686,M,1969-12-31 19:00:00,(479) 499-8037,(215) 273-5074
+477,Tyler,Palmer,Jorden,17 Ferry hill Road,Hopkinsville,WY,67646,F,1969-12-31 19:00:00,(458) 486-5017,(852) 827-7921
+478,Cassidy,Mitchell,Chelsea,16 Endicott Street,Shawnee,ND,36585,M,1969-12-31 19:00:00,(715) 833-6855,(233) 255-3172
+479,Athena,Livingston,Yeo,16 Endicott Street,Everett,IN,73899,M,1969-12-31 19:00:00,(323) 178-2023,(677) 840-8995
+480,Prescott,Emerson,Sara,255 Grapevine Road,Newcastle,MN,39853,M,1969-12-31 19:00:00,(421) 445-0128,(627) 623-3514
+481,Velma,Reilly,Wade,255 Grapevine Road,Forrest City,DC,40262,M,1969-12-31 19:00:00,(276) 305-9335,(668) 273-0532
+482,Samuel,Middleton,Ina,255 Grapevine Road,Vacaville,AL,23790,F,1969-12-31 19:00:00,(159) 484-9430,(371) 704-5785
+483,Cheyenne,Randolph,Kellie,255 Grapevine Road,Richland,GA,21771,F,1969-12-31 19:00:00,(650) 191-3720,(866) 551-7265
+484,Madonna,Hines,Rebekah,255 Grapevine Road,Yigo,UT,90350,F,1969-12-31 19:00:00,(528) 348-0145,(763) 938-5762
+485,Tana,Obrien,Cassady,255 Grapevine Road,Charleston,TN,92211,M,1969-12-31 19:00:00,(696) 842-4153,(449) 212-0748
+486,Connor,Maxwell,Morgan,255 Grapevine Road,Muskogee,KS,41347,F,1969-12-31 19:00:00,(895) 949-4995,(116) 864-0110
+487,Jessamine,Ramos,Hamish,255 Grapevine Road,Santa Cruz,DC,89185,F,1969-12-31 19:00:00,(455) 340-2670,(311) 431-9059
+488,Kieran,Goodwin,Brian,16 Endicott Street,Anchorage,KS,87232,F,1969-12-31 19:00:00,(837) 508-7291,(610) 760-2015
+489,Leila,Chandler,Theodore,255 Grapevine Road,Rock Springs,AK,37974,F,1969-12-31 19:00:00,(830) 122-6323,(125) 141-6509
+490,Maris,Santos,Victoria,16 Endicott Street,Elkhart,NC,12743,M,1969-12-31 19:00:00,(755) 289-1142,(668) 267-8567
+491,Ivor,Whitfield,Hasad,17 Ferry hill Road,Manchester,NH,96741,M,1969-12-31 19:00:00,(419) 552-0202,(981) 458-8421
+492,Indira,Reid,Quail,17 Ferry hill Road,Pascagoula,SD,03512,F,1969-12-31 19:00:00,(751) 953-8352,(931) 452-8300
+493,Barclay,Pugh,Roth,16 Endicott Street,Scranton,UT,14666,M,1969-12-31 19:00:00,(393) 655-5869,(497) 707-8754
+494,Noelani,Heath,Elizabeth,255 Grapevine Road,Kona,NY,24328,F,1969-12-31 19:00:00,(735) 604-0028,(106) 851-5937
+495,Frances,Smith,Herman,17 Ferry hill Road,Norwalk,OR,53699,F,1969-12-31 19:00:00,(932) 161-1689,(395) 333-5178
+496,Cailin,Hansen,Lacota,17 Ferry hill Road,Bradford,UT,71014,F,1969-12-31 19:00:00,(851) 431-6378,(604) 772-9184
+497,Ivana,Waters,Dora,16 Endicott Street,Atwater,NV,09961,F,1969-12-31 19:00:00,(120) 399-9046,(866) 950-4428
+498,Isabella,Garner,Glenna,16 Endicott Street,Hilo,MD,59080,F,1969-12-31 19:00:00,(892) 839-6056,(660) 188-4229
+499,Penelope,Mcgee,Fatima,17 Ferry hill Road,Springdale,GA,20413,F,1969-12-31 19:00:00,(538) 694-1552,(437) 656-3196
+500,Raven,Sanders,Sean,17 Ferry hill Road,Attleboro,MN,71700,F,1969-12-31 19:00:00,(955) 507-8455,(918) 215-9933
+501,Hashim,Hewitt,Sebastian,17 Ferry hill Road,Needham,MI,47692,F,1969-12-31 19:00:00,(100) 455-4645,(805) 739-0873
+502,Ivor,Gross,Scott,255 Grapevine Road,Fredericksburg,NH,88389,M,1969-12-31 19:00:00,(451) 107-8026,(426) 390-7395
+503,Hedy,Dennis,Bianca,17 Ferry hill Road,Watertown,WY,96247,F,1969-12-31 19:00:00,(552) 588-9052,(169) 454-7758
+504,Evan,Kim,Tamara,255 Grapevine Road,Sheboygan,RI,58701,F,1969-12-31 19:00:00,(992) 944-0034,(681) 430-6898
+505,Clio,Rosales,Madonna,255 Grapevine Road,Clemson,NY,71264,F,1969-12-31 19:00:00,(292) 326-8182,(599) 487-6633
+506,Preston,Mays,Alexander,16 Endicott Street,Salisbury,SD,22615,M,1969-12-31 19:00:00,(517) 609-0985,(861) 505-2658
+507,Jakeem,Gallegos,Mufutau,16 Endicott Street,Walla Walla,SD,32559,F,1969-12-31 19:00:00,(592) 577-2487,(439) 198-4250
+508,Amaya,Jenkins,Sara,16 Endicott Street,Cincinnati,PA,72264,M,1969-12-31 19:00:00,(519) 807-3463,(458) 608-6561
+509,Brooke,Slater,Tad,17 Ferry hill Road,North Pole,MS,94714,M,1969-12-31 19:00:00,(219) 683-9316,(592) 163-1524
+510,Armando,Tucker,Tatiana,255 Grapevine Road,Sherrill,IA,77186,M,1969-12-31 19:00:00,(797) 113-5166,(898) 322-3112
+511,Hillary,Wheeler,Kasimir,16 Endicott Street,DuBois,DE,88885,M,1969-12-31 19:00:00,(994) 151-8591,(815) 927-3238
+512,Candice,Lott,Wynter,17 Ferry hill Road,Salem,AZ,63558,M,1969-12-31 19:00:00,(294) 785-4014,(398) 626-7769
+513,Hyacinth,Hodges,Zachary,255 Grapevine Road,New Britain,ID,10304,F,1969-12-31 19:00:00,(905) 129-3189,(456) 215-5654
+514,Lucian,Cobb,Maya,255 Grapevine Road,Rolling Hills Estates,GA,76871,M,1969-12-31 19:00:00,(911) 100-4575,(730) 385-9010
+515,Isaac,Vazquez,Dexter,17 Ferry hill Road,Wheaton,SD,04716,M,1969-12-31 19:00:00,(272) 748-4797,(647) 767-1503
+516,Elmo,Young,Britanney,16 Endicott Street,Catskill,IA,92565,F,1969-12-31 19:00:00,(137) 835-5722,(404) 907-1080
+517,Rana,Zimmerman,Hannah,255 Grapevine Road,Fernley,MT,01949,M,1969-12-31 19:00:00,(843) 675-9708,(870) 851-6558
+518,Uriel,Sanchez,Gloria,16 Endicott Street,Jeannette,WV,85638,F,1969-12-31 19:00:00,(142) 840-5213,(829) 478-3621
+519,Gabriel,Miller,Aspen,17 Ferry hill Road,Waukegan,NJ,44396,F,1969-12-31 19:00:00,(476) 690-4108,(991) 613-9739
+520,David,Gaines,Leigh,16 Endicott Street,Bend,WA,60437,F,1969-12-31 19:00:00,(376) 584-5760,(890) 630-8652
+521,Derek,Nixon,Christopher,17 Ferry hill Road,Seaford,HI,93579,F,1969-12-31 19:00:00,(645) 306-1067,(465) 128-3905
+522,Maxwell,Schwartz,Pascale,255 Grapevine Road,Perth Amboy,GA,16951,F,1969-12-31 19:00:00,(784) 741-1161,(445) 440-0378
+523,Griffith,Howell,Barrett,16 Endicott Street,Dunkirk,NH,71555,F,1969-12-31 19:00:00,(173) 245-6900,(400) 789-0300
+524,Cathleen,Fitzpatrick,Lucian,255 Grapevine Road,Greensboro,FL,78942,F,1969-12-31 19:00:00,(988) 898-2099,(880) 290-3263
+525,Geoffrey,Andrews,Knox,16 Endicott Street,Frisco,UT,10799,M,1969-12-31 19:00:00,(977) 966-8569,(573) 737-0320
+526,Fletcher,Mccarthy,Vielka,255 Grapevine Road,Beverly,IN,16993,M,1969-12-31 19:00:00,(697) 367-7304,(775) 106-4656
+527,Abbot,Montoya,Vera,17 Ferry hill Road,Cairo,OH,06793,M,1969-12-31 19:00:00,(616) 911-6977,(131) 688-6577
+528,Connor,Soto,Hop,16 Endicott Street,Jackson,NH,96913,M,1969-12-31 19:00:00,(345) 322-2549,(425) 992-1860
+529,Quintessa,Blevins,Maisie,17 Ferry hill Road,Natchez,CA,43099,F,1969-12-31 19:00:00,(115) 664-0809,(820) 691-3978
+530,Jaquelyn,Goff,Valentine,255 Grapevine Road,Goose Creek,IN,13339,M,1969-12-31 19:00:00,(940) 849-5602,(616) 684-0239
+531,Eaton,Perkins,Dominic,16 Endicott Street,Ketchikan,OR,63713,M,1969-12-31 19:00:00,(631) 333-8494,(435) 675-8472
+532,Jameson,Doyle,Wendy,255 Grapevine Road,North Pole,CT,43375,M,1969-12-31 19:00:00,(284) 679-9145,(903) 585-9057
+533,Brittany,Chavez,Sarah,16 Endicott Street,Fort Smith,KS,88263,M,1969-12-31 19:00:00,(527) 672-6860,(620) 777-8957
+534,Stacy,Steele,Barry,17 Ferry hill Road,Union City,AL,30068,M,1969-12-31 19:00:00,(413) 274-8045,(723) 771-5627
+535,Lisandra,Byrd,Olivia,16 Endicott Street,Beloit,TN,64178,F,1969-12-31 19:00:00,(521) 577-3900,(715) 443-9507
+536,Deanna,Bruce,Levi,17 Ferry hill Road,Detroit,MO,32464,F,1969-12-31 19:00:00,(413) 423-0494,(824) 421-6376
+537,Chiquita,Abbott,Carter,17 Ferry hill Road,Livonia,MI,94508,M,1969-12-31 19:00:00,(419) 803-6370,(697) 963-1652
+538,Merrill,Bauer,Olga,255 Grapevine Road,Normal,NY,45064,M,1969-12-31 19:00:00,(775) 156-5435,(276) 829-5366
+539,Jesse,Gallegos,Eaton,255 Grapevine Road,Rancho Palos Verdes,OH,10095,F,1969-12-31 19:00:00,(516) 951-0288,(574) 840-2734
+540,Shafira,Bernard,Bree,255 Grapevine Road,Duluth,AL,54670,M,1969-12-31 19:00:00,(325) 504-0887,(390) 124-9269
+541,Noelani,Small,Walter,255 Grapevine Road,McKeesport,NY,71696,F,1969-12-31 19:00:00,(111) 899-1802,(152) 411-1902
+542,Zelda,Miranda,Theodore,16 Endicott Street,North Little Rock,OK,37649,M,1969-12-31 19:00:00,(586) 399-4418,(539) 541-5001
+543,Zelenia,Preston,Samantha,17 Ferry hill Road,Council Bluffs,KY,25112,F,1969-12-31 19:00:00,(118) 537-0665,(180) 291-1606
+544,Aladdin,Daniels,Ainsley,17 Ferry hill Road,Enid,NV,75494,M,1969-12-31 19:00:00,(319) 174-0652,(573) 279-2902
+545,Taylor,Finch,Renee,16 Endicott Street,Monongahela,MT,90809,M,1969-12-31 19:00:00,(849) 501-0742,(544) 556-4744
+546,Jonah,Barker,Tucker,16 Endicott Street,Stillwater,OH,63813,F,1969-12-31 19:00:00,(253) 905-5590,(165) 809-3189
+547,Nora,Oliver,Maris,17 Ferry hill Road,Glendora,MT,88731,M,1969-12-31 19:00:00,(472) 863-9387,(470) 559-2264
+548,Tamara,Weiss,Wilma,17 Ferry hill Road,Sandy,FL,39501,F,1969-12-31 19:00:00,(753) 130-4100,(702) 967-8661
+549,Bernard,Kim,Harding,17 Ferry hill Road,Radford,HI,46599,M,1969-12-31 19:00:00,(490) 500-1130,(718) 480-5348
+550,Yoshio,Conrad,Allistair,17 Ferry hill Road,Laconia,RI,60761,F,1969-12-31 19:00:00,(724) 865-5749,(645) 993-8130
+551,Brock,Sampson,Rylee,17 Ferry hill Road,Malden,OR,83917,M,1969-12-31 19:00:00,(723) 563-0189,(118) 348-3270
+552,Kelsie,Donaldson,Pamela,17 Ferry hill Road,Newcastle,VT,60484,M,1969-12-31 19:00:00,(570) 750-7689,(273) 543-9715
+553,Chaim,Pruitt,James,17 Ferry hill Road,Binghamton,NM,09570,F,1969-12-31 19:00:00,(309) 199-1636,(266) 971-1566
+554,Alexandra,Randall,Dante,17 Ferry hill Road,Eden Prairie,WI,03303,F,1969-12-31 19:00:00,(925) 651-8277,(198) 665-6376
+555,Benjamin,Abbott,Liberty,255 Grapevine Road,Naperville,OK,06631,F,1969-12-31 19:00:00,(831) 209-1077,(723) 109-1054
+556,Angela,Cochran,Ciara,16 Endicott Street,DuBois,AZ,27459,M,1969-12-31 19:00:00,(687) 764-3984,(986) 141-0634
+557,Ivory,May,Kareem,255 Grapevine Road,Revere,OH,61948,M,1969-12-31 19:00:00,(130) 125-9019,(520) 165-5104
+558,Ezra,Rios,Cadman,255 Grapevine Road,Rhinelander,WI,86217,F,1969-12-31 19:00:00,(422) 432-9629,(385) 589-7616
+559,Minerva,Spears,Lydia,255 Grapevine Road,Kearns,KY,05028,F,1969-12-31 19:00:00,(603) 333-5180,(987) 694-2709
+560,Shaine,Hurst,Emily,255 Grapevine Road,Grand Rapids,PA,55268,M,1969-12-31 19:00:00,(910) 200-1887,(729) 529-3725
+561,Rogan,Mccoy,Eric,255 Grapevine Road,Tacoma,MD,29540,M,1969-12-31 19:00:00,(407) 395-9155,(549) 264-0278
+562,Jayme,Nolan,Emma,255 Grapevine Road,Mentor,UT,83391,M,1969-12-31 19:00:00,(966) 211-5617,(367) 646-0099
+563,Dexter,Le,Ryan,255 Grapevine Road,Port Huron,KS,45611,M,1969-12-31 19:00:00,(333) 941-2098,(458) 558-7067
+564,Lane,Graves,Anthony,17 Ferry hill Road,Malibu,WV,14948,M,1969-12-31 19:00:00,(891) 889-3488,(966) 123-6640
+565,Nell,Vincent,Amery,16 Endicott Street,Cerritos,TX,64465,F,1969-12-31 19:00:00,(556) 834-8909,(335) 876-5769
+566,Erich,Shaffer,Ruth,255 Grapevine Road,Lawrence,IA,80536,F,1969-12-31 19:00:00,(712) 611-8577,(433) 102-3812
+567,Eaton,Mcknight,Kamal,17 Ferry hill Road,Hazleton,FL,86409,F,1969-12-31 19:00:00,(200) 787-0111,(344) 256-4114
+568,Rowan,Mayer,Minerva,255 Grapevine Road,Merced,OH,69769,F,1969-12-31 19:00:00,(575) 786-9200,(774) 899-6567
+569,Stephanie,Coffey,Ivor,16 Endicott Street,Barrow,NJ,59224,M,1969-12-31 19:00:00,(108) 319-0849,(836) 403-2189
+570,Victoria,Terry,Karly,16 Endicott Street,Azusa,KS,78377,M,1969-12-31 19:00:00,(877) 717-5539,(572) 761-6560
+571,Carl,Payne,Hermione,255 Grapevine Road,Camden,WV,71749,F,1969-12-31 19:00:00,(660) 200-6824,(441) 901-0751
+572,Ross,Petty,Brady,17 Ferry hill Road,Sister Bay,KY,28989,F,1969-12-31 19:00:00,(907) 721-1720,(841) 603-4746
+573,Heidi,Estes,Yoshio,16 Endicott Street,Diamond Bar,NM,55052,M,1969-12-31 19:00:00,(849) 669-3119,(343) 180-4101
+574,Owen,Dillon,Rhea,255 Grapevine Road,Hawaiian Gardens,OR,92841,F,1969-12-31 19:00:00,(117) 327-5715,(619) 810-5487
+575,Rinah,Estrada,Jemima,255 Grapevine Road,La Habra Heights,MI,54962,F,1969-12-31 19:00:00,(907) 612-2310,(625) 113-8480
+576,Neville,Espinoza,Jescie,255 Grapevine Road,Athens,ID,53651,F,1969-12-31 19:00:00,(745) 266-6826,(155) 635-2600
+577,Rhonda,Blackburn,Dorothy,16 Endicott Street,San Bernardino,IA,47083,F,1969-12-31 19:00:00,(498) 415-4709,(262) 862-6755
+578,Katelyn,Golden,Scarlet,16 Endicott Street,Elmira,ND,99598,M,1969-12-31 19:00:00,(133) 842-0058,(784) 539-9789
+579,Ifeoma,Blanchard,Madeson,255 Grapevine Road,Nampa,CO,95629,F,1969-12-31 19:00:00,(715) 873-5570,(970) 759-1652
+580,Ryder,Cohen,Hedda,16 Endicott Street,Flint,DE,08223,F,1969-12-31 19:00:00,(976) 546-5262,(863) 416-2308
+581,Basia,Gallegos,William,16 Endicott Street,Abilene,IL,62238,M,1969-12-31 19:00:00,(852) 114-8882,(145) 443-4739
+582,Murphy,Frye,Caryn,16 Endicott Street,San Diego,DE,05957,M,1969-12-31 19:00:00,(727) 600-5569,(994) 733-4643
+583,Catherine,Figueroa,Jayme,255 Grapevine Road,Los Alamitos,MN,22850,F,1969-12-31 19:00:00,(619) 179-0738,(172) 616-8407
+584,Suki,Mcintosh,Daquan,17 Ferry hill Road,Laurel,MI,49569,M,1969-12-31 19:00:00,(496) 225-1988,(246) 654-5177
+585,Roary,Conley,Camilla,17 Ferry hill Road,Norwalk,IA,23610,M,1969-12-31 19:00:00,(469) 448-5852,(497) 565-3866
+586,Amir,Fox,Zachery,16 Endicott Street,Eatontown,DC,20889,F,1969-12-31 19:00:00,(388) 231-5290,(943) 800-8306
+587,Willow,Fisher,Ross,17 Ferry hill Road,Bartlesville,GA,18107,F,1969-12-31 19:00:00,(388) 688-5223,(332) 738-6668
+588,Ginger,Price,Amaya,16 Endicott Street,Duarte,SD,51540,F,1969-12-31 19:00:00,(396) 510-8425,(811) 589-8507
+589,Chastity,Estrada,Liberty,17 Ferry hill Road,Cleveland,DC,12909,F,1969-12-31 19:00:00,(392) 727-5390,(298) 796-8228
+590,Quynn,Holder,Althea,255 Grapevine Road,Council Bluffs,AK,94597,F,1969-12-31 19:00:00,(258) 558-5472,(531) 769-4003
+591,Carla,Davis,Hunter,255 Grapevine Road,Huntington Beach,ND,42400,M,1969-12-31 19:00:00,(695) 167-4092,(786) 790-9141
+592,Marcia,Simmons,Reagan,17 Ferry hill Road,Dunkirk,VT,96881,M,1969-12-31 19:00:00,(593) 685-2729,(629) 870-4580
+593,Quamar,Bean,Yoko,17 Ferry hill Road,Warner Robins,AZ,20314,M,1969-12-31 19:00:00,(191) 721-4501,(306) 887-5960
+594,Desirae,Mills,Ava,17 Ferry hill Road,Farrell,MN,86488,F,1969-12-31 19:00:00,(196) 608-8046,(912) 982-1435
+595,Ulla,Murray,Amela,255 Grapevine Road,Tuscaloosa,LA,17813,F,1969-12-31 19:00:00,(212) 369-2711,(642) 288-0487
+596,Laurel,Rose,Blair,17 Ferry hill Road,Fond du Lac,VA,37659,M,1969-12-31 19:00:00,(280) 901-5547,(327) 814-3955
+597,Justine,Terry,Inga,255 Grapevine Road,Rawlins,NJ,58348,F,1969-12-31 19:00:00,(509) 156-3731,(985) 940-4342
+598,Odette,Decker,Tanisha,255 Grapevine Road,Lander,MO,31541,M,1969-12-31 19:00:00,(979) 710-7066,(560) 813-5422
+599,Stephanie,Reynolds,Quintessa,16 Endicott Street,Chino,VA,07576,F,1969-12-31 19:00:00,(870) 837-3082,(328) 650-5282
+600,Zeph,Armstrong,Camilla,17 Ferry hill Road,Chino Hills,WY,66746,M,1969-12-31 19:00:00,(840) 922-1508,(113) 305-2074
+601,Minerva,Torres,Jescie,16 Endicott Street,Chesapeake,MT,22462,F,1969-12-31 19:00:00,(955) 463-4767,(829) 894-5894
+602,Noah,Brooks,Walker,17 Ferry hill Road,Charleston,NH,85640,F,1969-12-31 19:00:00,(145) 802-6325,(460) 364-9732
+603,Isabella,Lewis,Savannah,17 Ferry hill Road,Port Arthur,DE,21266,F,1969-12-31 19:00:00,(787) 102-4726,(475) 218-5661
+604,Xena,Hansen,Finn,16 Endicott Street,Manhattan Beach,CT,78866,M,1969-12-31 19:00:00,(893) 619-9950,(136) 708-6416
+605,Xanthus,Oneil,Rama,16 Endicott Street,Missoula,NJ,26019,M,1969-12-31 19:00:00,(395) 346-3829,(916) 322-2900
+606,Rudyard,Morrow,Macey,16 Endicott Street,Slidell,DE,15300,M,1969-12-31 19:00:00,(578) 408-2145,(578) 488-2557
+607,Hope,Graves,Vladimir,17 Ferry hill Road,Bartlesville,VT,92570,M,1969-12-31 19:00:00,(791) 947-3268,(150) 608-9483
+608,Orli,Stone,Dacey,16 Endicott Street,Dallas,NH,65657,M,1969-12-31 19:00:00,(949) 218-2698,(777) 161-8431
+609,Jaime,Mayer,Prescott,17 Ferry hill Road,Hot Springs,NV,28977,F,1969-12-31 19:00:00,(863) 551-1392,(900) 442-8098
+610,Kane,Hawkins,Ina,255 Grapevine Road,Pendleton,MO,33297,M,1969-12-31 19:00:00,(488) 781-6810,(348) 347-8825
+611,Chancellor,Terry,Amela,17 Ferry hill Road,Grand Forks,TX,53642,F,1969-12-31 19:00:00,(330) 251-4907,(485) 301-4918
+612,Dacey,Lancaster,Norman,16 Endicott Street,Farmer City,DC,39970,F,1969-12-31 19:00:00,(315) 313-6999,(903) 821-1799
+613,Joy,Compton,Bell,16 Endicott Street,Laurel,UT,80505,M,1969-12-31 19:00:00,(295) 284-1870,(191) 880-2012
+614,Yael,Nixon,Cadman,16 Endicott Street,Ansonia,VA,53248,F,1969-12-31 19:00:00,(335) 105-1079,(882) 995-8667
+615,Lee,Nieves,Nathaniel,17 Ferry hill Road,Connellsville,LA,23859,M,1969-12-31 19:00:00,(640) 620-4024,(173) 740-2073
+616,Roary,Wilson,Nigel,16 Endicott Street,Vicksburg,CT,03054,M,1969-12-31 19:00:00,(741) 775-7584,(997) 171-8786
+617,Elaine,Potter,Paloma,255 Grapevine Road,Saginaw,AZ,48099,M,1969-12-31 19:00:00,(755) 330-1382,(190) 776-0447
+618,Maryam,Cooke,Richard,255 Grapevine Road,Farmington,OR,72928,F,1969-12-31 19:00:00,(693) 975-0667,(438) 975-5934
+619,Jenna,Norris,Cadman,16 Endicott Street,Stockton,IN,10704,M,1969-12-31 19:00:00,(807) 575-9048,(893) 837-3093
+620,Yoshio,Rollins,Levi,16 Endicott Street,Reno,WV,34642,F,1969-12-31 19:00:00,(281) 329-1239,(602) 706-6725
+621,Nyssa,Watts,Jeremy,16 Endicott Street,Suffolk,VT,16497,M,1969-12-31 19:00:00,(368) 598-1018,(174) 890-5849
+622,May,Gould,Susan,17 Ferry hill Road,Anchorage,OH,48207,M,1969-12-31 19:00:00,(158) 166-1319,(315) 265-8949
+623,Maryam,House,Maite,255 Grapevine Road,Asbury Park,OH,44192,F,1969-12-31 19:00:00,(692) 102-3185,(833) 873-4292
+624,Natalie,Aguilar,Wendy,17 Ferry hill Road,Hastings,SD,03906,M,1969-12-31 19:00:00,(193) 378-0129,(963) 256-8552
+625,Nash,Ware,Aubrey,255 Grapevine Road,Chickasha,IN,92296,M,1969-12-31 19:00:00,(746) 875-7389,(958) 600-2011
+626,Farrah,Garrett,Ifeoma,16 Endicott Street,Hattiesburg,TN,42999,M,1969-12-31 19:00:00,(745) 135-0835,(948) 969-2938
+627,Isaac,Rich,Nevada,255 Grapevine Road,Cedar Falls,MO,47783,M,1969-12-31 19:00:00,(288) 124-0629,(322) 251-6388
+628,Hilda,Webb,Genevieve,17 Ferry hill Road,Rolling Hills,GA,55844,M,1969-12-31 19:00:00,(789) 408-6218,(824) 203-6060
+629,Alea,Holcomb,Damon,255 Grapevine Road,Sandpoint,ME,78967,F,1969-12-31 19:00:00,(768) 976-8910,(146) 116-0598
+630,Mallory,Pennington,Dara,16 Endicott Street,Atlanta,KY,01369,F,1969-12-31 19:00:00,(461) 481-4375,(545) 134-6061
+631,Anthony,Payne,Kimberly,255 Grapevine Road,Nichols Hills,AK,00771,F,1969-12-31 19:00:00,(626) 801-3473,(810) 982-0579
+632,Wallace,Hatfield,Alfreda,16 Endicott Street,Bethlehem,ND,87303,F,1969-12-31 19:00:00,(155) 639-4494,(414) 994-8345
+633,Aristotle,Mack,Courtney,17 Ferry hill Road,Ansonia,IL,60116,M,1969-12-31 19:00:00,(551) 156-3712,(651) 906-0596
+634,Wade,Waters,Stella,255 Grapevine Road,Long Beach,OK,39281,F,1969-12-31 19:00:00,(475) 288-7407,(477) 964-9526
+635,Madonna,Robertson,Grace,255 Grapevine Road,Peoria,OR,89064,F,1969-12-31 19:00:00,(538) 846-2142,(882) 408-0828
+636,George,Vazquez,Kitra,17 Ferry hill Road,Indianapolis,WI,46484,F,1969-12-31 19:00:00,(316) 459-1315,(405) 323-6296
+637,Octavia,Gilmore,Maris,255 Grapevine Road,Bozeman,TX,32148,M,1969-12-31 19:00:00,(986) 402-7070,(416) 613-3405
+638,Robin,Bruce,Hashim,17 Ferry hill Road,Reading,VT,77264,M,1969-12-31 19:00:00,(673) 753-0606,(839) 345-0597
+639,Knox,Mullen,Leo,16 Endicott Street,Guayanilla,NE,96669,F,1969-12-31 19:00:00,(224) 821-6618,(169) 656-1229
+640,Arsenio,Marsh,Jelani,17 Ferry hill Road,La Palma,PA,64399,F,1969-12-31 19:00:00,(308) 917-0766,(327) 547-5017
+641,Lawrence,Nelson,Jessamine,16 Endicott Street,Cedar City,FL,04212,F,1969-12-31 19:00:00,(302) 168-3968,(534) 552-0268
+642,Amity,Scott,Abbot,17 Ferry hill Road,Boulder Junction,NY,94496,M,1969-12-31 19:00:00,(648) 617-0415,(136) 304-3945
+643,Robert,Maxwell,Clark,17 Ferry hill Road,Buena Park,MA,07756,F,1969-12-31 19:00:00,(733) 259-2965,(118) 954-7167
+644,Wang,Rich,Carla,17 Ferry hill Road,Dallas,WY,68492,M,1969-12-31 19:00:00,(528) 483-4923,(661) 738-6108
+645,Vaughan,Dickson,Steel,16 Endicott Street,Lake Forest,KS,50988,F,1969-12-31 19:00:00,(727) 651-2129,(516) 614-5430
+646,Heidi,Shelton,Graiden,255 Grapevine Road,Webster Groves,TX,75492,F,1969-12-31 19:00:00,(543) 762-2888,(934) 474-7586
+647,Shannon,Rivers,Jena,17 Ferry hill Road,Cumberland,MT,81724,F,1969-12-31 19:00:00,(976) 765-7091,(849) 425-2002
+648,Kimberly,Delacruz,Quail,17 Ferry hill Road,Midwest City,NC,15781,F,1969-12-31 19:00:00,(572) 563-3037,(389) 381-8193
+649,Kirby,Key,Angela,255 Grapevine Road,Clairton,IL,44517,F,1969-12-31 19:00:00,(814) 841-1204,(223) 317-8675
+650,Yen,Vinson,Rana,16 Endicott Street,Downey,MS,26230,F,1969-12-31 19:00:00,(722) 137-1504,(772) 547-4454
+651,Henry,Sanchez,Theodore,255 Grapevine Road,Burbank,NV,65188,F,1969-12-31 19:00:00,(253) 858-5300,(884) 348-6275
+652,Jennifer,Tanner,Brock,255 Grapevine Road,San Antonio,MN,27980,M,1969-12-31 19:00:00,(492) 792-4877,(363) 639-0209
+653,Lilah,Shannon,Iliana,17 Ferry hill Road,Pico Rivera,TN,91883,M,1969-12-31 19:00:00,(860) 747-9015,(405) 615-2993
+654,Jarrod,Navarro,Chiquita,255 Grapevine Road,Brooklyn Park,WY,36706,F,1969-12-31 19:00:00,(544) 569-8655,(807) 701-2631
+655,Sharon,Holcomb,Blossom,255 Grapevine Road,Lebanon,MT,25069,F,1969-12-31 19:00:00,(383) 148-8465,(578) 209-0409
+656,Sonya,Long,Ivy,255 Grapevine Road,Opelousas,NE,46639,M,1969-12-31 19:00:00,(785) 341-7299,(389) 898-6436
+657,Kirestin,Wiley,Cassady,17 Ferry hill Road,Norwalk,IL,26701,F,1969-12-31 19:00:00,(527) 726-0168,(144) 571-0737
+658,Autumn,Weber,Yael,17 Ferry hill Road,Daly City,PA,97825,M,1969-12-31 19:00:00,(526) 685-6300,(211) 948-9480
+659,Hermione,Anthony,Ross,255 Grapevine Road,Rome,WV,57474,F,1969-12-31 19:00:00,(706) 107-1280,(770) 251-5597
+660,Shaine,Patton,Mikayla,17 Ferry hill Road,Covington,SD,32639,M,1969-12-31 19:00:00,(478) 659-3305,(810) 417-1842
+661,Kimberley,Nguyen,Alexandra,16 Endicott Street,Gastonia,AZ,90079,M,1969-12-31 19:00:00,(390) 695-4167,(349) 181-6523
+662,Colin,Macias,Illana,17 Ferry hill Road,Irwindale,NJ,59440,F,1969-12-31 19:00:00,(454) 522-7628,(544) 168-3228
+663,Idona,Parks,Jana,16 Endicott Street,Ypsilanti,NC,62827,F,1969-12-31 19:00:00,(591) 229-7648,(331) 569-9346
+664,Cade,Huffman,Dominic,16 Endicott Street,West Hartford,NC,41732,M,1969-12-31 19:00:00,(626) 374-5060,(659) 905-1585
+665,Holmes,Rowland,Cassady,255 Grapevine Road,Monroe,IL,57573,M,1969-12-31 19:00:00,(583) 544-1041,(192) 687-9691
+666,Maxwell,Leblanc,Hope,17 Ferry hill Road,Vineland,DE,49133,M,1969-12-31 19:00:00,(779) 710-8134,(914) 605-2606
+667,Blossom,Vinson,Rhea,17 Ferry hill Road,Fayetteville,CO,45314,F,1969-12-31 19:00:00,(359) 484-3989,(141) 748-7369
+668,acqueline,Thornton,Barry,16 Endicott Street,Lodi,KY,79929,F,1969-12-31 19:00:00,(237) 226-1688,(166) 526-4172
+669,Marvin,Delgado,Malik,16 Endicott Street,Indio,MT,42889,M,1969-12-31 19:00:00,(161) 740-8163,(438) 501-1276
+670,Chase,Carson,Carissa,17 Ferry hill Road,North Chicago,IN,26597,F,1969-12-31 19:00:00,(482) 555-8832,(944) 210-3324
+671,Chloe,Steele,Nehru,255 Grapevine Road,West Haven,MT,32215,M,1969-12-31 19:00:00,(605) 538-3825,(139) 453-5404
+672,Ria,Wright,acqueline,16 Endicott Street,Fullerton,AZ,58153,M,1969-12-31 19:00:00,(919) 845-9743,(479) 783-5833
+673,Meredith,Parks,Harriet,255 Grapevine Road,Washington,NV,98508,F,1969-12-31 19:00:00,(532) 375-6554,(489) 223-8966
+674,Cade,Montoya,Clare,17 Ferry hill Road,Brooklyn Park,IL,00743,F,1969-12-31 19:00:00,(296) 741-1303,(632) 608-7701
+675,Tara,Cooper,Iola,17 Ferry hill Road,Lowell,ND,02109,M,1969-12-31 19:00:00,(500) 804-5461,(659) 360-1857
+676,Debra,Barr,Jescie,16 Endicott Street,Maywood,NM,59050,M,1969-12-31 19:00:00,(644) 216-6659,(361) 219-4148
+677,Camilla,Abbott,Iola,17 Ferry hill Road,West Palm Beach,HI,25170,F,1969-12-31 19:00:00,(869) 529-8819,(903) 252-3565
+678,Brenna,Mcmahon,Rhea,255 Grapevine Road,Baton Rouge,LA,44613,F,1969-12-31 19:00:00,(339) 249-1532,(156) 611-7894
+679,Tatum,Ball,Simon,17 Ferry hill Road,Fargo,NH,95725,M,1969-12-31 19:00:00,(749) 272-2388,(505) 300-2093
+680,Steel,Daniel,Theodore,17 Ferry hill Road,Stanton,TX,32781,M,1969-12-31 19:00:00,(642) 930-4467,(479) 562-3826
+681,Joel,Berg,Kasimir,255 Grapevine Road,Tamuning,AK,29261,F,1969-12-31 19:00:00,(126) 593-8633,(367) 284-6994
+682,Belle,Shaw,Jenna,17 Ferry hill Road,Phoenix,AZ,20456,M,1969-12-31 19:00:00,(497) 131-3994,(830) 735-8199
+683,Norman,Obrien,Wynter,17 Ferry hill Road,Cumberland,MT,14112,F,1969-12-31 19:00:00,(534) 539-2790,(248) 347-0175
+684,Conan,Vang,Arthur,16 Endicott Street,Danville,CT,39874,F,1969-12-31 19:00:00,(136) 836-9842,(312) 598-6883
+685,Jamalia,Burch,Keely,255 Grapevine Road,Stevens Point,FL,66692,M,1969-12-31 19:00:00,(484) 237-4509,(485) 379-7859
+686,Hall,Hardin,Cadman,16 Endicott Street,Saint Louis,ME,62157,F,1969-12-31 19:00:00,(847) 456-8320,(227) 177-4181
+687,Brock,Myers,Karen,255 Grapevine Road,Chino,AL,78515,M,1969-12-31 19:00:00,(728) 148-2762,(546) 637-7935
+688,Hilda,Jimenez,Kieran,255 Grapevine Road,Eatontown,OR,27045,F,1969-12-31 19:00:00,(943) 616-1527,(904) 830-2852
+689,Alisa,Saunders,Walter,255 Grapevine Road,Dixon,MT,04658,F,1969-12-31 19:00:00,(644) 372-1869,(262) 124-0048
+690,Florence,Morgan,Harper,255 Grapevine Road,Kingsport,DC,04648,M,1969-12-31 19:00:00,(309) 179-2422,(763) 802-1757
+691,Branden,Barrett,Wyoming,255 Grapevine Road,Yazoo City,NH,45754,M,1969-12-31 19:00:00,(349) 762-4352,(574) 332-3415
+692,Irene,Chen,Beverly,17 Ferry hill Road,Midwest City,NJ,01451,F,1969-12-31 19:00:00,(336) 699-1733,(266) 572-9930
+693,Lucas,Sutton,Melodie,16 Endicott Street,Revere,CO,26552,F,1969-12-31 19:00:00,(523) 366-3239,(159) 180-6765
+694,Rahim,Hill,Nevada,17 Ferry hill Road,Valdosta,SD,14037,F,1969-12-31 19:00:00,(136) 376-3353,(259) 925-7629
+695,Hayes,Collier,Quentin,16 Endicott Street,Stillwater,CA,89226,M,1969-12-31 19:00:00,(929) 382-4424,(682) 311-7293
+696,Yen,Serrano,Jade,255 Grapevine Road,Everett,NC,39458,M,1969-12-31 19:00:00,(412) 837-4298,(415) 618-6932
+697,Abra,Molina,Vincent,17 Ferry hill Road,Durant,ID,03225,F,1969-12-31 19:00:00,(625) 823-1398,(584) 417-4767
+698,Veda,Tyler,Aladdin,16 Endicott Street,Broken Arrow,UT,40976,M,1969-12-31 19:00:00,(909) 498-8822,(996) 764-6542
+699,Erich,Mack,Berk,17 Ferry hill Road,Medford,MD,06216,M,1969-12-31 19:00:00,(243) 976-8726,(463) 915-2665
+700,Leandra,Dawson,Vielka,16 Endicott Street,Albany,AK,73216,F,1969-12-31 19:00:00,(930) 657-0209,(461) 237-6561
+701,Asher,Nelson,Clark,16 Endicott Street,Vineland,CT,82013,M,1969-12-31 19:00:00,(707) 106-4785,(152) 623-7855
+702,Nero,Klein,Melanie,16 Endicott Street,Lancaster,AL,34331,F,1969-12-31 19:00:00,(487) 273-2259,(596) 452-1088
+703,Martin,Goodwin,Tatyana,16 Endicott Street,Dana Point,RI,96973,F,1969-12-31 19:00:00,(574) 824-3107,(738) 717-3567
+704,Joshua,Tillman,Jessica,255 Grapevine Road,Isle of Palms,MA,86751,M,1969-12-31 19:00:00,(858) 966-6954,(137) 604-1999
+705,Grace,Haley,Gareth,16 Endicott Street,Charlottesville,MI,58407,F,1969-12-31 19:00:00,(731) 685-7233,(274) 174-4172
+706,Noah,Torres,Olivia,17 Ferry hill Road,Fall River,TX,55096,M,1969-12-31 19:00:00,(824) 157-2323,(167) 240-8379
+707,Timon,Berg,Preston,255 Grapevine Road,Gardena,MN,12036,F,1969-12-31 19:00:00,(842) 265-2333,(832) 211-0299
+708,Melodie,Ewing,Jane,17 Ferry hill Road,Morgantown,MD,05748,M,1969-12-31 19:00:00,(231) 575-3084,(304) 594-1293
+709,Price,Leonard,Oleg,255 Grapevine Road,Rolling Hills Estates,VA,71312,M,1969-12-31 19:00:00,(882) 966-2616,(668) 861-6189
+710,Lenore,Murphy,Summer,16 Endicott Street,Newton,WV,21604,M,1969-12-31 19:00:00,(718) 435-0939,(655) 745-3041
+711,Wallace,Beasley,Avram,17 Ferry hill Road,Garland,MD,80198,M,1969-12-31 19:00:00,(335) 365-8216,(669) 700-6118
+712,Winifred,Johns,Darrel,16 Endicott Street,Binghamton,MN,35361,M,1969-12-31 19:00:00,(465) 671-1418,(514) 633-5750
+713,Moana,Morrow,Jermaine,16 Endicott Street,San Mateo,ID,47802,F,1969-12-31 19:00:00,(845) 354-7794,(129) 870-5442
+714,Carla,Fields,Jeanette,17 Ferry hill Road,Sunnyvale,AL,39775,F,1969-12-31 19:00:00,(308) 192-0229,(124) 576-6018
+715,Raven,Austin,Suki,16 Endicott Street,Clemson,ME,98206,F,1969-12-31 19:00:00,(994) 213-2486,(243) 261-9603
+716,Maisie,Delaney,Patricia,17 Ferry hill Road,Pomona,HI,97781,M,1969-12-31 19:00:00,(941) 428-6718,(438) 131-6590
+717,Quinn,Moon,Fiona,255 Grapevine Road,Dayton,WA,09051,F,1969-12-31 19:00:00,(890) 618-0470,(787) 488-1423
+718,Rina,Holden,Doris,255 Grapevine Road,Great Falls,UT,09790,F,1969-12-31 19:00:00,(194) 564-2526,(417) 831-5834
+719,Emmanuel,Randall,Glenna,16 Endicott Street,Henderson,SD,87481,M,1969-12-31 19:00:00,(562) 198-3161,(587) 422-6954
+720,Macey,Wilcox,Eugenia,255 Grapevine Road,Colorado Springs,SD,07560,M,1969-12-31 19:00:00,(799) 860-3487,(604) 669-2622
+721,Wallace,Henderson,Athena,255 Grapevine Road,Bessemer,NE,54453,F,1969-12-31 19:00:00,(246) 624-2288,(970) 592-4332
+722,Rhiannon,Houston,Rama,255 Grapevine Road,Guayama,GA,59006,M,1969-12-31 19:00:00,(307) 685-4560,(695) 927-7754
+723,Whoopi,Swanson,Melvin,16 Endicott Street,Duarte,NH,13511,F,1969-12-31 19:00:00,(175) 636-1211,(588) 333-2298
+724,Amber,Cross,Idona,255 Grapevine Road,Muskegon,CT,20896,F,1969-12-31 19:00:00,(326) 537-0263,(695) 984-9187
+725,Lacy,Hinton,Tashya,17 Ferry hill Road,Cedar City,NM,25341,M,1969-12-31 19:00:00,(899) 153-7486,(425) 413-0525
+726,Perry,Hardin,Caryn,255 Grapevine Road,Ithaca,IA,47737,M,1969-12-31 19:00:00,(905) 492-7271,(311) 836-5783
+727,Daphne,Fields,Nayda,255 Grapevine Road,Chattanooga,TX,58464,M,1969-12-31 19:00:00,(565) 746-0589,(945) 738-9650
+728,Shaine,Ramos,Skyler,255 Grapevine Road,Kennewick,NC,05660,F,1969-12-31 19:00:00,(174) 653-5082,(471) 131-8107
+729,Herrod,Hyde,Halla,17 Ferry hill Road,Kennesaw,OK,75250,M,1969-12-31 19:00:00,(134) 226-5075,(494) 591-9450
+730,Wyatt,Albert,Rashad,255 Grapevine Road,Monongahela,OK,72116,F,1969-12-31 19:00:00,(428) 503-8984,(903) 464-3624
+731,Philip,Rodgers,Celeste,17 Ferry hill Road,Valdez,LA,03421,M,1969-12-31 19:00:00,(458) 442-2456,(109) 724-4065
+732,Tatum,Leonard,Wade,16 Endicott Street,Weirton,LA,50518,M,1969-12-31 19:00:00,(602) 168-1688,(923) 989-8487
+733,Adena,Schwartz,Brody,255 Grapevine Road,Pasco,AK,95497,M,1969-12-31 19:00:00,(666) 355-1790,(788) 176-1581
+734,Maisie,Kelley,Demetrius,255 Grapevine Road,Chicago,TX,62739,F,1969-12-31 19:00:00,(852) 643-2323,(194) 676-2295
+735,Kirestin,Boyer,Hope,255 Grapevine Road,Batavia,NV,50103,M,1969-12-31 19:00:00,(560) 894-9896,(668) 854-3686
+736,Sheila,Valencia,Darryl,255 Grapevine Road,Rolla,VT,12383,F,1969-12-31 19:00:00,(871) 677-2360,(814) 591-3841
+737,Chaim,Christensen,Audra,16 Endicott Street,Escondido,VA,25907,M,1969-12-31 19:00:00,(758) 129-9344,(357) 399-4100
+738,Carlos,Garrison,Yael,17 Ferry hill Road,Del Rio,CA,80048,F,1969-12-31 19:00:00,(680) 924-3825,(829) 930-1696
+739,Bradley,Craft,Perry,17 Ferry hill Road,Murrieta,NE,45626,M,1969-12-31 19:00:00,(519) 334-0640,(942) 649-7662
+740,Bevis,Dotson,Quyn,17 Ferry hill Road,Claremont,DC,74884,F,1969-12-31 19:00:00,(391) 932-8854,(341) 804-9315
+741,Kirby,Guzman,Patricia,16 Endicott Street,Marietta,WA,36738,M,1969-12-31 19:00:00,(715) 560-7026,(266) 482-9294
+742,Xander,Juarez,Freya,16 Endicott Street,Placentia,ID,12628,F,1969-12-31 19:00:00,(989) 905-0624,(544) 738-6812
+743,Rana,Tanner,Jaquelyn,16 Endicott Street,Monroe,OH,57737,M,1969-12-31 19:00:00,(437) 152-5962,(459) 271-0664
+744,Keefe,Clayton,Bo,255 Grapevine Road,New London,VA,64391,F,1969-12-31 19:00:00,(538) 501-8600,(410) 974-5956
+745,Xaviera,Curtis,Kennedy,255 Grapevine Road,Columbia,CT,28667,F,1969-12-31 19:00:00,(780) 490-7117,(962) 828-8435
+746,Mallory,Maynard,Melinda,17 Ferry hill Road,Weirton,WY,75366,M,1969-12-31 19:00:00,(565) 682-5544,(722) 267-8249
+747,Zelenia,Hendricks,Whoopi,17 Ferry hill Road,Passaic,WY,61837,M,1969-12-31 19:00:00,(290) 634-4676,(354) 604-5439
+748,Ivor,Berry,Xerxes,255 Grapevine Road,Monongahela,AK,77067,M,1969-12-31 19:00:00,(120) 707-0516,(651) 991-4013
+749,Hoyt,Payne,Hashim,16 Endicott Street,Chico,KY,13944,M,1969-12-31 19:00:00,(516) 122-6845,(860) 973-3479
+750,Armando,Talley,Emery,16 Endicott Street,Kahului,AL,42359,F,1969-12-31 19:00:00,(829) 765-5354,(198) 667-6503
+751,Duncan,Kaufman,Fulton,255 Grapevine Road,Riverton,ID,20149,M,1969-12-31 19:00:00,(244) 509-5971,(647) 250-3043
+752,Gretchen,Clemons,Leroy,255 Grapevine Road,San Marino,AK,94348,M,1969-12-31 19:00:00,(583) 555-0021,(535) 589-9949
+753,Jarrod,Flores,Xyla,17 Ferry hill Road,Weirton,NE,47921,F,1969-12-31 19:00:00,(764) 796-2318,(207) 257-6866
+754,Hollee,Molina,Clio,255 Grapevine Road,Newport News,AZ,13687,F,1969-12-31 19:00:00,(836) 255-3624,(390) 267-5398
+755,Germaine,Massey,Tallulah,255 Grapevine Road,Bethlehem,NC,44780,M,1969-12-31 19:00:00,(462) 186-2874,(649) 847-2965
+756,Heidi,Pitts,Christian,16 Endicott Street,North Charleston,TX,93856,M,1969-12-31 19:00:00,(422) 306-8457,(930) 895-2776
+757,Hayfa,Hardin,Kenyon,16 Endicott Street,Laguna Woods,GA,86409,M,1969-12-31 19:00:00,(256) 614-4443,(506) 273-5184
+758,Abigail,Gallagher,Madaline,255 Grapevine Road,Jersey City,MI,35692,F,1969-12-31 19:00:00,(167) 611-0172,(908) 182-0188
+759,Keaton,Garcia,Deirdre,17 Ferry hill Road,New Iberia,UT,17684,F,1969-12-31 19:00:00,(953) 236-0341,(272) 460-9922
+760,Risa,Tucker,Bradley,255 Grapevine Road,Dixon,AZ,53017,F,1969-12-31 19:00:00,(532) 873-9563,(262) 195-9862
+761,Fallon,Stevenson,Dennis,16 Endicott Street,Santa Clarita,SD,51383,F,1969-12-31 19:00:00,(671) 235-2083,(932) 894-1875
+762,Remedios,Levine,Hadassah,255 Grapevine Road,Trenton,UT,20301,F,1969-12-31 19:00:00,(477) 451-3831,(982) 758-5123
+763,Lenore,Bryan,Charles,16 Endicott Street,Kearns,MO,67844,F,1969-12-31 19:00:00,(956) 898-7805,(490) 513-1255
+764,Blaine,Allison,Ariana,255 Grapevine Road,Rolling Hills,AK,56102,F,1969-12-31 19:00:00,(107) 913-3038,(379) 534-5359
+765,Scarlet,Frederick,William,255 Grapevine Road,La Jolla,SC,06614,M,1969-12-31 19:00:00,(388) 426-5950,(306) 765-5956
+766,Ina,Anthony,Jin,17 Ferry hill Road,Malden,SC,27805,F,1969-12-31 19:00:00,(328) 389-6962,(528) 575-8709
+767,Ginger,Lawson,Quin,17 Ferry hill Road,Attleboro,KS,92411,M,1969-12-31 19:00:00,(103) 965-4849,(698) 497-7453
+768,Lois,Mckenzie,McKenzie,16 Endicott Street,Montebello,WA,08711,M,1969-12-31 19:00:00,(871) 710-3087,(164) 528-0847
+769,Lareina,Barrera,Melinda,16 Endicott Street,Rawlins,NV,72644,F,1969-12-31 19:00:00,(656) 743-6081,(362) 219-7164
+770,William,Griffin,Amanda,17 Ferry hill Road,Riverside,SC,22879,F,1969-12-31 19:00:00,(231) 313-5857,(954) 119-0595
+771,Rebekah,Ramirez,Hammett,16 Endicott Street,Narragansett,WY,92424,M,1969-12-31 19:00:00,(472) 339-1942,(243) 749-4131
+772,Bo,Velazquez,Chaney,255 Grapevine Road,Brooklyn Park,CO,54737,F,1969-12-31 19:00:00,(772) 715-8585,(189) 211-2031
+773,Grace,Jordan,Desiree,17 Ferry hill Road,Schenectady,NV,26999,M,1969-12-31 19:00:00,(244) 739-7298,(411) 543-8959
+774,Rudyard,Hays,Jonas,16 Endicott Street,Rohnert Park,DE,00854,M,1969-12-31 19:00:00,(943) 232-4449,(977) 937-7722
+775,Elijah,Willis,Haviva,16 Endicott Street,Laguna Hills,TN,31975,F,1969-12-31 19:00:00,(275) 615-6835,(203) 925-1299
+776,Vincent,Hodges,Rhea,17 Ferry hill Road,Camden,OH,14090,M,1969-12-31 19:00:00,(152) 988-1820,(272) 471-3198
+777,Linus,Burris,Kai,255 Grapevine Road,Phoenix,MI,47690,M,1969-12-31 19:00:00,(897) 717-8891,(614) 713-3383
+778,Freya,Larsen,Reagan,17 Ferry hill Road,Des Moines,DE,14001,M,1969-12-31 19:00:00,(295) 197-6124,(358) 631-9893
+779,Aileen,Collier,Jordan,255 Grapevine Road,Parkersburg,IL,40936,F,1969-12-31 19:00:00,(337) 452-7003,(423) 316-3311
+780,Otto,Shepard,Indira,17 Ferry hill Road,Suffolk,HI,86514,M,1969-12-31 19:00:00,(767) 860-2835,(108) 420-1042
+781,Melyssa,Gould,Joshua,17 Ferry hill Road,Great Falls,WA,31208,F,1969-12-31 19:00:00,(783) 629-6380,(581) 634-2695
+782,Ella,Farrell,Jana,16 Endicott Street,Sherrill,NE,31525,F,1969-12-31 19:00:00,(547) 828-3199,(542) 237-4628
+783,Jacob,Black,Holly,16 Endicott Street,Rolling Hills Estates,PA,26574,F,1969-12-31 19:00:00,(127) 227-5607,(181) 600-0146
+784,Anthony,Dean,Helen,17 Ferry hill Road,Phenix City,DC,51489,M,1969-12-31 19:00:00,(172) 779-7613,(614) 861-8853
+785,Brennan,Decker,Lance,16 Endicott Street,Christiansted,AK,07079,M,1969-12-31 19:00:00,(595) 209-8246,(854) 718-8347
+786,Althea,Mclean,Serina,17 Ferry hill Road,Stevens Point,WI,95180,F,1969-12-31 19:00:00,(801) 257-9027,(316) 654-6128
+787,Price,Burt,Rachel,16 Endicott Street,Plainfield,WY,02414,M,1969-12-31 19:00:00,(625) 742-9595,(131) 359-9774
+788,Jenna,Hunt,Isabella,17 Ferry hill Road,Malibu,OH,19335,F,1969-12-31 19:00:00,(780) 375-3076,(676) 440-8952
+789,Winter,Ballard,Wynne,16 Endicott Street,Biddeford,ME,90171,F,1969-12-31 19:00:00,(478) 544-1205,(713) 666-6760
+790,Herman,Perkins,Hedda,17 Ferry hill Road,Fernley,MS,67436,M,1969-12-31 19:00:00,(710) 926-6303,(179) 739-1035
+791,Chelsea,Morales,Amanda,16 Endicott Street,Norton,IL,90701,M,1969-12-31 19:00:00,(373) 677-6463,(865) 990-0615
+792,Daquan,Robinson,Sierra,17 Ferry hill Road,Ruston,KS,41015,M,1969-12-31 19:00:00,(933) 597-3522,(633) 248-4277
+793,Addison,Lang,Amaya,17 Ferry hill Road,Laguna Woods,ND,20653,F,1969-12-31 19:00:00,(604) 236-7698,(282) 550-4009
+794,Herman,Lester,Macy,255 Grapevine Road,The Dalles,SC,18022,F,1969-12-31 19:00:00,(699) 388-4618,(213) 312-6794
+795,Timothy,Rollins,Darryl,255 Grapevine Road,Honolulu,NM,95184,F,1969-12-31 19:00:00,(628) 337-4507,(734) 428-3010
+796,Erin,Lewis,Moana,17 Ferry hill Road,Montgomery,CO,57086,F,1969-12-31 19:00:00,(237) 745-4708,(182) 102-3599
+797,Olga,Mack,Benjamin,17 Ferry hill Road,Norton,SD,42670,F,1969-12-31 19:00:00,(267) 966-0581,(614) 214-8759
+798,Meghan,Curtis,Omar,16 Endicott Street,Chicago Heights,VA,96164,F,1969-12-31 19:00:00,(311) 702-3274,(423) 182-7093
+799,Noah,Burch,Evan,255 Grapevine Road,Forrest City,OK,13135,M,1969-12-31 19:00:00,(482) 667-9800,(727) 721-4344
+800,Hedda,Riggs,Chelsea,16 Endicott Street,Hattiesburg,AL,57040,M,1969-12-31 19:00:00,(175) 975-6034,(348) 693-9756
+801,Igor,Tyler,Magee,17 Ferry hill Road,Cruz Bay,AK,12787,M,1969-12-31 19:00:00,(733) 767-0166,(106) 852-2485
+802,Angelica,Beard,Lucius,16 Endicott Street,Pueblo,WA,71205,F,1969-12-31 19:00:00,(730) 896-9927,(540) 935-0317
+803,Barrett,Valentine,Maya,16 Endicott Street,Hackensack,ND,28059,M,1969-12-31 19:00:00,(558) 586-0269,(620) 147-0336
+804,Sophia,Ramsey,Erin,255 Grapevine Road,Lower Burrell,NE,41599,F,1969-12-31 19:00:00,(850) 120-7407,(978) 314-1978
+805,Amber,Dunn,Gay,255 Grapevine Road,San Dimas,ME,38599,M,1969-12-31 19:00:00,(294) 691-5797,(949) 817-8401
+806,Nora,Short,Justina,16 Endicott Street,South El Monte,MN,39933,M,1969-12-31 19:00:00,(451) 259-0988,(157) 568-2437
+807,Baker,Cox,Cooper,17 Ferry hill Road,Natchitoches,ID,65216,F,1969-12-31 19:00:00,(654) 643-6901,(683) 120-1434
+808,Indigo,Velazquez,Nomlanga,16 Endicott Street,Glens Falls,UT,55110,M,1969-12-31 19:00:00,(533) 534-1281,(583) 927-3157
+809,Alexa,Silva,Libby,255 Grapevine Road,Brockton,SC,81715,F,1969-12-31 19:00:00,(503) 885-2792,(976) 123-0093
+810,Haviva,Bartlett,Benedict,255 Grapevine Road,Vernon,AZ,52656,F,1969-12-31 19:00:00,(426) 219-0851,(182) 275-5863
+811,Ava,Lowe,Ishmael,17 Ferry hill Road,Artesia,LA,06033,F,1969-12-31 19:00:00,(522) 473-4555,(401) 265-2293
+812,Sonya,Wolfe,Oliver,17 Ferry hill Road,Roseville,RI,18530,M,1969-12-31 19:00:00,(133) 789-0902,(655) 848-7468
+813,Azalia,Gutierrez,Magee,255 Grapevine Road,Rapid City,NE,58182,M,1969-12-31 19:00:00,(719) 711-3762,(259) 717-7544
+814,Wynne,Carlson,Alma,255 Grapevine Road,Morrison,TN,02211,M,1969-12-31 19:00:00,(432) 194-2549,(727) 262-1721
+815,Zahir,Shaw,William,17 Ferry hill Road,Aguadilla,NC,84517,M,1969-12-31 19:00:00,(229) 778-3955,(587) 309-2886
+816,Clare,Spence,Florence,255 Grapevine Road,Charlottesville,ID,02431,F,1969-12-31 19:00:00,(105) 961-4487,(570) 467-6503
+817,Leigh,Combs,Marah,17 Ferry hill Road,Palos Verdes Estates,MS,60076,M,1969-12-31 19:00:00,(474) 962-4428,(195) 609-2254
+818,Noelani,David,Teagan,255 Grapevine Road,Morgan City,RI,32717,M,1969-12-31 19:00:00,(791) 220-3259,(341) 405-1248
+819,Joseph,Barnes,Len,255 Grapevine Road,Winnemucca,AL,78860,F,1969-12-31 19:00:00,(814) 173-3247,(309) 547-0537
+820,Tanya,Flores,Raphael,255 Grapevine Road,Lodi,WV,03017,F,1969-12-31 19:00:00,(814) 162-3618,(188) 616-4445
+821,TaShya,Villarreal,Karen,255 Grapevine Road,Marietta,NH,33557,M,1969-12-31 19:00:00,(109) 717-8063,(228) 764-5697
+822,Nora,Joseph,Fleur,255 Grapevine Road,Peru,FL,92302,F,1969-12-31 19:00:00,(298) 252-3810,(556) 244-8977
+823,Brynne,Holmes,Warren,16 Endicott Street,Vincennes,CO,39027,F,1969-12-31 19:00:00,(906) 717-3644,(283) 251-2001
+824,Meghan,Witt,Dacey,16 Endicott Street,Meridian,NV,32739,F,1969-12-31 19:00:00,(578) 212-3065,(678) 679-2718
+825,Melanie,Pacheco,Isabella,16 Endicott Street,Sanford,WV,97765,M,1969-12-31 19:00:00,(882) 847-3259,(942) 761-3350
+826,Talon,Harvey,Zelenia,17 Ferry hill Road,Thiensville,WI,51244,F,1969-12-31 19:00:00,(924) 284-0378,(981) 342-1823
+827,Ishmael,Bush,Fritz,16 Endicott Street,Truth or Consequences,VA,30254,F,1969-12-31 19:00:00,(494) 762-6549,(971) 894-2070
+828,Olga,Page,Tyrone,17 Ferry hill Road,Elkhart,ND,16201,M,1969-12-31 19:00:00,(745) 294-1659,(602) 782-3510
+829,Leonard,Humphrey,Olivia,255 Grapevine Road,Steubenville,NV,74519,M,1969-12-31 19:00:00,(149) 609-2119,(942) 563-1000
+830,Hedwig,Warner,Kylee,16 Endicott Street,El Paso,LA,32481,F,1969-12-31 19:00:00,(903) 122-9655,(386) 496-7827
+831,Piper,Ingram,Arsenio,17 Ferry hill Road,Janesville,MA,53166,F,1969-12-31 19:00:00,(891) 547-7331,(399) 216-9671
+832,Justina,Carson,Kermit,255 Grapevine Road,Branson,DE,87579,F,1969-12-31 19:00:00,(268) 599-7998,(257) 838-2440
+833,Solomon,Logan,Cruz,17 Ferry hill Road,Auburn Hills,FL,18976,F,1969-12-31 19:00:00,(750) 759-8076,(469) 800-7521
+834,Sebastian,Floyd,Fritz,17 Ferry hill Road,Kona,MI,03964,M,1969-12-31 19:00:00,(235) 301-6614,(711) 343-1767
+835,Ralph,Browning,Cullen,255 Grapevine Road,Farrell,CO,59085,F,1969-12-31 19:00:00,(979) 684-3066,(597) 255-9677
+836,Adara,Boyd,Riley,255 Grapevine Road,Gary,IA,84154,M,1969-12-31 19:00:00,(481) 547-9350,(910) 697-6059
+837,Astra,Sheppard,Dara,255 Grapevine Road,Bend,ND,09091,M,1969-12-31 19:00:00,(494) 744-7643,(619) 678-7519
+838,Lev,Curry,Lenore,16 Endicott Street,Parkersburg,SC,94088,M,1969-12-31 19:00:00,(434) 988-5972,(769) 388-8046
+839,Tanner,Carey,Iola,16 Endicott Street,Guánica,HI,05530,M,1969-12-31 19:00:00,(281) 263-8321,(219) 366-1709
+840,Kenneth,Hinton,Camille,17 Ferry hill Road,Delta Junction,VT,96887,F,1969-12-31 19:00:00,(518) 930-0503,(264) 973-5158
+841,Quinn,Quinn,Oliver,255 Grapevine Road,Pawtucket,NH,31040,M,1969-12-31 19:00:00,(810) 413-5885,(510) 778-4463
+842,Rose,Franklin,Walter,16 Endicott Street,Everett,DC,29530,M,1969-12-31 19:00:00,(535) 320-8415,(200) 663-3933
+843,Scarlet,Melendez,Kimberly,255 Grapevine Road,San Mateo,OH,78613,M,1969-12-31 19:00:00,(448) 764-8644,(388) 312-1779
+844,Barrett,Mccall,Madonna,16 Endicott Street,Gettysburg,SC,14762,M,1969-12-31 19:00:00,(264) 818-2975,(196) 875-9328
+845,Andrew,Logan,Mikayla,16 Endicott Street,Shreveport,VT,12687,M,1969-12-31 19:00:00,(957) 822-9297,(946) 365-3218
+846,Connor,Atkins,Mufutau,255 Grapevine Road,Slidell,IL,96653,F,1969-12-31 19:00:00,(864) 151-0073,(726) 944-1511
+847,Yardley,Willis,Imani,17 Ferry hill Road,Hopkinsville,PA,17771,M,1969-12-31 19:00:00,(338) 311-0480,(922) 443-3474
+848,Aquila,Coleman,Dale,17 Ferry hill Road,Hampton,CT,37465,M,1969-12-31 19:00:00,(778) 268-0904,(338) 713-7351
+849,Juliet,Wheeler,Dieter,17 Ferry hill Road,Montebello,CT,72941,F,1969-12-31 19:00:00,(192) 197-3350,(698) 950-4528
+850,Lillian,Solis,Willa,255 Grapevine Road,Orlando,MD,52244,F,1969-12-31 19:00:00,(416) 877-3652,(357) 785-3754
+851,Ria,Collins,Stone,255 Grapevine Road,Henderson,AK,48265,F,1969-12-31 19:00:00,(423) 176-3330,(394) 948-7676
+852,Ahmed,Cabrera,Myles,16 Endicott Street,Clovis,MT,02125,F,1969-12-31 19:00:00,(125) 466-6506,(183) 769-7763
+853,Norman,Soto,Stephanie,16 Endicott Street,Turlock,CO,61196,M,1969-12-31 19:00:00,(522) 138-1128,(825) 689-3782
+854,Ingrid,Paul,Frances,17 Ferry hill Road,Alexandria,MA,16448,M,1969-12-31 19:00:00,(776) 995-7113,(106) 888-2525
+855,Iona,Cummings,Zelda,17 Ferry hill Road,Bradbury,DE,01278,F,1969-12-31 19:00:00,(738) 842-9587,(470) 995-4159
+856,Frances,Nielsen,Amela,255 Grapevine Road,Bellingham,AZ,85524,F,1969-12-31 19:00:00,(773) 361-6316,(470) 539-8907
+857,Carter,Booth,Serena,16 Endicott Street,Providence,DE,69733,M,1969-12-31 19:00:00,(946) 363-6331,(730) 738-8464
+858,Hammett,Hayes,Lilah,255 Grapevine Road,Dalton,SC,10457,M,1969-12-31 19:00:00,(304) 645-3860,(249) 613-0598
+859,Uriah,Christensen,Molly,17 Ferry hill Road,San Fernando,CA,89693,F,1969-12-31 19:00:00,(495) 256-4050,(280) 789-6066
+860,Orlando,Huff,Ori,16 Endicott Street,Moline,SD,16802,F,1969-12-31 19:00:00,(685) 645-7364,(261) 237-9748
+861,Logan,Barton,Melvin,17 Ferry hill Road,Santa Ana,OK,95480,F,1969-12-31 19:00:00,(367) 622-8930,(310) 158-6657
+862,Cecilia,Frye,Ian,17 Ferry hill Road,Hopkinsville,CT,16584,F,1969-12-31 19:00:00,(170) 101-3113,(790) 447-5711
+863,Wilma,Mathis,Ezra,16 Endicott Street,Lawrence,FL,66337,F,1969-12-31 19:00:00,(487) 691-3827,(493) 215-1786
+864,Latifah,Garner,Stephen,17 Ferry hill Road,Lincoln,NC,34212,M,1969-12-31 19:00:00,(241) 169-3625,(886) 663-1921
+865,Lucius,Powell,Rhoda,16 Endicott Street,Chesapeake,CA,36477,F,1969-12-31 19:00:00,(578) 203-9805,(547) 568-1467
+866,Yoshi,Sanders,Sheila,255 Grapevine Road,Cortland,ME,10498,M,1969-12-31 19:00:00,(925) 831-3889,(560) 938-8166
+867,Ezra,Stevenson,Arden,16 Endicott Street,East Lansing,WI,89115,F,1969-12-31 19:00:00,(564) 443-8147,(526) 793-0839
+868,Micah,Morrow,Tarik,17 Ferry hill Road,Rock Island,WA,40415,M,1969-12-31 19:00:00,(686) 834-3500,(530) 370-9499
+869,Dora,Nolan,Tanya,17 Ferry hill Road,Grand Junction,KY,88074,M,1969-12-31 19:00:00,(182) 692-0333,(133) 532-8910
+870,Laith,Knight,Jack,16 Endicott Street,Fort Lauderdale,MA,88071,M,1969-12-31 19:00:00,(647) 970-0135,(564) 575-0296
+871,Desirae,Dyer,Amelia,255 Grapevine Road,Valdosta,FL,39276,F,1969-12-31 19:00:00,(573) 609-1736,(586) 872-0033
+872,Gay,David,Kim,16 Endicott Street,Stamford,ND,34007,M,1969-12-31 19:00:00,(268) 904-4812,(632) 766-0917
+873,Rajah,Barrera,Holmes,16 Endicott Street,Rosemead,ME,14082,M,1969-12-31 19:00:00,(873) 785-3280,(940) 868-6625
+874,Erica,Acosta,Winter,16 Endicott Street,Brockton,MD,78741,M,1969-12-31 19:00:00,(478) 658-5093,(689) 405-6056
+875,Tucker,Morales,Angelica,16 Endicott Street,Rock Springs,NY,88557,F,1969-12-31 19:00:00,(167) 261-7411,(567) 524-4842
+876,Inez,Dotson,Tyrone,255 Grapevine Road,Radford,OK,42309,M,1969-12-31 19:00:00,(712) 224-6921,(166) 919-3482
+877,Sylvia,Mcfarland,Ulla,16 Endicott Street,Hamilton,GA,17130,F,1969-12-31 19:00:00,(549) 471-5384,(578) 960-8207
+878,Axel,Grimes,Yetta,16 Endicott Street,Claremont,CA,12062,F,1969-12-31 19:00:00,(439) 714-2932,(540) 748-8771
+879,Lesley,West,Doris,17 Ferry hill Road,Iowa City,TN,08348,F,1969-12-31 19:00:00,(623) 555-0068,(446) 228-7113
+880,Linda,Martin,Castor,17 Ferry hill Road,Dana Point,VA,71294,M,1969-12-31 19:00:00,(607) 666-0031,(319) 533-0950
+881,Kasper,Pennington,Abigail,17 Ferry hill Road,Raleigh,NM,02310,M,1969-12-31 19:00:00,(869) 901-1216,(547) 598-9684
+882,Zenaida,Livingston,Bo,17 Ferry hill Road,Council Bluffs,SC,85154,F,1969-12-31 19:00:00,(552) 769-3067,(147) 722-6732
+883,Alan,Maddox,Abra,16 Endicott Street,Statesboro,CO,51903,M,1969-12-31 19:00:00,(720) 887-8355,(571) 313-2639
+884,Leandra,Durham,Aileen,16 Endicott Street,Mesquite,SC,13343,F,1969-12-31 19:00:00,(410) 765-2474,(517) 256-7864
+885,Jesse,Donovan,Daquan,17 Ferry hill Road,Johnson City,MI,74295,M,1969-12-31 19:00:00,(601) 986-5047,(615) 489-8029
+886,Walter,Morin,Idola,17 Ferry hill Road,Danbury,ND,28730,M,1969-12-31 19:00:00,(272) 219-7251,(140) 279-1333
+887,Thaddeus,Medina,Abel,16 Endicott Street,Cypress,NM,62634,M,1969-12-31 19:00:00,(546) 897-9470,(271) 515-4751
+888,Kaseem,Pennington,Ray,255 Grapevine Road,Kearney,GA,68314,F,1969-12-31 19:00:00,(121) 691-7732,(886) 638-1051
+889,Fuller,Barrera,Halee,17 Ferry hill Road,Augusta,AK,44265,M,1969-12-31 19:00:00,(775) 407-2949,(420) 482-7860
+890,Otto,Obrien,Avye,16 Endicott Street,Monroe,LA,89955,F,1969-12-31 19:00:00,(626) 675-9963,(891) 751-4223
+891,Bradley,Schneider,Ocean,255 Grapevine Road,Moultrie,FL,74800,F,1969-12-31 19:00:00,(763) 737-4391,(805) 239-2164
+892,Damon,Daniels,Nehru,255 Grapevine Road,Huntington Park,OH,76140,M,1969-12-31 19:00:00,(872) 164-9791,(193) 258-4757
+893,Cally,York,Idona,17 Ferry hill Road,Concord,AL,03486,M,1969-12-31 19:00:00,(515) 316-3005,(699) 356-4508
+894,Vera,Erickson,September,16 Endicott Street,Sun Valley,TX,58163,F,1969-12-31 19:00:00,(707) 702-3916,(581) 199-9184
+895,Baxter,Oconnor,Evangeline,17 Ferry hill Road,Shreveport,IL,69267,M,1969-12-31 19:00:00,(793) 619-1912,(901) 186-1596
+896,Walker,Rojas,Stone,17 Ferry hill Road,Lodi,MS,14818,F,1969-12-31 19:00:00,(386) 398-1002,(974) 560-4499
+897,Olivia,Hopkins,Hiroko,17 Ferry hill Road,Muncie,OH,58035,F,1969-12-31 19:00:00,(344) 357-1216,(921) 410-0643
+898,Cleo,Barlow,acqueline,16 Endicott Street,Lodi,MO,00045,F,1969-12-31 19:00:00,(924) 241-1724,(925) 578-7783
+899,Keefe,Hart,Simon,255 Grapevine Road,Tuscaloosa,MA,95320,M,1969-12-31 19:00:00,(717) 531-4679,(467) 250-6999
+900,Candice,Sosa,Hu,17 Ferry hill Road,Houma,WI,02419,M,1969-12-31 19:00:00,(603) 383-6507,(114) 113-1986
+901,Cynthia,Crosby,Leslie,16 Endicott Street,Muskegon,AZ,92306,M,1969-12-31 19:00:00,(901) 509-5235,(477) 454-5794
+902,Maggy,Mcguire,Jin,255 Grapevine Road,Kankakee,IL,92493,M,1969-12-31 19:00:00,(134) 360-6380,(826) 620-2851
+903,Celeste,Adkins,Jackson,255 Grapevine Road,Honolulu,CA,47472,M,1969-12-31 19:00:00,(424) 704-5211,(513) 375-4703
+904,Diana,Herring,Ishmael,17 Ferry hill Road,Warwick,WI,19143,M,1969-12-31 19:00:00,(584) 896-2105,(860) 664-9080
+905,Scarlet,Sargent,Aubrey,17 Ferry hill Road,Escondido,WA,26201,F,1969-12-31 19:00:00,(972) 188-9496,(235) 226-0070
+906,Mari,Zimmerman,Wynter,16 Endicott Street,Daly City,WI,09282,F,1969-12-31 19:00:00,(703) 209-3454,(715) 885-4857
+907,Lillian,Potts,Palmer,17 Ferry hill Road,Seaford,MS,75389,M,1969-12-31 19:00:00,(888) 333-9597,(441) 399-9764
+908,Ocean,Klein,Vaughan,255 Grapevine Road,Norman,NV,41230,M,1969-12-31 19:00:00,(745) 333-6849,(849) 513-2621
+909,Riley,Valencia,Phillip,17 Ferry hill Road,Delta Junction,NH,62307,M,1969-12-31 19:00:00,(502) 352-0915,(158) 779-4778
+910,Angela,Winters,Isabelle,16 Endicott Street,Biddeford,VT,64677,M,1969-12-31 19:00:00,(399) 215-2639,(433) 212-1068
+911,Mannix,Riley,Quin,16 Endicott Street,Iowa City,WA,65354,M,1969-12-31 19:00:00,(707) 436-7709,(820) 999-5770
+912,Naida,Caldwell,Xavier,255 Grapevine Road,Nacogdoches,SC,21928,F,1969-12-31 19:00:00,(750) 459-2801,(896) 577-2865
+913,Avram,Fitzgerald,Emerson,255 Grapevine Road,Michigan City,SC,66527,M,1969-12-31 19:00:00,(761) 672-4699,(461) 337-3699
+914,Candace,Maldonado,Quynn,17 Ferry hill Road,Kansas City,HI,98460,F,1969-12-31 19:00:00,(324) 924-3966,(339) 138-1867
+915,Driscoll,Buchanan,Veronica,17 Ferry hill Road,Sutter Creek,AK,02736,M,1969-12-31 19:00:00,(601) 577-8078,(460) 227-4366
+916,Callum,Maddox,Philip,255 Grapevine Road,Scarborough,NE,26738,F,1969-12-31 19:00:00,(161) 130-3905,(380) 657-7050
+917,Brennan,Galloway,Mannix,255 Grapevine Road,South Portland,NJ,45107,F,1969-12-31 19:00:00,(486) 392-5721,(309) 450-4864
+918,Garth,Landry,Amena,16 Endicott Street,La Verne,DC,90877,F,1969-12-31 19:00:00,(697) 419-7280,(785) 650-9005
+919,Plato,Langley,Naida,17 Ferry hill Road,Natchez,OK,41038,F,1969-12-31 19:00:00,(581) 762-4570,(279) 285-9325
+920,Guy,Sanders,Eric,255 Grapevine Road,Rancho Palos Verdes,MD,25607,F,1969-12-31 19:00:00,(798) 368-4486,(336) 651-9342
+921,Kieran,Delgado,Melanie,255 Grapevine Road,Waukegan,IN,02790,F,1969-12-31 19:00:00,(695) 182-2189,(708) 251-6774
+922,Basia,Pugh,Nell,17 Ferry hill Road,Pierre,IA,36232,F,1969-12-31 19:00:00,(245) 334-0332,(949) 723-7907
+923,Rama,Petersen,Basil,17 Ferry hill Road,LaGrange,AZ,37983,F,1969-12-31 19:00:00,(273) 505-4541,(779) 777-5589
+924,Shelby,Espinoza,Wylie,17 Ferry hill Road,Farmer City,DC,42225,M,1969-12-31 19:00:00,(302) 854-5233,(108) 687-4178
+925,Cecilia,Ashley,Adena,255 Grapevine Road,Lancaster,MD,92905,M,1969-12-31 19:00:00,(592) 826-9245,(129) 298-3985
+926,Brynn,Frye,Winter,17 Ferry hill Road,Turlock,SC,27420,F,1969-12-31 19:00:00,(462) 717-8370,(354) 339-4690
+927,Nathan,Shepard,Reuben,16 Endicott Street,Binghamton,LA,35707,F,1969-12-31 19:00:00,(142) 512-7671,(165) 765-4430
+928,Cole,Hunt,Jana,16 Endicott Street,Sister Bay,WV,69912,F,1969-12-31 19:00:00,(341) 922-9887,(541) 972-1275
+929,Zahir,Love,Kenyon,17 Ferry hill Road,Cortland,MA,67518,F,1969-12-31 19:00:00,(314) 291-7336,(258) 424-3898
+930,Cora,Carpenter,Eleanor,17 Ferry hill Road,Union City,IL,14339,M,1969-12-31 19:00:00,(312) 749-8072,(416) 205-4289
+931,Maya,Perry,Dawn,16 Endicott Street,Huntington,DE,16029,M,1969-12-31 19:00:00,(785) 858-2644,(708) 988-5502
+932,Elizabeth,Kim,Hanna,17 Ferry hill Road,Lexington,AZ,99575,F,1969-12-31 19:00:00,(335) 980-6885,(771) 383-5379
+933,Knox,Craft,William,16 Endicott Street,Union City,OR,28964,M,1969-12-31 19:00:00,(555) 430-0112,(957) 326-8466
+934,Hu,Martinez,Hollee,255 Grapevine Road,Orlando,SC,21776,F,1969-12-31 19:00:00,(271) 394-2426,(795) 251-5154
+935,Hadley,Donaldson,Dustin,16 Endicott Street,Meadville,OK,34415,M,1969-12-31 19:00:00,(190) 617-3024,(630) 795-1277
+936,Owen,Glass,Ivan,17 Ferry hill Road,Sitka,MN,09190,M,1969-12-31 19:00:00,(279) 394-8246,(307) 585-1192
+937,Risa,Roy,Moses,16 Endicott Street,Philadelphia,UT,85855,F,1969-12-31 19:00:00,(509) 856-0545,(497) 589-3662
+938,Jonas,Gardner,Brent,17 Ferry hill Road,Abilene,WY,59169,M,1969-12-31 19:00:00,(259) 704-0925,(818) 571-0124
+939,Brennan,Decker,Helen,16 Endicott Street,Wichita Falls,WV,88748,F,1969-12-31 19:00:00,(534) 450-2687,(597) 621-6456
+940,Dora,Martinez,Macaulay,255 Grapevine Road,Lock Haven,AZ,83418,M,1969-12-31 19:00:00,(780) 478-8764,(981) 447-6948
+941,Britanney,Tran,Tanya,17 Ferry hill Road,Rohnert Park,LA,11602,F,1969-12-31 19:00:00,(708) 462-3437,(813) 852-9419
+942,Gay,Stevenson,Gil,16 Endicott Street,Mandan,SC,94203,M,1969-12-31 19:00:00,(760) 207-0118,(738) 358-5312
+943,Christian,Parrish,Adena,17 Ferry hill Road,Aguadilla,DE,52712,M,1969-12-31 19:00:00,(209) 427-0663,(248) 561-7313
+944,Kirestin,Callahan,Kermit,255 Grapevine Road,Auburn Hills,IN,57367,M,1969-12-31 19:00:00,(947) 600-7592,(219) 423-9390
+945,Kessie,William,Gannon,17 Ferry hill Road,Vallejo,ID,91549,F,1969-12-31 19:00:00,(508) 100-1105,(445) 735-2397
+946,Katell,Solis,Wilma,255 Grapevine Road,Union City,DC,10818,M,1969-12-31 19:00:00,(290) 306-6413,(875) 362-7527
+947,Abigail,Chapman,Veronica,16 Endicott Street,Auburn Hills,AL,82383,M,1969-12-31 19:00:00,(892) 305-1813,(541) 168-1880
+948,Gavin,Spence,Athena,255 Grapevine Road,Watertown,WY,29521,M,1969-12-31 19:00:00,(360) 283-6257,(938) 729-0097
+949,Branden,Ward,Quintessa,16 Endicott Street,Bartlesville,MI,61531,M,1969-12-31 19:00:00,(143) 490-2399,(680) 688-7852
+950,Kareem,Moreno,Nita,16 Endicott Street,Frisco,VT,01744,F,1969-12-31 19:00:00,(552) 842-4321,(309) 161-5383
+951,Clinton,Cortez,Daria,16 Endicott Street,Duquesne,RI,26278,F,1969-12-31 19:00:00,(315) 647-8469,(285) 578-6913
+952,Pandora,Hall,Belle,255 Grapevine Road,Gainesville,VT,74390,M,1969-12-31 19:00:00,(388) 847-9334,(120) 934-6759
+953,Serina,Schwartz,Stephanie,17 Ferry hill Road,Oneonta,OH,72960,M,1969-12-31 19:00:00,(187) 411-4323,(760) 510-2995
+954,Stella,Mayer,Christopher,255 Grapevine Road,Woburn,KY,38625,F,1969-12-31 19:00:00,(464) 888-5499,(692) 687-4495
+955,Lucy,Willis,Troy,16 Endicott Street,Fort Worth,MO,03967,M,1969-12-31 19:00:00,(563) 153-6562,(446) 842-4311
+956,Wing,Kaufman,Megan,255 Grapevine Road,Palo Alto,MT,38891,M,1969-12-31 19:00:00,(545) 107-4543,(968) 389-2364
+957,Hilel,Franco,Yeo,16 Endicott Street,Fairfield,HI,33788,M,1969-12-31 19:00:00,(963) 406-3746,(649) 903-3338
+958,Alden,Murphy,Allen,16 Endicott Street,Huntington Park,VA,75148,M,1969-12-31 19:00:00,(549) 296-8458,(592) 830-8904
+959,Sonia,Horton,Ezra,16 Endicott Street,Brigham City,AZ,84034,F,1969-12-31 19:00:00,(400) 758-2500,(809) 813-6561
+960,Dominique,Rojas,David,255 Grapevine Road,Carbondale,NH,95806,M,1969-12-31 19:00:00,(658) 269-9797,(823) 495-7788
+961,Aristotle,Watkins,Ian,17 Ferry hill Road,Irving,WI,69018,F,1969-12-31 19:00:00,(770) 568-3917,(974) 653-7571
+962,Zachary,Carney,Athena,17 Ferry hill Road,Pass Christian,IN,17588,F,1969-12-31 19:00:00,(574) 581-3660,(297) 778-7890
+963,Irma,Mccoy,Gage,255 Grapevine Road,Kearns,UT,70844,F,1969-12-31 19:00:00,(467) 137-2349,(127) 817-3704
+964,Cheryl,Long,Dylan,17 Ferry hill Road,Bandera,IN,70947,M,1969-12-31 19:00:00,(851) 291-1290,(563) 377-4306
+965,Carl,Bryant,Tucker,16 Endicott Street,Plainfield,WA,65027,F,1969-12-31 19:00:00,(283) 483-8471,(355) 551-6705
+966,Gisela,Rollins,Jolie,16 Endicott Street,Cody,MA,11504,M,1969-12-31 19:00:00,(888) 360-5150,(777) 583-8587
+967,Kyra,Acosta,Carla,17 Ferry hill Road,Florence,NC,19198,F,1969-12-31 19:00:00,(689) 730-4089,(917) 594-0966
+968,Graham,Ware,Desirae,255 Grapevine Road,Hazleton,ID,09988,M,1969-12-31 19:00:00,(391) 470-2977,(928) 894-2875
+969,Brielle,Booth,Remedios,17 Ferry hill Road,Starkville,MN,39030,F,1969-12-31 19:00:00,(106) 184-9138,(170) 946-0545
+970,Yuri,Flores,Ariel,255 Grapevine Road,Jenks,IN,34841,M,1969-12-31 19:00:00,(368) 596-5774,(344) 880-7110
+971,Chelsea,Lott,Grant,255 Grapevine Road,Plano,RI,90469,M,1969-12-31 19:00:00,(654) 438-6733,(631) 742-9062
+972,Ethan,Franklin,Adrienne,17 Ferry hill Road,Woodruff,MT,48202,M,1969-12-31 19:00:00,(412) 246-8775,(305) 367-5970
+973,Guinevere,Reyes,Kelsie,255 Grapevine Road,West Springfield,CT,32354,M,1969-12-31 19:00:00,(903) 789-9841,(527) 407-7730
+974,Camille,Estrada,Camille,255 Grapevine Road,McKeesport,AZ,52965,M,1969-12-31 19:00:00,(556) 498-8251,(339) 169-1919
+975,Clayton,Oneil,Zeus,16 Endicott Street,Lynchburg,AZ,64610,M,1969-12-31 19:00:00,(287) 449-5885,(587) 407-6774
+976,Isabella,Deleon,Keelie,255 Grapevine Road,Cedarburg,NV,59446,M,1969-12-31 19:00:00,(953) 749-1366,(442) 117-5326
+977,Orli,Hodge,Cooper,16 Endicott Street,Saukville,NJ,28181,M,1969-12-31 19:00:00,(310) 686-9290,(475) 792-4441
+978,Brenna,Downs,Raja,17 Ferry hill Road,Anderson,CA,25136,M,1969-12-31 19:00:00,(237) 528-8935,(950) 402-4207
+979,Raymond,Ayers,Rigel,16 Endicott Street,Berkeley,AL,67695,F,1969-12-31 19:00:00,(239) 275-0364,(489) 686-4848
+980,Paloma,Mathews,Tamara,255 Grapevine Road,Lock Haven,NV,18548,M,1969-12-31 19:00:00,(348) 603-9825,(799) 648-3070
+981,Ariel,Duffy,Maggie,16 Endicott Street,Reno,OH,50408,F,1969-12-31 19:00:00,(119) 945-6351,(835) 815-9327
+982,Aristotle,Warren,Ignatius,255 Grapevine Road,Agat,KY,17037,M,1969-12-31 19:00:00,(726) 278-9138,(387) 704-7080
+983,Constance,Spence,Ignatius,16 Endicott Street,Nacogdoches,NJ,39655,M,1969-12-31 19:00:00,(337) 565-7534,(672) 762-9478
+984,George,Franks,Hiram,255 Grapevine Road,Pocatello,ID,77515,F,1969-12-31 19:00:00,(808) 432-0147,(776) 244-5788
+985,Aileen,Mcfadden,Avram,16 Endicott Street,Sunbury,NC,14822,F,1969-12-31 19:00:00,(653) 700-4776,(322) 110-0719
+986,Larissa,Barry,Martina,255 Grapevine Road,Saratoga Springs,MS,72635,F,1969-12-31 19:00:00,(469) 246-4684,(894) 514-0110
+987,Dennis,Walters,Lareina,17 Ferry hill Road,Gloversville,MD,91050,F,1969-12-31 19:00:00,(175) 760-4549,(790) 911-1073
+988,Amir,Brennan,Quon,16 Endicott Street,Princeton,UT,99365,M,1969-12-31 19:00:00,(354) 804-5955,(176) 240-1589
+989,Gail,Leon,Robin,17 Ferry hill Road,Saint Albans,AK,51706,M,1969-12-31 19:00:00,(102) 167-1333,(845) 424-7728
+990,Lynn,Battle,Tanisha,16 Endicott Street,La Jolla,WV,58661,M,1969-12-31 19:00:00,(389) 622-3677,(924) 753-2510
+991,Armando,Murphy,Allen,255 Grapevine Road,New Brunswick,HI,35514,F,1969-12-31 19:00:00,(475) 242-0777,(200) 720-8811
+992,Beau,Ramos,Heather,255 Grapevine Road,Redding,MO,96361,F,1969-12-31 19:00:00,(245) 812-0228,(536) 448-4223
+993,Daryl,Warren,Sybil,16 Endicott Street,South Pasadena,MN,67602,M,1969-12-31 19:00:00,(355) 573-9102,(687) 800-0998
+994,Stella,Schultz,Eve,255 Grapevine Road,Visalia,UT,15260,M,1969-12-31 19:00:00,(446) 548-0369,(479) 468-2513
+995,Signe,Bentley,Damon,255 Grapevine Road,Hartford,MD,49496,M,1969-12-31 19:00:00,(459) 718-1885,(567) 181-8837
+996,Urielle,Pennington,Byron,17 Ferry hill Road,New Kensington,GA,80930,M,1969-12-31 19:00:00,(588) 373-7418,(226) 154-0352
+997,Allistair,Coffey,Inez,17 Ferry hill Road,Eden Prairie,FL,14003,F,1969-12-31 19:00:00,(871) 389-4155,(705) 157-0712
+998,Justina,Horne,Ingrid,255 Grapevine Road,Newburyport,OK,03584,M,1969-12-31 19:00:00,(741) 897-6926,(697) 410-8640
+999,Medge,Bishop,Regan,16 Endicott Street,Syracuse,CT,60402,F,1969-12-31 19:00:00,(199) 116-5139,(447) 988-6963
+1000,Nerea,Landry,Jordan,255 Grapevine Road,Buena Park,AK,20119,F,1969-12-31 19:00:00,(467) 506-8448,(334) 298-9439

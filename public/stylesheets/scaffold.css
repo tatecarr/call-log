@@ -243,8 +243,8 @@ input.feedback {
 
 #flash-warning {
 	padding: 10px 5px 10px 40px;
-	border: 2px solid #FFCC00;
-	background: #EEE url(/images/warning.gif) no-repeat 5px center;
+	border: 2px solid #FFE222;
+	background: #FFF8CC url(/images/warning.gif) no-repeat 5px center;
 	width: 600px;
 	-moz-border-radius:10px;
 	-webkit-border-radius:10px;
@@ -376,7 +376,7 @@ input.feedback {
 }
 
 #home-page-links a {
-	font-size: 18pt;
+	font-size: 16pt;
 	padding-top: 90px;
 	padding-bottom: 0px;
 }
@@ -418,8 +418,16 @@ input.feedback {
 	margin-bottom: 40px;
 }
 
-#new_house_link {
+#new_house_link a {
+	background: url(/images/house-add.gif) no-repeat left center;
+	padding-left: 45px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
 
+#new_house_link {
+	width: 150px;
+	float: right;
 }
 
 #staff-reports {
@@ -434,4 +442,66 @@ input.feedback {
 
 #results-no {
 	text-align:right;
+}
+
+#backup-page {
+	width: 350px;
+	margin-right: 50px;
+	float: left;
+}
+
+#restore-page {
+	width: 500px;
+	float: left;
+	margin-bottom: 20px;
+}
+
+form.new_import {
+	width: 400px;
+	margin: 0 auto;
+}
+
+button.disabled
+{
+	background-color: #EFFBFF;
+	border: 1px solid #CFF2FF;
+	color: #99C4DF;
+	cursor: default;
+}
+
+button, input.button
+{
+	background: #DFF7FF 5px center no-repeat;
+	border: 1px solid #A4DBEF;
+	color: #2C758F;
+	padding: 5px 8px 5px 24px;
+	margin-right: 10px;
+	font-size: 11px;
+	font-weight: bold;
+	
+}
+
+div.buttons
+{
+	padding: 10px 0;
+	border-top: 1px dotted #C4E7F4;
+}
+
+button.upload, input.upload
+{
+	background-image: url(/images/upload.png);
+}
+
+button.browse
+{
+	background-image: url(/images/add.png);
+}
+
+div.message
+{
+	background: #FFF8CC;
+	border: 1px solid #FFE222;
+	padding: 10px;
+	margin-bottom: 10px;
+	line-height: 1.3;
 }

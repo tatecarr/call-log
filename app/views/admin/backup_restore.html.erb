@@ -1,19 +1,22 @@
 <% content_for :title, "Admin" %>
 <div id="backup-page">
+	<h2>Backup</h2>
+	<div class="message">Click to download a sql backup of the database.</div>
 	<% form_tag(:action => "backup") do %>
 		<p><%= submit_tag "Backup" %></p>
 	<% end -%>
 </div>
 
-
 <div id="restore-page">
+	<h2>Restore</h2>
+	<div class="message">File must be a .sql file. This file will contain the mysql statements necessary to restore the database from the backup created.</div>
 	<% form_for @import, :url => { :action => "restore" }, :html => { :multipart => true } do |f| %>
 	<fieldset>
 		SQL File: 
 		<%= f.file_field :csv, :onclick => 'enableSubmit(this);' %>
 	</fieldset>
 	<div class="buttons">
-		<%= f.submit "Restore from Backup", :disabled => true, :disable_with => "Restoring..." %>
+		<%= f.submit "Restore from Backup", :disabled => true, :disable_with => "Restoring...", :class => 'button upload' %>
 	</div>
 	<% end %>
 </div>

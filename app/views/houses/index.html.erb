@@ -6,7 +6,7 @@
 	<% form_for @search do |f| -%>
 			House Name: <%= text_field_with_auto_complete :house, :full_info %> <%= f.submit "Search", :disable_with => 'Searching...' %>
 		<% if admin? %>
-			<%= link_to 'NEW HOUSE - BUT A NICE IMAGE, BEN?', new_house_path, :id => "new_house_link" %>
+			<div id="new_house_link"><%= link_to "Add a House", new_house_path %></div>
 		<% end %>
 	<% end -%>
 </div>
@@ -23,14 +23,13 @@
     	<th><%= order @search, :by => :fax %></th>
   	</tr>
 	<% @houses.each_with_index do |house, i| %>
-	  <tr <% if i % 2 == 1 %>class="odd"<% end %> onclick="tableRowLinkToHouse(<%= house.id %>);return false;">
-	    <td><%=h house.bu_code %></td>
-	    <td><%=h house.name %></td>
-	    <td><%=h house.address %></td>
-	    <td><%=h house.city %></td>
-	    <td><%=h house.phone1 %></td>
-	    <td><%=h house.fax %></td>
-	    <td><%= link_to 'Show', house %></td>
+	  <tr <% if i % 2 == 1 %>class="odd"<% end %>>
+	    <td onclick="tableRowLinkToHouse(<%= house.id %>);return false;"><%=h house.bu_code %></td>
+	    <td onclick="tableRowLinkToHouse(<%= house.id %>);return false;"><%=h house.name %></td>
+	    <td onclick="tableRowLinkToHouse(<%= house.id %>);return false;"><%=h house.address %></td>
+	    <td onclick="tableRowLinkToHouse(<%= house.id %>);return false;"><%=h house.city %></td>
+	    <td onclick="tableRowLinkToHouse(<%= house.id %>);return false;"><%=h house.phone1 %></td>
+	    <td onclick="tableRowLinkToHouse(<%= house.id %>);return false;"><%=h house.fax %></td>
 	    <% if admin? || house_admin?(house) %>
 			<td><%= link_to 'Edit', edit_house_path(house) %></td>
 		    <td><%= link_to 'Destroy', house, :confirm => 'Are you sure?', :method => :delete %></td>

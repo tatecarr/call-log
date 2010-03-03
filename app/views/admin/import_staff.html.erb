@@ -1,15 +1,13 @@
 <% content_for :title, "Admin" %>
+<h2>Staff Import</h2>
+<div class="message">Upload should be a .csv file. This file should contain a comma separated list of each staff member and their info.
+</div>
 <div id="import-page">
 	<% form_for @import, :url => { :action => "import_csv" }, :html => { :multipart => true } do |f| %>
 	<fieldset>
 		CSV File:
 		<%= f.file_field :csv, :onclick => 'enableSubmit(this);' %>
-		<%= f.submit "Import Data", :disabled => true, :disable_with => "Importing..." %>
 	</fieldset>
+	<div class="buttons"><%= f.submit "Import Data", :disabled => true, :disable_with => "Importing...", :class => 'button upload' %></div>
 	<% end %>
-	<div id="message"></div>
 </div>
-
-<iframe id="upload_frame" name="upload_frame">
-</iframe>
-
