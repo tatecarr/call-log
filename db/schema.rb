@@ -90,7 +90,7 @@ ActiveRecord::Schema.define(:version => 20100314011846) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "full_name"
-    t.string   "payrate"
+    t.integer  "payrate",      :limit => 10, :precision => 10, :scale => 0
     t.string   "work_number"
     t.string   "status"
     t.string   "email"

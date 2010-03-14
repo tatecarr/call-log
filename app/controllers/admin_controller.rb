@@ -419,7 +419,7 @@ class AdminController < ApplicationController
       
       # Conditions to check if based on their certifications the staff earns $9.65 | $10.19
       # We don't have the format of that info at this time, so it'll be hardcoded $9.65 for now.
-      params[:staff][:payrate] = "$9.65"
+      params[:staff][:payrate] = 9.65
       
       # create and save the new staff member to the db
       person = Staff.new(params[:staff])
@@ -460,7 +460,7 @@ class AdminController < ApplicationController
   	def update_pay_rate
   	  ActiveRecord::Base.connection.execute("
   	  update staffs
-      set staffs.payrate = '$10.19'
+      set staffs.payrate = 10.19
       where staffs.staff_id in (
         select x.staff_id
 

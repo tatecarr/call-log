@@ -1,6 +1,6 @@
 class AddPayrateToStaff < ActiveRecord::Migration
   def self.up
-    add_column :staffs, :payrate, :string
+    add_column :staffs, :payrate, :decimal
   end
 
   def self.down

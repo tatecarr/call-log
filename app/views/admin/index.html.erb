@@ -32,14 +32,15 @@
 			</tr>
 		</table>
 		
-		<div id="houses_<%= user.id %>" class="houses" style="display:none;">
+		<div id="houses_<%= user.id %>" class="houses" style="display:none; margin: 15px 0px 15px 0px;">
 			<% unless user.role == "System-Admin" %>
+			<h3 style="margin: 0px;">House Permissions</h3>
 				<div id="houses_list_<%= user.id %>">
 						<%= render :partial => "user_house", :collection => user.user_houses %>
 				</div>
 			
-				<div id="add_house_message_<%= user.id %>"></div>
-				<% form_remote_tag :url => { :controller => "admin", :action => "create" }, :html => {:id => "form_#{user.id}"} do %>
+				<div id="add_house_message_<%= user.id %>"><h3 style="margin: 0px;">Add Permission</h3></div>
+				<% form_remote_tag :url => { :controller => "admin", :action => "create" }, :html => {:id => "form_#{user.id}", :class => "add_permission"} do %>
 					House:
 					<%= my_text_field_with_auto_complete :house, :full_info, {:index => user.id} %>
 					<%= hidden_field_tag :user_id, user.id %>

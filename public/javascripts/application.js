@@ -68,3 +68,7 @@ function tableRowLinkTo(link) {
 function tableRowLinkToHouse(link) {
 	window.location.href = "houses/" + link
 }
+
+function showLoader() {
+	document.getElementById("loader").style.display = "block";
+}
