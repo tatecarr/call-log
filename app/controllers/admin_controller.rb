@@ -265,12 +265,22 @@ class AdminController < ApplicationController
 
       # delete all the staff that aren't agency staff
       Staff.delete_all(["agency_staff = ?", false])
-
+      Course.delete_all
+      
+      already_added = false
+      prev_id = -1
       # step through the file and add a person for each line
       lines.each do |line|
+        already_added = prev_id == line[@row_positions[:employee_number]].match(/\d+/)[0].to_i ? true : false
+        unless already_added
           add_person(line) unless line.empty?
+          prev_id = line[@row_positions[:employee_number]].match(/\d+/)[0].to_i
+        end
+        add_course(line) unless line.empty?
       end
 
+      update_pay_rate
+      
       # we don't need the file anymore so we can remove it
       @import.destroy
 
@@ -365,10 +375,18 @@ class AdminController < ApplicationController
 		# @return lines - array of each line in the file
 		#
     def parse_csv_file(path_to_csv)
+      theFile = File.open(path_to_csv, "r")
       lines = []
-      FasterCSV.foreach(path_to_csv) do |row|
-        lines << row
+      
+      theFile.readlines.each do |line|
+        line.sub!(/\A"/, "")
+        line.sub!(/"\s*\Z/, "")
+        if line =~ /"".*""/
+          line.sub!(/"".*""/, line.match(/"".*""/)[0].gsub(/,/, "").gsub(/"/, ""))
+        end
+        lines << line.split(",")
       end
+      theFile.close()
       lines
     end
 
@@ -381,19 +399,22 @@ class AdminController < ApplicationController
       # set up the params hash
       params = Hash.new
       params[:staff] = Hash.new
-      params[:staff][:staff_id] = line[@row_positions[:staff_id]]
-      params[:staff][:first_name] = line[@row_positions[:first_name]]
-      params[:staff][:last_name] = line[@row_positions[:last_name]]
-      params[:staff][:full_name] = params[:staff][:first_name] + " " + params[:staff][:last_name] + " (" + params[:staff][:staff_id] +")"
-      params[:staff][:nickname] = line[@row_positions[:nickname]]
+      params[:staff][:staff_id] = line[@row_positions[:employee_number]].match(/\d+/)[0].to_i
+      params[:staff][:first_name] = line[@row_positions[:first_name]].strip
+      params[:staff][:last_name] = line[@row_positions[:last_name]].strip
+      params[:staff][:full_name] = params[:staff][:first_name] + " " + params[:staff][:last_name] + " (" + line[@row_positions[:employee_number]].match(/\d+/)[0] +")"
+      params[:staff][:nickname] = nil#line[@row_positions[:nickname]]
       params[:staff][:address] = line[@row_positions[:address]]
       params[:staff][:city] = line[@row_positions[:city]]
-      params[:staff][:state] = line[@row_positions[:state]]
-      params[:staff][:zip] = line[@row_positions[:zip]]
+      params[:staff][:state] = 'MA'#line[@row_positions[:state]]
+      params[:staff][:zip] = '00000'#line[@row_positions[:zip]]
       params[:staff][:gender] = line[@row_positions[:gender]]
       params[:staff][:doh] = line[@row_positions[:doh]]
-      params[:staff][:cell_number] = line[@row_positions[:cell_number]]
+      params[:staff][:email] = line[@row_positions[:email_address]]
+      params[:staff][:cell_number] = line[@row_positions[:phone_number]]
       params[:staff][:home_number] = line[@row_positions[:home_number]]
+      params[:staff][:work_number] = line[@row_positions[:work_number]]
+      params[:staff][:status] = line[@row_positions[:employee_status]]
       params[:staff][:agency_staff] = false
       
       # Conditions to check if based on their certifications the staff earns $9.65 | $10.19
@@ -422,5 +443,32 @@ class AdminController < ApplicationController
         staff_info.save
       end
       
+  	end
+  	
+  	# add a course to a staff member
+  	def add_course(line)
+  	  course = Course.new
+  	  course.staff_id = line[@row_positions[:employee_number]].match(/\d+/)[0].to_i
+  	  course.name = line[@row_positions[:course]]
+      course.renewal_date = line[@row_positions[:renewal_date]]
+  	  unless course.name.empty? and course.renewal_date.nil?
+  	    course.name = "Unknown" if course.name.empty?
+  	    course.save
+  	  end
+  	end
+  	
+  	def update_pay_rate
+  	  ActiveRecord::Base.connection.execute("
+  	  update staffs
+      set staffs.payrate = '$10.19'
+      where staffs.staff_id in (
+        select x.staff_id
+
+        from (select staffs.staff_id, count(staffs.staff_id) as number
+                from staffs join courses on staffs.staff_id = courses.staff_id
+                where courses.name in ('Adult CPR', 'MAPS', 'First Aid')
+                group by staffs.staff_id) as x
+
+        where x.number > 2)")
   	end
 end

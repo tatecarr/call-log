@@ -1,6 +1,5 @@
 html, body, p, ul, ol, dl, li, h1, h2, h3, h4, img	{
-	margin: 0;
-	padding: 0;
+
 }
 
 ul {
@@ -181,7 +180,7 @@ fieldset { width: 300px;}
 }
 
 .pay_rate {
-	width: 65px !important;
+	width: 50px !important;
 }
 
 /* admin page */

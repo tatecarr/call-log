@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  staff_id: 1
+  name: MyString
+  renewal_date: 2010-03-13 19:43:19
+
+two:
+  staff_id: 1
+  name: MyString
+  renewal_date: 2010-03-13 19:43:19
