@@ -14,10 +14,6 @@
     <%= f.text_field :last_name %>
   </p>
   <p>
-    <%= f.label :nickname %><br />
-    <%= f.text_field :nickname %>
-  </p>
-  <p>
     <%= f.label :address %><br />
     <%= f.text_field :address %>
   </p>
@@ -35,7 +31,7 @@
   </p>
   <p>
     <%= f.label :gender %><br />
-    <%= f.text_field :gender %>
+    <%= select("staff", "gender", %w[Male Female]) %>
   </p>
   <p>
     <%= f.label :doh %><br />

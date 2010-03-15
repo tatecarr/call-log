@@ -141,7 +141,7 @@ class StaffsController < ApplicationController
     respond_to do |format|
       if @staff.save && @staff_info.save
         flash[:notice] = 'Staff was successfully created.'
-        format.html { redirect_to agency_staff_path }
+        format.html { redirect_to @staff }
         format.xml  { render :xml => @staff, :status => :created, :location => @staff }
       else
         format.html { render :action => "new" }
