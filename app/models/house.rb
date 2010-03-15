@@ -9,5 +9,5 @@ class House < ActiveRecord::Base
   
   validates_presence_of :bu_code, :name
   
-  acts_as_textiled :overview, :trainings_needed, :medication_times, :waivers, :schedule_info, :behavior_plans
+  acts_as_textiled :ratio, :relief_pay, :keys, :overview, :trainings_needed, :medication_times, :waivers, :schedule_info, :behavior_plans
 end
