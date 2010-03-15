@@ -3,6 +3,9 @@ class HousesController < ApplicationController
   before_filter :login_required
 
   # creates the necessary ajax required for the in_place_editor_field
+  in_place_edit_for :house, :ratio
+  in_place_edit_for :house, :relief_pay
+  in_place_edit_for :house, :keys
   in_place_edit_for :house, :overview
   in_place_edit_for :house, :trainings_needed
   in_place_edit_for :house, :medication_times

@@ -1,211 +1,224 @@
-<br/>
 <% if admin? || house_admin?(@house) %>
-	<%= link_to 'Edit', edit_house_path(@house) %> | 
+	<div style="text-align:right; font-size:20pt;">
+		<%= link_to 'Edit', edit_house_path(@house) %>
+	</div>
+<% else %>
+	<br/>
 <% end %>
-<%= link_to 'Back', houses_path %>
-<br/><br/>
-
-<h2>Staff Assigned to House</h2>		
-<h3>Full Time Staff</h3>
-<div id="Full Time Staff">
-
-	<div id="no_full_time_staff">
-		<% if @ordered_full_time_staff.empty? %>
-			<p>There are no full time staff added to the house yet.</p>
+<div style="width:900px; text-align:center; padding-bottom:10px;">
+	
+	<div class="show-page-name"><%=h @house.name %> (<%=h @house.bu_code %>)</div>
+	<div class="show-page-info"><%=h @house.address %></div>
+	<div class="show-page-info"><%=h @house.city %>, <%=h @house.state %> <%=h @house.zip %></div>
+	<div class="show-page-info">
+		<% if @house.phone1.blank? %>
+			None //
+		<% else %>
+			<%= @house.phone1 %> //
+		<% end %>
+		<% if @house.phone2.blank? %>
+			None //
+		<% else %>
+			<%= @house.phone2 %> //
+		<% end %>
+		<% if @house.fax.blank? %>
+			Fax - None
+		<% else %>
+			<%= @house.fax %>
 		<% end %>
 	</div>
-	<% unless @ordered_full_time_staff.empty? %>
-		<p>
-			<%= render :partial => "house_staffs/house_staff", :collection => @ordered_full_time_staff %>
-		</p>
-	<% end %>
+</div>
+<div style="float:left; width:419px; padding:15px; border-right:2px solid #CCC;">
 	
-</div><br/>
-
-<h3>Relief Staff</h3>
-<div id="Relief Staff">
-	
-	<div id="no_relief_staff">
-		<% if @ordered_relief_staff.empty? %>
-			<p>There are no relief staff added to the house yet.</p>
-		<% end %>
+	<div style="text-align:center;">
+		<span style="font-size:14pt;">Information</span>
 	</div>
-	<% unless @ordered_relief_staff.empty? %>
-		<p>
-			<%= render :partial => "house_staffs/house_staff", :collection => @ordered_relief_staff %>
-		</p>
-	<% end %>
 	
-</div><br/>
+	<% if admin? || house_admin?(@house) %>
 
-<h3>Overtime Staff</h3>
-<div id="Overtime Staff">
+		<p>
+			<span id="ratio"><b>Ratio (Click to Edit):</b></span><br/>
+		  	<%= in_place_editor_field :house, 'ratio', {}, {:rows => 10, :cols => 50, :external_control => "ratio"} %>
+		</p>
+
+		<p>
+			<span id="relief_pay"><b>Relief pay (Click to Edit):</b></span><br/>
+		  	<%= in_place_editor_field :house, 'relief_pay', {}, {:rows => 10, :cols => 50, :external_control => "relief_pay"} %>
+		</p>
+
+		<p>
+			<span id="keys"><b>Keys (Click to Edit):</b></span><br/>
+		  	<%= in_place_editor_field :house, 'keys', {}, {:rows => 10, :cols => 50, :external_control => "keys"} %>
+		</p>
+
+		<p>
+			<span id="overview"><b>Overview (Click to Edit):</b></span><br/>
+		  	<%= in_place_editor_field :house, 'overview', {}, {:rows => 10, :cols => 50, :external_control => "overview"} %>
+		</p>
+
+		<p>
+			<span id="trainings"><b>Trainings Needed (Click to Edit):</b></span><br/>
+		  	<%= in_place_editor_field :house, 'trainings_needed', {}, {:rows => 10, :cols => 50, :external_control => "trainings"} %>
+		</p>
+
+		<p>
+			<span id="med_times"><b>Medication Times (Click to Edit):</b></span><br/>
+		  	<%= in_place_editor_field :house, 'medication_times', {}, {:rows => 10, :cols => 50, :external_control => "med_times"} %>
+		</p>
+
+		<p>
+			<span id="waivers"><b>Waivers (Click to Edit):</b></span><br/>
+		  	<%= in_place_editor_field :house, 'waivers', {}, {:rows => 10, :cols => 50, :external_control => "waivers"} %>
+		</p>
+
+		<p>
+			<span id="schedule_info"><b>Schedule Info (Click to Edit):</b></span><br/>
+		  	<%= in_place_editor_field :house, 'schedule_info', {}, {:rows => 10, :cols => 50, :external_control => "schedule_info"} %>
+		</p>
+
+		<p>
+			<span id="behavior"><b>Behavior Plans (Click to Edit):</b></span><br/>
+		  	<%= in_place_editor_field :house, 'behavior_plans', {}, {:rows => 10, :cols => 50, :external_control => "behavior"} %>
+		</p>
+
+	<% else %>
+
+		<p>
+		  <b>Ratio:</b>
+		  <%= @house.ratio %>
+		</p>
+
+		<p>
+		  <b>Relief pay:</b>
+		  <%= @house.relief_pay %>
+		</p>
+
+		<p>
+		  <b>Keys:</b>
+		  <%= @house.keys %>
+		</p>
+
+		<p>
+		  <b>Overview:</b>
+		  <%= @house.overview %>
+		</p>
+
+		<p>
+		  <b>Trainings Needed:</b>
+		  <%= @house.trainings_needed %>
+		</p>
+
+		<p>
+		  <b>Medication Times:</b>
+		  <%= @house.medication_times %>
+		</p>
+
+		<p>
+		  <b>Waivers:</b>
+		  <%= @house.waivers %>
+		</p>
+
+		<p>
+		  <b>Schedule Info:</b>
+		  <%= @house.schedule_info %>
+		</p>
+
+		<p>
+		  <b>Behavior Plans:</b>
+		  <%= @house.behavior_plans %>
+		</p>
+
+	<% end %>
+</div>
+
+<div style="float:left; width:419px; padding:15px;">
 	
-	<div id="no_overtime_staff">
-		<% if @ordered_overtime_staff.empty? %>
-			<p>There are no overtime staff added to the house yet.</p>
-		<% end %>
+	<div style="text-align:center;">
+		<span style="font-size:14pt;">Full Time Staff</span>
 	</div>
-	<% unless @ordered_overtime_staff.empty? %>
-		<p>
-			<%= render :partial => "house_staffs/house_staff", :collection => @ordered_overtime_staff %>
-		</p>
-	<% end %>
-
-</div><br/>
-
-<% if admin? || house_admin?(@house) %>
-	<a href="#" onclick="Effect.toggle('add_staff_form', 'slide', { duration: 0.3 }); return false;">Add Staff</a>&nbsp;&nbsp;
-	<a href="">Refresh List Order</a>
-	<div id="add_staff_form" style="display:none;">
-		<div>
-			<div id="add_staff_message"></div>
-			<% remote_form_for [@house, HouseStaff.new] do |f| %>
-				<table>
-					<tr>
-						<td>
-							<%= f.label :staff_id, "Staff Member" %>
-							<%= text_field_with_auto_complete :staff, :full_name %>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<%= f.label :position_name, "Position" %>
-							<%= f.select :position_name, options_for_select(house_position_list) %>
-							<%= f.label :position_type, "Position type" %>
-							<%= f.select :position_type, options_for_select(["Full Time Staff","Relief Staff","Overtime Staff"]) %>
-						</td>
-					</tr>
-				</table>
-				<p><%= f.submit "Add Staff to House" %></p>
+	
+	<div id="Full Time Staff" style="padding-bottom:10px; border-bottom:2px solid #CCC">
+		
+		<div id="no_full_time_staff">
+			<% if @ordered_full_time_staff.empty? %>
+				<p>There are no full time staff added to the house yet.</p>
 			<% end %>
 		</div>
+		<% unless @ordered_full_time_staff.empty? %>
+			<p>
+				<%= render :partial => "house_staffs/house_staff", :collection => @ordered_full_time_staff %>
+			</p>
+		<% end %>
+	
 	</div>
-	<br/><br/>
-<% end %>
 
-<p>
-  <b>Bu code:</b>
-  <%=h @house.bu_code %>
-</p>
-
-<p>
-  <b>Name:</b>
-  <%=h @house.name %>
-</p>
-
-<p>
-  <b>Address:</b>
-  <%=h @house.address %>
-</p>
-
-<p>
-  <b>City:</b>
-  <%=h @house.city %>
-</p>
-
-<p>
-  <b>State:</b>
-  <%=h @house.state %>
-</p>
-
-<p>
-  <b>Zip:</b>
-  <%=h @house.zip %>
-</p>
-
-<p>
-  <b>Phone1:</b>
-  <%=h @house.phone1 %>
-</p>
-
-<p>
-  <b>Phone2:</b>
-  <%=h @house.phone2 %>
-</p>
-
-<p>
-  <b>Fax:</b>
-  <%=h @house.fax %>
-</p>
-
-<p>
-  <b>Ratio:</b>
-  <%=h @house.ratio %>
-</p>
-
-<p>
-  <b>Relief pay:</b>
-  <%=h @house.relief_pay %>
-</p>
-
-<p>
-  <b>Keys:</b>
-  <%=h @house.keys %>
-</p>
-
-<% if admin? || house_admin?(@house) %>
-
-	<p>
-		<span id="overview"><b>Overview (Click to Edit):</b></span><br/>
-	  	<%= in_place_editor_field :house, 'overview', {}, {:rows => 10, :cols => 100, :external_control => "overview"} %>
-	</p>
+	<div style="text-align:center; padding-top:10px;">
+		<span style="font-size:14pt;">Relief Staff</span>
+	</div>
 	
-	<p>
-		<span id="trainings"><b>Trainings Needed (Click to Edit):</b></span><br/>
-	  	<%= in_place_editor_field :house, 'trainings_needed', {}, {:rows => 10, :cols => 100, :external_control => "trainings"} %>
-	</p>
+	<div id="Relief Staff" style="padding-bottom:10px; border-bottom:2px solid #CCC">
 	
-	<p>
-		<span id="med_times"><b>Medication Times (Click to Edit):</b></span><br/>
-	  	<%= in_place_editor_field :house, 'medication_times', {}, {:rows => 10, :cols => 100, :external_control => "med_times"} %>
-	</p>
+		<div id="no_relief_staff">
+			<% if @ordered_relief_staff.empty? %>
+				<p>There are no relief staff added to the house yet.</p>
+			<% end %>
+		</div>
+		<% unless @ordered_relief_staff.empty? %>
+			<p>
+				<%= render :partial => "house_staffs/house_staff", :collection => @ordered_relief_staff %>
+			</p>
+		<% end %>
 	
-	<p>
-		<span id="waivers"><b>Waivers (Click to Edit):</b></span><br/>
-	  	<%= in_place_editor_field :house, 'waivers', {}, {:rows => 10, :cols => 100, :external_control => "waivers"} %>
-	</p>
-	
-	<p>
-		<span id="schedule_info"><b>Schedule Info (Click to Edit):</b></span><br/>
-	  	<%= in_place_editor_field :house, 'schedule_info', {}, {:rows => 10, :cols => 100, :external_control => "schedule_info"} %>
-	</p>
-	
-	<p>
-		<span id="behavior"><b>Behavior Plans (Click to Edit):</b></span><br/>
-	  	<%= in_place_editor_field :house, 'behavior_plans', {}, {:rows => 10, :cols => 100, :external_control => "behavior"} %>
-	</p>
-	
-<% else %>
+	</div>
 
-	<p>
-	  <b>Overview:</b>
-	  <%= @house.overview %>
-	</p>
+	<div style="text-align:center; padding-top:10px;">
+		<span style="font-size:14pt;">Overtime Staff</span>
+	</div>
 	
-	<p>
-	  <b>Trainings Needed:</b>
-	  <%= @house.trainings_needed %>
-	</p>
-
-	<p>
-	  <b>Medication Times:</b>
-	  <%= @house.medication_times %>
-	</p>
-
-	<p>
-	  <b>Waivers:</b>
-	  <%= @house.waivers %>
-	</p>
-
-	<p>
-	  <b>Schedule Info:</b>
-	  <%= @house.schedule_info %>
-	</p>
-
-	<p>
-	  <b>Behavior Plans:</b>
-	  <%= @house.behavior_plans %>
-	</p>
+	<div id="Overtime Staff">
 	
-<% end %>
+		<div id="no_overtime_staff">
+			<% if @ordered_overtime_staff.empty? %>
+				<p>There are no overtime staff added to the house yet.</p>
+			<% end %>
+		</div>
+		<% unless @ordered_overtime_staff.empty? %>
+			<p>
+				<%= render :partial => "house_staffs/house_staff", :collection => @ordered_overtime_staff %>
+			</p>
+		<% end %>
+
+	</div><br/>
+	
+	<% if admin? || house_admin?(@house) %>
+		<div style="text-align:center; font-size:12pt; padding-top:10px;">
+			<a href="#" onclick="Effect.toggle('add_staff_form', 'slide', { duration: 0.3 }); return false;">Assign Staff</a>&nbsp;&nbsp;
+			<a href="">Refresh List Order</a>
+		</div>
+		<div id="add_staff_form" style="display:none;">
+			<div>
+				<div id="add_staff_message"></div>
+				<% remote_form_for [@house, HouseStaff.new] do |f| %>
+					<table>
+						<tr>
+							<td>
+								<%= f.label :staff_id, "Staff Member" %>
+								<%= text_field_with_auto_complete :staff, :full_name %>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<%= f.label :position_type, "Position type" %>
+								<%= f.select :position_type, options_for_select(["Full Time Staff","Relief Staff","Overtime Staff"]) %><br/>
+								<%= f.label :position_name, "Position" %>
+								<%= f.select :position_name, options_for_select(house_position_list) %>
+							</td>
+						</tr>
+					</table>
+					<p><%= f.submit "Add Staff to House" %></p>
+				<% end %>
+			</div>
+		</div>
+	<% end %>
+
+</div>

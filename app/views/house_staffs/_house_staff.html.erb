@@ -1,9 +1,12 @@
 <% div_for house_staff do %>
-	<div style="float:left;">
-		<strong>Staff: </strong> <%= Staff.find_by_staff_id(house_staff.staff_id).full_name %> &nbsp; <strong>Position: </strong> <%= house_staff.position_name %>
+	<div style="float:left; width:200px;">
+		<%= Staff.find_by_staff_id(house_staff.staff_id).full_name %>
+	</div>
+	<div style="float:left; width:175px;">
+		<%= house_staff.position_name %>
 	</div>
 	<% if admin? || house_admin?(House.find_by_bu_code(house_staff.bu_code)) %>
-		<div style="float:left;">		
+		<div style="float:left; width:35px;">
 			<%= form_remote_tag :url => url_for(:controller => 'house_staffs', :action => 'remove_house_staff') %>
 			<%= hidden_field_tag 'staff_id', house_staff.staff_id %>
 			<%= hidden_field_tag 'bu_code', house_staff.bu_code %>

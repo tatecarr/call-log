@@ -1,85 +1,77 @@
 <% content_for :title, "Call Log: Staff" %>
 
-<p>
-  <b>Staff:</b>
-  <%=h @staff.staff_id %>
-</p>
+<div style="width:900px; text-align:center; padding-bottom:10px;">
+	<div class="show-page-name">
+		<%=h @staff.first_name %> <%=h @staff.last_name %> (<%=h @staff.staff_id %>)
+	</div>
+</div>
 
-<p>
-  <b>First name:</b>
-  <%=h @staff.first_name %>
-</p>
+<div style="float:left; width:450px;">
+	
+	<div style="padding-left:45px;">
+		
+		<table>
+			<tr>
+				<td class="show-page-info"><b>Cell number:</b></td>
+				<td class="show-page-info"><%=h @staff.cell_number %></td>
+			</tr>
+			<tr>
+				<td class="show-page-info"><b>Home number:</b></td>
+				<td class="show-page-info"><%=h @staff.home_number %></td>
+			</tr>
+			<tr>
+				<td class="show-page-info"><b>Address:</b></td>
+				<td class="show-page-info">
+					<%=h @staff.address %> <br/>
+					<%=h @staff.city %>, <%=h @staff.state %> <%=h @staff.zip %>
+				</td>
+			</tr>
+			<tr>
+				<td class="show-page-info"><b>Gender:</b></td>
+				<td class="show-page-info"><%=h @staff.gender %></td>
+			</tr>
+			<tr>
+				<td class="show-page-info"><b>DOH:</b></td>
+				<td class="show-page-info"><%=h @staff.doh %></td>
+			</tr>
+		</table>
+	</div>
+</div>
 
-<p>
-  <b>Last name:</b>
-  <%=h @staff.last_name %>
-</p>
+<div style="float:left; width:450px;">
+		
+	<table>
+		<tr>
+			<td class="show-page-info"><b>Course</b></td>
+			<td class="show-page-info"><b>Expiration</b></td>
+		</tr>
+		<% print @staff_courses.length %>
+		<% puts "----------------------------" %>
+		<tr>
+			<td class="show-page-info">CPR</td>
+			<td class="show-page-info">1/2/2010</td>
+		</tr>
+	</table>
+	
+</div>
+<br/>
+<div style="float:left; width:900px; border-top:2px solid #CCC; padding-top:5px;">
+	
+	<p>
+		<span id="experience_prefs"><b>Experience and Preferences:</b></span><br/>
+	  	<%= in_place_editor_field :staff_info, 'experience_prefs', {}, {:rows => 10, :cols => 100, :external_control => "experience_prefs"} %>
+	</p><br/>
+	<p>
+		<span id="skills_limits"><b>Skills and Limits</b></span><br/>
+	  	<%= in_place_editor_field :staff_info, 'skills_limits', {}, {:rows => 10, :cols => 100, :external_control => "skills_limits"} %>
+	</p><br/>
+	<p>
+		<span id="schedule_availability"><b>Schedule and Availability</b></span><br/>
+	  	<%= in_place_editor_field :staff_info, 'schedule_availability', {}, {:rows => 10, :cols => 100, :external_control => "schedule_availability"} %>
+	</p><br/>
+	<p>
+		<span id="contact_notes"><b>Contact Info and Notes</b></span><br/>
+	  	<%= in_place_editor_field :staff_info, 'contact_notes', {}, {:rows => 10, :cols => 100, :external_control => "contact_notes"} %>
+	</p><br/>
 
-<p>
-  <b>Nickname:</b>
-  <%=h @staff.nickname %>
-</p>
-
-<p>
-  <b>Address:</b>
-  <%=h @staff.address %>
-</p>
-
-<p>
-  <b>City:</b>
-  <%=h @staff.city %>
-</p>
-
-<p>
-  <b>State:</b>
-  <%=h @staff.state %>
-</p>
-
-<p>
-  <b>Zip:</b>
-  <%=h @staff.zip %>
-</p>
-
-<p>
-  <b>Gender:</b>
-  <%=h @staff.gender %>
-</p>
-
-<p>
-  <b>Doh:</b>
-  <%=h @staff.doh %>
-</p>
-
-<p>
-  <b>Cell number:</b>
-  <%=h @staff.cell_number %>
-</p>
-
-<p>
-  <b>Home number:</b>
-  <%=h @staff.home_number %>
-</p>
-
-<p>
-  <b>Agency staff:</b>
-  <%=h @staff.agency_staff %>
-</p><br/>
-<p>
-	<span id="experience_prefs"><b>Experience and Preferences:</b></span><br/>
-  	<%= in_place_editor_field :staff_info, 'experience_prefs', {}, {:rows => 10, :cols => 100, :external_control => "experience_prefs"} %>
-</p><br/>
-<p>
-	<span id="skills_limits"><b>Skills and Limits</b></span><br/>
-  	<%= in_place_editor_field :staff_info, 'skills_limits', {}, {:rows => 10, :cols => 100, :external_control => "skills_limits"} %>
-</p><br/>
-<p>
-	<span id="schedule_availability"><b>Schedule and Availability</b></span><br/>
-  	<%= in_place_editor_field :staff_info, 'schedule_availability', {}, {:rows => 10, :cols => 100, :external_control => "schedule_availability"} %>
-</p><br/>
-<p>
-	<span id="contact_notes"><b>Contact Info and Notes</b></span><br/>
-  	<%= in_place_editor_field :staff_info, 'contact_notes', {}, {:rows => 10, :cols => 100, :external_control => "contact_notes"} %>
-</p><br/>
-
-<%= link_to 'Edit', edit_staff_path(@staff) %> |
-<%= link_to 'Back', staffs_path %>
+</div>

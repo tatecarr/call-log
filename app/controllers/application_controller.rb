@@ -45,7 +45,7 @@ class ApplicationController < ActionController::Base
   # WHEN VIEWING THE STAFF OF A HOUSE.  IF THIS ORDER GETS CHANGED, THE VALUE IN HouseStaff.sort_order
   # WILL BE OFF AND WILL NEED TO BE ADJUSTED.  AN EXCEPTION IS IF A POSITION IS ADDED AT THE END.
   def house_position_list
-    @house_position_list = ["Res. Dir. Clinical Manager", "Res. Dir. Nurse Case Manager", "Assistant House Director",
+    @house_position_list = ["Residential Director", "Clinical Manager", "Nurse Case Manager", "Assistant House Director",
                           "House Coordinator", "House Manager", "Skills Instructor", "Awake Overnight", "Sleep Overnight",
                           "Relief Manager", "PSS"]
   end

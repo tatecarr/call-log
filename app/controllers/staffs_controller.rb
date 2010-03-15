@@ -93,6 +93,7 @@ class StaffsController < ApplicationController
   def show
     @staff = Staff.find(params[:id])
     @staff_info = StaffInfo.find_by_staff_id(@staff.staff_id)
+    @staff_courses = @staff.courses
 
     respond_to do |format|
       format.html # show.html.erb
