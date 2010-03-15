@@ -15,6 +15,7 @@ class StaffsController < ApplicationController
 
     #TODO, LIST HOW MANY STAFF ARE IN THE LIST.  BOTH WHEN A SEARCH IS EXECUTED OR OTHERWISE
     if params[:predefined_report].nil?
+      
       # The options for number of results per page.
       @number_per_page_options = [["25", "0"], ["50", "1"], ["75", "2"], ["100", "3"]]
       @number_per_page = params[:number_per_page] || 0
@@ -29,14 +30,39 @@ class StaffsController < ApplicationController
       params[:search][:full_name_like] = @full_name unless params[:staff].nil?
       params[:search][:home_number_like] = @home_number unless params[:staff].nil?
       params[:search][:cell_number_like] = @cell_number unless params[:staff].nil?
-    
+      params[:search][:payrate_gt] = params[:search][:payrate_gt].to_i unless params[:search].nil? or params[:search][:payrate_gt].to_i == 0
+      params[:search][:payrate_lt] = params[:search][:payrate_lt].to_i unless params[:search].nil? or params[:search][:payrate_lt].to_i == 0
+
       @search = Staff.search(params[:search])
     
       # this makes it so that on the first load of the page, when params[:search] is nil, the call-log
       # is ordered by last_name.  it had been doing it by id (not staff_id), so after every import, the
       # agency staff would all be listed first in the call log.  kinda undesirable I think.
-      if params[:search]
-        @staffs = @search.paginate :per_page => @selected_number, :page => params[:page]
+      if params[:search]    
+        
+        # handles logic for searching certifications. Because it's another model and exclusion is implied we need to
+        # use find_by_sql.     
+        if params[:cpr] or params[:fa] or params[:mt]
+          certification_array = []
+          certification_array.push('First Aid') if params[:fa]
+          certification_array.push('Adult CPR') if params[:cpr]
+          certification_array.push('MAPS') if params[:mt]
+          @certified = Staff.find_by_sql("select *
+                                          from staffs
+                                          where staff_id in (select staff_id
+
+                                                            from (select staffs.staff_id, count(staffs.staff_id) as number
+                                                                    from staffs join courses on staffs.staff_id = courses.staff_id
+                                                                    where courses.name in ('#{certification_array.join("','")}')
+                                                                    group by staffs.staff_id) as x
+
+                                                            where x.number = #{certification_array.length})")
+          # get the difference between the search results and the certifications                                                  
+          @staffs = @search & @certified
+          @staffs = @staffs.paginate :per_page => @selected_number, :page => params[:page]
+        else
+          @staffs = @search.paginate :per_page => @selected_number, :page => params[:page]
+        end
       else
         @staffs = @search.sort_by(&:last_name).paginate :per_page => @selected_number, :page => params[:page]
       end

@@ -16,7 +16,8 @@
 		<%= f.file_field :csv, :onclick => 'enableSubmit(this);' %>
 	</fieldset>
 	<div class="buttons">
-		<%= f.submit "Restore from Backup", :disabled => true, :disable_with => "Restoring...", :class => 'button upload' %>
+		<%= f.submit "Restore from Backup", :disabled => true, :class => 'button upload', :onclick => "showLoader();if (window.hiddenCommit) { window.hiddenCommit.setAttribute('value', this.value); }else { hiddenCommit = document.createElement('input');hiddenCommit.type = 'hidden';hiddenCommit.value = this.value;hiddenCommit.name = this.name;this.form.appendChild(hiddenCommit); }this.setAttribute('originalValue', this.value);this.disabled = true;this.value='Importing...';showLoader();;result = (this.form.onsubmit ? (this.form.onsubmit() ? this.form.submit() : false) : this.form.submit());if (result == false) { this.value = this.getAttribute('originalValue');this.disabled = false; }return result;" %>
 	</div>
+	<div id="loader" style="display:none;"><%= image_tag "/images/ajax-loader.gif" %> Restoring from backup. This could take a while...</div>
 	<% end %>
 </div>
