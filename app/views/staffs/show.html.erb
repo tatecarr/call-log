@@ -1,77 +1,152 @@
 <% content_for :title, "Call Log: Staff" %>
 
-<div style="width:900px; text-align:center; padding-bottom:10px;">
+<div style="float:left; width:448px; padding-bottom:10px;">
+	
 	<div class="show-page-name">
 		<%=h @staff.first_name %> <%=h @staff.last_name %> (<%=h @staff.staff_id %>)
 	</div>
-</div>
-
-<div style="float:left; width:450px;">
 	
-	<div style="padding-left:45px;">
+	<div style="padding-left:15px;">
 		
 		<table>
 			<tr>
-				<td class="show-page-info"><b>Cell number:</b></td>
-				<td class="show-page-info"><%=h @staff.cell_number %></td>
+				<td><b>Status:</b></td>
+				<% if @staff.status.blank? %>
+					<td>Unknown</td>
+				<% else %>
+					<td><%= @staff.status %></td>
+				<% end %>
 			</tr>
 			<tr>
-				<td class="show-page-info"><b>Home number:</b></td>
-				<td class="show-page-info"><%=h @staff.home_number %></td>
+				<td><b>Email:</b></td>
+				<% if @staff.email.blank? %>
+					<td>None</td>
+				<% else %>
+					<td><%= @staff.email %></td>
+				<% end %>
 			</tr>
 			<tr>
-				<td class="show-page-info"><b>Address:</b></td>
-				<td class="show-page-info">
+				<td style="width:100px;"><b>Work number:</b></td>
+				<% if @staff.work_number.blank? %>
+					<td>None</td>
+				<% else %>
+					<td><%= @staff.work_number %></td>
+				<% end %>
+			</tr>
+			<tr>
+				<td><b>Cell number:</b></td>
+				<% if @staff.cell_number.blank? %>
+					<td>None</td>
+				<% else %>
+					<td><%= @staff.cell_number %></td>
+				<% end %>
+			</tr>
+			<tr>
+				<td><b>Home number:</b></td>
+				<% if @staff.home_number.blank? %>
+					<td>None</td>
+				<% else %>
+					<td><%= @staff.home_number %></td>
+				<% end %>
+			</tr>
+			<tr>
+				<td><b>Address:</b></td>
+				<td>
 					<%=h @staff.address %> <br/>
 					<%=h @staff.city %>, <%=h @staff.state %> <%=h @staff.zip %>
 				</td>
 			</tr>
 			<tr>
-				<td class="show-page-info"><b>Gender:</b></td>
-				<td class="show-page-info"><%=h @staff.gender %></td>
+				<td><b>Gender:</b></td>
+				<% if @staff.gender.blank? %>
+					<td>Unknown</td>
+				<% else %>
+					<td><%= @staff.gender %></td>
+				<% end %>
 			</tr>
 			<tr>
-				<td class="show-page-info"><b>DOH:</b></td>
-				<td class="show-page-info"><%=h @staff.doh %></td>
+				<td><b>DOH:</b></td>
+				<% if @staff.doh.blank? %>
+					<td>Unknown</td>
+				<% else %>
+					<td><%=h @staff.doh.strftime("%B %d, %Y") %></td>
+				<% end %>
+			</tr>
+			<tr>
+				<td><b>Payrate:</b></td>
+				<% if @staff.payrate.blank? %>
+					<td>Unknown</td>
+				<% else %>
+					<td>$<%= @staff.payrate %></td>
+				<% end %>
 			</tr>
 		</table>
 	</div>
 </div>
 
-<div style="float:left; width:450px;">
+<div style="float:left; width:450px; padding-top:33px; padding-bottom:10px;">
 		
 	<table>
 		<tr>
-			<td class="show-page-info"><b>Course</b></td>
-			<td class="show-page-info"><b>Expiration</b></td>
+			<td><b>Course:</b></td>
+			<td><b>Expiration:</b></td>
 		</tr>
-		<% print @staff_courses.length %>
-		<% puts "----------------------------" %>
-		<tr>
-			<td class="show-page-info">CPR</td>
-			<td class="show-page-info">1/2/2010</td>
-		</tr>
+		
+		<% if @staff_courses.length == 0 %>
+			<tr>
+				<td colspan=2><%= @staff.first_name %> has not taken any courses.</td>
+			</tr>
+		<% else %>
+			<% for course in @staff_courses do %>
+				<% unless course.renewal_date.nil? %>
+					<tr class="<% if course.renewal_date < Time.now %>expired<% end %><% if course.renewal_date >= Time.now and course.renewal_date < Time.now+1.month %>warning<% end %>">
+						<td style="padding-right:10px;">
+							<% if course.name.blank? %>
+								Unknown
+							<% else %>
+								<%= course.name %>
+							<% end %>
+						</td>
+						<td><%= course.renewal_date.strftime("%B %d, %Y") %></td>
+					</tr>
+				<% else %>
+					<tr>
+						<td style="padding-right:10px;">
+							<% if course.name.blank? %>
+								Unknown
+							<% else %>
+								<%= course.name %>
+							<% end %>
+						</td>
+						<td>Unknown</td>
+				<% end %>
+			<% end %>
+		<% end %>
 	</table>
 	
 </div>
 <br/>
-<div style="float:left; width:900px; border-top:2px solid #CCC; padding-top:5px;">
+<div style="float:left; width:880px; border-top:2px solid #CCC; padding-top:5px; padding-left:20px;">
 	
-	<p>
-		<span id="experience_prefs"><b>Experience and Preferences:</b></span><br/>
-	  	<%= in_place_editor_field :staff_info, 'experience_prefs', {}, {:rows => 10, :cols => 100, :external_control => "experience_prefs"} %>
-	</p><br/>
-	<p>
-		<span id="skills_limits"><b>Skills and Limits</b></span><br/>
-	  	<%= in_place_editor_field :staff_info, 'skills_limits', {}, {:rows => 10, :cols => 100, :external_control => "skills_limits"} %>
-	</p><br/>
-	<p>
-		<span id="schedule_availability"><b>Schedule and Availability</b></span><br/>
-	  	<%= in_place_editor_field :staff_info, 'schedule_availability', {}, {:rows => 10, :cols => 100, :external_control => "schedule_availability"} %>
-	</p><br/>
-	<p>
-		<span id="contact_notes"><b>Contact Info and Notes</b></span><br/>
-	  	<%= in_place_editor_field :staff_info, 'contact_notes', {}, {:rows => 10, :cols => 100, :external_control => "contact_notes"} %>
-	</p><br/>
+	<div style="float:left; width:440px;">
+		<p>
+			<span id="experience_prefs"><b>Experience and Preferences: (Click to Edit)</b></span><br/>
+		  	<%= in_place_editor_field :staff_info, 'experience_prefs', {}, {:rows => 10, :cols => 50, :external_control => "experience_prefs"} %>
+		</p><br/>
+		<p>
+			<span id="skills_limits"><b>Skills and Limits: (Click to Edit)</b></span><br/>
+		  	<%= in_place_editor_field :staff_info, 'skills_limits', {}, {:rows => 10, :cols => 50, :external_control => "skills_limits"} %>
+		</p>
+	</div>
+	<div style="float:left; width:440px;">
+		<p>
+			<span id="schedule_availability"><b>Schedule and Availability: (Click to Edit)</b></span><br/>
+		  	<%= in_place_editor_field :staff_info, 'schedule_availability', {}, {:rows => 10, :cols => 50, :external_control => "schedule_availability"} %>
+		</p><br/>
+		<p>
+			<span id="contact_notes"><b>Contact Info and Notes: (Click to Edit)</b></span><br/>
+		  	<%= in_place_editor_field :staff_info, 'contact_notes', {}, {:rows => 10, :cols => 50, :external_control => "contact_notes"} %>
+		</p><br/>
+	</div>
 
 </div>
