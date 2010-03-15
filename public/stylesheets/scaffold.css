@@ -362,7 +362,7 @@ input.feedback {
   text-align: left;
 }
 
-#list-table tr.odd {
+tr.odd {
   background-color: rgb(237, 243, 254);
 }
 
@@ -374,12 +374,18 @@ tr.expired {
   background-color: #FFDDDD;
 }
 
+#list-table tr {
+	border-bottom: 1px solid #CCC;
+}
+
 #list-table tr:hover {
   background-color: #CCC;
+  cursor: pointer;
 }
 
 #list-table tr:first-child:hover {
   background-color: #FFF;
+  cursor: default;
 }
 
 #no-results {
