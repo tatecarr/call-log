@@ -9,12 +9,12 @@ class UserMailer < ActionMailer::Base
   def forgotten_password(user)
     recipients    user.email
     from          "Northeast Arc"
-    subject       "Your temporary password"
+    subject       "Your call log password"
     body          :user => user
   end
   
   def email_feedback(feedback)
-    recipients    "taylor.carr@gordon.edu"
+    recipients    ["taylor.carr@gordon.edu", "benjamin.vogelzang@gordon.edu", "peter.fraleigh@gordon.edu"]
     from          "Call Log Test User"
     subject       "Call Log Test Feedback"
     body          :feedback => feedback

@@ -12,7 +12,7 @@ ActionController::Routing::Routes.draw do |map|
   map.logout 'logout', :controller => 'sessions', :action => 'destroy'
   map.login 'login', :controller => 'sessions', :action => 'new'
   map.home 'home', :controller => 'sessions', :action => 'home'
-  map.passwordreset 'change-password', :controller => "users", :action => "password_reset"
+  map.change_password 'change-password', :controller => "users", :action => "password_reset"
   
   map.email_feedback 'email_feedback', :controller => "feedback", :action => "index"
   

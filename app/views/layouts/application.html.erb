@@ -33,6 +33,10 @@ var curvyCornersVerbose = false;
 <li><%= link_to "Agency Staff", agency_staff_path %></li>
 <li><%= link_to "Backup and Restore", backup_restore_path %></li>
 </ul>
+<% elsif controller.controller_name == "sessions" %>
+<ul id="second_navi">
+<li><%= link_to "Change Your Password", change_password_path %></li>
+</ul>
 <% end %>
 
 <% if flash[:notice] %>

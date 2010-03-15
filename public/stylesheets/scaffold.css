@@ -355,6 +355,14 @@ input.feedback {
   background-color: rgb(237, 243, 254);
 }
 
+tr.warning {
+  background-color: #FFEE99;
+}
+
+tr.expired {
+  background-color: #FFDDDD;
+}
+
 #list-table tr:hover {
   background-color: #CCC;
 }
