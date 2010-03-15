@@ -52,7 +52,8 @@
 	    <th><%= order @search, :by => :home_number %></th>
 	  </tr>
 	<% @staffs.each_with_index do |staff, i| %>
-	  <tr <% if i % 2 == 1 %>class="odd"<% end %> onclick="tableRowLinkTo(<%= staff.id %>);return false;">
+	
+	  <tr class="<% if i % 2 == 1 %>odd<% end %> <% if expired_certification(staff.courses) %>expired<% end %> <% if certification_warning(staff.courses) %>warning<% end %>"  onclick="tableRowLinkTo(<%= staff.id %>);return false;">
 	    <td><%= staff.first_name %></td>
 	    <td><%=h staff.last_name %></td>
 	    <td><%=h staff.address %></td>

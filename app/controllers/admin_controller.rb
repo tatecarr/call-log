@@ -397,33 +397,30 @@ class AdminController < ApplicationController
   	def add_person(line)
       
       # set up the params hash
-      params = Hash.new
-      params[:staff] = Hash.new
-      params[:staff][:staff_id] = line[@row_positions[:employee_number]].match(/\d+/)[0].to_i
-      params[:staff][:first_name] = line[@row_positions[:first_name]].strip
-      params[:staff][:last_name] = line[@row_positions[:last_name]].strip
-      params[:staff][:full_name] = params[:staff][:first_name] + " " + params[:staff][:last_name] + " (" + line[@row_positions[:employee_number]].match(/\d+/)[0] +")"
-      params[:staff][:nickname] = nil#line[@row_positions[:nickname]]
-      params[:staff][:address] = line[@row_positions[:address]]
-      params[:staff][:city] = line[@row_positions[:city]]
-      params[:staff][:state] = 'MA'#line[@row_positions[:state]]
-      params[:staff][:zip] = '00000'#line[@row_positions[:zip]]
-      params[:staff][:gender] = line[@row_positions[:gender]]
-      params[:staff][:doh] = line[@row_positions[:doh]]
-      params[:staff][:email] = line[@row_positions[:email_address]]
-      params[:staff][:cell_number] = line[@row_positions[:phone_number]]
-      params[:staff][:home_number] = line[@row_positions[:home_number]]
-      params[:staff][:work_number] = line[@row_positions[:work_number]]
-      params[:staff][:status] = line[@row_positions[:employee_status]]
-      params[:staff][:agency_staff] = false
+      staff = Staff.new
+      staff.staff_id = line[@row_positions[:employee_number]].match(/\d+/)[0].to_i
+      staff.first_name = line[@row_positions[:first_name]].strip
+      staff.last_name = line[@row_positions[:last_name]].strip
+      staff.full_name = staff.first_name + " " + staff.last_name + " (" + line[@row_positions[:employee_number]].match(/\d+/)[0] +")"
+      staff.address = line[@row_positions[:address]]
+      staff.city = line[@row_positions[:city]]
+      staff.state = 'MA'#line[@row_positions[:state]]
+      staff.zip = '00000'#line[@row_positions[:zip]]
+      staff.gender = line[@row_positions[:gender]]
+      staff.doh = line[@row_positions[:doh]]
+      staff.email = line[@row_positions[:email_address]]
+      staff.cell_number = line[@row_positions[:phone_number]]
+      staff.home_number = line[@row_positions[:home_number]]
+      staff.work_number = line[@row_positions[:work_number]]
+      staff.status = line[@row_positions[:employee_status]]
+      staff.agency_staff = false
       
       # Conditions to check if based on their certifications the staff earns $9.65 | $10.19
       # We don't have the format of that info at this time, so it'll be hardcoded $9.65 for now.
-      params[:staff][:payrate] = 9.65
+      staff.payrate = 9.65
       
       # create and save the new staff member to the db
-      person = Staff.new(params[:staff])
-      person.save
+      staff.save
       
       # want to create a model for holding their info too - there are 4 fields
       # that hold info about each staff that we don't want to be overwritten
@@ -432,10 +429,10 @@ class AdminController < ApplicationController
       # in this table, create it, otherwise they've been imported before.
       #
       # if StaffInfo not found for this staff_id, create one.  otherwise do nothing.
-      if StaffInfo.find_by_staff_id(params[:staff][:staff_id]).nil?
+      if StaffInfo.find_by_staff_id(staff.staff_id).nil?
         staff_info = StaffInfo.new
         # set the record's staff_id to that of the staff member being created.
-        staff_info.staff_id = params[:staff][:staff_id]
+        staff_info.staff_id = staff.staff_id
         staff_info.experience_prefs = "Click here to add experience and preferences info."
         staff_info.skills_limits = "Click here to add skills and limits info."
         staff_info.schedule_availability = "Click here to add schedule and availability info."
