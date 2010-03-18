@@ -235,14 +235,30 @@ class AdminController < ApplicationController
     @import = Import.new(params[:import])
     @import.save
 
+    # Exit if the file is not a .csv file
+    unless @import.csv.path.include?('.csv')
+      # remove the file and show error
+      @import.destroy
+      flash[:error] = "The file you are trying to upload is not a .csv file"
+      redirect_to :action => "import_staff" and return
+    end
+
     # read the csv file into a 2-d array
     lines = parse_csv_file(@import.csv.path)
 
     # does the file have anything in it?
     if lines.empty?
+      # remove the file and show error
+      @import.destroy
       flash[:error] = "There was nothing in the file."
       redirect_to :action => "index" and return
     end
+    
+    #replace the first line with cleaner headings...this could result in nasty data, 
+    #but the user should see that after upload finishes
+    lines[0] = ["last_name", "first_name", "doh", "gender", "home_number", "phone_number", 
+                "work_number", "course", "renewal_date", "email_address", "address", 
+                "city", "org_level", "employee_number", "employee_status"]
 
     # Provides and easy way for us to access the column header position when adding people later.
     #
@@ -271,14 +287,15 @@ class AdminController < ApplicationController
       prev_id = -1
       # step through the file and add a person for each line
       lines.each do |line|
-        already_added = prev_id == line[@row_positions[:employee_number]].match(/\d+/)[0].to_i ? true : false
+        already_added = prev_id == line[@row_positions[:employee_number]].to_i ? true : false
         unless already_added
           add_person(line) unless line.empty?
-          prev_id = line[@row_positions[:employee_number]].match(/\d+/)[0].to_i
+          prev_id = line[@row_positions[:employee_number]].to_i
         end
         add_course(line) unless line.empty?
       end
 
+      # update the pay rate for relief staff
       update_pay_rate
       
       # we don't need the file anymore so we can remove it
@@ -327,6 +344,14 @@ class AdminController < ApplicationController
 	  # upload and save the file
     @import = Import.new(params[:import])
     @import.save
+    
+    # Exit if the file is not a .csv file
+    unless @import.csv.path.include?('.sql')
+      # remove the file and show error
+      @import.destroy
+      flash[:error] = "The file you are trying to upload is not a .sql file"
+      redirect_to :action => "backup_restore" and return
+    end
     
     require 'erb'
     require 'yaml'
@@ -377,15 +402,20 @@ class AdminController < ApplicationController
     def parse_csv_file(path_to_csv)
       theFile = File.open(path_to_csv, "r")
       lines = []
-      
-      theFile.readlines.each do |line|
-        line.sub!(/\A"/, "")
-        line.sub!(/"\s*\Z/, "")
-        if line =~ /"".*""/
-          line.sub!(/"".*""/, line.match(/"".*""/)[0].gsub(/,/, "").gsub(/"/, ""))
+    
+      if theFile
+        theFile.readlines.each do |line|
+          line.sub!(/\A"/, "")
+          line.sub!(/"\s*\Z/, "")
+          if line =~ /"".*""/
+            line.sub!(/"".*""/, line.match(/"".*""/)[0].gsub(/,/, "").gsub(/"/, ""))
+          end
+          lines << line.split(",")
         end
-        lines << line.split(",")
-      end
+      else
+        flash[:error] = "Was not able to read file. Please try again with another file."
+        redirect_to :action => "import_staff" and return
+      end  
       theFile.close()
       lines
     end
@@ -398,7 +428,7 @@ class AdminController < ApplicationController
       
       # set up the params hash
       staff = Staff.new
-      staff.staff_id = line[@row_positions[:employee_number]].match(/\d+/)[0].to_i
+      staff.staff_id = line[@row_positions[:employee_number]].to_i
       staff.first_name = line[@row_positions[:first_name]].strip
       staff.last_name = line[@row_positions[:last_name]].strip
       staff.full_name = staff.first_name + " " + staff.last_name + " (" + line[@row_positions[:employee_number]].match(/\d+/)[0] +")"
@@ -445,7 +475,7 @@ class AdminController < ApplicationController
   	# add a course to a staff member
   	def add_course(line)
   	  course = Course.new
-  	  course.staff_id = line[@row_positions[:employee_number]].match(/\d+/)[0].to_i
+  	  course.staff_id = line[@row_positions[:employee_number]].to_i
   	  course.name = line[@row_positions[:course]]
       course.renewal_date = line[@row_positions[:renewal_date]]
   	  unless course.name.empty? and course.renewal_date.nil?

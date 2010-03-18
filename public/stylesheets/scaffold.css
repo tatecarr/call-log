@@ -366,16 +366,22 @@ tr.odd {
   background-color: rgb(237, 243, 254);
 }
 
+td.warning {
+  background-color: #FFEE99;
+border: 1px solid #CCC;
+}
+
+td.expired {
+  background-color: #FFDDDD;
+border: 1px solid #CCC;
+}
+
 tr.warning {
   background-color: #FFEE99;
 }
 
 tr.expired {
   background-color: #FFDDDD;
-}
-
-#list-table tr {
-	border-bottom: 1px solid #CCC;
 }
 
 #list-table tr:hover {

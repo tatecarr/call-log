@@ -30,8 +30,8 @@ class StaffsController < ApplicationController
       params[:search][:full_name_like] = @full_name unless params[:staff].nil?
       params[:search][:home_number_like] = @home_number unless params[:staff].nil?
       params[:search][:cell_number_like] = @cell_number unless params[:staff].nil?
-      params[:search][:payrate_gt] = params[:search][:payrate_gt].to_i unless params[:search].nil? or params[:search][:payrate_gt].to_i == 0
-      params[:search][:payrate_lt] = params[:search][:payrate_lt].to_i unless params[:search].nil? or params[:search][:payrate_lt].to_i == 0
+      params[:search][:payrate_gt] = params[:search][:payrate_gt].to_f unless params[:search].nil? or params[:search][:payrate_gt].to_f == 0
+      params[:search][:payrate_lt] = params[:search][:payrate_lt].to_f unless params[:search].nil? or params[:search][:payrate_lt].to_f == 0
 
       @search = Staff.search(params[:search])
     
@@ -174,7 +174,7 @@ class StaffsController < ApplicationController
     @staff.destroy
 
     respond_to do |format|
-      format.html { redirect_to agency_staff_path }
+      format.html { redirect_to non_res_staff_path }
       format.xml  { head :ok }
     end
   end

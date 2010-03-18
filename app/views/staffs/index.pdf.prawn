@@ -10,11 +10,11 @@ pdf.table @staffs.map { |staff|
   doh = "#{staff.doh.strftime("%m/%d/%Y")}"
   cell_phone = "#{staff.cell_number}"
   home_phone = "#{staff.home_number}"
-  exp_prefs = "#{staff.staff_info.experience_prefs}"
-  skill_limit = "#{staff.staff_info.skills_limits}"
+  exp_prefs = "#{sanitize_html staff.staff_info.experience_prefs}"
+  skill_limit = "#{sanitize_html staff.staff_info.skills_limits}"
   courses = "#{staff.courses.map {|course| course.name }.join(', ')}"
-  availability = "#{staff.staff_info.schedule_availability}"
-  notes = "#{staff.staff_info.contact_notes}"
+  availability = "#{sanitize_html staff.staff_info.schedule_availability}"
+  notes = "#{sanitize_html staff.staff_info.contact_notes}"
   
   [first_name + " " + last_name + "\nDOH " + doh, "C " + cell_phone + "\nH " + home_phone, exp_prefs, skill_limit, courses, availability, notes ]
 },

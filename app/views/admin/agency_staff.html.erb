@@ -1,6 +1,6 @@
 <% content_for :title, "Admin" %>
-<h2>Agency Staff</h2>
-<%= link_to "Add new agency staff", new_staff_path %>
+<h2>Non-Res Staff</h2>
+<%= link_to "Add new Non-Res Staff", new_staff_path %>
 <% unless @agency_staffs.empty? %>
 	<% @agency_staffs.each do |staff| %>
 		<table>
@@ -14,5 +14,5 @@
 		</table>
 	<% end %>
 <% else %>
-	<div id="no-results">No Agency Staff Found</div>
+	<div id="no-results">No Non-Res Staff Found</div>
 <% end %>

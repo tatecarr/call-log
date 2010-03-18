@@ -99,47 +99,47 @@ table_draw pdf, pss, "PSS"
 pdf.move_down(15)
 
 pdf.text "Brief Overview of House: ", :style => :bold, :size => 12
-pdf.text "#{house.overview}"
+pdf.text "#{sanitize_html house.overview}"
 
 pdf.move_down(15)
 
 pdf.text "Ratio: ", :style => :bold, :size => 12
-pdf.text "#{house.ratio}"
+pdf.text "#{sanitize_html house.ratio}"
 
 pdf.move_down(15)
 
 pdf.text "Trainings Needed: ", :style => :bold, :size => 12
-pdf.text "#{house.trainings_needed}"
+pdf.text "#{sanitize_html house.trainings_needed}"
 
 pdf.move_down(15)
 
 pdf.text "Medication Times: ", :style => :bold, :size => 12
-pdf.text "#{house.medication_times}"
+pdf.text "#{sanitize_html house.medication_times}"
 
 pdf.move_down(15)
 
 pdf.text "Relief Pay: ", :style => :bold, :size => 12
-pdf.text "#{house.relief_pay}"
+pdf.text "#{sanitize_html house.relief_pay}"
 
 pdf.move_down(15)
 
 pdf.text "Waivers: ", :style => :bold, :size => 12
-pdf.text "#{house.waivers}"
+pdf.text "#{sanitize_html house.waivers}"
 
 pdf.move_down(15)
 
 pdf.text "Keys: ", :style => :bold, :size => 12
-pdf.text "#{house.keys}"
+pdf.text "#{sanitize_html house.keys}"
 
 pdf.move_down(15)
 
 pdf.text "Schedule Info: ", :style => :bold, :size => 12
-pdf.text "#{house.schedule_info}"
+pdf.text "#{sanitize_html house.schedule_info}"
 
 pdf.move_down(15)
 
 pdf.text "Behavior Plans: ", :style => :bold, :size => 12
-pdf.text "#{house.behavior_plans}"
+pdf.text "#{sanitize_html house.behavior_plans}"
 
 	# when one house is finished reporting, this makes it 
 	# start a new page on the pdf for the next house

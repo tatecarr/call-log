@@ -16,7 +16,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.email_feedback 'email_feedback', :controller => "feedback", :action => "index"
   
-  map.agency_staff 'agency-staff', :controller => "admin", :action => "agency_staff"
+  map.non_res_staff 'non-res-staff', :controller => "admin", :action => "agency_staff"
   map.backup_restore 'backup-restore', :controller => "admin", :action => "backup_restore" 
   map.import_staff 'import-staff', :controller => "admin", :action => "import_staff" 
   

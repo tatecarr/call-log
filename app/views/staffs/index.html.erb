@@ -45,24 +45,21 @@
 	    <th><%= order @search, :by => :last_name %></th>
 	    <th><%= order @search, :by => :address %></th>
 	    <th><%= order @search, :by => :city %></th>
-	    <th><%= order @search, :by => :state %></th>
-	    <th><%= order @search, :by => :zip %></th>
 	    <th><%= order @search, :by => :gender %></th>
 	    <th><%= order @search, :by => :cell_number %></th>
 	    <th><%= order @search, :by => :home_number %></th>
 	  </tr>
 	<% @staffs.each_with_index do |staff, i| %>
 	
-	  <tr class="<% if i % 2 == 1 %>odd<% end %> <% if expired_certification(staff.courses) %>expired<% end %> <% if certification_warning(staff.courses) %>warning<% end %>"  onclick="tableRowLinkTo(<%= staff.id %>);return false;">
+	  <tr class="<% if i % 2 == 1 %>odd<% end %>"  onclick="tableRowLinkTo(<%= staff.id %>);return false;">
 	    <td><%= staff.first_name %></td>
 	    <td><%=h staff.last_name %></td>
 	    <td><%=h staff.address %></td>
 	    <td><%=h staff.city %></td>
-	    <td><%=h staff.state %></td>
-	    <td><%=h staff.zip %></td>
 	    <td><%=h staff.gender %></td>
 	    <td><%=h staff.cell_number %></td>
 	    <td><%=h staff.home_number %></td>
+		<td class=" <% if expired_certification(staff.courses) %>expired<% end %> <% if certification_warning(staff.courses) %>warning<% end %>">&nbsp;&nbsp;&nbsp;&nbsp;</td>
 	  </tr>
 	<% end %>
 <% else %>

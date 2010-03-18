@@ -3,7 +3,7 @@
 	<h2>Backup</h2>
 	<div class="message">Click to download a sql backup of the database.</div>
 	<% form_tag(:action => "backup") do %>
-		<p><%= submit_tag "Backup" %></p>
+		<p><%= submit_tag "Backup", :disable_with => "Backing up..." %></p>
 	<% end -%>
 </div>
 
