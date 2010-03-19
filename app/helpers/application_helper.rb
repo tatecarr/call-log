@@ -14,9 +14,5 @@ module ApplicationHelper
       content_tag("div", "", :id => tag_name + "_auto_complete", :class => "auto_complete") +
       auto_complete_field(tag_name, { :url => { :action => "auto_complete_for_#{object}_#{method}" } }.update(completion_options))
   end
-  
-  def sanitize_html(html)
-    html.gsub(/<\/?[^>]*>/, "")
-  end
 
 end
