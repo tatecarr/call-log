@@ -3,18 +3,17 @@
 <div id="login_forms">
 	<% form_tag sessions_path do %>
 	  <p>
-	    <%= label_tag :login, "Username or Email Address" %><br />
+	    <strong><%= label_tag :login, "Username or Email Address" %></strong><br />
 	    <%= text_field_tag :login, params[:login] %>
 	  </p>
 	  <p>
-	    <%= label_tag :password %><br />
+	    <strong><%= label_tag :password %></strong><br />
 	    <%= password_field_tag :password %>
 	  </p>
 	  <p><%= submit_tag "Log in" %></p>
 	<% end %>
 
-
-	<p>Forgot your password? <a href="" onclick="Effect.toggle('forgot-password-form', 'slide', { duration: 0.3 }); return false;">Click Here</a></p> 
+	<p><strong>Forgot your password?</strong> <a href="" onclick="Effect.toggle('forgot-password-form', 'slide', { duration: 0.3 }); return false;">Click Here</a></p> 
 
 	<div id="forgot-password-form" style="display: none;">
 	<% form_tag(:action => "reset_password") do %>
