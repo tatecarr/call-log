@@ -12,6 +12,8 @@ class HousesController < ApplicationController
   in_place_edit_for :house, :waivers
   in_place_edit_for :house, :schedule_info
   in_place_edit_for :house, :behavior_plans
+  in_place_edit_for :house, :individuals
+  in_place_edit_for :house, :contact_numbers
   
 #------------------- Creates AJAX methods for autocompleting forms -----------------
   

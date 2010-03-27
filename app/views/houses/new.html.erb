@@ -20,14 +20,6 @@
     <%= f.text_field :city %>
   </p>
   <p>
-    <%= f.label :state %><br />
-    <%= f.text_field :state %>
-  </p>
-  <p>
-    <%= f.label :zip %><br />
-    <%= f.text_field :zip %>
-  </p>
-  <p>
     <%= f.label :phone1 %><br />
     <%= f.text_field :phone1 %>
   </p>
@@ -45,7 +37,7 @@
   </p>
   <p>
     <%= f.label :ratio %><br />
-    <%= f.text_field :ratio %>
+    <%= f.text_area :ratio %>
   </p>
   <p>
     <%= f.label :trainings_needed %><br />
@@ -65,7 +57,7 @@
   </p>
   <p>
     <%= f.label :keys %><br />
-    <%= f.text_field :keys %>
+    <%= f.text_area :keys %>
   </p>
   <p>
     <%= f.label :schedule_info %><br />
@@ -74,6 +66,14 @@
   <p>
     <%= f.label :behavior_plans %><br />
     <%= f.text_area :behavior_plans %>
+  </p>
+  <p>
+  	<%= f.label :individuals %><br />
+	<%= f.text_area :individuals %>
+  </p>
+  <p>
+  	<%= f.label :contact_numbers %><br />
+	<%= f.text_area :contact_numbers %>
   </p>
   <p>
     <%= f.submit 'Create' %>

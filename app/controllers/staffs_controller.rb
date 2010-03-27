@@ -178,4 +178,25 @@ class StaffsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def update_include_in_reports
+    staff = Staff.find_by_staff_id(params[:staff_id])
+    if params[:report_checked] == "report_checked"
+      staff.staff_info.update_attributes(:include_in_reports => true)
+      
+      render :update do |page|
+        page["include_message"].replace_html "Staff included."
+        page.visual_effect :highlight, "include_message"
+      end
+      
+    else
+      staff.staff_info.update_attributes(:include_in_reports  => false)
+      
+      render :update do |page|
+        page["include_message"].replace_html "Staff not included."
+        page.visual_effect :highlight, "include_message"
+      end
+      
+    end
+  end  
 end

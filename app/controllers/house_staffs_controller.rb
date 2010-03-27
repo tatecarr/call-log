@@ -156,10 +156,11 @@ class HouseStaffsController < ApplicationController
       end
     end
 
-    # if the staff_id is blank, display message as to why it is blank
+    # if the staff_id is blank (no staff was found), display message as to why it is blank
     if staff_id.to_s.blank?
       render :update do |page|
         page["add_staff_message"].replace_html message
+        page.visual_effect :highlight, "add_staff_message"
       end
 
     # if a valid staff_id is identified, but they are already assigned to the house, show message
@@ -172,6 +173,7 @@ class HouseStaffsController < ApplicationController
                   
       render :update do |page|
         page["add_staff_message"].replace_html message
+        page.visual_effect :highlight, "add_staff_message"
       end
 
     # if a valid and unique staff_id was found through this ridiculous process, create a new house_staff record

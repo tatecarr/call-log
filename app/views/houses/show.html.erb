@@ -80,6 +80,16 @@
 			<span id="behavior"><b>Behavior Plans: (Click to Edit)</b></span><br/>
 		  	<%= in_place_editor_field :house, 'behavior_plans', {}, {:rows => 10, :cols => 50, :external_control => "behavior"} %>
 		</p>
+		
+		<p>
+			<span id="individuals"><b>Individuals: (Click to Edit)</b></span><br/>
+		  	<%= in_place_editor_field :house, 'individuals', {}, {:rows => 10, :cols => 50, :external_control => "individuals"} %>
+		</p>
+		
+		<p>
+			<span id="contact_numbers"><b>Contact Numbers: (Click to Edit)</b></span><br/>
+		  	<%= in_place_editor_field :house, 'contact_numbers', {}, {:rows => 10, :cols => 50, :external_control => "contact_numbers"} %>
+		</p>
 
 	<% else %>
 
@@ -126,6 +136,16 @@
 		<p>
 		  <b>Behavior Plans:</b>
 		  <%= @house.behavior_plans %>
+		</p>
+		
+		<p>
+			<b>Individuals:</b>
+			<%= @house.individuals %>
+		</p>
+		
+		<p>
+			<b>Contact Numbers:</b>
+			<%= @house.contact_numbers %>
 		</p>
 
 	<% end %>
@@ -193,7 +213,7 @@
 	<% if admin? || house_admin?(@house) %>
 		<div style="text-align:center; font-size:12pt; padding-top:10px;">
 			<a href="#" onclick="Effect.toggle('add_staff_form', 'slide', { duration: 0.3 }); return false;">Assign Staff</a>&nbsp;&nbsp;
-			<a href="">Refresh List Order</a>
+			<%= link_to 'Refresh List Order', @house %>
 		</div>
 		<div id="add_staff_form" style="display:none;">
 			<div>

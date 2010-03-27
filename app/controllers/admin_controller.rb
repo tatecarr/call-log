@@ -442,6 +442,7 @@ class AdminController < ApplicationController
       staff.cell_number = line[@row_positions[:phone_number]]
       staff.home_number = line[@row_positions[:home_number]]
       staff.work_number = line[@row_positions[:work_number]]
+      staff.org_level = line[@row_positions[:org_level]]
       staff.status = line[@row_positions[:employee_status]]
       staff.agency_staff = false
       
@@ -467,6 +468,7 @@ class AdminController < ApplicationController
         staff_info.skills_limits = "Click here to add skills and limits info."
         staff_info.schedule_availability = "Click here to add schedule and availability info."
         staff_info.contact_notes = "Click here to add conact info and other notes."
+        staff_info.include_in_reports = 0
         staff_info.save
       end
       

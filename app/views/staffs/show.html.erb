@@ -9,6 +9,25 @@
 	<div style="padding-left:15px;">
 		
 		<table>
+			<% if @staff.org_level != 299 %>				
+				<tr>
+					<td style="padding-right:10px">
+						<b>Include in reports?</b> <%= check_box_tag :include_in_reports, "report_checked", @staff.staff_info.include_in_reports %>
+						<%= observe_field :include_in_reports, :url => { :action => :update_include_in_reports },
+							:with => "'report_checked='+value+'&staff_id='+#{@staff.staff_id}"
+						%>
+					</td>
+					<td>
+						<div id="include_message">
+							<% if @staff.staff_info.include_in_reports %>
+								Staff included.
+							<% else %>
+								Staff not included.
+							<% end %>
+						</div>
+					</td>
+				</tr>
+			<% end %>
 			<tr>
 				<td><b>Status:</b></td>
 				<% if @staff.status.blank? %>
@@ -26,7 +45,7 @@
 				<% end %>
 			</tr>
 			<tr>
-				<td style="width:100px;"><b>Work number:</b></td>
+				<td><b>Work number:</b></td>
 				<% if @staff.work_number.blank? %>
 					<td>None</td>
 				<% else %>
@@ -42,7 +61,7 @@
 				<% end %>
 			</tr>
 			<tr>
-				<td><b>Home number:</b></td>
+				<td style="padding-right:10px"><b>Home number:</b></td>
 				<% if @staff.home_number.blank? %>
 					<td>None</td>
 				<% else %>
@@ -99,7 +118,7 @@
 		<% else %>
 			<% for course in @staff_courses do %>
 				<% unless course.renewal_date.nil? %>
-					<tr class="<% if course.renewal_date < Time.now %>expired<% end %><% if course.renewal_date >= Time.now and course.renewal_date < Time.now+1.month %>warning<% end %>">
+					<tr class="<% if course.renewal_date < Time.now && (course.name == "Adult CPR" || course.name == "First Aid" || course.name == "MAPS") %>expired<% end %><% if course.renewal_date >= Time.now and course.renewal_date < Time.now+1.month && (course.name == "Adult CPR" || course.name == "First Aid" || course.name == "MAPS") %>warning<% end %>">
 						<td style="padding-right:10px;">
 							<% if course.name.blank? %>
 								Unknown
