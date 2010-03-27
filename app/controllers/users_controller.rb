@@ -24,7 +24,7 @@ class UsersController < ApplicationController
       flash[:error] = "Please make sure your passwords match. We were unable to reset your password."
     end
     
-    redirect_to :action => "password_reset"
+    redirect_to :controller => "sessions", :action => "home"
   end
   
   def destroy

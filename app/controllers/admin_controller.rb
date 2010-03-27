@@ -357,7 +357,7 @@ class AdminController < ApplicationController
       # remove the file and show error
       @import.destroy
       flash[:error] = "No File was selected"
-      redirect_to :action => "import_staff" and return
+      redirect_to :action => "backup_restore" and return
     end
     
     # Exit if the file is not a .csv file
