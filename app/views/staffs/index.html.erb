@@ -4,7 +4,7 @@
 
 
 <div id="search-form">
-	<h3>Search</h3>
+	<h3>Search</h3><div id="results-no"><%= @staffs.total_entries.to_s + " Results Returned " unless @staffs.empty? %></div>
 	<%- form_for @search do |f| -%>
 		<table>
 			<tr>
@@ -31,13 +31,15 @@
 					<td><%= select_tag :number_per_page, options_for_select(@number_per_page_options, selected = @number_per_page) %></td>
 			</tr>
 			<tr>
-				<td><%= submit_tag "Search", :disable_with => 'Searching...' %></td>
+				<td><%= submit_tag "Search", :disable_with => 'Searching...' %></td><br>
+				<td></td>
+				<td></td>
+				<td></td>
 			</tr>
 		<% end -%>
 		</table>
 	<% end -%>
 </div>
-<div id="results-no"><%= @staffs.total_entries.to_s + " Results Returned " unless @staffs.empty? %></div>
 <table id="list-table">
 <% unless @staffs.empty? %>	
 	  <tr>

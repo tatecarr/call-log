@@ -233,7 +233,15 @@ class AdminController < ApplicationController
 
     # upload and save the file
     @import = Import.new(params[:import])
-    @import.save
+    
+    # Exit if no file was selected
+    unless @import.save
+      # remove the file and show error
+      @import.destroy
+      flash[:error] = "No File was selected"
+      redirect_to :action => "import_staff" and return
+    end
+    
 
     # Exit if the file is not a .csv file
     unless @import.csv.path.include?('.csv')
@@ -343,7 +351,14 @@ class AdminController < ApplicationController
 	def restore
 	  # upload and save the file
     @import = Import.new(params[:import])
-    @import.save
+    
+    # Exit if no file was selected
+    unless @import.save
+      # remove the file and show error
+      @import.destroy
+      flash[:error] = "No File was selected"
+      redirect_to :action => "import_staff" and return
+    end
     
     # Exit if the file is not a .csv file
     unless @import.csv.path.include?('.sql')
