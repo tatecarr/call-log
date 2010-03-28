@@ -1,3 +1,12 @@
+.in_place_editor_label:hover {
+	cursor:pointer;
+	text-decoration: underline;
+}
+
+.in_place_editor_field {
+	cursor:pointer;
+}
+
 .show-page-name {
 	font-weight: bold;
 	font-size:20pt;
@@ -152,8 +161,8 @@ ul#second_navi li {
 
 ul#second_navi a {
 	color: #FFF;
-	padding-right: 52px;
-	padding-left: 52px;
+	padding-right: 50px;
+	padding-left: 50px;
 }
 
 ul#second_navi a:hover {
@@ -178,7 +187,6 @@ ul#second_navi a:hover {
 	box-shadow: 4px 4px 8px #818181;
 	-webkit-box-shadow: 4px 4px 8px #818181;
 	-moz-box-shadow: 4px 4px 8px #818181;
-	filter: progid:DXImageTransform.Microsoft.dropShadow(color=#818181, offX=4, offY=4, positive=true);
 	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFFFFF), to(#EEEEEE));
 	background-image: -moz-linear-gradient(0% 100% 90deg,#EEEEEE, #FFFFFF);
 }
@@ -213,7 +221,6 @@ fieldset { width: 300px;}
 	box-shadow: 4px 4px 8px #818181;
 	-webkit-box-shadow: 4px 4px 8px #818181;
 	-moz-box-shadow: 4px 4px 8px #818181;
-	filter: progid:DXImageTransform.Microsoft.dropShadow(color=#818181, offX=4, offY=4, positive=true);
 	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFFFFF), to(#EEEEEE));
 	background-image: -moz-linear-gradient(0% 100% 90deg,#EEEEEE, #FFFFFF);
 }

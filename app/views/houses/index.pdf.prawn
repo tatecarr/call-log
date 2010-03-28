@@ -15,7 +15,7 @@ def table_draw(pdf, collection, collection_name,
 			pdf.text "No #{collection_name} are assigned to this house profile.", :style => :italic, :size => 10
 		else
 			pdf.table collection.map { |house_staff| 
-				staff = Staff.find_by_id(house_staff.id)
+				staff = Staff.find_by_staff_id(house_staff.staff_id)
 				[
 				   	staff.first_name + " " + staff.last_name,
 				    house_staff.position_name,
@@ -52,6 +52,7 @@ pdf.text "Directors", :style => :bold, :size => 12
 directors = HouseStaff.find(:all, :conditions => ['bu_code = ? 
 				AND position_name IN (?)', house.bu_code, 
 				["Residential Director", "Nurse Case Manager", "Clinical Manager", "Assistant House Director", "House Coordinator"]])
+
 table_draw pdf, directors, "Directors"
 
 pdf.move_down(15)
@@ -140,6 +141,16 @@ pdf.move_down(15)
 
 pdf.text "Behavior Plans: ", :style => :bold, :size => 12
 pdf.text "#{ house.behavior_plans(:plain)}"
+
+pdf.move_down(15)
+
+pdf.text "Individuals: ", :style => :bold, :size => 12
+pdf.text "#{ house.individuals(:plain)}"
+
+pdf.move_down(15)
+
+pdf.text "Contact Numbers: ", :style => :bold, :size => 12
+pdf.text "#{ house.contact_numbers(:plain)}"
 
 	# when one house is finished reporting, this makes it 
 	# start a new page on the pdf for the next house
