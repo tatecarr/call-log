@@ -244,7 +244,7 @@ class AdminController < ApplicationController
     
 
     # Exit if the file is not a .csv file
-    unless @import.csv.path.include?('.csv')
+    unless @import.csv.path.match(/\.csv$/)
       # remove the file and show error
       @import.destroy
       flash[:error] = "The file you are trying to upload is not a .csv file"
@@ -259,7 +259,7 @@ class AdminController < ApplicationController
       # remove the file and show error
       @import.destroy
       flash[:error] = "There was nothing in the file."
-      redirect_to :action => "index" and return
+      redirect_to :action => "import_staff" and return
     end
     
     #replace the first line with cleaner headings...this could result in nasty data, 
@@ -360,8 +360,8 @@ class AdminController < ApplicationController
       redirect_to :action => "backup_restore" and return
     end
     
-    # Exit if the file is not a .csv file
-    unless @import.csv.path.include?('.sql')
+    # Exit if the file is not a .sql file
+    unless @import.csv.path.match(/\.sql$/)
       # remove the file and show error
       @import.destroy
       flash[:error] = "The file you are trying to upload is not a .sql file"
@@ -378,17 +378,15 @@ class AdminController < ApplicationController
     
 	  success = system "mysql -u #{config['username']} -p#{config['password']} #{config['database']} < #{@import.csv.path}"
 	  
-	  @import.destroy
-	  
 	  if success
 	    flash[:notice] = "The restore was successful."
 	    @import.destroy
+	    redirect_to backup_restore_path
     else
-      flash[:error] = "Failed to restore. Make sure the file is the correct format and try again."
+      flash[:error] = "Failed to restore. Make sure the file contains the correct MySQL syntax."
       @import.destroy
-      render :action => "index"
+      redirect_to backup_restore_path
     end
-    redirect_to backup_restore_path
 	end
 
 #-------------------------- Private helper methods ----------------------------------
@@ -449,8 +447,6 @@ class AdminController < ApplicationController
       staff.full_name = staff.first_name + " " + staff.last_name + " (" + line[@row_positions[:employee_number]].match(/\d+/)[0] +")"
       staff.address = line[@row_positions[:address]]
       staff.city = line[@row_positions[:city]]
-      staff.state = 'MA'#line[@row_positions[:state]]
-      staff.zip = '00000'#line[@row_positions[:zip]]
       staff.gender = line[@row_positions[:gender]]
       staff.doh = line[@row_positions[:doh]]
       staff.email = line[@row_positions[:email_address]]

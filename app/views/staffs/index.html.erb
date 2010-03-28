@@ -25,7 +25,7 @@
 			</tr>
 			<tr>
 				<td>Gender:</td>
-				<td><%= f.radio_button :gender_equals, :Male %>Male<%= f.radio_button :gender_equals, :Female %>Female</td>
+				<td><%= f.radio_button :gender_equals, :Male %>Male<%= f.radio_button :gender_equals, :Female %>Female<%= f.radio_button :gender_does_not_equal, :both %>Both</td>
 				<% form_tag staffs_path, :method => 'get' do %>
 					<td>Results per page:</td> 
 					<td><%= select_tag :number_per_page, options_for_select(@number_per_page_options, selected = @number_per_page) %></td>

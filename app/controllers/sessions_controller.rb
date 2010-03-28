@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  before_filter :login_required, :only => [:home]
+  
   def new
     redirect_to home_path if logged_in?
   end
