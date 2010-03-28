@@ -182,14 +182,17 @@ ul#second_navi a:hover {
 	width: 410px;
 	margin: auto;
 	border: 1px solid #CCC;
-	-moz-border-radius: 10px; 
-	-webkit-border-radius: 10px;
+	/*-moz-border-radius: 10px; 
+		-webkit-border-radius: 10px;*/
 	padding: 20px 35px 25px;
 	box-shadow: 4px 4px 8px #818181;
 	-webkit-box-shadow: 4px 4px 8px #818181;
 	-moz-box-shadow: 4px 4px 8px #818181;
-	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFFFFF), to(#EEEEEE));
-	background-image: -moz-linear-gradient(0% 100% 90deg,#EEEEEE, #FFFFFF);
+	/* For IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
+	/* For IE 5.5 - 7 */
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');
+	background: #EEE url(/images/gradient.png) repeat-x top left;
 }
 
 
@@ -212,7 +215,7 @@ fieldset { width: 300px;}
 /* search in call-log */
 
 #search-form {
-	width: 610px;
+	width: 650px;
 	margin: 0 auto;
 	border: 1px solid #CCC;
 	-moz-border-radius: 10px; 
@@ -222,12 +225,15 @@ fieldset { width: 300px;}
 	box-shadow: 4px 4px 8px #818181;
 	-webkit-box-shadow: 4px 4px 8px #818181;
 	-moz-box-shadow: 4px 4px 8px #818181;
-	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFFFFF), to(#EEEEEE));
-	background-image: -moz-linear-gradient(0% 100% 90deg,#EEEEEE, #FFFFFF);
+	/* For IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
+	/* For IE 5.5 - 7 */
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');
+	background: #EEE url(/images/gradient.png) repeat-x top left;
 }
 
 .pay_rate {
-	width: 50px !important;
+	width: 40px !important;
 }
 
 /* admin page */
@@ -513,9 +519,6 @@ tr.expired {
 
 #results-no {
 	text-align:right;
-	float: right;
-	position: relative;
-	top: -20px;
 }
 
 #backup-page {

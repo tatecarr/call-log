@@ -2,39 +2,36 @@
 
 <h1>Call Log</h1>
 
-
 <div id="search-form">
-	<h3>Search</h3><div id="results-no"><%= @staffs.total_entries.to_s + " Results Returned " unless @staffs.empty? %></div>
+	<h3>Search</h3>
 	<%- form_for @search do |f| -%>
 		<table>
 			<tr>
 				<td>Full Name:</td> 
 				<td><%= text_field_with_auto_complete :staff, :full_name, :value => @full_name %></td>
-			</tr>
-			<tr>
-				<td>Home Phone:</td> 
-				<td><%= text_field_with_auto_complete :staff, :home_number, :value => @home_number %></td>
 				<td>Pay Rate:</td>
 				<td>Min: <%= f.text_field :payrate_gt, :class => "pay_rate" %> Max: <%= f.text_field :payrate_lt, :class => "pay_rate" %></td>
 			</tr>
 			<tr>
-				<td>Cell Phone:</td> 
-				<td><%= text_field_with_auto_complete :staff, :cell_number, :value => @cell_number %></td>
+				<td>Home Phone:</td> 
+				<td><%= text_field_with_auto_complete :staff, :home_number, :value => @home_number %></td>
 				<td>Certifications:</td>
 				<td>CPR <%= check_box_tag :cpr, 1, params[:cpr] %> FA <%= check_box_tag :fa, 1, params[:fa] %> MT<%= check_box_tag :mt, 1, params[:mt] %></td>
 			</tr>
 			<tr>
+				<td>Cell Phone:</td> 
+				<td><%= text_field_with_auto_complete :staff, :cell_number, :value => @cell_number %></td>
 				<td>Gender:</td>
 				<td><%= f.radio_button :gender_equals, :Male %>Male<%= f.radio_button :gender_equals, :Female %>Female<%= f.radio_button :gender_does_not_equal, :both %>Both</td>
+			</tr>
+			<tr>
 				<% form_tag staffs_path, :method => 'get' do %>
 					<td>Results per page:</td> 
 					<td><%= select_tag :number_per_page, options_for_select(@number_per_page_options, selected = @number_per_page) %></td>
 			</tr>
 			<tr>
-				<td><%= submit_tag "Search", :disable_with => 'Searching...' %></td><br>
-				<td></td>
-				<td></td>
-				<td></td>
+				<td><%= submit_tag "Search", :disable_with => 'Searching...' %></td>
+				<td colspan="3"><div id="results-no"><%= @staffs.total_entries.to_s + " Results Returned " unless @staffs.empty? %></div></td>
 			</tr>
 		<% end -%>
 		</table>
