@@ -259,7 +259,7 @@ class AdminController < ApplicationController
       # remove the file and show error
       @import.destroy
       flash[:error] = "There was nothing in the file."
-      redirect_to :action => "index" and return
+      redirect_to :action => "import_staff" and return
     end
     
     #replace the first line with cleaner headings...this could result in nasty data, 
