@@ -1,6 +1,8 @@
 # Sets the pdf to landscape view
 pdf = Prawn::Document.new(:page_layout => :landscape)
 
+unless @staff.blank?
+
 # The following variables are being used to define the contents of each of the columns of the staff report since there are multiple 
 # values for each column on some accounts.
 staff_id = "#{@staff.staff_id}"
@@ -23,3 +25,7 @@ pdf.table data, :border_style => :grid,
 				:align => { 0 => :left, 1 => :left, 2 => :left, 3 => :left, 4 => :left, 5 => :left, 6 => :left },
 				:column_widths => { 0 => 100, 1 => 100, 2 => 110, 3 => 105, 4 => 105, 5 => 105, 6 => 100 },
 				:font_size => 10
+				
+else
+	pdf.text "There are no staff members to print."
+end
