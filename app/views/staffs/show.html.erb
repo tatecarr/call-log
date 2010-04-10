@@ -92,11 +92,13 @@
 				<% end %>
 			</tr>
 			<tr>
-				<td><b>Payrate:</b></td>
-				<% if @staff.payrate.blank? %>
-					<td>Unknown</td>
-				<% else %>
-					<td>$<%= @staff.payrate %></td>
+				<% if @staff.org_level == 299 %>
+					<td><b>Payrate:</b></td>
+					<% if @staff.payrate.blank? %>
+						<td>Unknown</td>
+					<% else %>
+						<td>$<%= @staff.payrate %></td>
+					<% end %>
 				<% end %>
 			</tr>
 		</table>

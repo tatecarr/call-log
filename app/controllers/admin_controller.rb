@@ -295,12 +295,20 @@ class AdminController < ApplicationController
       prev_id = -1
       # step through the file and add a person for each line
       lines.each do |line|
-        already_added = prev_id == line[@row_positions[:employee_number]].to_i ? true : false
-        unless already_added
-          add_person(line) unless line.empty?
-          prev_id = line[@row_positions[:employee_number]].to_i
+        #makes sure that there is 15 elements on the line (first, last, address, etc.)
+        #otherwise the line is blank or invalid
+        #line.empty? always returns false.  line is an array, and may be length == 0, but won't be empty.
+        if line.length == 15
+          
+          already_added = prev_id == line[@row_positions[:employee_number]].to_i ? true : false
+          
+          unless already_added
+            add_person(line)
+            prev_id = line[@row_positions[:employee_number]].to_i
+          end
+          add_course(line)
+          
         end
-        add_course(line) unless line.empty?
       end
 
       # update the pay rate for relief staff
@@ -418,13 +426,33 @@ class AdminController < ApplicationController
     
       if theFile
         theFile.readlines.each do |line|
+          
+          # ne-arc's input file was within quotation marks...
+          #
+          # remove leading quotation mark.
           line.sub!(/\A"/, "")
+          
+          # remove trailing quotation mark.
           line.sub!(/"\s*\Z/, "")
+          
+          # if any of the comma delimeted elements contains a comma, their system surrounds
+          # that element with double quotes.
+          
+          # So if the line matches ""..anything..""
           if line =~ /"".*""/
-            line.sub!(/"".*""/, line.match(/"".*""/)[0].gsub(/,/, "").gsub(/"/, ""))
+            
+            # gsub applies the substitute for each match in the string.  So we remove the commas
+            # and then the double quotes.
+            line.gsub!(/"".*""/, line.match(/"".*""/)[0].gsub(/,/, "").gsub(/"/, ""))
+            
           end
+          
+          # convert the comma delimeted string into an array with each comma delimted substring
+          # being one of the elements.
           lines << line.split(",")
+          
         end
+        
       else
         flash[:error] = "Was not able to read file. Please try again with another file."
         redirect_to :action => "import_staff" and return
@@ -459,7 +487,7 @@ class AdminController < ApplicationController
       
       # Conditions to check if based on their certifications the staff earns $9.65 | $10.19
       # We don't have the format of that info at this time, so it'll be hardcoded $9.65 for now.
-      staff.payrate = 9.65
+      staff.payrate = staff.org_level == 299 ? 9.65 : 0.00
       
       # create and save the new staff member to the db
       staff.save
@@ -509,6 +537,6 @@ class AdminController < ApplicationController
                 where courses.name in ('Adult CPR', 'MAPS', 'First Aid')
                 group by staffs.staff_id) as x
 
-        where x.number > 2)")
+        where x.number > 2) AND staffs.org_level = 299")
   	end
 end

@@ -15,6 +15,7 @@ ActionController::Routing::Routes.draw do |map|
   map.change_password 'change-password', :controller => "users", :action => "password_reset"
   
   map.email_feedback 'email_feedback', :controller => "feedback", :action => "index"
+  map.user_manual 'user_manual', :controller => 'sessions', :action => 'get_user_manual'
   
   map.non_res_staff 'non-res-staff', :controller => "admin", :action => "agency_staff"
   map.backup_restore 'backup-restore', :controller => "admin", :action => "backup_restore" 

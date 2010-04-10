@@ -14,6 +14,10 @@
     <%= f.text_field :last_name %>
   </p>
   <p>
+  	<%= f.label :email %><br/>
+	<%= f.text_field :email %>
+  </p>
+  <p>
     <%= f.label :address %><br />
     <%= f.text_field :address %>
   </p>
@@ -37,7 +41,14 @@
     <%= f.label :home_number %><br />
     <%= f.text_field :home_number %>
   </p>
+  <p>
+  	<%= f.label :work_number %><br/>
+	<%= f.text_field :work_number %>
+  </p>
 	<%= f.hidden_field :agency_staff, :value => true %>
+	<%= f.hidden_field :payrate, :value => 0.00 %>
+	<%= f.hidden_field :org_level, :value => 200 %>
+	<%= f.hidden_field :status, :value => 'Active' %>
   <p>
     <%= f.submit 'Create' %>
   </p>

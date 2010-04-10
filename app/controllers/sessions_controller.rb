@@ -11,6 +11,10 @@ class SessionsController < ApplicationController
     end 
   end
   
+  def get_user_manual
+    send_file "public/user_manual/CallLog-UserManual.pdf", :type => "application/pdf"
+  end
+  
   def create
     user = User.authenticate(params[:login], params[:password])
     if user
