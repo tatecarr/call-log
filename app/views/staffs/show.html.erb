@@ -9,7 +9,7 @@
 	<div style="padding-left:15px;">
 		
 		<table>
-			<% if @staff.org_level != 299 %>				
+			<% if @staff.org_level != 299 && !@staff.agency_staff %>				
 				<tr>
 					<td style="padding-right:10px">
 						<b>Include in reports?</b> <%= check_box_tag :include_in_reports, "report_checked", @staff.staff_info.include_in_reports %>
