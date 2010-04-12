@@ -78,7 +78,7 @@ class StaffsController < ApplicationController
       when "relief-with-full"
         @staffs = Staff.find_by_sql("select * 
                                     from staffs join staff_infos on staffs.staff_id = staff_infos.staff_id 
-                                    where agency_staff = false and (org_level = 299 or include_in_reports = true)")
+                                    where agency_staff = false and (org_level = 299 or include_in_reports = 1) order by last_name")
       when "non-res"
         @staffs = Staff.find(:all, :conditions => ['agency_staff = ?', true])
       end

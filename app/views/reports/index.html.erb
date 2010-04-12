@@ -9,7 +9,7 @@
 	Selected houses in the list below will be included in a generated .pdf report.
 	If no houses are selected, all will be included in the report.
   </div>
-  <%= submit_tag "Print Selected House Reports", :disable_with => "Printing..." %><br/>
+  <%= submit_tag "Create Selected Houses Report", :disable_with => "Generating..." %><br/>
   <% for house in @houses %>
 	<%= check_box_tag "bu_code_equals[]", house.bu_code %><%= house.name %><br />
   <% end %>
@@ -23,7 +23,7 @@
 	This report will print all Non-Res Staff.
   </div>
   <%= hidden_field_tag :predefined_report, "non-res" %>
-  <%= submit_tag "Print Non-Res Staff Report", :disable_with => "Printing..." %>
+  <%= submit_tag "Create Non-Res Staff Report", :disable_with => "Generating..." %>
 <% end -%><br/>
 
 <% form_tag '/call-log.pdf', :method => 'get' do %>
@@ -31,16 +31,16 @@
 	This report will print all Relief Staff.
   </div>
   <%= hidden_field_tag :predefined_report, "relief" %>
-  <%= submit_tag "Print Relief Staff Report", :disable_with => "Printing..." %>
+  <%= submit_tag "Create Relief Staff Report", :disable_with => "Generating..." %>
 <% end -%><br/>
 
 <% form_tag '/call-log.pdf', :method => 'get' do %>
   <div class="message" style="width:400px;">
 	This report will print all Relief Staff, as well as Full Time Staff
-	who have been selected to include in this report.
+	who have been selected on their individual staff page to be included in this report.
   </div>  
   <%= hidden_field_tag :predefined_report, "relief-with-full" %>
-  <%= submit_tag "Print Selected Full-Time With Relief Staff Report", :disable_with => "Printing..." %>
+  <%= submit_tag "Create Relief with indicated Full-Time Staff Report", :disable_with => "Generating..." %>
 <% end -%><br/>
 </div>
 

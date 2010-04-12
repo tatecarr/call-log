@@ -29,14 +29,6 @@
 				</tr>
 			<% end %>
 			<tr>
-				<td><b>Status:</b></td>
-				<% if @staff.status.blank? %>
-					<td>Unknown</td>
-				<% else %>
-					<td><%= @staff.status %></td>
-				<% end %>
-			</tr>
-			<tr>
 				<td><b>Email:</b></td>
 				<% if @staff.email.blank? %>
 					<td>None</td>
@@ -100,6 +92,22 @@
 						<td>$<%= @staff.payrate %></td>
 					<% end %>
 				<% end %>
+			</tr>
+			<tr>
+				<td><b>Status:</b></td>
+				<% if @staff.status.blank? %>
+					<td>Unknown</td>
+				<% else %>
+					<td><%= @staff.status %></td>
+				<% end %>
+			</tr>
+			<tr>
+				<td><b>Organizational Code:</b></td>
+				<td><%= @staff.org_level %></td>
+			</tr>
+			<tr>
+				<td><b>Non-Res Staff?:</b></td>
+				<td><%= @staff.agency_staff.to_s.capitalize %></td>
 			</tr>
 		</table>
 	</div>
