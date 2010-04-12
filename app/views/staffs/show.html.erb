@@ -37,14 +37,6 @@
 				<% end %>
 			</tr>
 			<tr>
-				<td><b>Work number:</b></td>
-				<% if @staff.work_number.blank? %>
-					<td>None</td>
-				<% else %>
-					<td><%= @staff.work_number %></td>
-				<% end %>
-			</tr>
-			<tr>
 				<td><b>Cell number:</b></td>
 				<% if @staff.cell_number.blank? %>
 					<td>None</td>
@@ -58,6 +50,14 @@
 					<td>None</td>
 				<% else %>
 					<td><%= @staff.home_number %></td>
+				<% end %>
+			</tr>
+			<tr>
+				<td><b>Work number:</b></td>
+				<% if @staff.work_number.blank? %>
+					<td>None</td>
+				<% else %>
+					<td><%= @staff.work_number %></td>
 				<% end %>
 			</tr>
 			<tr>
