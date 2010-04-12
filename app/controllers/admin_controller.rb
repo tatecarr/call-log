@@ -380,6 +380,7 @@ class AdminController < ApplicationController
     
     file = File.open(@import.csv.path, 'r')
     lines = file.readlines
+    file.close()
     if lines.empty?
       # remove the file and show error
       @import.destroy
