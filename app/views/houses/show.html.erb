@@ -38,57 +38,57 @@
 
 		<p>
 			<span id="ratio" class="in_place_editor_label"><b>Ratio: (Click to Edit)</b></span><br/>
-		  	<%= in_place_editor_field :house, 'ratio', {}, {:rows => 10, :cols => 50, :external_control => "ratio"} %>
+		  	<%= in_place_editor_field :house, 'ratio', {}, {:rows => 10, :cols => 50, :load_text_url => { :controller => "houses", :action => "get_unformatted_text_ratio", :id => @house.bu_code }, :external_control => "ratio"} %>
 		</p>
 
 		<p>
 			<span id="relief_pay" class="in_place_editor_label"><b>Relief pay: (Click to Edit)</b></span><br/>
-		  	<%= in_place_editor_field :house, 'relief_pay', {}, {:rows => 10, :cols => 50, :external_control => "relief_pay"} %>
+		  	<%= in_place_editor_field :house, 'relief_pay', {}, {:rows => 10, :cols => 50, :load_text_url => { :controller => "houses", :action => "get_unformatted_text_relief", :id => @house.bu_code }, :external_control => "relief_pay"} %>
 		</p>
 
 		<p>
 			<span id="keys" class="in_place_editor_label"><b>Keys: (Click to Edit)</b></span><br/>
-		  	<%= in_place_editor_field :house, 'keys', {}, {:rows => 10, :cols => 50, :external_control => "keys"} %>
+		  	<%= in_place_editor_field :house, 'keys', {}, {:rows => 10, :cols => 50, :load_text_url => { :controller => "houses", :action => "get_unformatted_text_keys", :id => @house.bu_code }, :external_control => "keys"} %>
 		</p>
 
 		<p>
 			<span id="overview" class="in_place_editor_label"><b>Overview: (Click to Edit)</b></span><br/>
-		  	<%= in_place_editor_field :house, 'overview', {}, {:rows => 10, :cols => 50, :external_control => "overview"} %>
+		  	<%= in_place_editor_field :house, 'overview', {}, {:rows => 10, :cols => 50, :load_text_url => { :controller => "houses", :action => "get_unformatted_text_overview", :id => @house.bu_code }, :external_control => "overview"} %>
 		</p>
 
 		<p>
 			<span id="trainings" class="in_place_editor_label"><b>Trainings Needed: (Click to Edit)</b></span><br/>
-		  	<%= in_place_editor_field :house, 'trainings_needed', {}, {:rows => 10, :cols => 50, :external_control => "trainings"} %>
+		  	<%= in_place_editor_field :house, 'trainings_needed', {}, {:rows => 10, :cols => 50, :load_text_url => { :controller => "houses", :action => "get_unformatted_text_trainings", :id => @house.bu_code }, :external_control => "trainings"} %>
 		</p>
 
 		<p>
 			<span id="med_times" class="in_place_editor_label"><b>Medication Times: (Click to Edit)</b></span><br/>
-		  	<%= in_place_editor_field :house, 'medication_times', {}, {:rows => 10, :cols => 50, :external_control => "med_times"} %>
+		  	<%= in_place_editor_field :house, 'medication_times', {}, {:rows => 10, :cols => 50, :load_text_url => { :controller => "houses", :action => "get_unformatted_text_medication", :id => @house.bu_code }, :external_control => "med_times"} %>
 		</p>
 
 		<p>
 			<span id="waivers" class="in_place_editor_label"><b>Waivers: (Click to Edit)</b></span><br/>
-		  	<%= in_place_editor_field :house, 'waivers', {}, {:rows => 10, :cols => 50, :external_control => "waivers"} %>
+		  	<%= in_place_editor_field :house, 'waivers', {}, {:rows => 10, :cols => 50, :load_text_url => { :controller => "houses", :action => "get_unformatted_text_waivers", :id => @house.bu_code }, :external_control => "waivers"} %>
 		</p>
 
 		<p>
 			<span id="schedule_info" class="in_place_editor_label"><b>Schedule Info: (Click to Edit)</b></span><br/>
-		  	<%= in_place_editor_field :house, 'schedule_info', {}, {:rows => 10, :cols => 50, :external_control => "schedule_info"} %>
+		  	<%= in_place_editor_field :house, 'schedule_info', {}, {:rows => 10, :cols => 50, :load_text_url => { :controller => "houses", :action => "get_unformatted_text_schedule", :id => @house.bu_code }, :external_control => "schedule_info"} %>
 		</p>
 
 		<p>
 			<span id="behavior" class="in_place_editor_label"><b>Behavior Plans: (Click to Edit)</b></span><br/>
-		  	<%= in_place_editor_field :house, 'behavior_plans', {}, {:rows => 10, :cols => 50, :external_control => "behavior"} %>
+		  	<%= in_place_editor_field :house, 'behavior_plans', {}, {:rows => 10, :cols => 50, :load_text_url => { :controller => "houses", :action => "get_unformatted_text_behavior", :id => @house.bu_code }, :external_control => "behavior"} %>
 		</p>
 		
 		<p>
 			<span id="individuals" class="in_place_editor_label"><b>Individuals: (Click to Edit)</b></span><br/>
-		  	<%= in_place_editor_field :house, 'individuals', {}, {:rows => 10, :cols => 50, :external_control => "individuals"} %>
+		  	<%= in_place_editor_field :house, 'individuals', {}, {:rows => 10, :cols => 50, :load_text_url => { :controller => "houses", :action => "get_unformatted_text_individuals", :id => @house.bu_code }, :external_control => "individuals"} %>
 		</p>
 		
 		<p>
 			<span id="contact_numbers" class="in_place_editor_label"><b>Contact Numbers: (Click to Edit)</b></span><br/>
-		  	<%= in_place_editor_field :house, 'contact_numbers', {}, {:rows => 10, :cols => 50, :external_control => "contact_numbers"} %>
+		  	<%= in_place_editor_field :house, 'contact_numbers', {}, {:rows => 10, :cols => 50, :load_text_url => { :controller => "houses", :action => "get_unformatted_text_contact", :id => @house.bu_code }, :external_control => "contact_numbers"} %>
 		</p>
 
 	<% else %>

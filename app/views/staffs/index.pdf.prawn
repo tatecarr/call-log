@@ -12,11 +12,11 @@ pdf.table @staffs.map { |staff|
   doh = "#{staff.doh.strftime("%m/%d/%Y")}"
   cell_phone = "#{staff.cell_number}"
   home_phone = "#{staff.home_number}"
-  exp_prefs = "#{staff.staff_info.experience_prefs(:plain)}"
-  skill_limit = "#{staff.staff_info.skills_limits(:plain)}"
+  exp_prefs = staff.staff_info.experience_prefs(:plain) == "Click here to add experience and preferences info." ? "" : "#{staff.staff_info.experience_prefs(:plain)}"
+  skill_limit = staff.staff_info.skills_limits(:plain) == "Click here to add skills and limits info." ? "" : "#{staff.staff_info.skills_limits(:plain)}"
   courses = "#{staff.courses.map {|course| course.name }.join(', ')}"
-  availability = "#{staff.staff_info.schedule_availability(:plain)}"
-  notes = "#{staff.staff_info.contact_notes(:plain)}"
+  availability = staff.staff_info.schedule_availability(:plain) == "Click here to add schedule and availability info." ? "": "#{staff.staff_info.schedule_availability(:plain)}"
+  notes = staff.staff_info.contact_notes(:plain) == "Click here to add conact info and other notes." ? "" : "#{staff.staff_info.contact_notes(:plain)}"
   
   [first_name + " " + last_name + "\nDOH " + doh, "C " + cell_phone + "\nH " + home_phone, exp_prefs, skill_limit, courses, availability, notes ]
 },

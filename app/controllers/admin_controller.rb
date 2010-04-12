@@ -287,9 +287,11 @@ class AdminController < ApplicationController
     # make sure we have people to import
     if lines.size > 0
 
-      # delete all the staff that aren't agency staff
+      # delete all the staff that ARE NOT agency staff
       Staff.delete_all(["agency_staff = ?", false])
-      Course.delete_all
+      
+      # delete all courses that ARE NOT for agency staff
+      remove_courses_except_non_res
       
       already_added = false
       prev_id = -1
@@ -375,6 +377,15 @@ class AdminController < ApplicationController
       flash[:error] = "The file you are trying to upload is not a .sql file"
       redirect_to :action => "backup_restore" and return
     end
+    
+    file = File.open(@import.csv.path, 'r')
+    lines = file.readlines
+    if lines.empty?
+      # remove the file and show error
+      @import.destroy
+      flash[:error] = "The selected file was empty"
+      redirect_to :action => "backup_restore" and return
+    end    
     
     require 'erb'
     require 'yaml'
@@ -538,5 +549,15 @@ class AdminController < ApplicationController
                 group by staffs.staff_id) as x
 
         where x.number > 2) AND staffs.org_level = 299")
+  	end
+  	
+  	def remove_courses_except_non_res
+  	  ActiveRecord::Base.connection.execute("
+  	  delete from courses
+  	  where courses.staff_id in 
+  	    (select staff_id 
+  	    from staffs 
+  	    where agency_staff = 0)  	  
+  	  ")  	 
   	end
 end

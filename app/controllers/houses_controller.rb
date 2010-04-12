@@ -177,4 +177,59 @@ class HousesController < ApplicationController
     end
   end
   
+  
+  def get_unformatted_text_ratio
+    @house = House.find_by_bu_code(params[:id])
+    render :text => @house.ratio(:source)
+  end
+  
+  def get_unformatted_text_relief
+    @house = House.find_by_bu_code(params[:id])
+    render :text => @house.relief_pay(:source)
+  end
+  
+  def get_unformatted_text_keys
+    @house = House.find_by_bu_code(params[:id])
+    render :text => @house.keys(:source)
+  end
+  
+  def get_unformatted_text_overview
+    @house = House.find_by_bu_code(params[:id])
+    render :text => @house.overview(:source)
+  end
+  
+  def get_unformatted_text_trainings
+    @house = House.find_by_bu_code(params[:id])
+    render :text => @house.trainings_needed(:source)
+  end
+  
+  def get_unformatted_text_medication
+    @house = House.find_by_bu_code(params[:id])
+    render :text => @house.medication_times(:source)
+  end
+  
+  def get_unformatted_text_waivers
+    @house = House.find_by_bu_code(params[:id])
+    render :text => @house.waivers(:source)
+  end
+  
+  def get_unformatted_text_schedule
+    @house = House.find_by_bu_code(params[:id])
+    render :text => @house.schedule_info(:source)
+  end
+  
+  def get_unformatted_text_behavior
+    @house = House.find_by_bu_code(params[:id])
+    render :text => @house.behavior_plans(:source)
+  end
+  
+  def get_unformatted_text_individuals
+    @house = House.find_by_bu_code(params[:id])
+    render :text => @house.individuals(:source)
+  end
+  
+  def get_unformatted_text_contact
+    @house = House.find_by_bu_code(params[:id])
+    render :text => @house.contact_numbers(:source)
+  end
 end

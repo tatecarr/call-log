@@ -66,10 +66,6 @@ module InPlaceMacrosHelper
 
     javascript_tag(function)
   end
-
-  def is_textiled_field(object, method)
-    object.class.respond_to?('textiled_attributes') and object.class.textiled_attributes.member?(method.to_sym)
-  end
   
   # Renders the value of the specified object and method with in-place editing capabilities.
   def in_place_editor_field(object, method, tag_options = {}, in_place_editor_options = {})
@@ -78,14 +74,7 @@ module InPlaceMacrosHelper
                    :id => "#{object}_#{method}_#{instance_tag.object.id}_in_place_editor",
                    :class => "in_place_editor_field"}.merge!(tag_options)
     in_place_editor_options[:url] = in_place_editor_options[:url] || url_for({ :action => "set_#{object}_#{method}", :id => instance_tag.object.id })
-     
-    if is_textiled_field(instance_tag.object, method)
-      in_place_editor_options[:load_text_url] = in_place_editor_options[:load_text_url] || url_for({ :action => "get_#{object}_#{method}_source", :id => instance_tag.object.id })
-      tag = content_tag(tag_options.delete(:tag), instance_tag.value(instance_tag.object),tag_options)
-    else
-      tag = content_tag(tag_options.delete(:tag), h(instance_tag.value(instance_tag.object)),tag_options)
-    end
-
+    tag = content_tag(tag_options.delete(:tag), (instance_tag.value(instance_tag.object)),tag_options)
     return tag + in_place_editor(tag_options[:id], in_place_editor_options)
   end
 end

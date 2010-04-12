@@ -758,6 +758,7 @@ Ajax.InPlaceEditor = Class.create({
     // Can't use triggerCallback due to backward compatibility: requires
     // binding + direct element
     this._boundComplete(transport, this.element);
+	window.location.reload();
   }
 });
 

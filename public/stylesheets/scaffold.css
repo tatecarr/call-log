@@ -5,6 +5,8 @@
 
 .in_place_editor_field {
 	cursor:pointer;
+	width:419px;
+	word-wrap: break-word;
 }
 
 .show-page-name {
@@ -218,8 +220,8 @@ fieldset { width: 300px;}
 	width: 650px;
 	margin: 0 auto;
 	border: 1px solid #CCC;
-	-moz-border-radius: 10px; 
-	-webkit-border-radius: 10px;
+	/*-moz-border-radius: 10px; 
+	-webkit-border-radius: 10px;*/
 	padding: 20px;
 	padding-top: 0px;
 	box-shadow: 4px 4px 8px #818181;

@@ -22,7 +22,7 @@
 				<td>Cell Phone:</td> 
 				<td><%= text_field_with_auto_complete :staff, :cell_number, :value => @cell_number %></td>
 				<td>Gender:</td>
-				<td><%= f.radio_button :gender_equals, :Male %>Male<%= f.radio_button :gender_equals, :Female %>Female<%= f.radio_button :gender_does_not_equal, :both %>Both</td>
+				<td><%= f.radio_button :gender_equals, :Male %>Male | <%= f.radio_button :gender_equals, :Female %>Female | <%= link_to_function "Clear", "document.getElementById('search_gender_equals_female').checked = false; document.getElementById('search_gender_equals_male').checked = false; return false;" %></td>
 			</tr>
 			<tr>
 				<% form_tag staffs_path, :method => 'get' do %>

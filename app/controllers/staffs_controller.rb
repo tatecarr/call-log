@@ -203,4 +203,50 @@ class StaffsController < ApplicationController
       
     end
   end  
+  
+  def add_course
+
+    unless params[:course][:name].empty?
+          @course = Course.new(params[:course])
+          @course.save
+    
+      render :update do |page|
+        page.visual_effect :fade, "no_courses_message", :duration => 0.0
+        page.insert_html :bottom, "courses_table", :partial => "staffs/staff_course"
+        page.visual_effect :highlight, "courses_table"
+        page[:new_course].reset
+      end
+    end
+
+  end
+  
+  def remove_course
+    
+    Course.delete(params[:course_id])
+    
+    render :update do |page|
+			page.visual_effect :fade, "course_#{params[:course_id]}", :duration => 0.25
+		end
+		    
+  end
+  
+  def get_unformatted_text_prefs
+    @staff = Staff.find_by_staff_id(params[:id])
+    render :text => @staff.staff_info.experience_prefs(:source)
+  end
+  
+  def get_unformatted_text_schedule
+    @staff = Staff.find_by_staff_id(params[:id])
+    render :text => @staff.staff_info.schedule_availability(:source)
+  end
+  
+  def get_unformatted_text_skills
+    @staff = Staff.find_by_staff_id(params[:id])
+    render :text => @staff.staff_info.skills_limits(:source)
+  end
+  
+  def get_unformatted_text_contact
+    @staff = Staff.find_by_staff_id(params[:id])
+    render :text => @staff.staff_info.contact_notes(:source)
+  end
 end

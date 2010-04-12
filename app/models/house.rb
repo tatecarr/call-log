@@ -9,6 +9,7 @@ class House < ActiveRecord::Base
   
   validates_presence_of :bu_code, :name
   validates_uniqueness_of :bu_code, :name
+  validates_numericality_of :bu_code
   
   acts_as_textiled :ratio, :relief_pay, :keys, :overview, :trainings_needed, :medication_times, :waivers, :schedule_info, 
                    :behavior_plans, :individuals, :contact_numbers

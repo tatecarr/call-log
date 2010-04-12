@@ -107,43 +107,79 @@
 
 <div style="float:left; width:450px; padding-top:33px; padding-bottom:10px;">
 		
-	<table>
+	<table id="courses_table">
 		<tr>
-			<td><b>Course:</b></td>
+			<td style="min-width:120px;"><b>Course:</b></td>
 			<td><b>Expiration:</b></td>
 		</tr>
 		
-		<% if @staff_courses.length == 0 %>
-			<tr>
-				<td colspan=2><%= @staff.first_name %> has not taken any courses.</td>
-			</tr>
-		<% else %>
-			<% for course in @staff_courses do %>
-				<% unless course.renewal_date.nil? %>
-					<tr class="<% if course.renewal_date < Time.now && (course.name == "Adult CPR" || course.name == "First Aid" || course.name == "MAPS") %>expired<% end %><% if course.renewal_date >= Time.now and course.renewal_date < Time.now+1.month && (course.name == "Adult CPR" || course.name == "First Aid" || course.name == "MAPS") %>warning<% end %>">
-						<td style="padding-right:10px;">
-							<% if course.name.blank? %>
-								Unknown
-							<% else %>
-								<%= course.name %>
-							<% end %>
+		<tr id="no_courses_message">
+			<% if @staff_courses.length == 0 %>
+				<td colspan=2>
+					<%= @staff.first_name %> has not taken any courses.
+				</td>
+			<% end %>
+		</tr>
+			
+		<% for course in @staff_courses do %>
+			<% unless course.renewal_date.nil? %>
+				<tr id="course_<%= course.id %>" class="<% if course.renewal_date < Time.now && (course.name == "Adult CPR" || course.name == "First Aid" || course.name == "MAPS") %>expired<% end %><% if course.renewal_date >= Time.now and course.renewal_date < Time.now+1.month && (course.name == "Adult CPR" || course.name == "First Aid" || course.name == "MAPS") %>warning<% end %>">
+					<td style="padding-right:10px;">
+						<% if course.name.blank? %>
+							Unknown
+						<% else %>
+							<%= course.name %>
+						<% end %>
+					</td>
+					<td><%= course.renewal_date.strftime("%B %d, %Y") %></td>
+					
+					<% if @staff.agency_staff %>
+						<td>
+							<%= form_remote_tag :url => url_for(:controller => 'staffs', :action => 'remove_course') %>
+							<%= hidden_field_tag 'course_id', course.id %>
+							<%= submit_tag "Remove" %>
+							</form>
 						</td>
-						<td><%= course.renewal_date.strftime("%B %d, %Y") %></td>
-					</tr>
-				<% else %>
-					<tr>
-						<td style="padding-right:10px;">
-							<% if course.name.blank? %>
-								Unknown
-							<% else %>
-								<%= course.name %>
-							<% end %>
-						</td>
-						<td>Unknown</td>
-				<% end %>
+					<% end %>						
+				</tr>
+			<% else %>
+				<tr>
+					<td style="padding-right:10px;">
+						<% if course.name.blank? %>
+							Unknown
+						<% else %>
+							<%= course.name %>
+						<% end %>
+					</td>
+					<td>Unknown</td>
 			<% end %>
 		<% end %>
 	</table>
+	
+	<% if @staff.agency_staff %>
+		<div style="padding-top:15px; font-size:14pt;">
+			<a href="#" onclick="Effect.toggle('add_course_form', 'slide', { duration: 0.3 }); return false;">Add Course</a>
+		</div>
+		<div id="add_course_form" style="display:none;">
+			<div>
+				<% remote_form_for Course.new, :url => { :controller => "staffs", :action => "add_course" } do |f| %>
+					<table>
+						<tr>
+							<td>Course Name:</td><td>Renewal Date:</td>
+						</tr>
+						<tr>
+							<td><%= f.text_field :name %></td>
+							<td><%= f.date_select :renewal_date %></td>
+							<%= f.hidden_field :staff_id, :value => @staff.staff_id %>
+						</tr>
+						<tr>
+							<td><%= f.submit "Add Course" %></td>
+						</tr>
+					</table>
+				<% end %>
+			</div>
+		</div>
+	<% end %>
 	
 </div>
 <br/>
@@ -152,21 +188,21 @@
 	<div style="float:left; width:440px;">
 		<p>
 			<span id="experience_prefs" class="in_place_editor_label"><b>Experience and Preferences: (Click to Edit)</b></span><br/>
-		  	<%= in_place_editor_field :staff_info, 'experience_prefs', {}, {:rows => 10, :cols => 50, :external_control => "experience_prefs"} %>
+		  	<%= in_place_editor_field :staff_info, 'experience_prefs', {}, {:rows => 10, :cols => 50, :load_text_url => { :controller => "staffs", :action => "get_unformatted_text_prefs", :id => @staff.staff_id }, :external_control => "experience_prefs"} %>
 		</p><br/>
 		<p>
 			<span id="skills_limits" class="in_place_editor_label"><b>Skills and Limits: (Click to Edit)</b></span><br/>
-		  	<%= in_place_editor_field :staff_info, 'skills_limits', {}, {:rows => 10, :cols => 50, :external_control => "skills_limits"} %>
+		  	<%= in_place_editor_field :staff_info, 'skills_limits', {}, {:rows => 10, :cols => 50, :load_text_url => { :controller => "staffs", :action => "get_unformatted_text_skills", :id => @staff.staff_id }, :external_control => "skills_limits"} %>
 		</p>
 	</div>
 	<div style="float:left; width:440px;">
 		<p>
 			<span id="schedule_availability" class="in_place_editor_label"><b>Schedule and Availability: (Click to Edit)</b></span><br/>
-		  	<%= in_place_editor_field :staff_info, 'schedule_availability', {}, {:rows => 10, :cols => 50, :external_control => "schedule_availability"} %>
+		  	<%= in_place_editor_field :staff_info, 'schedule_availability', {}, {:rows => 10, :cols => 50, :load_text_url => { :controller => "staffs", :action => "get_unformatted_text_schedule", :id => @staff.staff_id }, :external_control => "schedule_availability"} %>
 		</p><br/>
 		<p>
 			<span id="contact_notes" class="in_place_editor_label"><b>Contact Info and Notes: (Click to Edit)</b></span><br/>
-		  	<%= in_place_editor_field :staff_info, 'contact_notes', {}, {:rows => 10, :cols => 50, :external_control => "contact_notes"} %>
+		  	<%= in_place_editor_field :staff_info, 'contact_notes', {}, {:rows => 10, :cols => 50, :load_text_url => { :controller => "staffs", :action => "get_unformatted_text_contact", :id => @staff.staff_id }, :external_control => "contact_notes"} %>
 		</p><br/>
 	</div>
 
