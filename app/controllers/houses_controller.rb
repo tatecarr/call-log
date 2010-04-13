@@ -1,5 +1,10 @@
 class HousesController < ApplicationController
-
+  uses_tiny_mce :options => {
+                                :theme => 'advanced',
+                                :skin => "o2k7",
+                                :skin_variant => "silver"
+                              }
+  
   before_filter :login_required
 
   # creates the necessary ajax required for the in_place_editor_field
