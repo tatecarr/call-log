@@ -88,7 +88,12 @@ class StaffsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @staffs }
-      format.pdf  { render :layout => false }
+      format.pdf do
+        render  :pdf => "Staff Report",
+                :template => "staffs/index.pdf.erb",
+                :stylesheets => ["application", "prince"],
+                :layout => "pdf"
+      end
     end
   end
 
@@ -98,7 +103,14 @@ class StaffsController < ApplicationController
     @staff = Staff.find(params[:id])
     @staff_info = StaffInfo.find_by_staff_id(@staff.staff_id)
     @staff_courses = @staff.courses
-
+    
+    @course_options = []
+    for course in Course.find_by_sql("select distinct name from courses where name != '' order by name")
+      @course_options << course.name
+    end
+    
+    puts @course_options
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @staff }

@@ -21,10 +21,10 @@ require "smtp_tls"
 config.action_mailer.delivery_method = :smtp
 
 config.action_mailer.smtp_settings = {
-  :address => "smtp.gmail.com",
+  :address => "smtp.ne-arc.org",
   :port => 587,
-  :domain => 'gmail.com',
-  :user_name => "nearcsupport@gmail.com",
-  :password => "seniorproject",
+  :domain => 'ne-arc.org',
+  :user_name => "calllogadmin@ne-arc.org",
+  :password => "PeterBenTaylor",
   :authentication => :plain
 }

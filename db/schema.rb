@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100328152513) do
+ActiveRecord::Schema.define(:version => 20100418205239) do
 
   create_table "courses", :force => true do |t|
     t.integer  "staff_id"
@@ -40,12 +40,12 @@ ActiveRecord::Schema.define(:version => 20100328152513) do
     t.string   "phone2"
     t.string   "fax"
     t.text     "overview"
-    t.string   "ratio"
+    t.text     "ratio"
     t.text     "trainings_needed"
     t.text     "medication_times"
-    t.string   "relief_pay"
+    t.text     "relief_pay"
     t.text     "waivers"
-    t.string   "keys"
+    t.text     "keys"
     t.text     "schedule_info"
     t.text     "behavior_plans"
     t.datetime "created_at"

@@ -2,7 +2,9 @@ class HousesController < ApplicationController
   uses_tiny_mce :options => {
                                 :theme => 'advanced',
                                 :skin => "o2k7",
-                                :skin_variant => "silver"
+                                :skin_variant => "silver",
+                                :plugins => %w{ table },
+                                :theme_advanced_buttons3 => "tablecontrols"
                               }
   
   before_filter :login_required

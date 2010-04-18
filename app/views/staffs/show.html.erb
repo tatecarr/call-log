@@ -37,19 +37,19 @@
 				<% end %>
 			</tr>
 			<tr>
-				<td><b>Cell number:</b></td>
-				<% if @staff.cell_number.blank? %>
-					<td>None</td>
-				<% else %>
-					<td><%= @staff.cell_number %></td>
-				<% end %>
-			</tr>
-			<tr>
 				<td style="padding-right:10px"><b>Home number:</b></td>
 				<% if @staff.home_number.blank? %>
 					<td>None</td>
 				<% else %>
 					<td><%= @staff.home_number %></td>
+				<% end %>
+			</tr>
+			<tr>
+				<td><b>Cell number:</b></td>
+				<% if @staff.cell_number.blank? %>
+					<td>None</td>
+				<% else %>
+					<td><%= @staff.cell_number %></td>
 				<% end %>
 			</tr>
 			<tr>
@@ -176,7 +176,11 @@
 							<td>Course Name:</td><td>Renewal Date:</td>
 						</tr>
 						<tr>
-							<td><%= f.text_field :name %></td>
+
+							
+							<td><%= f.select :name, options_for_select(@course_options) %></td>
+							
+							
 							<td><%= f.date_select :renewal_date %></td>
 							<%= f.hidden_field :staff_id, :value => @staff.staff_id %>
 						</tr>
