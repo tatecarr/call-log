@@ -1,6 +1,6 @@
 <% content_tag_for(:tr, @course) do %>
 	<td><%= @course.name %></td>
-	<td><%= @course.renewal_date.strftime("%B %d, %Y") %></td>
+	<td><%= @course.renewal_date.strftime("%m/%d/%y") %></td>
 	<td>
 		<%= form_remote_tag :url => url_for(:controller => 'staffs', :action => 'remove_course') %>
 		<%= hidden_field_tag 'course_id', @course.id %>

@@ -2,8 +2,6 @@
 	<div style="text-align:right; font-size:20pt;">
 		<%= link_to 'Edit', edit_house_path(@house) %>
 	</div>
-<% else %>
-	<br/>
 <% end %>
 <div style="width:900px; text-align:center; padding-bottom:10px;">
 	
@@ -28,136 +26,12 @@
 		<% end %>
 	</div>
 </div>
-<div style="float:left; width:419px; padding:15px; border-right:2px solid #CCC;">
+
+<div>
 	
-	<div style="text-align:center;">
-		<span style="font-size:14pt;">Information</span>
-	</div>
+	<div class="staff_heading">Full Time Staff</div>
 	
-	<% if admin? || house_admin?(@house) %>
-
-		<p>
-			<span id="ratio" class="in_place_editor_label"><b>Ratio: (Click to Edit)</b></span><br/>
-		  	<%= in_place_editor_field :house, 'ratio', {}, {:rows => 10, :cols => 50, :load_text_url => { :controller => "houses", :action => "get_unformatted_text_ratio", :id => @house.bu_code }, :external_control => "ratio"} %>
-		</p>
-
-		<p>
-			<span id="relief_pay" class="in_place_editor_label"><b>Relief pay: (Click to Edit)</b></span><br/>
-		  	<%= in_place_editor_field :house, 'relief_pay', {}, {:rows => 10, :cols => 50, :load_text_url => { :controller => "houses", :action => "get_unformatted_text_relief", :id => @house.bu_code }, :external_control => "relief_pay"} %>
-		</p>
-
-		<p>
-			<span id="keys" class="in_place_editor_label"><b>Keys: (Click to Edit)</b></span><br/>
-		  	<%= in_place_editor_field :house, 'keys', {}, {:rows => 10, :cols => 50, :load_text_url => { :controller => "houses", :action => "get_unformatted_text_keys", :id => @house.bu_code }, :external_control => "keys"} %>
-		</p>
-
-		<p>
-			<span id="overview" class="in_place_editor_label"><b>Overview: (Click to Edit)</b></span><br/>
-		  	<%= in_place_editor_field :house, 'overview', {}, {:rows => 10, :cols => 50, :load_text_url => { :controller => "houses", :action => "get_unformatted_text_overview", :id => @house.bu_code }, :external_control => "overview"} %>
-		</p>
-
-		<p>
-			<span id="trainings" class="in_place_editor_label"><b>Trainings Needed: (Click to Edit)</b></span><br/>
-		  	<%= in_place_editor_field :house, 'trainings_needed', {}, {:rows => 10, :cols => 50, :load_text_url => { :controller => "houses", :action => "get_unformatted_text_trainings", :id => @house.bu_code }, :external_control => "trainings"} %>
-		</p>
-
-		<p>
-			<span id="med_times" class="in_place_editor_label"><b>Medication Times: (Click to Edit)</b></span><br/>
-		  	<%= in_place_editor_field :house, 'medication_times', {}, {:rows => 10, :cols => 50, :load_text_url => { :controller => "houses", :action => "get_unformatted_text_medication", :id => @house.bu_code }, :external_control => "med_times"} %>
-		</p>
-
-		<p>
-			<span id="waivers" class="in_place_editor_label"><b>Waivers: (Click to Edit)</b></span><br/>
-		  	<%= in_place_editor_field :house, 'waivers', {}, {:rows => 10, :cols => 50, :load_text_url => { :controller => "houses", :action => "get_unformatted_text_waivers", :id => @house.bu_code }, :external_control => "waivers"} %>
-		</p>
-
-		<p>
-			<span id="schedule_info" class="in_place_editor_label"><b>Schedule Info: (Click to Edit)</b></span><br/>
-		  	<%= in_place_editor_field :house, 'schedule_info', {}, {:rows => 10, :cols => 50, :load_text_url => { :controller => "houses", :action => "get_unformatted_text_schedule", :id => @house.bu_code }, :external_control => "schedule_info"} %>
-		</p>
-
-		<p>
-			<span id="behavior" class="in_place_editor_label"><b>Behavior Plans: (Click to Edit)</b></span><br/>
-		  	<%= in_place_editor_field :house, 'behavior_plans', {}, {:rows => 10, :cols => 50, :load_text_url => { :controller => "houses", :action => "get_unformatted_text_behavior", :id => @house.bu_code }, :external_control => "behavior"} %>
-		</p>
-		
-		<p>
-			<span id="individuals" class="in_place_editor_label"><b>Individuals: (Click to Edit)</b></span><br/>
-		  	<%= in_place_editor_field :house, 'individuals', {}, {:rows => 10, :cols => 50, :load_text_url => { :controller => "houses", :action => "get_unformatted_text_individuals", :id => @house.bu_code }, :external_control => "individuals"} %>
-		</p>
-		
-		<p>
-			<span id="contact_numbers" class="in_place_editor_label"><b>Contact Numbers: (Click to Edit)</b></span><br/>
-		  	<%= in_place_editor_field :house, 'contact_numbers', {}, {:rows => 10, :cols => 50, :load_text_url => { :controller => "houses", :action => "get_unformatted_text_contact", :id => @house.bu_code }, :external_control => "contact_numbers"} %>
-		</p>
-
-	<% else %>
-
-		<p>
-		  <b>Ratio:</b>
-		  <%= @house.ratio %>
-		</p>
-
-		<p>
-		  <b>Relief pay:</b>
-		  <%= @house.relief_pay %>
-		</p>
-
-		<p>
-		  <b>Keys:</b>
-		  <%= @house.keys %>
-		</p>
-
-		<p>
-		  <b>Overview:</b>
-		  <%= @house.overview %>
-		</p>
-
-		<p>
-		  <b>Trainings Needed:</b>
-		  <%= @house.trainings_needed %>
-		</p>
-
-		<p>
-		  <b>Medication Times:</b>
-		  <%= @house.medication_times %>
-		</p>
-
-		<p>
-		  <b>Waivers:</b>
-		  <%= @house.waivers %>
-		</p>
-
-		<p>
-		  <b>Schedule Info:</b>
-		  <%= @house.schedule_info %>
-		</p>
-
-		<p>
-		  <b>Behavior Plans:</b>
-		  <%= @house.behavior_plans %>
-		</p>
-		
-		<p>
-			<b>Individuals:</b>
-			<%= @house.individuals %>
-		</p>
-		
-		<p>
-			<b>Contact Numbers:</b>
-			<%= @house.contact_numbers %>
-		</p>
-
-	<% end %>
-</div>
-
-<div style="float:left; width:419px; padding:15px;">
-	
-	<div style="text-align:center;">
-		<span style="font-size:14pt;">Full Time Staff</span>
-	</div>
-	
-	<div id="Full Time Staff" style="padding-bottom:10px; border-bottom:2px solid #CCC">
+	<div id="Full Time Staff">
 		
 		<div id="no_full_time_staff">
 			<% if @ordered_full_time_staff.empty? %>
@@ -166,18 +40,15 @@
 		</div>
 		<% unless @ordered_full_time_staff.empty? %>
 			<p>
-				<%= render :partial => "house_staffs/house_staff", :collection => @ordered_full_time_staff %>
+				<%= render :partial => "house_staffs/house_staff", :collection => @ordered_full_time_staff%>
 			</p>
 		<% end %>
 	
 	</div>
 
-	<div style="text-align:center; padding-top:10px;">
-		<span style="font-size:14pt;">Relief Staff</span>
-	</div>
+	<div class="staff_heading">Relief Staff</div>
 	
-	<div id="Relief Staff" style="padding-bottom:10px; border-bottom:2px solid #CCC">
-	
+	<div id ="Relief Staff">
 		<div id="no_relief_staff">
 			<% if @ordered_relief_staff.empty? %>
 				<p>There are no relief staff added to the house yet.</p>
@@ -188,15 +59,11 @@
 				<%= render :partial => "house_staffs/house_staff", :collection => @ordered_relief_staff %>
 			</p>
 		<% end %>
-	
 	</div>
 
-	<div style="text-align:center; padding-top:10px;">
-		<span style="font-size:14pt;">Overtime Staff</span>
-	</div>
+	<div class="staff_heading">Overtime Staff</div>
 	
 	<div id="Overtime Staff">
-	
 		<div id="no_overtime_staff">
 			<% if @ordered_overtime_staff.empty? %>
 				<p>There are no overtime staff added to the house yet.</p>
@@ -207,15 +74,14 @@
 				<%= render :partial => "house_staffs/house_staff", :collection => @ordered_overtime_staff %>
 			</p>
 		<% end %>
-
-	</div><br/>
+	</div>
 	
 	<% if admin? || house_admin?(@house) %>
-		<div style="text-align:center; font-size:12pt; padding-top:10px;">
+		<div style="font-size:12pt; padding-top:10px; text-align: center;">
 			<a href="#" onclick="Effect.toggle('add_staff_form', 'slide', { duration: 0.3 }); return false;">Assign Staff</a>&nbsp;&nbsp;
 			<%= link_to 'Refresh List Order', @house %>
 		</div>
-		<div id="add_staff_form" style="display:none;">
+		<div id="add_staff_form" style="display:none;width: 330px; margin:0px auto;">
 			<div>
 				<div id="add_staff_message"></div>
 				<% remote_form_for [@house, HouseStaff.new] do |f| %>
@@ -223,16 +89,18 @@
 						<tr>
 							<td>
 								<%= f.label :staff_id, "Staff Member" %>
+							</td>
+							<td>
 								<%= text_field_with_auto_complete :staff, :full_name %>
 							</td>
 						</tr>
 						<tr>
-							<td>
-								<%= f.label :position_type, "Position type" %>
-								<%= f.select :position_type, options_for_select(["Full Time Staff","Relief Staff","Overtime Staff"]) %><br/>
-								<%= f.label :position_name, "Position" %>
-								<%= f.select :position_name, options_for_select(house_position_list) %>
-							</td>
+							<td><%= f.label :position_type, "Position type" %></td>
+							<td><%= f.select :position_type, options_for_select(["Full Time Staff","Relief Staff","Overtime Staff"]) %></td>
+						</tr>
+						<tr>
+							<td><%= f.label :position_name, "Position" %></td>
+							<td><%= f.select :position_name, options_for_select(house_position_list) %></td>
 						</tr>
 					</table>
 					<p><%= f.submit "Add Staff to House" %></p>
@@ -242,3 +110,61 @@
 	<% end %>
 
 </div>
+
+	<p>
+	  <b>Ratio:</b>
+	  <%= @house.ratio %>
+	</p>
+
+	<p>
+	  <b>Relief pay:</b>
+	  <%= @house.relief_pay %>
+	</p>
+
+	<p>
+	  <b>Keys:</b>
+	  <%= @house.keys %>
+	</p>
+
+	<p>
+	  <b>Overview:</b>
+	  <%= @house.overview %>
+	</p>
+
+	<p>
+	  <b>Trainings Needed:</b>
+	  <%= @house.trainings_needed %>
+	</p>
+
+	<p>
+	  <b>Medication Times:</b>
+	  <%= @house.medication_times %>
+	</p>
+
+	<p>
+	  <b>Waivers:</b>
+	  <%= @house.waivers %>
+	</p>
+
+	<p>
+	  <b>Schedule Info:</b>
+	  <%= @house.schedule_info %>
+	</p>
+
+	<p>
+	  <b>Behavior Plans:</b>
+	  <%= @house.behavior_plans %>
+	</p>
+	
+	<p>
+		<b>Individuals:</b>
+		<%= @house.individuals %>
+	</p>
+	
+	<p>
+		<b>Contact Numbers:</b>
+		<%= @house.contact_numbers %>
+	</p>
+
+</div>
+
