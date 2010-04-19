@@ -32,6 +32,13 @@ class StaffsController < ApplicationController
       params[:search][:cell_number_like] = @cell_number unless params[:staff].nil?
       params[:search][:payrate_gt] = params[:search][:payrate_gt].to_f unless params[:search].nil? or params[:search][:payrate_gt].to_f == 0
       params[:search][:payrate_lt] = params[:search][:payrate_lt].to_f unless params[:search].nil? or params[:search][:payrate_lt].to_f == 0
+      
+      # default to relief staff
+      unless params[:search]
+        params[:search] = Hash.new
+      end
+      params[:search][:org_level_equals] = 299 if params[:org_level].nil?
+      @org_level = true unless params[:org_level].nil?
 
       @search = Staff.search(params[:search])
     
@@ -67,7 +74,7 @@ class StaffsController < ApplicationController
         @staffs = @search.sort_by(&:last_name).paginate :per_page => @selected_number, :page => params[:page]
       end
     
-      if @staffs.length == 1 
+      if @staffs.length == 1 and params[:page].nil?
         redirect_to @staffs[0] and return
       end
     

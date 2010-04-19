@@ -3,7 +3,7 @@
 <div style="float:left; width:448px; padding-bottom:10px;">
 	
 	<div class="show-page-name">
-		<%=h @staff.first_name %> <%=h @staff.last_name %> (<%=h @staff.staff_id %>)
+		<%=h @staff.first_name %> <%=h @staff.last_name %>
 	</div>
 	
 	<div style="padding-left:15px;">
@@ -139,7 +139,7 @@
 							<%= course.name %>
 						<% end %>
 					</td>
-					<td><%= course.renewal_date.strftime("%B %d, %Y") %></td>
+					<td><%= course.renewal_date.strftime("%m/%d/%y") %></td>
 					
 					<% if @staff.agency_staff %>
 						<td>

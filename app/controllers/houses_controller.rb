@@ -4,23 +4,13 @@ class HousesController < ApplicationController
                                 :skin => "o2k7",
                                 :skin_variant => "silver",
                                 :plugins => %w{ table },
-                                :theme_advanced_buttons3 => "tablecontrols"
+                                :theme_advanced_buttons3 => "tablecontrols",
+                                :theme_advanced_resizing => true,
+                                :theme_advanced_statusbar_location => "bottom",
+                                :theme_advanced_toolbar_location => "top"
                               }
   
   before_filter :login_required
-
-  # creates the necessary ajax required for the in_place_editor_field
-  in_place_edit_for :house, :ratio
-  in_place_edit_for :house, :relief_pay
-  in_place_edit_for :house, :keys
-  in_place_edit_for :house, :overview
-  in_place_edit_for :house, :trainings_needed
-  in_place_edit_for :house, :medication_times
-  in_place_edit_for :house, :waivers
-  in_place_edit_for :house, :schedule_info
-  in_place_edit_for :house, :behavior_plans
-  in_place_edit_for :house, :individuals
-  in_place_edit_for :house, :contact_numbers
   
 #------------------- Creates AJAX methods for autocompleting forms -----------------
   
@@ -192,61 +182,5 @@ class HousesController < ApplicationController
       format.html { redirect_to(houses_url) }
       format.xml  { head :ok }
     end
-  end
-  
-  
-  def get_unformatted_text_ratio
-    @house = House.find_by_bu_code(params[:id])
-    render :text => @house.ratio(:source)
-  end
-  
-  def get_unformatted_text_relief
-    @house = House.find_by_bu_code(params[:id])
-    render :text => @house.relief_pay(:source)
-  end
-  
-  def get_unformatted_text_keys
-    @house = House.find_by_bu_code(params[:id])
-    render :text => @house.keys(:source)
-  end
-  
-  def get_unformatted_text_overview
-    @house = House.find_by_bu_code(params[:id])
-    render :text => @house.overview(:source)
-  end
-  
-  def get_unformatted_text_trainings
-    @house = House.find_by_bu_code(params[:id])
-    render :text => @house.trainings_needed(:source)
-  end
-  
-  def get_unformatted_text_medication
-    @house = House.find_by_bu_code(params[:id])
-    render :text => @house.medication_times(:source)
-  end
-  
-  def get_unformatted_text_waivers
-    @house = House.find_by_bu_code(params[:id])
-    render :text => @house.waivers(:source)
-  end
-  
-  def get_unformatted_text_schedule
-    @house = House.find_by_bu_code(params[:id])
-    render :text => @house.schedule_info(:source)
-  end
-  
-  def get_unformatted_text_behavior
-    @house = House.find_by_bu_code(params[:id])
-    render :text => @house.behavior_plans(:source)
-  end
-  
-  def get_unformatted_text_individuals
-    @house = House.find_by_bu_code(params[:id])
-    render :text => @house.individuals(:source)
-  end
-  
-  def get_unformatted_text_contact
-    @house = House.find_by_bu_code(params[:id])
-    render :text => @house.contact_numbers(:source)
   end
 end

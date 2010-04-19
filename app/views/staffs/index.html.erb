@@ -28,6 +28,8 @@
 				<% form_tag staffs_path, :method => 'get' do %>
 					<td>Results per page:</td> 
 					<td><%= select_tag :number_per_page, options_for_select(@number_per_page_options, selected = @number_per_page) %></td>
+					<td>Include Non-Relief?:</td> 
+					<td><%= check_box_tag :org_level, "1", @org_level %></td> 
 			</tr>
 			<tr>
 				<td><%= submit_tag "Search", :disable_with => 'Searching...' %></td>

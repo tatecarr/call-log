@@ -241,31 +241,27 @@ fieldset { width: 300px;}
 /* admin page */
 
 #add-user-form {
-	float: left;
-	width: 300px;
-	clear: left;
 }
 
 #current-users {
-	float: left;
-	width: 600px;
-	clear:right;
+	width: 900px;
 }
 
 .user_username {
-	width: 150px;
+	width: 300px;
 	float:left;
 }
 
 .user_email {
-	width: 250px;
+	width: 300px;
 	float:left;
 }
 
 .user_role {
-	width: 130px;
+	width: 225px;
 	float:left;
 }
+
 
 .houses {
 	margin-left: 30px;
@@ -419,13 +415,6 @@ td.expired {
 border: 1px solid #CCC;
 }
 
-tr.warning {
-  background-color: #FFEE99;
-}
-
-tr.expired {
-  background-color: #FFDDDD;
-}
 
 #list-table tr:hover {
   background-color: #CCC;
@@ -595,4 +584,33 @@ div.user_house {
 
 form.add_permission {
 	margin-left: 30px;
+}
+
+#house_staff_name {
+	float: left;
+	width: 300px;
+	overflow: hidden;
+}
+
+#house_staff_position {
+	float: left;
+	width: 200px;
+}
+
+#house_staff_remove_link {
+	float: left;
+	width: 75px;
+}
+
+.house_staff {
+	padding: 2px 0px;
+	border-bottom: 1px solid #CCC;
+	width: 575px;
+	margin: 0px auto;
+}
+
+.staff_heading {
+	font-size: 14pt;
+	margin-left: 140px;
+	margin-top: 10px;
 }

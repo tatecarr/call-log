@@ -6,17 +6,11 @@
 	<h2>Add a User</h2>
 	<% form_for @user, :url => {:action => 'add_user' } do |f| -%>
 		<p>
-			Email Address of User:<br />
-		  	<%= f.text_field :email %> 
-		</p>
-		<p>
-			Account Type:<br/>
+			Email Address of User: <%= f.text_field :email %> Account Type:
 			<%= select("user", "role", %w[House-Admin System-Admin]) %> &nbsp;
-		</p>
-		<%= f.hidden_field :system_generated_pw, :value => true %>
-		<p>
 			<%= f.submit "Add User", :disable_with => 'Adding...' %>
 		</p>
+		<%= f.hidden_field :system_generated_pw, :value => true %>
 	<% end -%>
 	</div>
 
@@ -39,7 +33,7 @@
 						<%= render :partial => "user_house", :collection => user.user_houses %>
 				</div>
 			
-				<div id="add_house_message_<%= user.id %>"><h3 style="margin: 0px;">Add Permission</h3></div>
+				<div id="add_house_message_<%= user.id %>"><h3 style="margin: 0px; clear: left;">Add Permission</h3></div>
 				<% form_remote_tag :url => { :controller => "admin", :action => "create" }, :html => {:id => "form_#{user.id}", :class => "add_permission"} do %>
 					House:
 					<%= my_text_field_with_auto_complete :house, :full_info, {:index => user.id} %>
