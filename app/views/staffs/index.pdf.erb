@@ -1,1 +1,64 @@
-<p>Hello Prince!</p>
+
+<table id="list-table">
+<% unless @staffs.empty? %>	
+
+	<thead>
+		<tr class='header'>
+			<td class='name'>Name / DOH</td>
+			<td class='contact_info'>Contact Information</td>
+			<td class='trainings'>Trainings</td>
+			<td class='admin_notes'>Experience and Preferences</td>
+			<td class='admin_notes'>Skills and Limitations</td>
+			<td class='admin_notes'>Schedule Availability</td>
+			<td class='admin_notes'>Notes</td>
+		</tr>
+	</thead>
+
+	<% @staffs.each_with_index do |staff, i| %>	
+	  <tr class="<% if i % 2 == 1 %>odd<% end %>" >
+	    <td class='name'>
+			<%= staff.first_name %> <%= staff.last_name %><br/>
+			DOH:&nbsp;&nbsp;<%= staff.doh.strftime("%m/%d/%y") %>
+		</td>
+		<td>
+			H:&nbsp;&nbsp;<%= staff.home_number %><br/>
+			C:&nbsp;&nbsp;<%= staff.cell_number %><br/>
+			W:&nbsp;&nbsp;<%= staff.work_number %><br/>
+		</td>
+		
+		<td class='trainings'>
+			<% for course in important_courses(staff) %>
+				<%= course.name %> <%= course.renewal_date.strftime("%m/%d/%y") %><br/>
+			<% end %>			
+		</td>
+
+		<% unless staff.staff_info.experience_prefs(:plain) == "Click here to add experience and preferences info." %>
+	    	<td class='admin_notes'><%= staff.staff_info.experience_prefs %></td>
+		<% else %>
+			<td>&nbsp;</td>
+		<% end %>
+		
+		<% unless staff.staff_info.skills_limits(:plain) == "Click here to add skills and limits info." %>
+	    	<td><%= staff.staff_info.skills_limits %></td>
+		<% else %>
+			<td>&nbsp;</td>
+		<% end %>
+		
+		<% unless staff.staff_info.schedule_availability(:plain) == "Click here to add schedule and availability info." %>
+		    <td><%= staff.staff_info.schedule_availability %></td>
+		<% else %>
+			<td>&nbsp;</td>
+		<% end %>
+		
+		<% unless staff.staff_info.contact_notes(:plain) == "Click here to add conact info and other notes." %>
+	    	<td><%= staff.staff_info.contact_notes %></td>
+		<% else %>
+			<td>&nbsp;</td>
+		<% end %>
+	  </tr>
+	<% end %>
+<% else %>
+	<tr id="no-results"><td>No corresponding staff found in the database.</td></tr>
+<% end %>
+
+</table>

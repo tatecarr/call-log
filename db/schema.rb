@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100418205239) do
+ActiveRecord::Schema.define(:version => 20100418220307) do
 
   create_table "courses", :force => true do |t|
     t.integer  "staff_id"
@@ -90,7 +90,7 @@ ActiveRecord::Schema.define(:version => 20100418205239) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "full_name"
-    t.decimal  "payrate",      :precision => 10, :scale => 2
+    t.decimal  "payrate",      :precision => 8, :scale => 2
     t.string   "work_number"
     t.string   "status"
     t.string   "email"

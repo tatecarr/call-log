@@ -1,0 +1,238 @@
+<% @houses.each do |house| %>
+
+<%
+directors = HouseStaff.find(:all, :conditions => ['bu_code = ? 
+AND position_name IN (?)', house.bu_code, 
+["Residential Director", "Nurse Case Manager", "Clinical Manager", "Assistant House Director", "House Coordinator"]])
+
+managers = HouseStaff.find(:all, :conditions => ['bu_code = ? 
+AND position_name = ?', house.bu_code, 
+"House Manager"])
+
+skills_instructors = HouseStaff.find(:all, :conditions => ['bu_code = ? 
+AND position_name = ?', house.bu_code, 
+"Skills Instructor"])
+
+overnights = HouseStaff.find(:all, :conditions => ['bu_code = ? 
+AND position_name in (?)', house.bu_code, 
+["Awake Overnight", "Sleep Overnight"]])
+
+reliefs = HouseStaff.find(:all, :conditions => ['bu_code = ? 
+AND position_name = ?', house.bu_code, 
+"Relief Manager"])
+
+pss = HouseStaff.find(:all, :conditions => ['bu_code = ? 
+AND position_name = ?', house.bu_code, "PSS"])	 
+%>
+
+<div class="house_profile">
+	
+<div id="heading">
+	<div class="show-page-name"><%=h house.name %> (<%=h house.bu_code %>)</div>
+	<div class="show-page-info"><%=h house.address %></div>
+	<div class="show-page-info"><%=h house.city %>, <%=h house.state %> <%=h house.zip %></div>
+	<div class="show-page-info">
+		<% if house.phone1.blank? %>
+			None //
+		<% else %>
+			<%= house.phone1 %> //
+		<% end %>
+		<% if house.phone2.blank? %>
+			None //
+		<% else %>
+			<%= house.phone2 %> //
+		<% end %>
+		<% if house.fax.blank? %>
+			Fax - None
+		<% else %>
+			<%= house.fax %>
+		<% end %>
+	</div>
+</div>
+	
+	
+<h3>Directors</h3>
+<% if directors.empty? %>
+	<p>No directors are assigned to this house profile.</p>
+<% else %>
+	<table>
+		<tr>
+			<th>Name</th>
+			<th>Position</th>
+			<th>Trainings</th>
+			<th>Phone</th>
+		</tr>
+	<% directors.each do |house_staff| %>
+		<tr>
+			<td><%= house_staff.staff.first_name + " " + house_staff.staff.last_name %></td>
+	   		<td><%= house_staff.position_name %></td>
+			<td><%= important_courses(house_staff.staff).map { |course| course.name + "/" } %></td>
+			<td>Home: <%= house_staff.staff.home_number %><br/>Cell: <%= house_staff.staff.cell_number %></td>
+		</tr>
+	<% end %>
+	</table>
+<% end %>
+<h3>Managers</h3>
+<% if managers.empty? %>
+	<p>No managers are assigned to this house profile.</p>
+<% else %>
+	<table>
+		<tr>
+			<th>Name</th>
+			<th>Position</th>
+			<th>Trainings</th>
+			<th>Phone</th>
+		</tr>
+	<% managers.each do |house_staff| %>
+		<tr>
+			<td><%= house_staff.staff.first_name + " " + house_staff.staff.last_name %></td>
+	   		<td><%= house_staff.position_name %></td>
+			<td><%= "CPR: 12/04/11 \n Cert2:04/28/12" %></td>
+			<td>Home: <%= house_staff.staff.home_number %><br/>Cell: <%= house_staff.staff.cell_number %></td>
+		</tr>
+	<% end %>
+	</table>
+<% end %>
+<h3>Skills Instructors</h3>
+<% if skills_instructors.empty? %>
+	<p>No skills instructors are assigned to this house profile.</p>
+<% else %>
+	<table>
+		<tr>
+			<th>Name</th>
+			<th>Position</th>
+			<th>Trainings</th>
+			<th>Phone</th>
+		</tr>
+	<% skills_instructors.each do |house_staff| %>
+		<tr>
+			<td><%= house_staff.staff.first_name + " " + house_staff.staff.last_name %></td>
+	   		<td><%= house_staff.position_name %></td>
+			<td><%= "CPR: 12/04/11 \n Cert2:04/28/12" %></td>
+			<td>Home: <%= house_staff.staff.home_number %><br/>Cell: <%= house_staff.staff.cell_number %></td>
+		</tr>
+	<% end %>
+	</table>
+<% end %>
+<h3>Overnight Staff</h3>
+<% if overnights.empty? %>
+	<p>No overnight staff are assigned to this house profile.</p>
+<% else %>
+	<table>
+		<tr>
+			<th>Name</th>
+			<th>Position</th>
+			<th>Trainings</th>
+			<th>Phone</th>
+		</tr>
+	<% overnights.each do |house_staff| %>
+		<tr>
+			<td><%= house_staff.staff.first_name + " " + house_staff.staff.last_name %></td>
+	   		<td><%= house_staff.position_name %></td>
+			<td><%= "CPR: 12/04/11 \n Cert2:04/28/12" %></td>
+			<td>Home: <%= house_staff.staff.home_number %><br/>Cell: <%= house_staff.staff.cell_number %></td>
+		</tr>
+	<% end %>
+	</table>
+<% end %>
+<h3>Relief Staff</h3>
+<% if reliefs.empty? %>
+	<p>No relief staff are assigned to this house profile.</p>
+<% else %>
+	<table>
+		<tr>
+			<th>Name</th>
+			<th>Position</th>
+			<th>Trainings</th>
+			<th>Phone</th>
+		</tr>
+	<% reliefs.each do |house_staff| %>
+		<tr>
+			<td><%= house_staff.staff.first_name + " " + house_staff.staff.last_name %></td>
+	   		<td><%= house_staff.position_name %></td>
+			<td><%= "CPR: 12/04/11 \n Cert2:04/28/12" %></td>
+			<td>Home: <%= house_staff.staff.home_number %><br/>Cell: <%= house_staff.staff.cell_number %></td>
+		</tr>
+	<% end %>
+	</table>
+<% end %>
+<h3>PSS</h3>
+<% if pss.empty? %>
+	<p>No pss are assigned to this house profile.</p>
+<% else %>
+	<table>
+		<tr>
+			<th>Name</th>
+			<th>Position</th>
+			<th>Trainings</th>
+			<th>Phone</th>
+		</tr>
+	<% pss.each do |house_staff| %>
+		<tr>
+			<td><%= house_staff.staff.first_name + " " + house_staff.staff.last_name %></td>
+	   		<td><%= house_staff.position_name %></td>
+			<td><%= "CPR: 12/04/11 \n Cert2:04/28/12" %></td>
+			<td>Home: <%= house_staff.staff.home_number %><br/>Cell: <%= house_staff.staff.cell_number %></td>
+		</tr>
+	<% end %>
+	</table>
+<% end %>	
+
+
+<p>
+  <b>Brief Overview of House:</b>
+  <%= house.overview %>
+</p>
+
+<p>
+  <b>Ratio:</b>
+  <%= house.ratio %>
+</p>
+
+<p>
+  <b>Trainings Needed:</b>
+  <%= house.trainings_needed %>
+</p>
+
+<p>
+  <b>Medication Times:</b>
+  <%= house.medication_times %>
+</p>
+
+<p>
+  <b>Relief pay:</b>
+  <%= house.relief_pay %>
+</p>
+
+<p>
+  <b>Waivers:</b>
+  <%= house.waivers %>
+</p>
+
+<p>
+  <b>Keys:</b>
+  <%= house.keys %>
+</p>
+
+<p>
+  <b>Important Schedule Information:</b>
+  <%= house.schedule_info %>
+</p>
+
+<p>
+  <b>Behavior Plans:</b>
+  <%= house.behavior_plans %>
+</p>
+
+<p>
+	<b>Individuals:</b>
+	<%= house.individuals %>
+</p>
+
+<p>
+	<b>Contact Numbers:</b>
+	<%= house.contact_numbers %>
+</p>
+
+</div>
+<% end %>

@@ -91,7 +91,7 @@ class StaffsController < ApplicationController
       format.pdf do
         render  :pdf => "Staff Report",
                 :template => "staffs/index.pdf.erb",
-                :stylesheets => ["application", "prince"],
+                :stylesheets => ["application", "prince", "scaffold"],
                 :layout => "pdf"
       end
     end

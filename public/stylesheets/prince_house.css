@@ -1,0 +1,31 @@
+@page {
+	size: US-Letter;
+	margin: 30pt;
+}
+
+#heading {
+	text-align:center; 
+	padding-bottom: 10px;
+}
+
+.house_profile {
+	page-break-after: always;
+	text-align: left;
+	width: 8in;
+}
+
+table {
+	border-collapse: collapse;
+	border: 1px solid #000;
+	width: 7.5in;
+}
+
+table td, th {
+	vertical-align: top;
+	padding: 5px;
+	border: 1px solid #000;
+}
+
+table th {
+	background-color: #EEE;
+}

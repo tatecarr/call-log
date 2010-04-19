@@ -1,0 +1,34 @@
+@page {
+	size: US-letter landscape;
+	margin: 30pt 30pt 30pt 30pt;
+}
+
+#list-table td {
+	border:1px solid;
+	padding:5px;
+	page-break-inside: avoid;
+	text-align:left;
+	vertical-align: top;
+}
+
+.header td {
+	text-align:center;
+	border:2px solid;
+	font-weight:bold;
+	background-color: #DDDDDD;
+	padding:5px;
+}
+
+.name {
+	text-align:center;
+	width:140px;
+}
+
+.contact_info {
+	text-align:center;
+	width:135px;
+}
+
+.trainings {
+	width:135px;
+}

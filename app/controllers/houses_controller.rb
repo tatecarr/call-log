@@ -61,14 +61,14 @@ class HousesController < ApplicationController
     ### TODO gives error if one house is in the database...can't evaluate params[:search]...also must fix this problem while adding houses
     ### I think I fixed this, but needs a little testing with adding/removing houses, searching, and pdf stuff when that gets implemented.
 
-    if params[:search]
-      
-      if @houses.length == 1 && params[:search][:bu_code_equals].nil?
-        redirect_to @houses[0]
-      end
-    
-    # Else display the page accordingly depending on the type of request.
-    else
+    # if params[:search]
+    #       
+    #       if @houses.length == 1 && params[:search][:bu_code_equals].nil?
+    #         redirect_to @houses[0]
+    #       end
+    #     
+    #     # Else display the page accordingly depending on the type of request.
+    #     else
       
       # makes it so that the first time the page is viewed, the houses are ordered by bu_code.
       # then the user can click a column heading and use the search to manipulate the list and order.
@@ -78,9 +78,14 @@ class HousesController < ApplicationController
       respond_to do |format|
         format.html # index.html.erb
         format.xml  { render :xml => @houses }
-        format.pdf  { render :layout => false }
+        format.pdf do
+          render  :pdf => "House Report",
+                  :template => "houses/index.pdf.erb",
+                  :stylesheets => ["application", "prince_house", "scaffold"],
+                  :layout => "pdf"
+        end
       end
-    end
+    #end
   end
 
 #----------------------- Action for displaying house pages -------------------------
@@ -100,7 +105,12 @@ class HousesController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @house }
-      format.pdf { render :layout => false }
+      format.pdf do
+        render  :pdf => "House Report",
+                :template => "houses/show.pdf.erb",
+                :stylesheets => ["application", "prince_house", "scaffold"],
+                :layout => "pdf"
+      end
     end
   end
 
