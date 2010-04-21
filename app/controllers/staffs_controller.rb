@@ -115,8 +115,9 @@ class StaffsController < ApplicationController
     for course in Course.find_by_sql("select distinct name from courses where name != '' order by name")
       @course_options << course.name
     end
-    
-    puts @course_options
+    @course_options << "Adult CPR" if !@course_options.include?("Adult CPR")
+    @course_options << "First Aid" if !@course_options.include?("First Aid")
+    @course_options << "MAPS" if !@course_options.include?("MAPS")
     
     respond_to do |format|
       format.html # show.html.erb
@@ -146,12 +147,21 @@ class StaffsController < ApplicationController
   # POST /staffs.xml
   def create
     @staff = Staff.new(params[:staff])
-    @staff.full_name = params[:staff][:first_name] + " " + params[:staff][:last_name] + " (" + (Staff.last.id + 1).to_s + ")"
-    
-    # for agency staff the id and staff_id are the same.  it's also used for the staff_info record, so assigning to variable.
-    staff_id = (Staff.last.id + 1).to_s
-    @staff.id = staff_id
-    @staff.staff_id = staff_id
+    staff_id = 1
+
+    if Staff.last.nil?
+      
+      @staff.full_name = params[:staff][:first_name] + " " + params[:staff][:last_name] + " (1)"
+      @staff.id = @staff.staff_id = 1
+      
+    else
+
+      # for agency staff the id and staff_id are the same.  it's also used for the staff_info record, so assigning to variable.
+      staff_id = (Staff.last.id + 1).to_s
+      @staff.full_name = params[:staff][:first_name] + " " + params[:staff][:last_name] + " (" + staff_id + ")"
+      @staff.id = @staff.staff_id = staff_id
+      
+    end
     
     @staff_info = StaffInfo.new
     # set the record's staff_id to that of the staff member being created.
@@ -226,14 +236,19 @@ class StaffsController < ApplicationController
   def add_course
 
     unless params[:course][:name].empty?
-          @course = Course.new(params[:course])
-          @course.save
-    
+      @course = Course.new(params[:course])
+      
       render :update do |page|
-        page.visual_effect :fade, "no_courses_message", :duration => 0.0
-        page.insert_html :bottom, "courses_table", :partial => "staffs/staff_course"
-        page.visual_effect :highlight, "courses_table"
-        page[:new_course].reset
+        
+        if @course.save
+          page.visual_effect :fade, "no_courses_message", :duration => 0.0
+          page.insert_html :bottom, "courses_table", :partial => "staffs/staff_course"
+          page.visual_effect :highlight, "courses_table"
+          #page[:new_course].reset
+        else
+          page << "alert('Error adding course.  Please check to see that the course has not already been added to this staff.')"
+        end
+        
       end
     end
 

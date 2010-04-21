@@ -131,15 +131,17 @@
 			
 		<% for course in @staff_courses do %>
 			<% unless course.renewal_date.nil? %>
-				<tr id="course_<%= course.id %>" class="<% if course.renewal_date < Time.now && (course.name == "Adult CPR" || course.name == "First Aid" || course.name == "MAPS") %>expired<% end %><% if course.renewal_date >= Time.now and course.renewal_date < Time.now+1.month && (course.name == "Adult CPR" || course.name == "First Aid" || course.name == "MAPS") %>warning<% end %>">
-					<td style="padding-right:10px;">
+				<tr id="course_<%= course.id %>">
+					<td style="padding-right:10px;" class="<% if course.renewal_date < Time.now && (course.name == "Adult CPR" || course.name == "First Aid" || course.name == "MAPS") %>expired<% end %><% if course.renewal_date >= Time.now and course.renewal_date < Time.now+1.month && (course.name == "Adult CPR" || course.name == "First Aid" || course.name == "MAPS") %>warning<% end %>">
 						<% if course.name.blank? %>
 							Unknown
 						<% else %>
 							<%= course.name %>
 						<% end %>
 					</td>
-					<td><%= course.renewal_date.strftime("%m/%d/%y") %></td>
+					<td class="<% if course.renewal_date < Time.now && (course.name == "Adult CPR" || course.name == "First Aid" || course.name == "MAPS") %>expired<% end %><% if course.renewal_date >= Time.now and course.renewal_date < Time.now+1.month && (course.name == "Adult CPR" || course.name == "First Aid" || course.name == "MAPS") %>warning<% end %>">
+						<%= course.renewal_date.strftime("%m/%d/%y") %>
+					</td>
 					
 					<% if @staff.agency_staff %>
 						<td>
