@@ -287,11 +287,11 @@ class AdminController < ApplicationController
     # make sure we have people to import
     if lines.size > 0
 
-      # delete all the staff that ARE NOT agency staff
-      Staff.delete_all(["agency_staff = ?", false])
-      
       # delete all courses that ARE NOT for agency staff
       remove_courses_except_non_res
+
+      # delete all the staff that ARE NOT agency staff
+      Staff.delete_all(["agency_staff = ?", false])
       
       already_added = false
       prev_id = -1
@@ -439,23 +439,26 @@ class AdminController < ApplicationController
       if theFile
         theFile.readlines.each do |line|
           
-          # ne-arc's input file was within quotation marks...
+          # ne-arc's input file was within quotation marks...   not anymore...thanks guys.
           #
           # remove leading quotation mark.
           line.sub!(/\A"/, "")
           
+          # remove second quote, which is around the "last, fist"
+          line.sub!(/\s*"\s*/, "")
+          
           # remove trailing quotation mark.
-          line.sub!(/"\s*\Z/, "")
+          #line.sub!(/"\s*\Z/, "")
           
           # if any of the comma delimeted elements contains a comma, their system surrounds
-          # that element with double quotes.
+          # that element with quotes.
           
-          # So if the line matches ""..anything..""
-          if line =~ /"".*""/
+          # So if the line matches "..anything.."
+          if line =~ /".*"/
             
             # gsub applies the substitute for each match in the string.  So we remove the commas
             # and then the double quotes.
-            line.gsub!(/"".*""/, line.match(/"".*""/)[0].gsub(/,/, "").gsub(/"/, ""))
+            line.gsub!(/".*"/, line.match(/".*"/)[0].gsub(/,/, "").gsub(/"/, ""))
             
           end
           
@@ -482,8 +485,8 @@ class AdminController < ApplicationController
       # set up the params hash
       staff = Staff.new
       staff.staff_id = line[@row_positions[:employee_number]].to_i
-      staff.first_name = line[@row_positions[:first_name]].strip
-      staff.last_name = line[@row_positions[:last_name]].strip
+      staff.first_name = line[@row_positions[:first_name]].match(/[A-Za-z0-9.\s]*/).to_s.strip
+      staff.last_name = line[@row_positions[:last_name]].match(/[A-Za-z0-9.\s]*/).to_s.strip
       staff.full_name = staff.first_name + " " + staff.last_name + " (" + line[@row_positions[:employee_number]].match(/\d+/)[0] +")"
       staff.address = line[@row_positions[:address]]
       staff.city = line[@row_positions[:city]]
@@ -554,11 +557,14 @@ class AdminController < ApplicationController
   	
   	def remove_courses_except_non_res
   	  ActiveRecord::Base.connection.execute("
-  	  delete from courses
-  	  where courses.staff_id in 
+  	  
+  	  delete from courses 
+  	  where courses.staff_id not in 
   	    (select staff_id 
   	    from staffs 
-  	    where agency_staff = 0)  	  
-  	  ")  	 
+  	    where agency_staff = true)
+  	    
+  	  ")
+
   	end
 end
