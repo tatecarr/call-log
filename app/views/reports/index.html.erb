@@ -36,9 +36,8 @@
 
 <% form_tag '/call-log.pdf', :method => 'get' do %>
   <div class="message" style="width:400px;">
-	This report will print all Relief Staff, as well as Full Time Staff
-	who have been selected on their individual staff page to be included in this report.
-  </div>  
+	This report will print all Full Time Staff who have been selected on their individual staff page to be included in this report.
+  </div>
   <%= hidden_field_tag :predefined_report, "relief-with-full" %>
   <%= submit_tag "Create Full-Time Staff Report", :disable_with => "Generating..." %>
 <% end -%><br/>

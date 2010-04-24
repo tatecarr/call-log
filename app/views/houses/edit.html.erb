@@ -4,14 +4,13 @@
   <%= f.error_messages %>
 
   <p>
-    <b>Bu code:</b>
-    <%=h @house.bu_code %>
+	Bu Code:<br/>
+  	<%= @house.bu_code %>
   </p>
   <p>
-    <b>Name:</b>
-    <%=h @house.name %>
+	<%= f.label :name %><br />
+	<%= f.text_field :name %>
   </p>
-  <p>
   <p>
     <%= f.label :address %><br />
     <%= f.text_field :address %>

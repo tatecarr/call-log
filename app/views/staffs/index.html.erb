@@ -69,4 +69,13 @@
 
 </table>
 
-<%= will_paginate @staffs %>
+<%= will_paginate @staffs %><br/>
+
+<table>
+	<tr>
+		<td class="expired">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td> &nbsp;One or more important courses is missing or expired.&nbsp;&nbsp;</td>
+	</tr>
+	<tr>
+		<td class="warning">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td> &nbsp;One or more important courses is expiring within one month from the current date.</td>
+	</tr>
+</table>

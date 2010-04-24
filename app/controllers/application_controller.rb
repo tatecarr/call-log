@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
   
-  session_times_out_in 15.minutes, :after_timeout => :log_them_out
+  session_times_out_in 60.minutes, :after_timeout => :log_them_out
   
   protected
   

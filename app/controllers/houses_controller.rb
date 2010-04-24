@@ -159,9 +159,11 @@ class HousesController < ApplicationController
 
   def update
     @house = House.find(params[:id])
-
+    
     respond_to do |format|
       if @house.update_attributes(params[:house])
+        @house.full_info = @house.name + " (" + @house.bu_code.to_s + ")"
+        @house.save
         flash[:notice] = 'House was successfully updated.'
         format.html { redirect_to(@house) }
         format.xml  { head :ok }
