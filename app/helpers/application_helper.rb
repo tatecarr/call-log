@@ -18,8 +18,8 @@ module ApplicationHelper
   def important_courses(staff)
     courses = []
     for course in staff.courses
-      if course.name == 'First Aid' || course.name == 'Adult CPR' || course.name == 'MAPS'
-        courses << course
+      if course.name.match(/((Adult)|(American Heart Asso)) CPR/) || course.name.match(/MAPS/) || course.name.match(/First Aid/)
+        courses << course.name
       end
     end
     courses

@@ -1,4 +1,7 @@
 <% if admin? || house_admin?(@house) %>
+	<div style='float: left; font-size:20pt'>
+		<%= link_to 'Create Report', house_path(@house, :format => "pdf") %>
+	</div>
 	<div style="text-align:right; font-size:20pt;">
 		<%= link_to 'Edit', edit_house_path(@house) %>
 	</div>
@@ -33,7 +36,7 @@
 	
 	<div id="Full Time Staff">
 		
-		<div id="no_full_time_staff">
+		<div id="no_full_time_staff" align="center">
 			<% if @ordered_full_time_staff.empty? %>
 				<p>There are no full time staff added to the house yet.</p>
 			<% end %>
@@ -49,7 +52,7 @@
 	<div class="staff_heading">Relief Staff</div>
 	
 	<div id ="Relief Staff">
-		<div id="no_relief_staff">
+		<div id="no_relief_staff" align="center">
 			<% if @ordered_relief_staff.empty? %>
 				<p>There are no relief staff added to the house yet.</p>
 			<% end %>
@@ -64,7 +67,7 @@
 	<div class="staff_heading">Overtime Staff</div>
 	
 	<div id="Overtime Staff">
-		<div id="no_overtime_staff">
+		<div id="no_overtime_staff" align="center">
 			<% if @ordered_overtime_staff.empty? %>
 				<p>There are no overtime staff added to the house yet.</p>
 			<% end %>

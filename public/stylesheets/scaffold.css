@@ -38,7 +38,7 @@ a {
 
 ul { margin: 0px; padding: 0px; }
 
-body { background-color: #fff; width: 900px; margin: auto;}
+body { background-color: #fff; width: 900px; margin: auto; margin-bottom: 40px;}
 
 body, p, ol, ul, td {
   font-family: 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
@@ -414,7 +414,6 @@ td.expired {
   background-color: #FFDDDD;
 border: 1px solid #CCC;
 }
-
 
 #list-table tr:hover {
   background-color: #CCC;

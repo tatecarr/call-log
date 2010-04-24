@@ -62,7 +62,7 @@ class HousesController < ApplicationController
       
       # makes it so that the first time the page is viewed, the houses are ordered by bu_code.
       # then the user can click a column heading and use the search to manipulate the list and order.
-      @houses = @houses.sort_by(&:bu_code)
+      @houses = @houses.sort_by(&:name)
       
       # Html and .pdf will be the formats used most of the time.
       respond_to do |format|

@@ -115,7 +115,7 @@
 
 <div style="float:left; width:450px; padding-top:33px; padding-bottom:10px;">
 		
-	<table id="courses_table">
+	<table id="courses_table" style='border-collapse:collapse;'>
 		<tr>
 			<td style="min-width:120px;"><b>Course:</b></td>
 			<td><b>Expiration:</b></td>
@@ -132,14 +132,14 @@
 		<% for course in @staff_courses do %>
 			<% unless course.renewal_date.nil? %>
 				<tr id="course_<%= course.id %>">
-					<td style="padding-right:10px;" class="<% if course.renewal_date < Time.now && (course.name == "Adult CPR" || course.name == "First Aid" || course.name == "MAPS") %>expired<% end %><% if course.renewal_date >= Time.now and course.renewal_date < Time.now+1.month && (course.name == "Adult CPR" || course.name == "First Aid" || course.name == "MAPS") %>warning<% end %>">
+					<td style="padding-right:10px;" class="<% if is_expired(course) %>expired<% end %><% if is_expiring_soon(course) %>warning<% end %>">
 						<% if course.name.blank? %>
 							Unknown
 						<% else %>
 							<%= course.name %>
 						<% end %>
 					</td>
-					<td class="<% if course.renewal_date < Time.now && (course.name == "Adult CPR" || course.name == "First Aid" || course.name == "MAPS") %>expired<% end %><% if course.renewal_date >= Time.now and course.renewal_date < Time.now+1.month && (course.name == "Adult CPR" || course.name == "First Aid" || course.name == "MAPS") %>warning<% end %>">
+					<td class="<% if is_expired(course) %>expired<% end %><% if is_expiring_soon(course) %>warning<% end %>">
 						<%= course.renewal_date.strftime("%m/%d/%y") %>
 					</td>
 					
@@ -165,6 +165,10 @@
 			<% end %>
 		<% end %>
 	</table>
+	
+	<% unless @missing_courses.empty? %>
+		<p style="color: red; font-style: italic"> <%= @staff.first_name %> is missing: <%= @missing_courses.join(", ") %></p>
+	<% end %>
 	
 	<% if @staff.agency_staff %>
 		<div style="padding-top:15px; font-size:14pt;">

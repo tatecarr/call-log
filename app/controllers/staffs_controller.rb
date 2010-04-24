@@ -25,7 +25,9 @@ class StaffsController < ApplicationController
       @full_name = params[:staff][:full_name] unless params[:staff].nil?
       @home_number = params[:staff][:home_number] unless params[:staff].nil?
       @cell_number = params[:staff][:cell_number] unless params[:staff].nil?
-    
+      
+      @staff = Staff.find_by_full_name(@full_name) unless @full_name.nil?
+      
       # to allow for searching with auto complete on last name
       params[:search][:full_name_like] = @full_name unless params[:staff].nil?
       params[:search][:home_number_like] = @home_number unless params[:staff].nil?
@@ -54,13 +56,17 @@ class StaffsController < ApplicationController
           certification_array.push('First Aid') if params[:fa]
           certification_array.push('Adult CPR') if params[:cpr]
           certification_array.push('MAPS') if params[:mt]
+          
+          where_clause = certification_where_clause(certification_array)
+          
           @certified = Staff.find_by_sql("select *
                                           from staffs
                                           where staff_id in (select staff_id
 
                                                             from (select staffs.staff_id, count(staffs.staff_id) as number
                                                                     from staffs join courses on staffs.staff_id = courses.staff_id
-                                                                    where courses.name in ('#{certification_array.join("','")}')
+                                                                    where #{where_clause}
+                                                                    and courses.renewal_date > now()
                                                                     group by staffs.staff_id) as x
 
                                                             where x.number = #{certification_array.length})")
@@ -73,21 +79,23 @@ class StaffsController < ApplicationController
       else
         @staffs = @search.sort_by(&:last_name).paginate :per_page => @selected_number, :page => params[:page]
       end
-    
-      if @staffs.length == 1 and params[:page].nil?
+
+      if !@staff.nil?
+        redirect_to @staff and return
+      elsif @staffs.length == 1 and params[:page].nil?
         redirect_to @staffs[0] and return
       end
     
     else
       case params[:predefined_report]
       when "relief"
-        @staffs = Staff.find(:all, :conditions => ['agency_staff = ? and org_level = ?', false, 299])
+        @staffs = Staff.find(:all, :conditions => ['agency_staff = ? and org_level = ?', false, 299], :order => "last_name")
       when "relief-with-full"
-        @staffs = Staff.find_by_sql("select * 
+        @staffs = Staff.find_by_sql("select staffs.* 
                                     from staffs join staff_infos on staffs.staff_id = staff_infos.staff_id 
-                                    where agency_staff = false and (org_level = 299 or include_in_reports = 1) order by last_name")
+                                    where include_in_reports = true order by last_name")
       when "non-res"
-        @staffs = Staff.find(:all, :conditions => ['agency_staff = ?', true])
+        @staffs = Staff.find(:all, :conditions => ['agency_staff = ?', true], :order => "last_name")
       end
     end
 
@@ -103,6 +111,19 @@ class StaffsController < ApplicationController
       end
     end
   end
+  
+  def certification_where_clause(cert_arr)
+    result = "("
+    puts cert_arr
+    cert_arr.each_with_index do |cert, i|
+      result << " or " unless i == 0
+      result << "(courses.name like '%CPR%' and (courses.name like '%Adult%' or courses.name like '%American Heart Asso%'))" if cert == "Adult CPR"
+      result << "courses.name like '%MAPS%'" if cert == "MAPS"
+      result << "courses.name like '%First Aid%'" if cert == "First Aid"
+    end
+    result << ")"
+    result
+  end
 
   # GET /staffs/1
   # GET /staffs/1.xml
@@ -110,6 +131,8 @@ class StaffsController < ApplicationController
     @staff = Staff.find(params[:id])
     @staff_info = StaffInfo.find_by_staff_id(@staff.staff_id)
     @staff_courses = @staff.courses
+    
+    @missing_courses = find_missing_courses(@staff_courses)
     
     @course_options = []
     for course in Course.find_by_sql("select distinct name from courses where name != '' order by name")
@@ -124,6 +147,22 @@ class StaffsController < ApplicationController
       format.xml  { render :xml => @staff }
       format.pdf { render :layout => false }
     end
+  end
+  
+  def find_missing_courses(courses)
+    missing_courses = ["First Aid", "Adult CPR", "MAPS"]
+    
+    current_courses = courses.map { |course|
+      if course.name.match(/((Adult)|(American Heart Asso)) CPR/)
+        "Adult CPR"
+      elsif course.name.match(/MAPS/)
+        "MAPS"
+      elsif course.name.match(/First Aid/)
+        "First Aid"
+      end
+    }
+    
+    missing_courses - current_courses
   end
 
   # GET /staffs/new

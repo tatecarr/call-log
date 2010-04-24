@@ -1,26 +1,29 @@
 <%
 directors = HouseStaff.find(:all, :conditions => ['bu_code = ? 
-AND position_name IN (?)', @house.bu_code, 
+AND position_name IN (?) AND position_type <> "Overtime Staff"', @house.bu_code, 
 ["Residential Director", "Nurse Case Manager", "Clinical Manager", "Assistant House Director", "House Coordinator"]])
 
 managers = HouseStaff.find(:all, :conditions => ['bu_code = ? 
-AND position_name = ?', @house.bu_code, 
+AND position_name = ? AND position_type <> "Overtime Staff"', @house.bu_code, 
 "House Manager"])
 
 skills_instructors = HouseStaff.find(:all, :conditions => ['bu_code = ? 
-AND position_name = ?', @house.bu_code, 
+AND position_name = ? AND position_type <> "Overtime Staff"', @house.bu_code, 
 "Skills Instructor"])
 
 overnights = HouseStaff.find(:all, :conditions => ['bu_code = ? 
-AND position_name in (?)', @house.bu_code, 
+AND position_name in (?) AND position_type <> "Overtime Staff"', @house.bu_code, 
 ["Awake Overnight", "Sleep Overnight"]])
 
 reliefs = HouseStaff.find(:all, :conditions => ['bu_code = ? 
-AND position_name = ?', @house.bu_code, 
+AND position_name = ? AND position_type <> "Overtime Staff"', @house.bu_code, 
 "Relief Manager"])
 
 pss = HouseStaff.find(:all, :conditions => ['bu_code = ? 
-AND position_name = ?', @house.bu_code, "PSS"])	 
+AND position_name = ? AND position_type <> "Overtime Staff"', @house.bu_code, "PSS"])	 
+
+overtime = HouseStaff.find(:all, :conditions => ['bu_code = ?
+AND position_type = "Overtime Staff"', @house.bu_code])
 %>
 
 <div class="house_profile">
@@ -64,7 +67,7 @@ AND position_name = ?', @house.bu_code, "PSS"])
 		<tr>
 			<td><%= house_staff.staff.first_name + " " + house_staff.staff.last_name %></td>
 	   		<td><%= house_staff.position_name %></td>
-			<td><%= important_courses(house_staff.staff).map { |course| course.name + "/" } %></td>
+			<td><%= important_courses(house_staff.staff).join("/") %></td>
 			<td>Home: <%= house_staff.staff.home_number %><br/>Cell: <%= house_staff.staff.cell_number %></td>
 		</tr>
 	<% end %>
@@ -85,7 +88,7 @@ AND position_name = ?', @house.bu_code, "PSS"])
 		<tr>
 			<td><%= house_staff.staff.first_name + " " + house_staff.staff.last_name %></td>
 	   		<td><%= house_staff.position_name %></td>
-			<td><%= "CPR: 12/04/11 \n Cert2:04/28/12" %></td>
+			<td><%= important_courses(house_staff.staff).join("/") %></td>
 			<td>Home: <%= house_staff.staff.home_number %><br/>Cell: <%= house_staff.staff.cell_number %></td>
 		</tr>
 	<% end %>
@@ -106,7 +109,7 @@ AND position_name = ?', @house.bu_code, "PSS"])
 		<tr>
 			<td><%= house_staff.staff.first_name + " " + house_staff.staff.last_name %></td>
 	   		<td><%= house_staff.position_name %></td>
-			<td><%= "CPR: 12/04/11 \n Cert2:04/28/12" %></td>
+			<td><%= important_courses(house_staff.staff).join("/") %></td>
 			<td>Home: <%= house_staff.staff.home_number %><br/>Cell: <%= house_staff.staff.cell_number %></td>
 		</tr>
 	<% end %>
@@ -127,7 +130,7 @@ AND position_name = ?', @house.bu_code, "PSS"])
 		<tr>
 			<td><%= house_staff.staff.first_name + " " + house_staff.staff.last_name %></td>
 	   		<td><%= house_staff.position_name %></td>
-			<td><%= "CPR: 12/04/11 \n Cert2:04/28/12" %></td>
+			<td><%= important_courses(house_staff.staff).join("/") %></td>
 			<td>Home: <%= house_staff.staff.home_number %><br/>Cell: <%= house_staff.staff.cell_number %></td>
 		</tr>
 	<% end %>
@@ -148,7 +151,7 @@ AND position_name = ?', @house.bu_code, "PSS"])
 		<tr>
 			<td><%= house_staff.staff.first_name + " " + house_staff.staff.last_name %></td>
 	   		<td><%= house_staff.position_name %></td>
-			<td><%= "CPR: 12/04/11 \n Cert2:04/28/12" %></td>
+			<td><%= important_courses(house_staff.staff).join("/") %></td>
 			<td>Home: <%= house_staff.staff.home_number %><br/>Cell: <%= house_staff.staff.cell_number %></td>
 		</tr>
 	<% end %>
@@ -169,13 +172,33 @@ AND position_name = ?', @house.bu_code, "PSS"])
 		<tr>
 			<td><%= house_staff.staff.first_name + " " + house_staff.staff.last_name %></td>
 	   		<td><%= house_staff.position_name %></td>
-			<td><%= "CPR: 12/04/11 \n Cert2:04/28/12" %></td>
+			<td><%= important_courses(house_staff.staff).join("/") %></td>
 			<td>Home: <%= house_staff.staff.home_number %><br/>Cell: <%= house_staff.staff.cell_number %></td>
 		</tr>
 	<% end %>
 	</table>
 <% end %>	
-
+<h3>Overtime</h3>
+<% if overtime.empty? %>
+	<p>No overtime staff are assigned to this house profile.</p>
+<% else %>
+	<table>
+		<tr>
+			<th>Name</th>
+			<th>Position</th>
+			<th>Trainings</th>
+			<th>Phone</th>
+		</tr>
+	<% overtime.each do |house_staff| %>
+		<tr>
+			<td><%= house_staff.staff.first_name + " " + house_staff.staff.last_name %></td>
+	   		<td><%= house_staff.position_name %></td>
+			<td><%= important_courses(house_staff.staff).join("/") %></td>
+			<td>Home: <%= house_staff.staff.home_number %><br/>Cell: <%= house_staff.staff.cell_number %></td>
+		</tr>
+	<% end %>
+	</table>
+<% end %>
 
 <p>
   <b>Brief Overview of House:</b>

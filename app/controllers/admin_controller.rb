@@ -485,8 +485,8 @@ class AdminController < ApplicationController
       # set up the params hash
       staff = Staff.new
       staff.staff_id = line[@row_positions[:employee_number]].to_i
-      staff.first_name = line[@row_positions[:first_name]].match(/[A-Za-z0-9.\s]*/).to_s.strip
-      staff.last_name = line[@row_positions[:last_name]].match(/[A-Za-z0-9.\s]*/).to_s.strip
+      staff.first_name = line[@row_positions[:first_name]].match(/[A-Za-z0-9'-.\s]*/).to_s.strip
+      staff.last_name = line[@row_positions[:last_name]].match(/[A-Za-z0-9'-.\s]*/).to_s.strip
       staff.full_name = staff.first_name + " " + staff.last_name + " (" + line[@row_positions[:employee_number]].match(/\d+/)[0] +")"
       staff.address = line[@row_positions[:address]]
       staff.city = line[@row_positions[:city]]
@@ -543,16 +543,20 @@ class AdminController < ApplicationController
   	def update_pay_rate
   	  ActiveRecord::Base.connection.execute("
   	  update staffs
-      set staffs.payrate = 10.19
-      where staffs.staff_id in (
-        select x.staff_id
+            set staffs.payrate = 10.19
+            where staffs.staff_id in (
+              select x.staff_id
 
-        from (select staffs.staff_id, count(staffs.staff_id) as number
-                from staffs join courses on staffs.staff_id = courses.staff_id
-                where courses.name in ('Adult CPR', 'MAPS', 'First Aid')
-                group by staffs.staff_id) as x
+              from (select staffs.staff_id, count(staffs.staff_id) as number
+                      from staffs join courses on staffs.staff_id = courses.staff_id
+                      where  
+                        ((courses.name like '%CPR%' and (courses.name like '%Adult%' or courses.name like '%American Heart Asso%')) 
+                        or courses.name like '%MAPS%' 
+                        or courses.name like '%First Aid%')
+                      and DATEDIFF(courses.renewal_date, NOW()) > 0 
+                      group by staffs.staff_id) as x
 
-        where x.number > 2) AND staffs.org_level = 299")
+              where x.number > 2) AND staffs.org_level = 299")
   	end
   	
   	def remove_courses_except_non_res
