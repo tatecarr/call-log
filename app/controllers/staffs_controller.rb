@@ -213,7 +213,7 @@ class StaffsController < ApplicationController
     respond_to do |format|
       if @staff.save && @staff_info.save
         flash[:notice] = 'Staff was successfully created.'
-        format.html { redirect_to @staff }
+        format.html { redirect_to non_res_staff_path }
         format.xml  { render :xml => @staff, :status => :created, :location => @staff }
       else
         format.html { render :action => "new" }
@@ -230,7 +230,7 @@ class StaffsController < ApplicationController
     respond_to do |format|
       if @staff.update_attributes(params[:staff])
         flash[:notice] = 'Staff was successfully updated.'
-        format.html { redirect_to(@staff) }
+        format.html { redirect_to non_res_staff_path }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

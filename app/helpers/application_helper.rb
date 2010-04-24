@@ -15,11 +15,15 @@ module ApplicationHelper
       auto_complete_field(tag_name, { :url => { :action => "auto_complete_for_#{object}_#{method}" } }.update(completion_options))
   end
   
-  def important_courses(staff)
+  def important_courses(staff, array = false)
     courses = []
     for course in staff.courses
       if course.name.match(/((Adult)|(American Heart Asso)) CPR/) || course.name.match(/MAPS/) || course.name.match(/First Aid/)
-        courses << course.name
+        if array
+          courses << course
+        else
+          courses << course.name
+        end
       end
     end
     courses

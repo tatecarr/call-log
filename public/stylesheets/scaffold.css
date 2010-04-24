@@ -613,3 +613,12 @@ form.add_permission {
 	margin-left: 140px;
 	margin-top: 10px;
 }
+
+#non-res-list {
+	border-collapse:collapse;
+}
+
+#non-res-list td {
+	border-bottom:1px solid #CCC;
+	padding:5px;
+}

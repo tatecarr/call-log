@@ -27,7 +27,7 @@
 		</td>
 		
 		<td class='trainings'>
-			<% for course in important_courses(staff) %>
+			<% for course in important_courses(staff, true) %>
 				<%= course.name %> <%= course.renewal_date.strftime("%m/%d/%y") %><br/>
 			<% end %>			
 		</td>

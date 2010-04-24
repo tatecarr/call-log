@@ -1,9 +1,11 @@
 <% content_for :title, "Admin" %>
 <h2>Non-Res Staff</h2>
-<%= link_to "Add new Non-Res Staff", new_staff_path %>
+<p style="font-size:14pt;">
+	<%= link_to "Add new Non-Res Staff", new_staff_path %>
+</p>
 <% unless @agency_staffs.empty? %>
-	<% @agency_staffs.each do |staff| %>
-		<table>
+	<table id="non-res-list">
+		<% @agency_staffs.each do |staff| %>
 			<tr>
 				<td><%= staff.first_name %></td>
 				<td><%= staff.last_name %></td>
@@ -11,8 +13,8 @@
 				<td><%= link_to "Edit", edit_staff_path(staff) %></td>
 				<td><%= link_to "Remove", staff, :confirm => "Are you sure? This will erase all of the employees information.", :method => :delete %></td>
 			</tr>
-		</table>
-	<% end %>
+		<% end %>
+	</table>
 <% else %>
 	<div id="no-results">No Non-Res Staff Found</div>
 <% end %>
