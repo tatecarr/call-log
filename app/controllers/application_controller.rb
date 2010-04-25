@@ -12,10 +12,12 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
   
+  # logs the person out after 60 minutes
   session_times_out_in 60.minutes, :after_timeout => :log_them_out
   
   protected
   
+  # tell is somebody is an admin
   def admin?
     current_user.role == "System-Admin"
   end
@@ -32,6 +34,7 @@ class ApplicationController < ActionController::Base
     bu_code_array.include?(house.bu_code) # return true if house's bu_code is in the array, else return false
   end
 
+  # log out a user
   def log_them_out
     flash[:error] = "You have been logged out due to inactivity. Please log in again."
     redirect_to root_url

@@ -182,15 +182,18 @@ class HouseStaffsController < ApplicationController
       # if there was an error message on a previous search, clear it.
       message = ""
       
+      # create a new house staff
       @house_staff = @house.house_staffs.new
 
+      # set all the attributes we got from the form
       @house_staff.bu_code = @house.bu_code
       @house_staff.staff_id = staff_id
       @house_staff.position_name = params[:house_staff][:position_name]
       @house_staff.sort_order = sort_order
       @house_staff.position_type = params[:house_staff][:position_type]
       @house_staff.save                                                       
-
+      
+      # javascript, update the page to show results
       render :update do |page|
         if @house_staff.position_type == "Full Time Staff"
           page["no_full_time_staff"].replace_html ""

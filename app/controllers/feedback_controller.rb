@@ -1,5 +1,6 @@
 class FeedbackController < ApplicationController
   
+  # stub code, for testing, allows them to send emails to us while testing
   def index
     
     if params[:app_page] != nil && params[:app_page] != ""

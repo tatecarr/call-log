@@ -1,4 +1,6 @@
 class UserMailer < ActionMailer::Base
+  # handles all the mailing logic
+  
   def registration_confirmation(user)
     recipients    user.email
     from          "Northeast Arc"

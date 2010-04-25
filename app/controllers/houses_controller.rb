@@ -1,4 +1,6 @@
 class HousesController < ApplicationController
+  
+  # wysiwyg editor setup for tiny_mce plugin
   uses_tiny_mce :options => {
                                 :theme => 'advanced',
                                 :skin => "o2k7",
@@ -10,6 +12,7 @@ class HousesController < ApplicationController
                                 :theme_advanced_toolbar_location => "top"
                               }
   
+  # make sure the person is logged in
   before_filter :login_required
   
 #------------------- Creates AJAX methods for autocompleting forms -----------------
