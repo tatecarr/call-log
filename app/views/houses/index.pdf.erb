@@ -1,4 +1,4 @@
-<% if @houses.empty? %>
+<% if !@houses.empty? %>
 	<% @houses.each do |house| %>
 
 	<%
@@ -262,5 +262,5 @@
 
 	<% end %>
 <% else %>
-	<p>There are no houses in the database to print.</p>
+	<table><tr id="no-results"><td>There are no houses in the database to print.</td></tr></table>
 <% end %>
