@@ -1,4 +1,6 @@
 class HousesController < ApplicationController
+  
+  # wysiwyg editor setup for tiny_mce plugin
   uses_tiny_mce :options => {
                                 :theme => 'advanced',
                                 :skin => "o2k7",
@@ -10,6 +12,7 @@ class HousesController < ApplicationController
                                 :theme_advanced_toolbar_location => "top"
                               }
   
+  # make sure the person is logged in
   before_filter :login_required
   
 #------------------- Creates AJAX methods for autocompleting forms -----------------
@@ -20,6 +23,7 @@ class HousesController < ApplicationController
 #--------- Action for displaying a searchable list of all houses in the DB ---------
 
   def index
+    create_pdf = false
 
     #-------------------------------------------------------------------------------
     # To allow for searching (with autocomplete) on house name
@@ -34,6 +38,7 @@ class HousesController < ApplicationController
     unless params[:bu_code_equals].nil?
       params[:search] = Hash.new
       params[:search][:bu_code_equals] = [params[:bu_code_equals]]
+      create_pdf = true
     end
     
     #-------------------------------------------------------------------------------
@@ -58,24 +63,25 @@ class HousesController < ApplicationController
     #       end
     #     
     #     # Else display the page accordingly depending on the type of request.
-    #     else
+    #     else 
       
-      # makes it so that the first time the page is viewed, the houses are ordered by bu_code.
-      # then the user can click a column heading and use the search to manipulate the list and order.
+    # makes it so that the first time the page is viewed, the houses are ordered by bu_code.
+    # then the user can click a column heading and use the search to manipulate the list and order.
+    if params[:search].nil? or create_pdf
       @houses = @houses.sort_by(&:name)
-      
-      # Html and .pdf will be the formats used most of the time.
-      respond_to do |format|
-        format.html # index.html.erb
-        format.xml  { render :xml => @houses }
-        format.pdf do
-          render  :pdf => "House Report",
-                  :template => "houses/index.pdf.erb",
-                  :stylesheets => ["application", "prince_house", "scaffold"],
-                  :layout => "pdf"
-        end
+    end
+    
+    # Html and .pdf will be the formats used most of the time.
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @houses }
+      format.pdf do
+        render  :pdf => "House Report",
+                :template => "houses/index.pdf.erb",
+                :stylesheets => ["application", "prince_house", "scaffold"],
+                :layout => "pdf"
       end
-    #end
+    end
   end
 
 #----------------------- Action for displaying house pages -------------------------

@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
+  
+  # make sure they are logged in
   before_filter :login_required
   
+  # the password reset page
   def password_reset
     @user = User.new
   end
@@ -33,8 +36,11 @@ class UsersController < ApplicationController
     end
   end
   
+  # remove a user from the database. This is called from the admin page so may be wise to move this to the admin controller...
   def destroy
 	  @user = User.find(params[:id])
+    
+    # make sure they aren't trying to delete themselves. This is our way of ensuring at least one account always remains.
     if current_user != @user
       @user.destroy
     else

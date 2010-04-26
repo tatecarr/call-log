@@ -21,6 +21,6 @@ production:
   encoding: utf8
   database: call_log_production
   username: root
-  #password: number9  # for our test server.
+  #password: number9  # this line is for servers requiring a password
   #socket: /var/run/mysqld/mysqld.sock  # .sock location on ubuntu
   socket: /tmp/mysql.sock

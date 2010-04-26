@@ -9,10 +9,11 @@
 
 class AdminController < ApplicationController
 
+  # check to make sure somebody has required access level for all of these
   before_filter :admin_required
-  auto_complete_for :house, :full_info
   
-  @@import_status = "hello"
+  # auto complete for some of the actions
+  auto_complete_for :house, :full_info
   
   def auto_complete_for_house_full_info
     
@@ -172,27 +173,27 @@ class AdminController < ApplicationController
 
 #-------------------------- Actions for displaying pages ---------------------------
  
+  # index page of the admin section
   def index
     @user = User.new
     @users = User.all
     @user_house = UserHouse.new
   end
   
+  # agency staff page of the admin section
   def agency_staff
     @agency_staffs = Staff.find(:all, :conditions => ['agency_staff = ?', true])
   end
   
+  # backup restore page
   def backup_restore
     @import = Import.new
   end
   
+  # staff import page
   def import_staff
     @import = Import.new
   end
-
-  def show
-    @import = Import.find(params[:id])
-	end
 
 
 #---------------------- Actions executed after form submission ----------------------
@@ -358,6 +359,7 @@ class AdminController < ApplicationController
     end
 	end
 	
+	# restore from a database backup file
 	def restore
 	  # upload and save the file
     @import = Import.new(params[:import])
@@ -413,7 +415,7 @@ class AdminController < ApplicationController
 
   private
   
-  
+    # allows for multiple auto complete forms on the same page
     def auto_complete_responder_for_full_info(value)
         
       param = '%' + value.downcase + '%' 
@@ -540,6 +542,7 @@ class AdminController < ApplicationController
   	  end
   	end
   	
+  	# runs the mysql to update the payrate of certain staff members
   	def update_pay_rate
   	  ActiveRecord::Base.connection.execute("
   	  update staffs
@@ -559,6 +562,7 @@ class AdminController < ApplicationController
               where x.number > 2) AND staffs.org_level = 299")
   	end
   	
+  	# remove all courses except non-res staff.
   	def remove_courses_except_non_res
   	  ActiveRecord::Base.connection.execute("
   	  
