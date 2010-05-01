@@ -1,3 +1,12 @@
+#-----------------------------------------------------------------------------------
+# application_controller.rb
+#
+# Handles all actions and logic for the admin section of the call log
+#
+# Written By: Ben Vogelzang 1/28/10
+#
+#-----------------------------------------------------------------------------------
+
 # Filters added to this controller apply to all controllers in the application.
 # Likewise, all the methods added will be available for all controllers.
 

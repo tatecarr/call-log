@@ -10,3 +10,5 @@ User.create!(:username => 'admin',
             :password => "nearc",
             :role => 'System-Admin',
             :system_generated_pw => false)
+            
+SystemSetting.create!(:session_timeout => 60)
