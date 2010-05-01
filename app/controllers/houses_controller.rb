@@ -15,6 +15,9 @@ class HousesController < ApplicationController
   # make sure the person is logged in
   before_filter :login_required
   
+  # logs the person out after 60 minutes
+  session_times_out_in 60.minutes, :after_timeout => :log_them_out
+  
 #------------------- Creates AJAX methods for autocompleting forms -----------------
   
   auto_complete_for :house, :full_info
@@ -23,8 +26,6 @@ class HousesController < ApplicationController
 #--------- Action for displaying a searchable list of all houses in the DB ---------
 
   def index
-    create_pdf = false
-
     #-------------------------------------------------------------------------------
     # To allow for searching (with autocomplete) on house name
     # full_info_like is a searchlogic formatted parameter, which allows the
@@ -33,13 +34,6 @@ class HousesController < ApplicationController
     # http://github.com/binarylogic/searchlogic/blob/master/README.rdoc
     #-------------------------------------------------------------------------------
     params[:search][:full_info_like] = params[:house][:full_info] unless params[:house].nil?
-    
-    # catch report form submissions.  used by the prawn plugin for generating pdfs.
-    unless params[:bu_code_equals].nil?
-      params[:search] = Hash.new
-      params[:search][:bu_code_equals] = [params[:bu_code_equals]]
-      create_pdf = true
-    end
     
     #-------------------------------------------------------------------------------
     # If a search has been exectued, the House.search will return return the results.
@@ -67,7 +61,7 @@ class HousesController < ApplicationController
       
     # makes it so that the first time the page is viewed, the houses are ordered by bu_code.
     # then the user can click a column heading and use the search to manipulate the list and order.
-    if params[:search].nil? or create_pdf
+    if params[:search].nil?
       @houses = @houses.sort_by(&:name)
     end
     

@@ -11,7 +11,22 @@
   <%= javascript_include_tag 'curvycorners' %>
   <%= include_tiny_mce_if_needed %>
 <script type="text/javascript">
-var curvyCornersVerbose = false;
+	var curvyCornersVerbose = false;
+	
+	var sessionTime = 3600; // timeout in an hour
+	var timeToThink = 300; // give them 5 minutes
+	setTimeout("showWarning()", (sessionTime - timeToThink) * 1000);
+	
+	function showWarning() {
+		var answer = confirm("You will be logged out in " + timeToThink / 60 + " minutes. Click OK to stay logged in for another hour.")
+		if (answer) {
+			setTimeout("showWarning()", (sessionTime - timeToThink) * 1000);
+			new Ajax.Request('/home', {asynchronous:true, evalScripts:true});
+		}
+		else {
+			
+		}
+	}
 </script>
 </head>
 <body>

@@ -3,6 +3,9 @@ class StaffsController < ApplicationController
   # make sure the user is logged in
   before_filter :login_required
   
+  # logs the person out after 60 minutes
+  session_times_out_in 60.minutes, :after_timeout => :log_them_out
+  
   # auto complete and in place edit plugin methods. These lines call the plugins 
   # which render the needed methods for the controller
   auto_complete_for :staff, :full_name
@@ -18,98 +21,91 @@ class StaffsController < ApplicationController
   def index
 
     #TODO, LIST HOW MANY STAFF ARE IN THE LIST.  BOTH WHEN A SEARCH IS EXECUTED OR OTHERWISE
-    # check to make sure we aren't being called from the reports page. Meaning we're not trying to print a report just display it normally
-    if params[:predefined_report].nil?
       
       # The options for number of results per page.
-      @number_per_page_options = [["25", "0"], ["50", "1"], ["75", "2"], ["100", "3"]]
-      @number_per_page = params[:number_per_page] || 0
-      @selected_number = @number_per_page_options[@number_per_page.to_i][0]
+    @number_per_page_options = [["25", "0"], ["50", "1"], ["75", "2"], ["100", "3"]]
+    @number_per_page = params[:number_per_page] || 0
+    @selected_number = @number_per_page_options[@number_per_page.to_i][0]
+  
+    # Save search terms so the fields can be populated with them after a search instead of being cleared.
+    @full_name = params[:staff][:full_name] unless params[:staff].nil?
+    @home_number = params[:staff][:home_number] unless params[:staff].nil?
+    @cell_number = params[:staff][:cell_number] unless params[:staff].nil?
     
-      # Save search terms so the fields can be populated with them after a search instead of being cleared.
-      @full_name = params[:staff][:full_name] unless params[:staff].nil?
-      @home_number = params[:staff][:home_number] unless params[:staff].nil?
-      @cell_number = params[:staff][:cell_number] unless params[:staff].nil?
-      
-      @staff = Staff.find_by_full_name(@full_name) unless @full_name.nil?
-      
-      # to allow for searching with auto complete on last name
-      # the auto complete plugin does not work correctly with the searchlogic plugin
-      # this formats the parameters correctly so the search performs right
-      params[:search][:full_name_like] = @full_name unless params[:staff].nil?
-      params[:search][:home_number_like] = @home_number unless params[:staff].nil?
-      params[:search][:cell_number_like] = @cell_number unless params[:staff].nil?
-      params[:search][:payrate_gt] = params[:search][:payrate_gt].to_f unless params[:search].nil? or params[:search][:payrate_gt].to_f == 0
-      params[:search][:payrate_lt] = params[:search][:payrate_lt].to_f unless params[:search].nil? or params[:search][:payrate_lt].to_f == 0
-      
-      # default to relief staff, we don't want full time staff to show up unless indicated
-      unless params[:search]
-        params[:search] = Hash.new
-      end
-      params[:search][:org_level_equals] = 299 if params[:org_level].nil?
-      @org_level = true unless params[:org_level].nil?
-
-
-      # this is where the main search method is called
-      @search = Staff.search(params[:search])
+    @staff = Staff.find_by_full_name(@full_name) unless @full_name.nil?
     
-      # this makes it so that on the first load of the page, when params[:search] is nil, the call-log
-      # is ordered by last_name.  it had been doing it by id (not staff_id), so after every import, the
-      # agency staff would all be listed first in the call log.  kinda undesirable I think.
-      if params[:search]    
-        
-        # handles logic for searching certifications. Because it's another model and exclusion is implied we need to
-        # use find_by_sql.     
-        if params[:cpr] or params[:fa] or params[:mt]
-          certification_array = []
-          certification_array.push('First Aid') if params[:fa]
-          certification_array.push('Adult CPR') if params[:cpr]
-          certification_array.push('MAPS') if params[:mt]
-          
-          # ask the handy helper method to contruct part of our where clause correctly
-          where_clause = certification_where_clause(certification_array)
-          
-          @certified = Staff.find_by_sql("select *
-                                          from staffs
-                                          where staff_id in (select staff_id
+    # to allow for searching with auto complete on last name
+    # the auto complete plugin does not work correctly with the searchlogic plugin
+    # this formats the parameters correctly so the search performs right
+    params[:search][:full_name_like] = @full_name unless params[:staff].nil?
+    params[:search][:home_number_like] = @home_number unless params[:staff].nil?
+    params[:search][:cell_number_like] = @cell_number unless params[:staff].nil?
+    params[:search][:payrate_gt] = params[:search][:payrate_gt].to_f unless params[:search].nil? or params[:search][:payrate_gt].to_f == 0
+    params[:search][:payrate_lt] = params[:search][:payrate_lt].to_f unless params[:search].nil? or params[:search][:payrate_lt].to_f == 0
+    
+    # default to relief staff, we don't want full time staff to show up unless indicated
+    unless params[:search]
+      params[:search] = Hash.new
+    end
+    params[:search][:org_level_equals] = 299 if params[:org_level].nil?
+    @org_level = true unless params[:org_level].nil?
 
-                                                            from (select staffs.staff_id, count(staffs.staff_id) as number
-                                                                    from staffs join courses on staffs.staff_id = courses.staff_id
-                                                                    where #{where_clause}
-                                                                    and courses.renewal_date > now()
-                                                                    group by staffs.staff_id) as x
 
-                                                            where x.number = #{certification_array.length})")
-          # get the difference between the search results and their certifications                                                  
-          @staffs = @search & @certified
-          @staffs = @staffs.paginate :per_page => @selected_number, :page => params[:page]
-        else
-          # don't worry about certifications
-          @staffs = @search.paginate :per_page => @selected_number, :page => params[:page]
+    # this is where the main search method is called
+    @search = Staff.search(params[:search])
+  
+    # this makes it so that on the first load of the page, when params[:search] is nil, the call-log
+    # is ordered by last_name.  it had been doing it by id (not staff_id), so after every import, the
+    # agency staff would all be listed first in the call log.  kinda undesirable I think.
+    if params[:search]    
+      
+      # handles logic for searching certifications. Because it's another model and exclusion is implied we need to
+      # use find_by_sql.     
+      if params[:cpr] or params[:fa] or params[:mt]
+        certification_array = []
+        if params[:fa]
+          certification_array.push('First Aid')
+          @fa = true
         end
+        if params[:cpr]
+          certification_array.push('Adult CPR') 
+          @cpr = true
+        end
+        if params[:mt]
+          certification_array.push('MAPS') 
+          @mt = true
+        end
+        
+        # ask the handy helper method to contruct part of our where clause correctly
+        where_clause = certification_where_clause(certification_array)
+        
+        @certified = Staff.find_by_sql("select *
+                                        from staffs
+                                        where staff_id in (select staff_id
+
+                                                          from (select staffs.staff_id, count(staffs.staff_id) as number
+                                                                  from staffs join courses on staffs.staff_id = courses.staff_id
+                                                                  where #{where_clause}
+                                                                  and courses.renewal_date > now()
+                                                                  group by staffs.staff_id) as x
+
+                                                          where x.number = #{certification_array.length})")
+        # get the difference between the search results and their certifications                                                  
+        @staffs = @search & @certified
+        @staffs = @staffs.paginate :per_page => @selected_number, :page => params[:page]
       else
-        @staffs = @search.sort_by(&:last_name).paginate :per_page => @selected_number, :page => params[:page]
+        # don't worry about certifications
+        @staffs = @search.paginate :per_page => @selected_number, :page => params[:page]
       end
-      
-      # this will redirect to the show page if a single staff is returned. Saves the user some time. 
-      if !@staff.nil?
-        redirect_to @staff and return
-      elsif @staffs.length == 1 and params[:page].nil?
-        redirect_to @staffs[0] and return
-      end
-    
-    # it's a predefined report so render the correct staffs for our collection
     else
-      case params[:predefined_report]
-      when "relief"
-        @staffs = Staff.find(:all, :conditions => ['agency_staff = ? and org_level = ?', false, 299], :order => "last_name")
-      when "relief-with-full"
-        @staffs = Staff.find_by_sql("select staffs.* 
-                                    from staffs join staff_infos on staffs.staff_id = staff_infos.staff_id 
-                                    where include_in_reports = true order by last_name")
-      when "non-res"
-        @staffs = Staff.find(:all, :conditions => ['agency_staff = ?', true], :order => "last_name")
-      end
+      @staffs = @search.sort_by(&:last_name).paginate :per_page => @selected_number, :page => params[:page]
+    end
+    
+    # this will redirect to the show page if a single staff is returned. Saves the user some time. 
+    if !@staff.nil?
+      redirect_to @staff and return
+    elsif @staffs.length == 1 and params[:page].nil?
+      redirect_to @staffs[0] and return
     end
 
 

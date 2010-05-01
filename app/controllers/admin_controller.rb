@@ -12,6 +12,9 @@ class AdminController < ApplicationController
   # check to make sure somebody has required access level for all of these
   before_filter :admin_required
   
+  # logs the person out after 60 minutes
+  session_times_out_in 60.minutes, :after_timeout => :log_them_out
+  
   # auto complete for some of the actions
   auto_complete_for :house, :full_info
   

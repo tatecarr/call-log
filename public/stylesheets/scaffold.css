@@ -591,26 +591,48 @@ form.add_permission {
 	overflow: hidden;
 }
 
+#house_staff_number {
+	float: left;
+	width: 200px;
+	overflow: hidden;
+}
+
 #house_staff_position {
 	float: left;
 	width: 200px;
 }
 
+#house_staff_box {
+	float: left;
+	width: 30px;
+}
+
+#house_staff_box.warning {
+	background-color: #FFEE99;
+	border: 1px solid #CCC;
+}
+
+#house_staff_box.expired {
+	background-color: #FFDDDD;
+	border: 1px solid #CCC;
+}
+
 #house_staff_remove_link {
 	float: left;
+	margin-left: 40px;
 	width: 75px;
 }
 
 .house_staff {
 	padding: 2px 0px;
 	border-bottom: 1px solid #CCC;
-	width: 575px;
+	width: 850px;
 	margin: 0px auto;
+	clear: left;
 }
 
 .staff_heading {
 	font-size: 14pt;
-	margin-left: 140px;
 	margin-top: 10px;
 }
 

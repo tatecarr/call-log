@@ -1,6 +1,16 @@
 <% div_for house_staff do %>
 	<div id="house_staff_name"><%= link_to house_staff.staff.first_name + " " + house_staff.staff.last_name, house_staff.staff %></div>
+	<div id="house_staff_number"><%= if house_staff.staff.cell_number != "" 
+										house_staff.staff.cell_number 
+									elsif house_staff.staff.home_number != ""
+										 house_staff.staff.home_number
+									elsif house_staff.staff.work_number != ""
+										house_staff.staff.work_number
+									else
+										"No Contact Number"
+									end %></div>
 	<div id="house_staff_position"><%= house_staff.position_name %></div>
+	<div id="house_staff_box" class="<% if expired_certification(house_staff.staff.courses) %>expired<% end %> <% if certification_warning(house_staff.staff.courses) %>warning<% end %>">&nbsp;</div>
 	<% if admin? || house_admin?(House.find_by_bu_code(house_staff.bu_code)) %>
 		<div id="house_staff_remove_link">
 			<%= form_remote_tag :url => url_for(:controller => 'house_staffs', :action => 'remove_house_staff') %>

@@ -3,6 +3,9 @@ class SessionsController < ApplicationController
   # make sure the person is logged in for the home action only
   before_filter :login_required, :only => [:home]
   
+  # logs the person out after 60 minutes
+  session_times_out_in 60.minutes, :after_timeout => :log_them_out, :except => [:new, :destroy]
+  
   # this is the login page. If the user is already logged in the redirect them to the home page
   def new
     redirect_to home_path if logged_in?
@@ -65,6 +68,7 @@ class SessionsController < ApplicationController
   
   # log the user out and put them at the login page
   def destroy
+    session[:expires_at] = nil
     session[:user_id] = nil
     flash[:notice] = "You have been logged out."
     redirect_to root_url

@@ -1,6 +1,9 @@
 class HouseStaffsController < ApplicationController
   before_filter :login_required
 
+  # logs the person out after 60 minutes
+  session_times_out_in 60.minutes, :after_timeout => :log_them_out
+
   # NEED AN UPDATE SORT ORDER FOR ADMINS IF THE ORDER OF THE HOUSE STAFF POSITIONS CHANGE
   # THE ARRAY OF HOUSE POSITIONS IS IN THE APPLICATION_CONTROLLER AND SORT_ORDER IS BASED
   # UPON THE ORDER THERE.  BUT THE VALUE IS ENTERED INTO THE DATABASE AND WOULDN'T CHANGE

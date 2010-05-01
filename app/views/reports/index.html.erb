@@ -4,7 +4,7 @@
 
 <div id="house-reports">
 <h2>Houses</h2>
-<% form_tag '/houses.pdf', :method => 'get' do %>
+<% form_tag :action => "house_report", :format => "pdf" do %>
   <div class="message" style="width:400px;">
 	Selected houses in the list below will be included in a generated .pdf report.
 	If no houses are selected, all will be included in the report.
@@ -18,7 +18,7 @@
 
 <div id="staff-reports">
 <h2>Staff</h2>
-<% form_tag '/call-log.pdf', :method => 'get' do %>
+<% form_tag :action => "predefined_report", :format => "pdf" do %>
   <div class="message" style="width:400px;">
 	This report will print all Relief Staff.
   </div>
@@ -26,7 +26,7 @@
   <%= submit_tag "Create Relief Staff Report", :disable_with => "Generating..." %>
 <% end -%><br/>
 
-<% form_tag '/call-log.pdf', :method => 'get' do %>
+<% form_tag :action => "predefined_report", :format => "pdf" do %>
   <div class="message" style="width:400px;">
 	This report will print all Non-Res Staff.
   </div>
@@ -34,7 +34,7 @@
   <%= submit_tag "Create Non-Res Staff Report", :disable_with => "Generating..." %>
 <% end -%><br/>
 
-<% form_tag '/call-log.pdf', :method => 'get' do %>
+<% form_tag :action => "predefined_report", :format => "pdf" do %>
   <div class="message" style="width:400px;">
 	This report will print all Full Time Staff who have been selected on their individual staff page to be included in this report.
   </div>

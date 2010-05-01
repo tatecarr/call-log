@@ -9,11 +9,9 @@ class ApplicationController < ActionController::Base
   helper_method :admin?
   helper_method :house_admin?
   helper_method :house_position_list
+  helper_method :log_them_out
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
-  
-  # logs the person out after 60 minutes
-  session_times_out_in 60.minutes, :after_timeout => :log_them_out
   
   protected
   

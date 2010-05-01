@@ -42,13 +42,13 @@
 <table id="list-table">
 <% unless @staffs.empty? %>	
 	  <tr>
-	    <th><%= order @search, :by => :first_name %></th>
-	    <th><%= order @search, :by => :last_name %></th>
-	    <th><%= order @search, :by => :address %></th>
-	    <th><%= order @search, :by => :city %></th>
-	    <th><%= order @search, :by => :gender %></th>
-	    <th><%= order @search, :by => :cell_number %></th>
-	    <th><%= order @search, :by => :home_number %></th>
+	    <th><%= order @search, :by => :first_name, :params => {:org_level => @org_level, :cpr => @cpr, :fa => @fa, :mt => @mt} %></th>
+	    <th><%= order @search, :by => :last_name, :params => {:org_level => @org_level, :cpr => @cpr, :fa => @fa, :mt => @mt} %></th>
+	    <th><%= order @search, :by => :address, :params => {:org_level => @org_level, :cpr => @cpr, :fa => @fa, :mt => @mt} %></th>
+	    <th><%= order @search, :by => :city, :params => {:org_level => @org_level, :cpr => @cpr, :fa => @fa, :mt => @mt} %></th>
+	    <th><%= order @search, :by => :gender, :params => {:org_level => @org_level, :cpr => @cpr, :fa => @fa, :mt => @mt} %></th>
+	    <th><%= order @search, :by => :cell_number, :params => {:org_level => @org_level, :cpr => @cpr, :fa => @fa, :mt => @mt} %></th>
+	    <th><%= order @search, :by => :home_number, :params => {:org_level => @org_level, :cpr => @cpr, :fa => @fa, :mt => @mt} %></th>
 	  </tr>
 	<% @staffs.each_with_index do |staff, i| %>
 	
@@ -73,9 +73,9 @@
 
 <table>
 	<tr>
-		<td class="expired">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td> &nbsp;One or more important courses is missing or expired.&nbsp;&nbsp;</td>
+		<td class="expired">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td> &nbsp;Staff member cannot work.&nbsp;&nbsp;</td>
 	</tr>
 	<tr>
-		<td class="warning">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td> &nbsp;One or more important courses is expiring within one month from the current date.</td>
+		<td class="warning">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td> &nbsp;Staff member can work but something with their certifications needs to be addressed.</td>
 	</tr>
 </table>

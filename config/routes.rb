@@ -21,6 +21,7 @@ ActionController::Routing::Routes.draw do |map|
   map.backup_restore 'backup-restore', :controller => "admin", :action => "backup_restore" 
   map.import_staff 'import-staff', :controller => "admin", :action => "import_staff" 
   
+  
   map.root :controller => 'sessions', :action => "new" 
   map.resources :sessions
   map.resources :admin
