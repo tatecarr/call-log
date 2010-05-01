@@ -1,3 +1,12 @@
+#-----------------------------------------------------------------------------------
+# staffs_controller.rb
+#
+# Handles all actions and logic for the staff section of the call log system
+#
+# Written By: Ben Vogelzang 1/28/10
+#
+#-----------------------------------------------------------------------------------
+
 class StaffsController < ApplicationController
   
   # make sure the user is logged in

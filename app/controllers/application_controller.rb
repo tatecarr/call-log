@@ -1,7 +1,7 @@
 #-----------------------------------------------------------------------------------
 # application_controller.rb
 #
-# Handles all actions and logic for the admin section of the call log
+# Handles all actions and logic for application wide methods.
 #
 # Written By: Ben Vogelzang 1/28/10
 #

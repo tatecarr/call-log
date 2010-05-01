@@ -1,3 +1,12 @@
+#-----------------------------------------------------------------------------------
+# house_staffs_controller.rb
+#
+# Handles all actions and logic for the house_staffs section of the call log system
+#
+# Written By: Taylor Carr 1/28/10
+#
+#-----------------------------------------------------------------------------------
+
 class HouseStaffsController < ApplicationController
   before_filter :login_required
 

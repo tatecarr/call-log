@@ -1,3 +1,12 @@
+#-----------------------------------------------------------------------------------
+# staffs_helper.rb
+#
+# Handles all staff helper methods of the call log system
+#
+# Written By: Ben Vogelzang 1/28/10
+#
+#-----------------------------------------------------------------------------------
+
 module StaffsHelper
   
   # determine whether a staff member has any expired courses or is missing any

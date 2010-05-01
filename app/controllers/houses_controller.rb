@@ -1,3 +1,12 @@
+#-----------------------------------------------------------------------------------
+# houses_controller.rb
+#
+# Handles all actions and logic for the house section of the call log system
+#
+# Written By: Taylor Carr 1/28/10
+#
+#-----------------------------------------------------------------------------------
+
 class HousesController < ApplicationController
   
   # wysiwyg editor setup for tiny_mce plugin

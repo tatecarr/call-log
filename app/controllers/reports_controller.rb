@@ -1,3 +1,12 @@
+#-----------------------------------------------------------------------------------
+# reports_controller.rb
+#
+# Handles all actions and logic for the report creation of the call log system
+#
+# Written By: Ben Vogelzang 1/28/10
+#
+#-----------------------------------------------------------------------------------
+
 class ReportsController < ApplicationController
   # make sure the person is logged in
   before_filter :login_required

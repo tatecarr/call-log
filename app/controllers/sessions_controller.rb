@@ -1,3 +1,12 @@
+#-----------------------------------------------------------------------------------
+# sessions_controller.rb
+#
+# Handles all actions and logic for the session handling of the call log system
+#
+# Written By: Ben Vogelzang 1/28/10
+#
+#-----------------------------------------------------------------------------------
+
 class SessionsController < ApplicationController
   
   # make sure the person is logged in for the home action only

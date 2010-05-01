@@ -1,3 +1,12 @@
+#-----------------------------------------------------------------------------------
+# application_helper.rb
+#
+# Handles all application wide helper methods of the call log system
+#
+# Written By: Taylor Carr 1/28/10
+#
+#-----------------------------------------------------------------------------------
+
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
 
