@@ -42,13 +42,13 @@
 <table id="list-table">
 <% unless @staffs.empty? %>	
 	  <tr>
-	    <th><%= order @search, :by => :first_name, :params => {:org_level => @org_level, :cpr => @cpr, :fa => @fa, :mt => @mt} %></th>
-	    <th><%= order @search, :by => :last_name, :params => {:org_level => @org_level, :cpr => @cpr, :fa => @fa, :mt => @mt} %></th>
-	    <th><%= order @search, :by => :address, :params => {:org_level => @org_level, :cpr => @cpr, :fa => @fa, :mt => @mt} %></th>
-	    <th><%= order @search, :by => :city, :params => {:org_level => @org_level, :cpr => @cpr, :fa => @fa, :mt => @mt} %></th>
-	    <th><%= order @search, :by => :gender, :params => {:org_level => @org_level, :cpr => @cpr, :fa => @fa, :mt => @mt} %></th>
-	    <th><%= order @search, :by => :cell_number, :params => {:org_level => @org_level, :cpr => @cpr, :fa => @fa, :mt => @mt} %></th>
-	    <th><%= order @search, :by => :home_number, :params => {:org_level => @org_level, :cpr => @cpr, :fa => @fa, :mt => @mt} %></th>
+	    <th><%= order @search, :by => :first_name, :params => {:org_level => @org_level, :cpr => @cpr, :fa => @fa, :mt => @mt, :staff => {:full_name => @full_name, :home_number => @home_number, :cell_number => @cell_number}} %></th>
+	    <th><%= order @search, :by => :last_name, :params => {:org_level => @org_level, :cpr => @cpr, :fa => @fa, :mt => @mt, :full_name => @full_name, :home_number => @home_number, :cell_number => @cell_number} %></th>
+	    <th><%= order @search, :by => :address, :params => {:org_level => @org_level, :cpr => @cpr, :fa => @fa, :mt => @mt, :full_name => @full_name, :home_number => @home_number, :cell_number => @cell_number} %></th>
+	    <th><%= order @search, :by => :city, :params => {:org_level => @org_level, :cpr => @cpr, :fa => @fa, :mt => @mt, :full_name => @full_name, :home_number => @home_number, :cell_number => @cell_number} %></th>
+	    <th><%= order @search, :by => :gender, :params => {:org_level => @org_level, :cpr => @cpr, :fa => @fa, :mt => @mt, :full_name => @full_name, :home_number => @home_number, :cell_number => @cell_number} %></th>
+	    <th><%= order @search, :by => :cell_number, :params => {:org_level => @org_level, :cpr => @cpr, :fa => @fa, :mt => @mt, :full_name => @full_name, :home_number => @home_number, :cell_number => @cell_number} %></th>
+	    <th><%= order @search, :by => :home_number, :params => {:org_level => @org_level, :cpr => @cpr, :fa => @fa, :mt => @mt, :full_name => @full_name, :home_number => @home_number, :cell_number => @cell_number} %></th>
 	  </tr>
 	<% @staffs.each_with_index do |staff, i| %>
 	

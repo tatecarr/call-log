@@ -13,7 +13,7 @@ class AdminController < ApplicationController
   before_filter :admin_required
   
   # logs the person out after 60 minutes
-  session_times_out_in 60.minutes, :after_timeout => :log_them_out
+  session_times_out_in SystemSetting.first.session_timeout.minutes, :after_timeout => :log_them_out
   
   # auto complete for some of the actions
   auto_complete_for :house, :full_info
@@ -196,6 +196,20 @@ class AdminController < ApplicationController
   # staff import page
   def import_staff
     @import = Import.new
+  end
+  
+  def edit_session_timeout
+    @system_setting = SystemSetting.new
+  end
+  
+  def update_session_timeout
+    @system_setting = SystemSetting.first
+    if @system_setting.update_attributes(params[:system_setting])
+      flash[:notice] = "Session timeout length was successfully changed."
+    else
+      flash[:error] = "Failed to change session timeout length."
+    end
+    redirect_to edit_session_timeout_path
   end
 
 

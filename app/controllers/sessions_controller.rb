@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   before_filter :login_required, :only => [:home]
   
   # logs the person out after 60 minutes
-  session_times_out_in 60.minutes, :after_timeout => :log_them_out, :except => [:new, :destroy]
+  session_times_out_in SystemSetting.first.session_timeout.minutes, :after_timeout => :log_them_out, :except => [:new, :destroy]
   
   # this is the login page. If the user is already logged in the redirect them to the home page
   def new

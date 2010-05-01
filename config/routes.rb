@@ -20,7 +20,7 @@ ActionController::Routing::Routes.draw do |map|
   map.non_res_staff 'non-res-staff', :controller => "admin", :action => "agency_staff"
   map.backup_restore 'backup-restore', :controller => "admin", :action => "backup_restore" 
   map.import_staff 'import-staff', :controller => "admin", :action => "import_staff" 
-  
+  map.edit_session_timeout 'edit-session-timeout', :controller => "admin", :action => "edit_session_timeout" 
   
   map.root :controller => 'sessions', :action => "new" 
   map.resources :sessions

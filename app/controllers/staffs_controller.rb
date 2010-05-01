@@ -4,7 +4,7 @@ class StaffsController < ApplicationController
   before_filter :login_required
   
   # logs the person out after 60 minutes
-  session_times_out_in 60.minutes, :after_timeout => :log_them_out
+  session_times_out_in SystemSetting.first.session_timeout.minutes, :after_timeout => :log_them_out
   
   # auto complete and in place edit plugin methods. These lines call the plugins 
   # which render the needed methods for the controller

@@ -16,7 +16,7 @@ class HousesController < ApplicationController
   before_filter :login_required
   
   # logs the person out after 60 minutes
-  session_times_out_in 60.minutes, :after_timeout => :log_them_out
+  session_times_out_in SystemSetting.first.session_timeout.minutes, :after_timeout => :log_them_out
   
 #------------------- Creates AJAX methods for autocompleting forms -----------------
   

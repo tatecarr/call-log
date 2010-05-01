@@ -13,12 +13,12 @@
 <script type="text/javascript">
 	var curvyCornersVerbose = false;
 	
-	var sessionTime = 3600; // timeout in an hour
+	var sessionTime = <%= SystemSetting.first.session_timeout * 60 %>; // timeout in an hour
 	var timeToThink = 300; // give them 5 minutes
 	setTimeout("showWarning()", (sessionTime - timeToThink) * 1000);
 	
 	function showWarning() {
-		var answer = confirm("You will be logged out in " + timeToThink / 60 + " minutes. Click OK to stay logged in for another hour.")
+		var answer = confirm("You will be logged out in 5 minutes. Click OK to stay logged in for another " + sessionTime / 60 + " minutes.")
 		if (answer) {
 			setTimeout("showWarning()", (sessionTime - timeToThink) * 1000);
 			new Ajax.Request('/home', {asynchronous:true, evalScripts:true});
@@ -54,6 +54,7 @@
 <ul id="second_navi">
 <li><%= link_to "Change Your Password", change_password_path %></li>
 <li><%= link_to "User Manual", "/UserManual/CallLog-UserManual.pdf" %></li>
+<% if admin? %><li><%= link_to "Edit Session Timeout", edit_session_timeout_path %></li><% end %>
 </ul>
 <% end %>
 
