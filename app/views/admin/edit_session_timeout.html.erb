@@ -1,5 +1,8 @@
 <h1>Edit Session Timeout</h1>
-<p>Enter the number of minutes you would like the session timeout to be below.</p>
+<p>
+	Enter the number of minutes you would like the session timeout to be below.<br/>
+	(If a value below 10 is entered, the session timeout will be set to 10 minutes)
+</p>
 <% form_for @system_setting, :url => {:controller => "admin", :action => "update_session_timeout"} do |f| -%>
   <%= f.error_messages %>
   <%= f.text_field :session_timeout, :size => 5 %> minutes<br/>

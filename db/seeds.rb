@@ -5,10 +5,10 @@
 #   
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Major.create(:name => 'Daley', :city => cities.first)
+SystemSetting.create!(:session_timeout => 60)
+
 User.create!(:username => 'admin', 
             :email => 'test@nearc.com', 
             :password => "nearc",
             :role => 'System-Admin',
             :system_generated_pw => false)
-            
-SystemSetting.create!(:session_timeout => 60)

@@ -204,7 +204,7 @@ class AdminController < ApplicationController
   
   def update_session_timeout
     @system_setting = SystemSetting.first
-    @system_setting.session_timeout = params[:system_setting][:session_timeout] < 10 ? 10 : params[:system_setting][:session_timeout]
+    @system_setting.session_timeout = params[:system_setting][:session_timeout].to_i < 10 ? 10 : params[:system_setting][:session_timeout]
     if @system_setting.save
       flash[:notice] = "Session timeout length was successfully changed."
     else
