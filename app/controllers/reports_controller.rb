@@ -47,9 +47,12 @@ class ReportsController < ApplicationController
   
   # for the house reports
   def house_report
+   
     # catch report form submissions.  used by the prawn plugin for generating pdfs.
     params[:search] = Hash.new
-    params[:search][:bu_code_equals] = [params[:bu_code_equals]]
+    unless params[:bu_code_equals].nil?
+        params[:search][:bu_code_equals] = [params[:bu_code_equals]]
+    end
     
     @search = House.search(params[:search])
     @houses = @search.all
