@@ -67,12 +67,14 @@
 				<th>Phone</th>
 			</tr>
 		<% directors.each do |house_staff| %>
-			<tr>
-				<td><%= house_staff.staff.first_name + " " + house_staff.staff.last_name %></td>
-		   		<td><%= house_staff.position_name %></td>
-				<td><%= important_courses(house_staff.staff).join("/") %></td>
-				<td>Home: <%= house_staff.staff.home_number %><br/>Cell: <%= house_staff.staff.cell_number %></td>
-			</tr>
+			<% unless house_staff.staff.nil? %>
+				<tr>
+					<td><%= house_staff.staff.first_name + " " + house_staff.staff.last_name %></td>
+			   		<td><%= house_staff.position_name %></td>
+					<td><%= important_courses(house_staff.staff).join("/") %></td>
+					<td>Home: <%= house_staff.staff.home_number %><br/>Cell: <%= house_staff.staff.cell_number %></td>
+				</tr>
+			<% end %>
 		<% end %>
 		</table>
 	<% end %>
@@ -88,12 +90,14 @@
 				<th>Phone</th>
 			</tr>
 		<% managers.each do |house_staff| %>
-			<tr>
-				<td><%= house_staff.staff.first_name + " " + house_staff.staff.last_name %></td>
-		   		<td><%= house_staff.position_name %></td>
-				<td><%= important_courses(house_staff.staff).join("/") %></td>
-				<td>Home: <%= house_staff.staff.home_number %><br/>Cell: <%= house_staff.staff.cell_number %></td>
-			</tr>
+			<% unless house_staff.staff.nil? %>
+				<tr>
+					<td><%= house_staff.staff.first_name + " " + house_staff.staff.last_name %></td>
+			   		<td><%= house_staff.position_name %></td>
+					<td><%= important_courses(house_staff.staff).join("/") %></td>
+					<td>Home: <%= house_staff.staff.home_number %><br/>Cell: <%= house_staff.staff.cell_number %></td>
+				</tr>
+			<% end %>
 		<% end %>
 		</table>
 	<% end %>
@@ -109,12 +113,14 @@
 				<th>Phone</th>
 			</tr>
 		<% skills_instructors.each do |house_staff| %>
-			<tr>
-				<td><%= house_staff.staff.first_name + " " + house_staff.staff.last_name %></td>
-		   		<td><%= house_staff.position_name %></td>
-				<td><%= important_courses(house_staff.staff).join("/") %></td>
-				<td>Home: <%= house_staff.staff.home_number %><br/>Cell: <%= house_staff.staff.cell_number %></td>
-			</tr>
+			<% unless house_staff.staff.nil? %>
+				<tr>
+					<td><%= house_staff.staff.first_name + " " + house_staff.staff.last_name %></td>
+			   		<td><%= house_staff.position_name %></td>
+					<td><%= important_courses(house_staff.staff).join("/") %></td>
+					<td>Home: <%= house_staff.staff.home_number %><br/>Cell: <%= house_staff.staff.cell_number %></td>
+				</tr>
+			<% end %>
 		<% end %>
 		</table>
 	<% end %>
@@ -130,12 +136,14 @@
 				<th>Phone</th>
 			</tr>
 		<% overnights.each do |house_staff| %>
-			<tr>
-				<td><%= house_staff.staff.first_name + " " + house_staff.staff.last_name %></td>
-		   		<td><%= house_staff.position_name %></td>
-				<td><%= important_courses(house_staff.staff).join("/") %></td>
-				<td>Home: <%= house_staff.staff.home_number %><br/>Cell: <%= house_staff.staff.cell_number %></td>
-			</tr>
+			<% unless house_staff.staff.nil? %>
+				<tr>
+					<td><%= house_staff.staff.first_name + " " + house_staff.staff.last_name %></td>
+			   		<td><%= house_staff.position_name %></td>
+					<td><%= important_courses(house_staff.staff).join("/") %></td>
+					<td>Home: <%= house_staff.staff.home_number %><br/>Cell: <%= house_staff.staff.cell_number %></td>
+				</tr>
+			<% end %>
 		<% end %>
 		</table>
 	<% end %>
@@ -151,12 +159,14 @@
 				<th>Phone</th>
 			</tr>
 		<% reliefs.each do |house_staff| %>
-			<tr>
-				<td><%= house_staff.staff.first_name + " " + house_staff.staff.last_name %></td>
-		   		<td><%= house_staff.position_name %></td>
-				<td><%= important_courses(house_staff.staff).join("/") %></td>
-				<td>Home: <%= house_staff.staff.home_number %><br/>Cell: <%= house_staff.staff.cell_number %></td>
-			</tr>
+			<% unless house_staff.staff.nil? %>
+				<tr>
+					<td><%= house_staff.staff.first_name + " " + house_staff.staff.last_name %></td>
+			   		<td><%= house_staff.position_name %></td>
+					<td><%= important_courses(house_staff.staff).join("/") %></td>
+					<td>Home: <%= house_staff.staff.home_number %><br/>Cell: <%= house_staff.staff.cell_number %></td>
+				</tr>
+			<% end %>
 		<% end %>
 		</table>
 	<% end %>
@@ -172,12 +182,14 @@
 				<th>Phone</th>
 			</tr>
 		<% pss.each do |house_staff| %>
-			<tr>
-				<td><%= house_staff.staff.first_name + " " + house_staff.staff.last_name %></td>
-		   		<td><%= house_staff.position_name %></td>
-				<td><%= important_courses(house_staff.staff).join("/") %></td>
-				<td>Home: <%= house_staff.staff.home_number %><br/>Cell: <%= house_staff.staff.cell_number %></td>
-			</tr>
+			<% unless house_staff.staff.nil? %>
+				<tr>
+					<td><%= house_staff.staff.first_name + " " + house_staff.staff.last_name %></td>
+			   		<td><%= house_staff.position_name %></td>
+					<td><%= important_courses(house_staff.staff).join("/") %></td>
+					<td>Home: <%= house_staff.staff.home_number %><br/>Cell: <%= house_staff.staff.cell_number %></td>
+				</tr>
+			<% end %>
 		<% end %>
 		</table>
 	<% end %>	
@@ -193,12 +205,14 @@
 				<th>Phone</th>
 			</tr>
 		<% overtime.each do |house_staff| %>
-			<tr>
-				<td><%= house_staff.staff.first_name + " " + house_staff.staff.last_name %></td>
-		   		<td><%= house_staff.position_name %></td>
-				<td><%= important_courses(house_staff.staff).join("/") %></td>
-				<td>Home: <%= house_staff.staff.home_number %><br/>Cell: <%= house_staff.staff.cell_number %></td>
-			</tr>
+			<% unless house_staff.staff.nil? %>
+				<tr>
+					<td><%= house_staff.staff.first_name + " " + house_staff.staff.last_name %></td>
+			   		<td><%= house_staff.position_name %></td>
+					<td><%= important_courses(house_staff.staff).join("/") %></td>
+					<td>Home: <%= house_staff.staff.home_number %><br/>Cell: <%= house_staff.staff.cell_number %></td>
+				</tr>
+			<% end %>
 		<% end %>
 		</table>
 	<% end %>
