@@ -57,12 +57,16 @@ class ReportsController < ApplicationController
     @search = House.search(params[:search])
     @houses = @search.all
     
+    # If only one house is being printed, the pdf file name will be the name of the house
+    # else it will be "Houses Report".  Previously it was always "House Report".
+    fileName = @houses.count == 1 ? @houses[0].name : "Houses Report"
+    
     # Html and .pdf will be the formats used most of the time.
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @houses }
       format.pdf do
-        render  :pdf => "House Report",
+        render  :pdf => fileName,
                 :template => "houses/index.pdf.erb",
                 :stylesheets => ["application", "prince_house", "scaffold"],
                 :layout => "pdf"
